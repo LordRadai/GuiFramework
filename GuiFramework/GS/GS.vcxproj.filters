@@ -33,12 +33,18 @@
     <ClInclude Include="GuiFramework\Window\GUIWindowBase.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="GuiFramework\Render\GUIRenderContext.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="GuiFramework\System\GUIObject.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="GuiFramework\System\GUIMsgReceiver.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="GuiFramework\Window\GUIWindowBase.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

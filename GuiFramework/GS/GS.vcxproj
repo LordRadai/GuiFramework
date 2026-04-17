@@ -140,6 +140,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="GuiFramework\Globals.h" />
+    <ClInclude Include="GuiFramework\Render\GUIRenderContext.h" />
     <ClInclude Include="GuiFramework\System\TGUILiteralString.inl" />
     <ClInclude Include="GuiFramework\System\GUIMsgReceiver.h" />
     <ClInclude Include="GuiFramework\System\GUIObject.h" />
@@ -149,6 +150,7 @@
   <ItemGroup>
     <ClCompile Include="GuiFramework\System\GUIMsgReceiver.cpp" />
     <ClCompile Include="GuiFramework\System\GUIObject.cpp" />
+    <ClCompile Include="GuiFramework\Window\GUIWindowBase.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

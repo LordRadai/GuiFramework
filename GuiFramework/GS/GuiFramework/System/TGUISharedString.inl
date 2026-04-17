@@ -27,14 +27,14 @@ namespace GuiFramework
 
 		void Attach(const CharT* str);
 
-		operator=(const ThisClass& other);
+		void operator=(const ThisClass& other);
 
-		CharT* c_str() const { return m_pData->m_str.c_str(); }
+		const CharT* c_str() const { return m_pData->m_str.c_str(); }
 	};
 
 	typedef void(__fastcall* TGUISharedStringCtor_t)(TGUISharedString<dl_wchar>*, const dl_wchar*);
 	typedef void(__fastcall* TGUISharedStringCopyCtor_t)(TGUISharedString<dl_wchar>*, const TGUISharedString<dl_wchar>*);
-	typedef void(__fastcall* TGUISharedStringDtor_t)(const TGUISharedString<dl_wchar>&);
+	typedef void(__fastcall* TGUISharedStringDtor_t)(TGUISharedString<dl_wchar>*);
 
 	typedef void(__fastcall* TGUISharedStringAttach_t)(TGUISharedString<dl_wchar>*, const dl_wchar*);
 
@@ -60,7 +60,7 @@ namespace GuiFramework
 		CALL(TGUISharedStringAttach_t, 0x523e20, this, str);
 	}
 
-	template<> inline TGUISharedString<dl_wchar>::operator=(const ThisClass& other)
+	template<> inline void TGUISharedString<dl_wchar>::operator=(const ThisClass& other)
 	{
 		CALL(TGUISharedStringAssign_t, 0x5239c0, this, &other);
 	}
