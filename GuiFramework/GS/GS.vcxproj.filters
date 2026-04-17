@@ -24,10 +24,10 @@
     <ClInclude Include="GuiFramework\System\GUIMsgReceiver.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="GuiFramework\System\GUISharedString.inl">
+    <ClInclude Include="GuiFramework\System\TGUISharedString.inl">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="GuiFramework\System\GUILiteralString.inl">
+    <ClInclude Include="GuiFramework\System\TGUILiteralString.inl">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

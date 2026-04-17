@@ -1,5 +1,5 @@
 #pragma once
-#include "GUISharedString.inl"
+#include "TGUISharedString.inl"
 #include <Call.h>
 
 namespace GuiFramework

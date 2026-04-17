@@ -140,10 +140,10 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="GuiFramework\Globals.h" />
-    <ClInclude Include="GuiFramework\System\GUILiteralString.inl" />
+    <ClInclude Include="GuiFramework\System\TGUILiteralString.inl" />
     <ClInclude Include="GuiFramework\System\GUIMsgReceiver.h" />
     <ClInclude Include="GuiFramework\System\GUIObject.h" />
-    <ClInclude Include="GuiFramework\System\GUISharedString.inl" />
+    <ClInclude Include="GuiFramework\System\TGUISharedString.inl" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="GuiFramework\System\GUIMsgReceiver.cpp" />
