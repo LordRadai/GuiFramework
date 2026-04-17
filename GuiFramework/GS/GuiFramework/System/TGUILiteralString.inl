@@ -8,6 +8,7 @@ namespace GuiFramework
 	class TGUILiteralString : public TGUISharedString<CharT>
 	{
 		typedef TGUILiteralString<CharT> ThisClass;
+		typedef TGUISharedString<CharT> SuperClass;
 	public:
 		TGUILiteralString() : TGUISharedString<CharT>() {}
 		TGUILiteralString(const CharT* str);

@@ -28,6 +28,8 @@ namespace GuiFramework
 		void Attach(const CharT* str);
 
 		operator=(const ThisClass& other);
+
+		CharT* c_str() const { return m_pData->m_str.c_str(); }
 	};
 
 	typedef void(__fastcall* TGUISharedStringCtor_t)(TGUISharedString<dl_wchar>*, const dl_wchar*);

@@ -144,6 +144,7 @@
     <ClInclude Include="GuiFramework\System\GUIMsgReceiver.h" />
     <ClInclude Include="GuiFramework\System\GUIObject.h" />
     <ClInclude Include="GuiFramework\System\TGUISharedString.inl" />
+    <ClInclude Include="GuiFramework\Window\GUIWindowBase.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="GuiFramework\System\GUIMsgReceiver.cpp" />
