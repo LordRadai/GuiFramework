@@ -2,6 +2,8 @@
 
 namespace GuiFramework
 {
+	typedef void(__fastcall* GUIWindowBase_ctor_t)(GUIWindowBase*, TGUISharedString<dl_wchar>);
+
 	typedef DLRF::DLRuntimeClass* (__fastcall* GetRuntimeClass_t)(const GUIWindowBase*);
 	typedef void(__fastcall* Destructor_t)(GUIWindowBase*);
 	typedef void(__fastcall* OnDelete_t)(GUIWindowBase*);
@@ -12,6 +14,11 @@ namespace GuiFramework
 	typedef void(__fastcall* OnRender_t)(const GUIWindowBase*, GraphicsContext&);
 	typedef void(__fastcall* OnNcRender_t)(const GUIWindowBase*, GraphicsContext&);
 	typedef void(__fastcall* OnRenderWindow_t)(const GUIWindowBase*, GraphicsContext&);
+
+	GUIWindowBase::GUIWindowBase(TGUISharedString<dl_wchar> label)
+	{
+		CALL(GUIWindowBase_ctor_t, 0x54f610, this, label);
+	}
 
 	DLRF::DLRuntimeClass* GUIWindowBase::GetRuntimeClassOfThis() const
 	{

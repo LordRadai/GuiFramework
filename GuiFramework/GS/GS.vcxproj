@@ -144,6 +144,7 @@
     <ClInclude Include="GuiFramework\Signal\GUISignal.h" />
     <ClInclude Include="GuiFramework\Signal\GUISignalManager.h" />
     <ClInclude Include="GuiFramework\System\GUIFont.h" />
+    <ClInclude Include="GuiFramework\System\GUIInvoker.h" />
     <ClInclude Include="GuiFramework\System\GUISystem.h" />
     <ClInclude Include="GuiFramework\System\TGUILiteralString.inl" />
     <ClInclude Include="GuiFramework\System\GUIMsgReceiver.h" />

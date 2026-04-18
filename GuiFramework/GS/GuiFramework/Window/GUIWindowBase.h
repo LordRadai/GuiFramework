@@ -44,6 +44,8 @@ namespace GuiFramework
 		typedef _GUI_VIRTUAL_INPUT VirtualInput;
 		typedef GUI_KEYSTROKE KeyEvent;
 
+        GUIWindowBase(TGUISharedString<dl_wchar> label);
+
         virtual DLRF::DLRuntimeClass* GetRuntimeClassOfThis() const override;
         virtual ~GUIWindowBase() override;
         virtual void OnDelete() override;
