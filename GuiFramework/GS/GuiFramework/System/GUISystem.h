@@ -3,6 +3,7 @@
 #include "TGUIStringStorage.inl"
 #include "TGUIRect.inl"
 #include "TGUIPoint.inl"
+#include "GuiFramework/Signal/GUISignalManager.h"
 
 namespace GuiFramework
 {
@@ -14,13 +15,6 @@ namespace GuiFramework
 
 	class GUISystem : public GUIMsgReceiver
 	{
-		class GUISystemEvents
-		{
-			DLUT::DLVector<dl_pointer> m_pEvents[31];
-			DLUT::DLVector<dl_pointer> m_pVar3E0[2];
-			dl_int m_state;
-		};
-
 	public:
 		GUISystem();
 
@@ -44,12 +38,12 @@ namespace GuiFramework
 
 		GUIWindowManager* GetWindowManager() const { return m_pGUIWindowManager; }
 
-		//GUITweakerDialog* AddTweakerDialog(const dl_wchar* title, dl_bool bUnique = true, dl_int width = 290, dl_int m_height = 400, dl_uint flags = GuiFramework::GUITweakerBase::GuiStyleFlags_Invisible | GuiFramework::GUITweakerBase::GuiStyleFlags_Titlebar | GuiFramework::GUITweakerBase::GuiStyleFlags_3DFrame | GuiFramework::GUITweakerBase::GuiStyleFlags_VScrollbar | GuiFramework::GUITweakerBase::GuiStyleFlags_Collapse | GuiFramework::GUITweakerBase::GuiStyleFlags_Destroy);
-		//GUIPopUpMenuNode* AddPopUpMenuNode(const dl_wchar* title, dl_uint flags = 0);
-		//dl_bool IsGUIOpen();
-
-		//void RegisterEvent(GUISystem* param_2, dl_wchar**, GUIMsgReceiver* pItem, DLRF::DLMethodResolver<DLRF::DLMethodInvokeContext>* pDLMethod, dl_uint param_5, dl_uint param_6);
-		/*
+		/**
+		 * @brief Connect a signal to a message receiver. The method resolver is used to resolve the method to call on the receiver when the signal is emitted.
+		 */
+		void Connect(GUIObject* pOwner, GUISignal::GUISignalDecl pSignalDeclaration, GUIMsgReceiver* pReceiver, DLRF::DLMethodResolver<DLRF::DLMethodInvokeContext>* pResolver, dl_uint param_5, dl_uint param_6);
+		
+		/**
 		* @brief Create GUISystem editor window.
 		*/
 		void CreateTweaker(GUITweakerDialog* pWnd);
@@ -67,7 +61,7 @@ namespace GuiFramework
 		dl_int m_isDrawing;
 		GUIWindowManager* m_pGUIWindowManager;
 		GUIWindowPainter* m_pGUIWindowPainter;
-		GUISystemEvents* m_pEvents;
+		GUISignalManager* m_pSignalManager;
 		dl_uint* m_sysInts;
 		dl_float32* m_sysFloats;
 		DLMT::DL_COLOR_32* m_sysColors;

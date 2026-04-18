@@ -141,6 +141,8 @@
   <ItemGroup>
     <ClInclude Include="GuiFramework\Globals.h" />
     <ClInclude Include="GuiFramework\Render\GUIRenderContext.h" />
+    <ClInclude Include="GuiFramework\Signal\GUISignal.h" />
+    <ClInclude Include="GuiFramework\Signal\GUISignalManager.h" />
     <ClInclude Include="GuiFramework\System\GUIFont.h" />
     <ClInclude Include="GuiFramework\System\GUISystem.h" />
     <ClInclude Include="GuiFramework\System\TGUILiteralString.inl" />
