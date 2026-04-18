@@ -154,6 +154,7 @@
     <ClInclude Include="GuiFramework\System\TGUISharedString.inl" />
     <ClInclude Include="GuiFramework\System\TGUIStringStorage.inl" />
     <ClInclude Include="GuiFramework\Window\GUIWindowBase.h" />
+    <ClInclude Include="GuiFramework\Window\GUIWindowManager.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="GuiFramework\System\GUIFont.cpp" />
@@ -161,6 +162,7 @@
     <ClCompile Include="GuiFramework\System\GUIObject.cpp" />
     <ClCompile Include="GuiFramework\System\GUISystem.cpp" />
     <ClCompile Include="GuiFramework\Window\GUIWindowBase.cpp" />
+    <ClCompile Include="GuiFramework\Window\GUIWindowManager.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

@@ -4,10 +4,10 @@
 #include "TGUIRect.inl"
 #include "TGUIPoint.inl"
 #include "GuiFramework/Signal/GUISignalManager.h"
+#include "GuiFramework/Window/GUIWindowManager.h"
 
 namespace GuiFramework
 {
-	class GUIWindowManager;
 	class GUIWindowPainter;
 	class GUIFont;
 	class GUITweakerDialog;
