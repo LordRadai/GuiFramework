@@ -9,4 +9,6 @@ namespace GuiFramework
 	public:
 		// Empty for now
 	};
+
+	typedef GUIRenderContext GraphicsContext;
 }

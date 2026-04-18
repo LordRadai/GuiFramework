@@ -43,7 +43,6 @@ namespace GuiFramework
 		typedef GUI_MOUSE_EVENT_INFO MouseEvent;
 		typedef _GUI_VIRTUAL_INPUT VirtualInput;
 		typedef GUI_KEYSTROKE KeyEvent;
-		typedef GUIRenderContext GraphicsContext;
 
         virtual DLRF::DLRuntimeClass* GetRuntimeClassOfThis() const override;
         virtual ~GUIWindowBase() override;
