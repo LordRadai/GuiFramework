@@ -1,8 +1,11 @@
 #pragma once
 #include "GUIObject.h"
+#include "TGUISharedString.inl"
 
 namespace GuiFramework
 {
+	class GUITweakerDialog;
+
 	class GUIFont : public GUIObject
 	{
 		typedef GUIFont ThisClass;
@@ -23,6 +26,8 @@ namespace GuiFramework
 		{
 			return DLKR::Free(block, GUI_ALLOCATOR);
 		}
+
+		void CreateTweaker(TGUISharedString<dl_wchar>& title, GUITweakerDialog* pWnd);
 
 	private:
 		DLMT::DL_COLOR_32 m_color;

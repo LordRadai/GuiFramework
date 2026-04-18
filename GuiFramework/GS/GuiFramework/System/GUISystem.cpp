@@ -12,6 +12,8 @@ namespace GuiFramework
 	typedef void(__fastcall* GUISystem_SetClipboard_t)(GUISystem*, const dl_wchar*);
 	typedef dl_bool(__fastcall* GUISystem_GetClipboard_t)(GUISystem*, DLTX::DLString*);
 
+	typedef void(__fastcall* GUISystem_CreateTweaker_t)(GUISystem*, GUITweakerDialog*);
+
 	GUISystem::GUISystem()
 	{
 		CALL(GUISystem_ctor_t, 0x528580, this);
@@ -50,5 +52,10 @@ namespace GuiFramework
 	dl_bool GUISystem::GetClipboard(DLTX::DLString* out)
 	{
 		return CALL(GUISystem_GetClipboard_t, 0x52b570, this, out);
+	}
+
+	void GUISystem::CreateTweaker(GUITweakerDialog* pWnd)
+	{
+		CALL(GUISystem_CreateTweaker_t, 0x52b640, this, pWnd);
 	}
 }

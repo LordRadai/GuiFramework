@@ -52,7 +52,7 @@ namespace GuiFramework
 		/*
 		* @brief Create GUISystem editor window.
 		*/
-		//void CreateSystemEditorGUI();
+		void CreateTweaker(GUITweakerDialog* pWnd);
 
 		static void* operator new(size_t size)
 		{
