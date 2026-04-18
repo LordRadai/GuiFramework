@@ -8,7 +8,7 @@ namespace GuiFramework
 	typedef dl_bool(__fastcall* OnMouseEvent_t)(GUIWindowBase*, const GUIWindowBase::MouseEvent&);
 	typedef dl_bool(__fastcall* OnVirtualInput_t)(GUIWindowBase*, const GUIWindowBase::VirtualInput&);
 	typedef dl_bool(__fastcall* OnNcCalcSize_t)(GUIWindowBase*);
-	typedef dl_int(__fastcall* OnNcHitTest_t)(GUIWindowBase*, const GUIWindowBase::Point2D&);
+	typedef dl_int(__fastcall* OnNcHitTest_t)(GUIWindowBase*, const Point2D&);
 	typedef void(__fastcall* OnRender_t)(const GUIWindowBase*, GUIWindowBase::GraphicsContext&);
 	typedef void(__fastcall* OnNcRender_t)(const GUIWindowBase*, GUIWindowBase::GraphicsContext&);
 	typedef void(__fastcall* OnRenderWindow_t)(const GUIWindowBase*, GUIWindowBase::GraphicsContext&);
