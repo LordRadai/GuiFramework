@@ -5,6 +5,7 @@
 #include "GuiFramework/System/TGUIPoint.inl"
 #include "GuiFramework/System/GUISystem.h"
 #include "GuiFramework/Render/GUIRenderContext.h"
+#include "GuiFramework/System/GUIMouse.h"
 
 namespace GuiFramework
 {
@@ -14,14 +15,6 @@ namespace GuiFramework
 		typedef GUIMsgReceiver SuperClass;
 
     public:
-        struct GUI_MOUSE_EVENT_INFO
-        {
-            dl_int EventID;
-            dl_int iVar4;
-            dl_int X;
-			dl_int Y;
-        };
-
 		struct _GUI_VIRTUAL_INPUT
         {
             dl_int InputID;
@@ -40,7 +33,6 @@ namespace GuiFramework
 			dl_wchar UnicodeChar;
         };
 
-		typedef GUI_MOUSE_EVENT_INFO MouseEvent;
 		typedef _GUI_VIRTUAL_INPUT VirtualInput;
 		typedef GUI_KEYSTROKE KeyEvent;
 
@@ -50,14 +42,14 @@ namespace GuiFramework
         virtual ~GUIWindowBase() override;
         virtual void OnDelete() override;
         virtual dl_bool AddChild(GUIWindowBase* pChild) { return false; }
-		virtual DLUT::DLVector<GUIObject*> GetChildrenVector() { return nullptr; }
+		virtual DLUT::DLVector<GUIObject*>* GetChildrenVector() { return nullptr; }
 		virtual Rect GetChildrenBaseCoord() const { return Rect(); }
 		virtual GUIWindowBase* GetNextFocusWindow() const { return nullptr; }
         virtual dl_bool IsMoveChild() const { return true; }
 		virtual dl_bool IsMoveSelf() const { return true; }
         virtual dl_bool OnMouseEvent(const MouseEvent& event);
 		virtual dl_bool OnMouseMove(const MouseEvent& event) { return false; }
-		virtual dl_bool OnNcMouseMove(const MouseEvent& event) { return false; }
+		virtual dl_bool OnNcMouseMove(GUI_NCHIT ncHit, const MouseEvent& event) { return false; }
 		virtual dl_bool OnLButtonDown(const MouseEvent& event) { return false; }
 		virtual dl_bool OnLButtonUp(const MouseEvent& event) { return false; }
 		virtual dl_bool OnRButtonDown(const MouseEvent& event) { return false; }
@@ -68,22 +60,22 @@ namespace GuiFramework
 		virtual dl_bool OnRButtonDblClk(const MouseEvent& event) { return false; }
 		virtual dl_bool OnMButtonDblClk(const MouseEvent& event) { return false; }
 		virtual dl_bool OnMouseWheel(const MouseEvent& event) { return false; }
-		virtual dl_bool OnNcLButtonDown(const MouseEvent& event) { return false; }
-		virtual dl_bool OnNcLButtonUp(const MouseEvent& event) { return false; }
-		virtual dl_bool OnNcRButtonDown(const MouseEvent& event) { return false; }
-		virtual dl_bool OnNcRButtonUp(const MouseEvent& event) { return false; }
-		virtual dl_bool OnNcMButtonDown(const MouseEvent& event) { return false; }
-		virtual dl_bool OnNcMButtonUp(const MouseEvent& event) { return false; }
-		virtual dl_bool OnNcLButtonDblClk(const MouseEvent& event) { return false; }
-		virtual dl_bool OnNcRButtonDblClk(const MouseEvent& event) { return false; }
-		virtual dl_bool OnNcMButtonDblClk(const MouseEvent& event) { return false; }
-		virtual dl_bool OnNcMouseWheel(const MouseEvent& event) { return false; }
+		virtual dl_bool OnNcLButtonDown(GUI_NCHIT ncHit, const MouseEvent& event) { return false; }
+		virtual dl_bool OnNcLButtonUp(GUI_NCHIT ncHit, const MouseEvent& event) { return false; }
+		virtual dl_bool OnNcRButtonDown(GUI_NCHIT ncHit, const MouseEvent& event) { return false; }
+		virtual dl_bool OnNcRButtonUp(GUI_NCHIT ncHit, const MouseEvent& event) { return false; }
+		virtual dl_bool OnNcMButtonDown(GUI_NCHIT ncHit, const MouseEvent& event) { return false; }
+		virtual dl_bool OnNcMButtonUp(GUI_NCHIT ncHit, const MouseEvent& event) { return false; }
+		virtual dl_bool OnNcLButtonDblClk(GUI_NCHIT ncHit, const MouseEvent& event) { return false; }
+		virtual dl_bool OnNcRButtonDblClk(GUI_NCHIT ncHit, const MouseEvent& event) { return false; }
+		virtual dl_bool OnNcMButtonDblClk(GUI_NCHIT ncHit, const MouseEvent& event) { return false; }
+		virtual dl_bool OnNcMouseWheel(GUI_NCHIT ncHit, const MouseEvent& event) { return false; }
 		virtual dl_bool OnMouseLeave() { return false; }
 		virtual dl_bool OnNcMouseLeave() { return false; }
         virtual dl_bool OnVirtualInput(const VirtualInput& input);
 		virtual dl_bool AdjustScroll() { return false; }
-        virtual dl_bool OnNcCalcSize();
-        virtual dl_int OnNcHitTest(const Point2D& pt);
+        virtual dl_bool OnNcCalcSize(Rect& out);
+        virtual GUI_NCHIT OnNcHitTest(const Point2D& pt);
 		virtual dl_bool OnCommand(unsigned int cmdId) { return false; }
         virtual dl_bool OnSetFocus() { return false; }
         virtual dl_bool OnKillFocus() { return false; }
@@ -92,7 +84,7 @@ namespace GuiFramework
 		virtual dl_bool OnKeyUp(const KeyEvent& event) { return false; }
 		virtual dl_bool OnChar(const KeyEvent& event) { return false; }
 		virtual dl_bool OnSize() { return false; }
-		virtual dl_bool OnMove() { return false; }
+		virtual dl_bool OnMove(dl_pointer param_2, dl_pointer param_3) { return false; }
 		virtual dl_bool OnMove(const Rect& rect) { return false; }
         virtual dl_bool OnMinimized() { return false; }
         virtual dl_bool OnRestored() { return false; }

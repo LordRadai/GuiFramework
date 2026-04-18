@@ -7,9 +7,9 @@ namespace GuiFramework
 	typedef DLRF::DLRuntimeClass* (__fastcall* GetRuntimeClass_t)(const GUIWindowBase*);
 	typedef void(__fastcall* Destructor_t)(GUIWindowBase*);
 	typedef void(__fastcall* OnDelete_t)(GUIWindowBase*);
-	typedef dl_bool(__fastcall* OnMouseEvent_t)(GUIWindowBase*, const GUIWindowBase::MouseEvent&);
+	typedef dl_bool(__fastcall* OnMouseEvent_t)(GUIWindowBase*, const MouseEvent&);
 	typedef dl_bool(__fastcall* OnVirtualInput_t)(GUIWindowBase*, const GUIWindowBase::VirtualInput&);
-	typedef dl_bool(__fastcall* OnNcCalcSize_t)(GUIWindowBase*);
+	typedef dl_bool(__fastcall* OnNcCalcSize_t)(GUIWindowBase*, Rect&);
 	typedef dl_int(__fastcall* OnNcHitTest_t)(GUIWindowBase*, const Point2D&);
 	typedef void(__fastcall* OnRender_t)(const GUIWindowBase*, GraphicsContext&);
 	typedef void(__fastcall* OnNcRender_t)(const GUIWindowBase*, GraphicsContext&);
@@ -45,12 +45,12 @@ namespace GuiFramework
 		return CALL(OnVirtualInput_t, 0x551670, this, input);
 	}
 
-	dl_bool GUIWindowBase::OnNcCalcSize()
+	dl_bool GUIWindowBase::OnNcCalcSize(Rect& out)
 	{
-		return CALL(OnNcCalcSize_t, 0x3c2300, this);
+		return CALL(OnNcCalcSize_t, 0x3c2300, this, out);
 	}
 
-	dl_int GUIWindowBase::OnNcHitTest(const Point2D& pt)
+	GUI_NCHIT GUIWindowBase::OnNcHitTest(const Point2D& pt)
 	{
 		return CALL(OnNcHitTest_t, 0x551870, this, pt);
 	}

@@ -145,6 +145,7 @@
     <ClInclude Include="GuiFramework\Signal\GUISignalManager.h" />
     <ClInclude Include="GuiFramework\System\GUIFont.h" />
     <ClInclude Include="GuiFramework\System\GUIInvoker.h" />
+    <ClInclude Include="GuiFramework\System\GUIMouse.h" />
     <ClInclude Include="GuiFramework\System\GUISystem.h" />
     <ClInclude Include="GuiFramework\System\TGUILiteralString.inl" />
     <ClInclude Include="GuiFramework\System\GUIMsgReceiver.h" />
@@ -153,6 +154,7 @@
     <ClInclude Include="GuiFramework\System\TGUIRect.inl" />
     <ClInclude Include="GuiFramework\System\TGUISharedString.inl" />
     <ClInclude Include="GuiFramework\System\TGUIStringStorage.inl" />
+    <ClInclude Include="GuiFramework\Window\GUIWidget.h" />
     <ClInclude Include="GuiFramework\Window\GUIWindowBase.h" />
     <ClInclude Include="GuiFramework\Window\GUIWindowManager.h" />
   </ItemGroup>
@@ -161,6 +163,7 @@
     <ClCompile Include="GuiFramework\System\GUIMsgReceiver.cpp" />
     <ClCompile Include="GuiFramework\System\GUIObject.cpp" />
     <ClCompile Include="GuiFramework\System\GUISystem.cpp" />
+    <ClCompile Include="GuiFramework\Window\GUIWidget.cpp" />
     <ClCompile Include="GuiFramework\Window\GUIWindowBase.cpp" />
     <ClCompile Include="GuiFramework\Window\GUIWindowManager.cpp" />
   </ItemGroup>
