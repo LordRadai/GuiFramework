@@ -138,6 +138,7 @@ namespace GuiFramework
 		typedef DLUT::DLVector<GUIObject*>* (__fastcall* GetChildrenVector_t)(GUIWindowBase*);
 		typedef Rect(__fastcall* GetChildrenBaseCoord_t)(const GUIWindowBase*);
 		typedef GUIWindowBase* (__fastcall* GetNextFocusWindow_t)(const GUIWindowBase*);
+		typedef dl_bool(__fastcall* OnMouseEvent_t)(const GUIWindowBase*, const MouseEvent&);
 		typedef dl_bool(__fastcall* OnMouseMove_t)(const GUIWindowBase*, const MouseEvent&);
 		typedef dl_bool(__fastcall* OnNcMouseMove_t)(const GUIWindowBase*, GUI_NCHIT, const MouseEvent&);
 		typedef dl_bool(__fastcall* OnNcLButtonDown_t)(const GUIWindowBase*, GUI_NCHIT, const MouseEvent&);
@@ -152,5 +153,6 @@ namespace GuiFramework
 		typedef dl_bool(__fastcall* OnClose_t)(const GUIWindowBase*);
 		typedef void(__fastcall* OnRender_t)(const GUIWindowBase*, GraphicsContext&);
 		typedef void(__fastcall* OnNcRender_t)(const GUIWindowBase*, GraphicsContext&);
+		typedef void(__fastcall* OnRenderWindow_t)(const GUIWindowBase*, GraphicsContext&);
     };
 }
