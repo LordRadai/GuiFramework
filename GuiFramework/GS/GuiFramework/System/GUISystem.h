@@ -30,7 +30,7 @@ namespace GuiFramework
 		virtual dl_int PopKeyStroke() { return 0; }
 		virtual GUIRootWindow* CreateRootWindow();
 		virtual dl_int BeginFont() { return 0; }
-		virtual void MeasureTextExtent(TGUI_POINT<int>* out);
+		virtual void MeasureTextExtent(Point2D* out);
 		virtual void EndFont() {}
 		virtual void SetClipboard(const dl_wchar* text);
 		virtual dl_bool GetClipboard(DLTX::DLString* out);

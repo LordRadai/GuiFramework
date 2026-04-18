@@ -40,8 +40,6 @@ namespace GuiFramework
 			dl_wchar UnicodeChar;
         };
 
-		typedef TGUI_RECT<int> Rect;
-		typedef TGUI_POINT<int> Point2D;
 		typedef GUI_MOUSE_EVENT_INFO MouseEvent;
 		typedef _GUI_VIRTUAL_INPUT VirtualInput;
 		typedef GUI_KEYSTROKE KeyEvent;
@@ -124,10 +122,10 @@ namespace GuiFramework
         GUISystem* pGuiSystem;
         dl_pointer* pGUIWindowPainter;
         TGUILiteralString<dl_wchar> m_name;
-        TGUI_RECT<dl_int> m_position;
+        Rect m_position;
         dl_uint m_styleFlags;
         dl_int m_iVar54;
-        TGUI_RECT<dl_int16> m_contentOffset;
+        Rect16 m_contentOffset;
 		dl_uint16 m_uVar64;
 		dl_uint16 m_uVar66;
         dl_char m_bVar68;

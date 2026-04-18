@@ -11,4 +11,6 @@ namespace GuiFramework
         TGUI_POINT() : X(0), Y(0) {}
         TGUI_POINT(T x, T y) : X(x), Y(y) {}
     };
+
+    typedef TGUI_POINT<int> Point2D;
 }

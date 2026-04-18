@@ -37,7 +37,7 @@ namespace GuiFramework
 		return CALL(GUISystem_CreateRootWindow_t, 0x52a9f0, this);
 	}
 
-	void GUISystem::MeasureTextExtent(TGUI_POINT<int>* out)
+	void GUISystem::MeasureTextExtent(Point2D* out)
 	{
 		CALL(GUISystem_MeasureTextExtent_t, 0x52aa70, this, out);
 	}
