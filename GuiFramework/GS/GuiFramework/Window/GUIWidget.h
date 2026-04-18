@@ -61,17 +61,22 @@ namespace GuiFramework
 
 	private:
 		DLUT::DLVector<GUIWidget*> m_childWidgets;
-		GUIScrollBarUtil* m_pScrollBars[2] = { 0 };
-		dl_int m_iVar0xa8 = 0;
-		dl_int m_iVar0xac = 0;
-		dl_uchar m_actionType = 0;
-		dl_uchar m_bVarB1 = 0;
-		dl_uchar m_bVarB2 = 0;
-		dl_uchar m_bVarB3 = 0;
-		dl_uint m_iVarB4 = 0;
-		dl_int16 m_sVarB8 = 0;
-		dl_uchar m_bVarBA[74] = { 0 };
-		dl_int m_iVar104 = 0;
-		dl_int m_iVar108 = 0;
+		GUIScrollBarUtil* m_pScrollBars[2];
+		dl_int m_iVar0xa8;
+		dl_int m_iVar0xac;
+		dl_uchar m_actionType;
+		dl_uchar m_bVarB1;
+		dl_uchar m_bVarB2;
+		dl_uchar m_bVarB3;
+		dl_uint m_iVarB4;
+		dl_int16 m_sVarB8;
+		dl_uchar m_bVarBA[74];
+		dl_int m_iVar104;
+		dl_int m_iVar108;
+
+		typedef Rect(__fastcall* GetDefaultSizeMin_t)(const GUIWidget*);
+		typedef Rect(__fastcall* GetDefaultSizeMax_t)(const GUIWidget*);
+		typedef void(__fastcall* ComputeNcShapeInfo_t)(const GUIWidget*, const GUIWidget::_GUI_NC_SHAPE_PROP&, GUIWidget::_GUI_NC_SHAPE_INFO&);
+
 	};
 }

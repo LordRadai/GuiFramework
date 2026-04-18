@@ -5,9 +5,6 @@ namespace GuiFramework
 {
 	typedef void(__fastcall* GUIFont_ctor_t)(GUIFont*);
 
-	typedef void(__fastcall* GUIFont_dtor_t)(GUIFont*);
-	typedef DLRF::DLRuntimeClass* (__fastcall* GUIFont_GetRuntimeClassOfThis_t)(const GUIFont*);
-
 	typedef void(__fastcall* GUIFont_CreateTweaker_t)(GUIFont*, TGUISharedString<dl_wchar>&, GUITweakerDialog*);
 
 	GUIFont::GUIFont()
@@ -17,12 +14,12 @@ namespace GuiFramework
 
 	GUIFont::~GUIFont()
 	{
-		CALL(GUIFont_dtor_t, 0x564c40, this);
+		CALL(Destructor_t, 0x564c40, this);
 	}
 
 	DLRF::DLRuntimeClass* GUIFont::GetRuntimeClassOfThis() const
 	{
-		return CALL(GUIFont_GetRuntimeClassOfThis_t, 0x562b90, this);
+		return CALL(GetRuntimeClass_t, 0x562b90, this);
 	}
 
 	void GUIFont::CreateTweaker(TGUISharedString<dl_wchar>& title, GUITweakerDialog* pWnd)

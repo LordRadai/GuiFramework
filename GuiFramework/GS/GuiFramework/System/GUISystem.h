@@ -74,5 +74,12 @@ namespace GuiFramework
 		dl_int m_iVar90;
 		dl_uint64 m_rng;
 		TGUIStringStorage<dl_wchar> m_stringStorage;
+
+		typedef void(__fastcall* Finalize_t)(GUISystem*);
+		typedef TGUI_RECT<int>(__fastcall* GetMouseInfo_t)(GUISystem*);
+		typedef GUIRootWindow* (__fastcall* CreateRootWindow_t)(GUISystem*);
+		typedef void(__fastcall* MeasureTextExtent_t)(GUISystem*, TGUI_POINT<int>*);
+		typedef void(__fastcall* SetClipboard_t)(GUISystem*, const dl_wchar*);
+		typedef dl_bool(__fastcall* GetClipboard_t)(GUISystem*, DLTX::DLString*);
 	};
 }

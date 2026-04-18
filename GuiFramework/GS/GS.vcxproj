@@ -150,13 +150,18 @@
     <ClInclude Include="GuiFramework\System\TGUILiteralString.inl" />
     <ClInclude Include="GuiFramework\System\GUIMsgReceiver.h" />
     <ClInclude Include="GuiFramework\System\GUIObject.h" />
+    <ClInclude Include="GuiFramework\System\TGUIObjectPtr.inl" />
     <ClInclude Include="GuiFramework\System\TGUIPoint.inl" />
     <ClInclude Include="GuiFramework\System\TGUIRect.inl" />
     <ClInclude Include="GuiFramework\System\TGUISharedString.inl" />
+    <ClInclude Include="GuiFramework\System\TGUISize.inl" />
     <ClInclude Include="GuiFramework\System\TGUIStringStorage.inl" />
     <ClInclude Include="GuiFramework\Window\GUIWidget.h" />
     <ClInclude Include="GuiFramework\Window\GUIWindowBase.h" />
     <ClInclude Include="GuiFramework\Window\GUIWindowManager.h" />
+    <ClInclude Include="GuiFramework\Window\Layouter\GUILayouter.h" />
+    <ClInclude Include="GuiFramework\Window\Layouter\GUILayoutItem.h" />
+    <ClInclude Include="GuiFramework\Window\Layouter\GUILayoutItem_Window.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="GuiFramework\System\GUIFont.cpp" />
@@ -166,6 +171,9 @@
     <ClCompile Include="GuiFramework\Window\GUIWidget.cpp" />
     <ClCompile Include="GuiFramework\Window\GUIWindowBase.cpp" />
     <ClCompile Include="GuiFramework\Window\GUIWindowManager.cpp" />
+    <ClCompile Include="GuiFramework\Window\Layouter\GUILayouter.cpp" />
+    <ClCompile Include="GuiFramework\Window\Layouter\GUILayoutItem.cpp" />
+    <ClCompile Include="GuiFramework\Window\Layouter\GUILayoutItem_Window.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

@@ -2,37 +2,11 @@
 
 namespace GuiFramework
 {
-	typedef void(__fastcall* GUIWidget_ctor_t)(GUIWidget*, TGUISharedString<dl_wchar>);
-	typedef DLRF::DLRuntimeClass* (__fastcall* GetRuntimeClass_t)(const GUIWidget*);
-	typedef void(__fastcall* Destructor_t)(GUIWidget*);
-	typedef void(__fastcall* OnDelete_t)(GUIWidget*);
-
-	typedef dl_bool(__fastcall* AddChild_t)(GUIWidget*, GUIWindowBase*);
-	typedef DLUT::DLVector<GUIObject*>* (__fastcall* GetChildrenVector_t)(GUIWidget*);
-	typedef Rect(__fastcall* GetChildrenBaseCoord_t)(const GUIWidget*);
-	typedef GUIWindowBase* (__fastcall* GetNextFocusWindow_t)(const GUIWidget*);
-	typedef dl_bool(__fastcall* OnMouseMove_t)(const GUIWidget*, const MouseEvent&);
-	typedef dl_bool(__fastcall* OnNcMouseMove_t)(const GUIWidget*, GUI_NCHIT, const MouseEvent&);
-	typedef dl_bool(__fastcall* OnNcLButtonDown_t)(const GUIWidget*, GUI_NCHIT, const MouseEvent&);
-	typedef dl_bool(__fastcall* OnNcLButtonUp_t)(const GUIWidget*, GUI_NCHIT, const MouseEvent&);
-	typedef dl_bool(__fastcall* OnMouseLeave_t)(const GUIWidget*);
-	typedef dl_bool(__fastcall* OnNcMouseLeave_t)(const GUIWidget*);
-	typedef dl_bool(__fastcall* OnVirtualInput_t)(const GUIWidget*, const GUIWindowBase::VirtualInput&);
-	typedef dl_bool(__fastcall* OnNcCalcSize_t)(const GUIWidget*, Rect&);
-	typedef GUI_NCHIT(__fastcall* OnNcHitTest_t)(const GUIWidget*, const Point2D&);
-	typedef dl_bool(__fastcall* OnCreate_t)(const GUIWidget*);
-	typedef dl_bool(__fastcall* OnPreCreate_t)(const GUIWidget*);
-	typedef dl_bool(__fastcall* OnClose_t)(const GUIWidget*);
-	typedef void(__fastcall* OnRender_t)(const GUIWidget*, GraphicsContext&);
-	typedef void(__fastcall* OnNcRender_t)(const GUIWidget*, GraphicsContext&);
-
-	typedef Rect(__fastcall* GetDefaultSizeMin_t)(const GUIWidget*);
-	typedef Rect(__fastcall* GetDefaultSizeMax_t)(const GUIWidget*);
-	typedef void(__fastcall* ComputeNcShapeInfo_t)(const GUIWidget*, const GUIWidget::_GUI_NC_SHAPE_PROP&, GUIWidget::_GUI_NC_SHAPE_INFO&);
+	typedef void(__fastcall* ctor_t)(GUIWidget*, TGUISharedString<dl_wchar>);
 
 	GUIWidget::GUIWidget(TGUISharedString<dl_wchar> label) : GUIWindowBase(label)
 	{
-		CALL(GUIWidget_ctor_t, 0x57a910, this, label);
+		CALL(ctor_t, 0x57a910, this, label);
 	}
 
 	DLRF::DLRuntimeClass* GUIWidget::GetRuntimeClassOfThis() const

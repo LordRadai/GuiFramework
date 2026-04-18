@@ -45,5 +45,7 @@ namespace GuiFramework
 		dl_float32 m_timeSinceLastClickPrev;
 		dl_int m_lastClickX;
 		dl_int m_lastClickY;
+
+		typedef void(__fastcall* SetFocus_t)(GUIWindowManager*, GUIWindowBase*);
 	};
 }

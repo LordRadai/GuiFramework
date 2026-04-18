@@ -3,9 +3,10 @@
 #include "GuiFramework/System/TGUILiteralString.inl"
 #include "GuiFramework/System/TGUIRect.inl"
 #include "GuiFramework/System/TGUIPoint.inl"
+#include "GuiFramework/System/TGUIObjectPtr.inl"
 #include "GuiFramework/System/GUISystem.h"
-#include "GuiFramework/Render/GUIRenderContext.h"
 #include "GuiFramework/System/GUIMouse.h"
+#include "GuiFramework/Render/GUIRenderContext.h"
 
 namespace GuiFramework
 {
@@ -110,10 +111,10 @@ namespace GuiFramework
         const dl_wchar* GetLabel() const { return m_name.c_str(); }
 
     protected:
-        GUIWindowBase* pParentWindow;
-        GUIWindowBase* pVar18;
-        GUISystem* pGuiSystem;
-        dl_pointer* pGUIWindowPainter;
+        GUIWindowBase* m_pParentWindow;
+        GUIWindowBase* m_pVar18;
+		TGUIObjectPtr<GUISystem> m_pGUISystem;
+        dl_pointer* m_pGUIWindowPainter;
         TGUILiteralString<dl_wchar> m_name;
         Rect m_position;
         dl_uint m_styleFlags;
@@ -132,5 +133,24 @@ namespace GuiFramework
         dl_int16 m_sVar70;
         dl_int16 m_sVar72;
         dl_int m_iVar74;
+
+		typedef dl_bool(__fastcall* AddChild_t)(GUIWindowBase*, GUIWindowBase*);
+		typedef DLUT::DLVector<GUIObject*>* (__fastcall* GetChildrenVector_t)(GUIWindowBase*);
+		typedef Rect(__fastcall* GetChildrenBaseCoord_t)(const GUIWindowBase*);
+		typedef GUIWindowBase* (__fastcall* GetNextFocusWindow_t)(const GUIWindowBase*);
+		typedef dl_bool(__fastcall* OnMouseMove_t)(const GUIWindowBase*, const MouseEvent&);
+		typedef dl_bool(__fastcall* OnNcMouseMove_t)(const GUIWindowBase*, GUI_NCHIT, const MouseEvent&);
+		typedef dl_bool(__fastcall* OnNcLButtonDown_t)(const GUIWindowBase*, GUI_NCHIT, const MouseEvent&);
+		typedef dl_bool(__fastcall* OnNcLButtonUp_t)(const GUIWindowBase*, GUI_NCHIT, const MouseEvent&);
+		typedef dl_bool(__fastcall* OnMouseLeave_t)(const GUIWindowBase*);
+		typedef dl_bool(__fastcall* OnNcMouseLeave_t)(const GUIWindowBase*);
+		typedef dl_bool(__fastcall* OnVirtualInput_t)(const GUIWindowBase*, const GUIWindowBase::VirtualInput&);
+		typedef dl_bool(__fastcall* OnNcCalcSize_t)(const GUIWindowBase*, Rect&);
+		typedef GUI_NCHIT(__fastcall* OnNcHitTest_t)(const GUIWindowBase*, const Point2D&);
+		typedef dl_bool(__fastcall* OnCreate_t)(const GUIWindowBase*);
+		typedef dl_bool(__fastcall* OnPreCreate_t)(const GUIWindowBase*);
+		typedef dl_bool(__fastcall* OnClose_t)(const GUIWindowBase*);
+		typedef void(__fastcall* OnRender_t)(const GUIWindowBase*, GraphicsContext&);
+		typedef void(__fastcall* OnNcRender_t)(const GUIWindowBase*, GraphicsContext&);
     };
 }

@@ -27,5 +27,9 @@ namespace GuiFramework
 
 	protected:
 		dl_uint m_interactionFlags;
+
+		typedef DLRF::DLRuntimeClass* (__fastcall* GetRuntimeClass_t)(const GUIObject*);
+		typedef void(__fastcall* Destructor_t)(GUIObject*);
+		typedef void(__fastcall* OnDelete_t)(GUIObject*);
 	};
 }
