@@ -1,40 +1,20 @@
 #pragma once
 #include "GuiFramework/System/GUIMsgReceiver.h"
 #include "GuiFramework/System/TGUILiteralString.inl"
+#include "GuiFramework/System/TGUIRect.inl"
+#include "GuiFramework/System/TGUIPoint.inl"
 #include "GuiFramework/Render/GUIRenderContext.h"
 
 namespace GuiFramework
 {
+    class GUISystem;
+
     class GUIWindowBase : public GUIMsgReceiver
     {
         typedef GUIWindowBase ThisClass;
 		typedef GUIMsgReceiver SuperClass;
 
-		typedef dl_pointer GUISystem;
-
     public:
-        template<typename T>
-        struct TGUI_RECT
-        {
-            T MinX;
-            T MinY;
-            T MaxX;
-            T MaxY;
-
-			TGUI_RECT() : MinX(0), MinY(0), MaxX(0), MaxY(0) {}
-			TGUI_RECT(T minX, T minY, T maxX, T maxY) : MinX(minX), MinY(minY), MaxX(maxX), MaxY(maxY) {}
-        };
-
-        template<typename T>
-        struct TGUI_POINT
-        {
-            T X;
-			T Y;
-
-			TGUI_POINT() : X(0), Y(0) {}
-			TGUI_POINT(T x, T y) : X(x), Y(y) {}
-        };
-
         struct GUI_MOUSE_EVENT_INFO
         {
             dl_int EventID;

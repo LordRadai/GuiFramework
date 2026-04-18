@@ -8,8 +8,9 @@ namespace GuiFramework
 	{
 		typedef GUIObject ThisClass;
 	public:
-		virtual DLRF::DLRuntimeClass* GetRuntimeClassOfThis() const;
+		GUIObject();
 
+		virtual DLRF::DLRuntimeClass* GetRuntimeClassOfThis() const;
 		virtual ~GUIObject();
 		virtual void OnDelete() {}
 		virtual void DeleteThis();
@@ -25,6 +26,6 @@ namespace GuiFramework
 		}
 
 	protected:
-		dl_uint m_interactionFlags = 0x40000000;
+		dl_uint m_interactionFlags;
 	};
 }

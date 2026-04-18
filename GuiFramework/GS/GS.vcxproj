@@ -141,15 +141,22 @@
   <ItemGroup>
     <ClInclude Include="GuiFramework\Globals.h" />
     <ClInclude Include="GuiFramework\Render\GUIRenderContext.h" />
+    <ClInclude Include="GuiFramework\System\GUIFont.h" />
+    <ClInclude Include="GuiFramework\System\GUISystem.h" />
     <ClInclude Include="GuiFramework\System\TGUILiteralString.inl" />
     <ClInclude Include="GuiFramework\System\GUIMsgReceiver.h" />
     <ClInclude Include="GuiFramework\System\GUIObject.h" />
+    <ClInclude Include="GuiFramework\System\TGUIPoint.inl" />
+    <ClInclude Include="GuiFramework\System\TGUIRect.inl" />
     <ClInclude Include="GuiFramework\System\TGUISharedString.inl" />
+    <ClInclude Include="GuiFramework\System\TGUIStringStorage.inl" />
     <ClInclude Include="GuiFramework\Window\GUIWindowBase.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="GuiFramework\System\GUIFont.cpp" />
     <ClCompile Include="GuiFramework\System\GUIMsgReceiver.cpp" />
     <ClCompile Include="GuiFramework\System\GUIObject.cpp" />
+    <ClCompile Include="GuiFramework\System\GUISystem.cpp" />
     <ClCompile Include="GuiFramework\Window\GUIWindowBase.cpp" />
   </ItemGroup>
   <ItemGroup>

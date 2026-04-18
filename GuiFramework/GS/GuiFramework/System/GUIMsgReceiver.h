@@ -9,6 +9,8 @@ namespace GuiFramework
 		typedef GUIObject SuperClass;
 
 	public:
+		GUIMsgReceiver() {}
+
 		virtual DLRF::DLRuntimeClass* GetRuntimeClassOfThis() const override;
 		virtual ~GUIMsgReceiver() override;
 
