@@ -3,12 +3,11 @@
 #include "GuiFramework/System/TGUILiteralString.inl"
 #include "GuiFramework/System/TGUIRect.inl"
 #include "GuiFramework/System/TGUIPoint.inl"
+#include "GuiFramework/System/GUISystem.h"
 #include "GuiFramework/Render/GUIRenderContext.h"
 
 namespace GuiFramework
 {
-    class GUISystem;
-
     class GUIWindowBase : public GUIMsgReceiver
     {
         typedef GUIWindowBase ThisClass;
