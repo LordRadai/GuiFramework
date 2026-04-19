@@ -6,6 +6,8 @@
 #include "GuiFramework/System/TGUIObjectPtr.inl"
 #include "GuiFramework/System/GUISystem.h"
 #include "GuiFramework/System/GUIMouse.h"
+#include "GuiFramework/System/GUIVirtualInput.h"
+#include "GuiFramework/System/GUIKeyStroke.h"
 #include "GuiFramework/Render/GUIRenderContext.h"
 
 namespace GuiFramework
@@ -16,27 +18,6 @@ namespace GuiFramework
 		typedef GUIMsgReceiver SuperClass;
 
     public:
-		struct _GUI_VIRTUAL_INPUT
-        {
-            dl_int InputID;
-
-            bool IsKeyEvent(dl_char eventID) const
-            {
-                return InputID == eventID;
-			}
-		};
-
-        struct GUI_KEYSTROKE
-        {
-			dl_uint16 VirtualKey;
-			dl_uint16 ScanCode;
-            dl_uint Flags;
-			dl_wchar UnicodeChar;
-        };
-
-		typedef _GUI_VIRTUAL_INPUT VirtualInput;
-		typedef GUI_KEYSTROKE KeyEvent;
-
         GUIWindowBase(TGUISharedString<dl_wchar> label);
 
         virtual DLRF::DLRuntimeClass* GetRuntimeClassOfThis() const override;
