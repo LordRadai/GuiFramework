@@ -5,6 +5,8 @@
 namespace GuiFramework
 {
 	typedef void(__fastcall* GUIObject_ctor_t)(GUIObject*);
+	typedef void(__fastcall* AddRef_t)(GUIObject*);
+	typedef void(__fastcall* UnRef_t)(GUIObject*);
 
 	GUIObject::GUIObject()
 	{
@@ -24,5 +26,15 @@ namespace GuiFramework
 	void GUIObject::DeleteThis()
 	{
 		CALL(OnDelete_t, 0x527840, this);
+	}
+
+	void GUIObject::AddRef()
+	{
+		CALL(AddRef_t, 0x30b460, this);
+	}
+
+	void GUIObject::UnRef()
+	{
+		CALL(UnRef_t, 0x30b4e0, this);
 	}
 }

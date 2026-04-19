@@ -1,13 +1,60 @@
 #pragma once
+#include "GUIObject.h"
 
-template<typename T>
-class TGUIObjectPtr
+namespace GuiFramework
 {
-	T* m_pPtr;
-public:
-	T* Get() const { return m_pPtr; }
+    template <class T>
+    class TGUIObjectPtr 
+    {
+    public:
+        TGUIObjectPtr() : m_ptr(nullptr) 
+        {
+            static_assert(std::is_base_of<GUIObject, T>::value, "T must be a child of GUIObject");
+        }
 
-	T& operator*() const { return *m_pPtr; }
-	T* operator->() const { return m_pPtr; }
-	void operator=(T* pPtr) { m_pPtr = pPtr; }
-};
+        TGUIObjectPtr(T* pObj) : m_ptr(pObj) 
+        {
+            static_assert(std::is_base_of<GUIObject, T>::value, "T must be a child of GUIObject");
+            if (m_ptr)
+                _AddRef();
+        }
+
+        ~TGUIObjectPtr() 
+        {
+            _UnRef();
+        }
+
+        TGUIObjectPtr& operator=(T* pObj) 
+        {
+            static_assert(std::is_base_of<GUIObject, T>::value, "T must be a child of GUIObject");
+            if (m_ptr != pObj) 
+            {
+                _UnRef();
+                m_ptr = pObj;
+                if (m_ptr)
+                    _AddRef();
+            }
+
+            return *this;
+        }
+
+        T* operator->() const { return m_ptr; }
+        T& operator*() const { return *m_ptr; }
+        T* Get() const { return m_ptr; }
+
+    private:
+        T* m_ptr;
+
+        void _UnRef() 
+        {
+            if (m_ptr)
+                m_ptr->UnRef();
+        }
+
+        void _AddRef() 
+        {
+            if (m_ptr)
+                m_ptr->AddRef();
+        }
+    };
+}
