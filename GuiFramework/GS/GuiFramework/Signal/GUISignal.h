@@ -1,5 +1,7 @@
 #pragma once
 #include <dantelion2.h>
+
+#include "GUISignalDecl.h"
 #include "GuiFramework/System/GUIObject.h"
 #include "GuiFramework/System/GUIInvoker.h"
 
@@ -8,12 +10,6 @@ namespace GuiFramework
 	class GUISignal
 	{
 	public:
-		class GUISignalDecl
-		{
-			const dl_wchar* m_name;
-			dl_uint m_flags;
-		};
-
 		static void* operator new(size_t size)
 		{
 			return DLKR::AllocateAligned(size, 8, GUI_ALLOCATOR);

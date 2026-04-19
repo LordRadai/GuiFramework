@@ -41,7 +41,7 @@ namespace GuiFramework
 		/**
 		 * @brief Connect a signal to a message receiver. The method resolver is used to resolve the method to call on the receiver when the signal is emitted.
 		 */
-		void Connect(GUIObject* pOwner, GUISignal::GUISignalDecl pSignalDeclaration, GUIMsgReceiver* pReceiver, DLRF::DLMethodResolver<DLRF::DLMethodInvokeContext>* pResolver, dl_uint param_5, dl_uint param_6);
+		void Connect(GUIObject* pOwner, GUISignalDecl pSignalDeclaration, GUIMsgReceiver* pReceiver, DLRF::DLMethodResolver<DLRF::DLMethodInvokeContext>* pResolver, dl_uint param_5, dl_uint param_6);
 		
 		/**
 		* @brief Create GUISystem editor window.

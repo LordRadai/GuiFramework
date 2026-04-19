@@ -90,9 +90,11 @@ namespace GuiFramework
         }
 
         const dl_wchar* GetLabel() const { return m_name.c_str(); }
+		GUIWindowBase* GetParentWindow() const { return m_pParentWindow.Get(); }
+		GUISystem* GetGUISystem() const { return m_pGUISystem.Get(); }
 
     protected:
-        GUIWindowBase* m_pParentWindow;
+		TGUIObjectPtr<GUIWindowBase> m_pParentWindow;
         GUIWindowBase* m_pVar18;
 		TGUIObjectPtr<GUISystem> m_pGUISystem;
         dl_pointer* m_pGUIWindowPainter;

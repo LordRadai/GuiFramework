@@ -12,6 +12,16 @@ namespace GuiFramework
 	public:
 		TGUILiteralString() : TGUISharedString<CharT>() {}
 		TGUILiteralString(const CharT* str);
+
+		static void* operator new(size_t size)
+		{
+			return DLKR::AllocateAligned(size, 8, GUI_ALLOCATOR);
+		}
+
+		static void operator delete(void* block)
+		{
+			return DLKR::Free(block, GUI_ALLOCATOR);
+		}
 	};
 
 	typedef void(__fastcall* TGUILiteralStringCtor_t)(TGUILiteralString<dl_wchar>*, const dl_wchar*);

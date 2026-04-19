@@ -1,7 +1,15 @@
 #include "GUILayouter.h"
+#include "GuiFramework/Window/GUIWidget.h"
 
 namespace GuiFramework
 {
+	typedef void(__fastcall* Ctor_t)(GUILayouter*, GUIWidget*);
+
+	GUILayouter::GUILayouter(GUIWidget* pOwner)
+	{
+		CALL(Ctor_t, 0x5c0940, this, pOwner);
+	}
+
 	DLRF::DLRuntimeClass* GUILayouter::GetRuntimeClassOfThis() const
 	{
 		return CALL(GetRuntimeClass_t, 0x5c08f0, this);

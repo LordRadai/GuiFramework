@@ -9,6 +9,8 @@ namespace GuiFramework
 	class GUILayoutItem : public GUIMsgReceiver
 	{
 	public:
+		GUILayoutItem() : GUIMsgReceiver() {}
+
 		virtual DLRF::DLRuntimeClass* GetRuntimeClassOfThis() const override;
 		virtual ~GUILayoutItem() override;
 		virtual void OnDelete() override {}

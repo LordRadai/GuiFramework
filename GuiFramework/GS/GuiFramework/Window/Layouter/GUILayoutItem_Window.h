@@ -13,6 +13,8 @@ namespace GuiFramework
 		typedef GUILayoutItem SuperClass;
 
 	public:
+		GUILayoutItem_Window(GUIWindowBase* pWindow);
+
 		virtual DLRF::DLRuntimeClass* GetRuntimeClassOfThis() const override;
 		virtual ~GUILayoutItem_Window() override;
 		virtual void OnDelete() override;

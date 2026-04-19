@@ -5,6 +5,7 @@
 namespace GuiFramework
 {
 	class GUIWindowBase;
+	class GUIWidget;
 
 	class GUILayouter : public GUILayoutItem
 	{
@@ -12,6 +13,8 @@ namespace GuiFramework
 		typedef GUILayoutItem SuperClass;
 
 	public:
+		GUILayouter(GUIWidget* pOwner);
+
 		virtual DLRF::DLRuntimeClass* GetRuntimeClassOfThis() const override;
 		virtual ~GUILayouter() override;
 		virtual void OnDelete() override;

@@ -142,6 +142,7 @@
     <ClInclude Include="GuiFramework\Globals.h" />
     <ClInclude Include="GuiFramework\Render\GUIRenderContext.h" />
     <ClInclude Include="GuiFramework\Signal\GUISignal.h" />
+    <ClInclude Include="GuiFramework\Signal\GUISignalDecl.h" />
     <ClInclude Include="GuiFramework\Signal\GUISignalManager.h" />
     <ClInclude Include="GuiFramework\System\GUIFont.h" />
     <ClInclude Include="GuiFramework\System\GUIInvoker.h" />

@@ -1,7 +1,15 @@
 #include "GUILayoutItem_Window.h"
+#include "GuiFramework/Window/GUIWindowBase.h"
 
 namespace GuiFramework
 {
+	typedef void(__fastcall* Ctor_t)(GUILayoutItem_Window*, GUIWindowBase*);
+
+	GUILayoutItem_Window::GUILayoutItem_Window(GUIWindowBase* pWindow)
+	{
+		CALL(Ctor_t, 0x5e2830, this, pWindow);
+	}
+
 	DLRF::DLRuntimeClass* GUILayoutItem_Window::GetRuntimeClassOfThis() const
 	{
 		return CALL(GetRuntimeClass_t, 0x5e27e0, this);

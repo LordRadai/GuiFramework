@@ -1,14 +1,19 @@
 #pragma once
 #include <dantelion2.h>
 
-struct _GUI_VIRTUAL_INPUT
+#include "GuiFramework/Globals.h"
+
+namespace GuiFramework
 {
-    dl_int InputID;
-
-    bool IsKeyEvent(dl_char eventID) const
+    struct _GUI_VIRTUAL_INPUT
     {
-        return InputID == eventID;
-    }
-};
+        dl_int InputID;
 
-typedef _GUI_VIRTUAL_INPUT VirtualInput;
+        bool IsKeyEvent(dl_char eventID) const
+        {
+            return InputID == eventID;
+        }
+    };
+
+    typedef _GUI_VIRTUAL_INPUT VirtualInput;
+}

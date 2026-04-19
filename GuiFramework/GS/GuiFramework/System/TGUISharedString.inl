@@ -2,6 +2,8 @@
 #include <dantelion2.h>
 #include <Call.h>
 
+#include "GuiFramework/Globals.h"
+
 namespace GuiFramework
 {
 	template<typename CharT>
@@ -30,6 +32,16 @@ namespace GuiFramework
 		void operator=(const ThisClass& other);
 
 		const CharT* c_str() const { return m_pData->m_str.c_str(); }
+
+		static void* operator new(size_t size)
+		{
+			return DLKR::AllocateAligned(size, 8, GUI_ALLOCATOR);
+		}
+
+		static void operator delete(void* block)
+		{
+			return DLKR::Free(block, GUI_ALLOCATOR);
+		}
 	};
 
 	typedef void(__fastcall* TGUISharedStringCtor_t)(TGUISharedString<dl_wchar>*, const dl_wchar*);
