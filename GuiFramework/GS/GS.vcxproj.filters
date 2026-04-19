@@ -93,6 +93,9 @@
     <ClInclude Include="GuiFramework\Signal\GUISignalDecl.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="GuiFramework\Window\Layouter\GUIVertLayouter.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="GuiFramework\System\GUIObject.cpp">
@@ -123,6 +126,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="GuiFramework\Window\Layouter\GUILayouter.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="GuiFramework\Window\Layouter\GUIVertLayouter.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

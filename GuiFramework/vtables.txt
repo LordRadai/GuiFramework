@@ -151,13 +151,44 @@ GUIAutoVLayout : GUIWidget
 GUILayoutItem : GUIMsgReceiver
 	0:GUILayoutItem::GetRuntimeClassOfThis
 	1:GUILayoutItem::~GUIObject
-	2:GUIWindowBase::OnDelete
-	3:GUILayoutItem::DeleteThis
-	4:
-	5:
-	6:
-	7:
-	8:
-	9:
-	10:
-	11:
+	2:GUILayoutItem::OnDelete
+	3:GUIObject::DeleteThis
+	4:GUILayoutItem::GetGUISystem
+	5:GUILayoutItem::GetMaxSize
+	6:GUILayoutItem::GetMinSize
+	7:GUILayoutItem::GetIdealSize
+	8:GUILayoutItem::SetGeometry
+	9:GUILayoutItem::GetGeometry
+	10:GUILayoutItem::IsOwn
+	
+GUILayouter : GUILayoutItem
+	0:GUILayouter::GetRuntimeClassOfThis
+	1:GUILayouter::~GUILayouter
+	2:GUILayouter::OnDelete
+	3:GUIObject::DeleteThis
+	4:GUILayouter::GetGUISystem
+	5:GUILayouter::GetMaxSize
+	6:GUILayouter::GetMinSize
+	7:GUILayouter::GetIdealSize
+	8:GUILayouter::SetGeometry
+	9:GUILayouter::GetGeometry
+	10:GUILayouter::IsOwn
+	11:GUILayouter::OnOwnerSizeChanged
+	12:GUILayouter::AutoAdd
+	13:GUILayouter::AutoRemove
+	
+GUIVertLayouter : GUILayouter
+	0:GUILayouter::GetRuntimeClassOfThis
+	1:GUILayouter::~GUIVertLayouter
+	2:GUILayouter::OnDelete
+	3:GUIObject::DeleteThis
+	4:GUILayouter::GetGUISystem
+	5:GUILayouter::GetMaxSize
+	6:GUILayouter::GetMinSize
+	7:GUILayouter::GetIdealSize
+	8:GUILayouter::SetGeometry
+	9:GUILayouter::GetGeometry
+	10:GUILayouter::IsOwn
+	11:GUILayouter::OnOwnerSizeChanged
+	12:GUILayouter::AutoAdd
+	13:GUILayouter::AutoRemove

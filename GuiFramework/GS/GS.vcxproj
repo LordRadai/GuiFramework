@@ -165,6 +165,7 @@
     <ClInclude Include="GuiFramework\Window\Layouter\GUILayouter.h" />
     <ClInclude Include="GuiFramework\Window\Layouter\GUILayoutItem.h" />
     <ClInclude Include="GuiFramework\Window\Layouter\GUILayoutItem_Window.h" />
+    <ClInclude Include="GuiFramework\Window\Layouter\GUIVertLayouter.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="GuiFramework\System\GUIFont.cpp" />
@@ -177,6 +178,7 @@
     <ClCompile Include="GuiFramework\Window\Layouter\GUILayouter.cpp" />
     <ClCompile Include="GuiFramework\Window\Layouter\GUILayoutItem.cpp" />
     <ClCompile Include="GuiFramework\Window\Layouter\GUILayoutItem_Window.cpp" />
+    <ClCompile Include="GuiFramework\Window\Layouter\GUIVertLayouter.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
