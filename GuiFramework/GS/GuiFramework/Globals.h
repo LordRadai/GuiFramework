@@ -1,5 +1,4 @@
 #pragma once
-#include <dantelion2.h>
 #include <Globals.h>
 
 namespace GuiFramework
