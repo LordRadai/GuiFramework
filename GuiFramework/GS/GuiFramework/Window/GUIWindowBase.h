@@ -126,7 +126,7 @@ namespace GuiFramework
 		typedef dl_bool(__fastcall* OnNcLButtonUp_t)(const GUIWindowBase*, GUI_NCHIT, const MouseEvent&);
 		typedef dl_bool(__fastcall* OnMouseLeave_t)(const GUIWindowBase*);
 		typedef dl_bool(__fastcall* OnNcMouseLeave_t)(const GUIWindowBase*);
-		typedef dl_bool(__fastcall* OnVirtualInput_t)(const GUIWindowBase*, const GUIWindowBase::VirtualInput&);
+		typedef dl_bool(__fastcall* OnVirtualInput_t)(const GUIWindowBase*, const VirtualInput&);
 		typedef dl_bool(__fastcall* OnNcCalcSize_t)(const GUIWindowBase*, Rect&);
 		typedef GUI_NCHIT(__fastcall* OnNcHitTest_t)(const GUIWindowBase*, const Point2D&);
 		typedef dl_bool(__fastcall* OnCreate_t)(const GUIWindowBase*);
