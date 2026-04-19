@@ -59,7 +59,7 @@ namespace GuiFramework
 			return DLKR::Free(block, GUI_ALLOCATOR);
 		}
 
-	private:
+	protected:
 		DLUT::DLVector<GUIWidget*> m_childWidgets;
 		GUIScrollBarUtil* m_pScrollBars[2];
 		dl_int m_iVar0xa8;

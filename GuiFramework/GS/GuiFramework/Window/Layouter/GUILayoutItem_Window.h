@@ -26,7 +26,7 @@ namespace GuiFramework
 		virtual Rect GetGeometry() const override;
 		virtual dl_bool IsOwn(GUIObject* pObject) const override;
 
-	private:
+	protected:
 		TGUIObjectPtr<GUIWindowBase> m_pWindow;
 		TGUIObjectPtr<GUISystem> m_pSystem;
 	};

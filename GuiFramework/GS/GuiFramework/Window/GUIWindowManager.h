@@ -13,11 +13,13 @@ namespace GuiFramework
 		typedef GUIObject SuperClass;
 
 	public:
+		GUIWindowManager(GUISystem* pGUISystem);
 		virtual ~GUIWindowManager() override;
 
 		void SetFocus(GUIWindowBase* pWindow);
-	private:
-		GUISystem* m_pAppGUISystem;
+
+	protected:
+		GUISystem* m_pGUISystem;
 		GUIRootWindow* m_pRootWindow;
 		GUIWindowBase* m_pActiveWindow;
 		GUIWindowBase* m_pLastActiveWindow;

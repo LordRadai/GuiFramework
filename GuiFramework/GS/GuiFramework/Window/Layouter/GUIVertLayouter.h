@@ -7,6 +7,7 @@ namespace GuiFramework
 	{
 		typedef GUIVertLayouter ThisClass;
 		typedef GUILayouter SuperClass;
+
 	public:
 		GUIVertLayouter(GUIWidget* pOwner);
 
@@ -26,6 +27,7 @@ namespace GuiFramework
 		{
 			return DLKR::Free(block, GUI_ALLOCATOR);
 		}
+
 	protected:
 	};
 }

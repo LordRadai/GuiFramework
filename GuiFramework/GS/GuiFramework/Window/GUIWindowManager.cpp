@@ -2,6 +2,13 @@
 
 namespace GuiFramework
 {
+	typedef void(__fastcall* Constructor_t)(GUIWindowManager*, GUISystem*);
+
+	GUIWindowManager::GUIWindowManager(GUISystem* pGUISystem)
+	{
+		CALL(Constructor_t, 0x567130, this, pGUISystem);
+	}
+
 	GUIWindowManager::~GUIWindowManager()
 	{
 		CALL(Destructor_t, 0x570e70, this);

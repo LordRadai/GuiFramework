@@ -34,7 +34,7 @@ namespace GuiFramework
 		typedef dl_bool(__fastcall* AutoAdd_t)(GUILayouter*, GUIWindowBase*);
 		typedef dl_bool(__fastcall* AutoRemove_t)(GUILayouter*, GUIWindowBase*);
 
-	private:
+	protected:
 		TGUIObjectPtr<GUIWidget> m_pOwner;
 		dl_pointer m_pVar18;
 		TGUIObjectPtr<GUISystem> m_pGUISystem;
