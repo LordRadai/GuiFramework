@@ -56,7 +56,7 @@ namespace GuiFramework
 		virtual dl_bool OnMouseLeave() { return false; }
 		virtual dl_bool OnNcMouseLeave() { return false; }
         virtual dl_bool OnVirtualInput(const VirtualInput& input);
-		virtual dl_bool AdjustScroll() { return false; }
+		virtual dl_bool AdjustScrollByChildFocus(GUIWindowBase* pChild) { return false; }
         virtual dl_bool OnNcCalcSize(Rect& out);
         virtual GUI_NCHIT OnNcHitTest(const Point2D& pt);
 		virtual dl_bool OnCommand(unsigned int cmdId) { return false; }
@@ -150,7 +150,7 @@ namespace GuiFramework
         typedef dl_bool(__fastcall* OnMouseLeave_t)(GUIWindowBase*);
         typedef dl_bool(__fastcall* OnNcMouseLeave_t)(GUIWindowBase*);
         typedef dl_bool(__fastcall* OnVirtualInput_t)(GUIWindowBase*, const VirtualInput&);
-        typedef dl_bool(__fastcall* AdjustScroll_t)(GUIWindowBase*);
+        typedef dl_bool(__fastcall* AdjustScrollByChildFocus_t)(GUIWindowBase*, GUIWindowBase*);
         typedef dl_bool(__fastcall* OnNcCalcSize_t)(GUIWindowBase*, Rect&);
         typedef GUI_NCHIT(__fastcall* OnNcHitTest_t)(const GUIWindowBase*, const Point2D&);
         typedef dl_bool(__fastcall* OnCommand_t)(GUIWindowBase*, unsigned int);

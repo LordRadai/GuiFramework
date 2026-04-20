@@ -6,6 +6,9 @@ namespace GuiFramework
 {
 	class GUIAutoVLayout : public GUIWidget
 	{
+		typedef GUIAutoVLayout ThisClass;
+		typedef GUIWidget SuperClass;
+
 	public:
 		GUIAutoVLayout(TGUISharedString<dl_wchar>& label);
 

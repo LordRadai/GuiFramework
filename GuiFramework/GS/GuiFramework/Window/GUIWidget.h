@@ -1,5 +1,6 @@
 #pragma once
 #include "GUIWindowBase.h"
+#include "GuiFramework/System/GUIScroll.h"
 
 namespace GuiFramework
 {
@@ -47,8 +48,8 @@ namespace GuiFramework
 		virtual Rect GetDefaultSizeMin() const;
 		virtual Rect GetDefaultSizeMax() const;
 		virtual void ComputeNcShapeInfo(const _GUI_NC_SHAPE_PROP& prop, _GUI_NC_SHAPE_INFO& info) const;
-		virtual dl_bool OnVScroll() { return false; }
-		virtual dl_bool OnHScroll() { return false; }
+		virtual dl_bool OnVScroll(_GUI_SCROLLBAR_EVENT event, const _GUI_SCROLL_POS& pos) { return false; }
+		virtual dl_bool OnHScroll(_GUI_SCROLLBAR_EVENT event, const _GUI_SCROLL_POS& pos) { return false; }
 
 		static void* operator new(size_t size)
 		{
@@ -78,6 +79,7 @@ namespace GuiFramework
 		typedef Rect(__fastcall* GetDefaultSizeMin_t)(const GUIWidget*);
 		typedef Rect(__fastcall* GetDefaultSizeMax_t)(const GUIWidget*);
 		typedef void(__fastcall* ComputeNcShapeInfo_t)(const GUIWidget*, const GUIWidget::_GUI_NC_SHAPE_PROP&, GUIWidget::_GUI_NC_SHAPE_INFO&);
-
+		typedef dl_bool(__fastcall* OnVScroll_t)(GUIWidget*, _GUI_SCROLLBAR_EVENT, const _GUI_SCROLL_POS&);
+		typedef dl_bool(__fastcall* OnHScroll_t)(GUIWidget*, _GUI_SCROLLBAR_EVENT, const _GUI_SCROLL_POS&);
 	};
 }

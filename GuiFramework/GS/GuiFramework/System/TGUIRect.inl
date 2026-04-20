@@ -24,6 +24,16 @@ namespace GuiFramework
         {
             return DLKR::Free(block, GUI_ALLOCATOR);
 		}
+
+        TGUI_RECT operator+(const TGUI_RECT& other) const
+        {
+            return TGUI_RECT(MinX + other.MinX, MinY + other.MinY, MaxX + other.MaxX, MaxY + other.MaxY);
+		}
+
+        TGUI_RECT operator+(dl_uint value) const
+        {
+            return TGUI_RECT(MinX + value, MinY + value, MaxX + value, MaxY + value);
+        }
     };
 
 	typedef TGUI_RECT<dl_int16> Rect16;
