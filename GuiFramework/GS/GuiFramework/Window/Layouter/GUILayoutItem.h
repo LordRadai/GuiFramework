@@ -39,5 +39,7 @@ namespace GuiFramework
 		{
 			return DLKR::Free(block, GUI_ALLOCATOR);
 		}
+
+#define SIGNAL_ON_SIZE_CHANGED (GUISignal*)(MODULE_ADDR + 0x1618530);
 	};
 }
