@@ -19,6 +19,7 @@ namespace GuiFramework
 		{
 		};
 
+		GUIWidget() {}
 		GUIWidget(TGUISharedString<dl_wchar> label);
 
 		virtual DLRF::DLRuntimeClass* GetRuntimeClassOfThis() const override;

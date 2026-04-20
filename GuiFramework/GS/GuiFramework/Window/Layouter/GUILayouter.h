@@ -34,6 +34,15 @@ namespace GuiFramework
 		typedef dl_bool(__fastcall* AutoAdd_t)(GUILayouter*, GUIWindowBase*);
 		typedef dl_bool(__fastcall* AutoRemove_t)(GUILayouter*, GUIWindowBase*);
 
+		static void* operator new(size_t size)
+		{
+			return DLKR::AllocateAligned(size, 8, GUI_ALLOCATOR);
+		}
+
+		static void operator delete(void* block)
+		{
+			return DLKR::Free(block, GUI_ALLOCATOR);
+		}
 	protected:
 		TGUIObjectPtr<GUIWidget> m_pOwner;
 		dl_pointer m_pVar18;

@@ -29,5 +29,11 @@ namespace GuiFramework
 		}
 
 	protected:
+		DLUT::DLVector<TGUIObjectPtr<GUILayoutItem>> m_layoutItems;
+		dl_uint16 m_sVar60;
+		dl_uint16 m_sVar62;
+		dl_uint m_iVar64;
+		dl_uint m_iVar68;
+		dl_uint m_iVar6C;
 	};
 }

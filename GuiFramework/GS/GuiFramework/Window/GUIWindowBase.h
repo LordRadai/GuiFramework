@@ -18,6 +18,7 @@ namespace GuiFramework
 		typedef GUIMsgReceiver SuperClass;
 
     public:
+		GUIWindowBase() {}
         GUIWindowBase(TGUISharedString<dl_wchar> label);
 
         virtual DLRF::DLRuntimeClass* GetRuntimeClassOfThis() const override;
@@ -117,25 +118,60 @@ namespace GuiFramework
         dl_int16 m_sVar72;
         dl_int m_iVar74;
 
-		typedef dl_bool(__fastcall* AddChild_t)(GUIWindowBase*, GUIWindowBase*);
-		typedef DLUT::DLVector<GUIObject*>* (__fastcall* GetChildrenVector_t)(GUIWindowBase*);
-		typedef Rect(__fastcall* GetChildrenBaseCoord_t)(const GUIWindowBase*);
-		typedef GUIWindowBase* (__fastcall* GetNextFocusWindow_t)(const GUIWindowBase*);
-		typedef dl_bool(__fastcall* OnMouseEvent_t)(const GUIWindowBase*, const MouseEvent&);
-		typedef dl_bool(__fastcall* OnMouseMove_t)(const GUIWindowBase*, const MouseEvent&);
-		typedef dl_bool(__fastcall* OnNcMouseMove_t)(const GUIWindowBase*, GUI_NCHIT, const MouseEvent&);
-		typedef dl_bool(__fastcall* OnNcLButtonDown_t)(const GUIWindowBase*, GUI_NCHIT, const MouseEvent&);
-		typedef dl_bool(__fastcall* OnNcLButtonUp_t)(const GUIWindowBase*, GUI_NCHIT, const MouseEvent&);
-		typedef dl_bool(__fastcall* OnMouseLeave_t)(const GUIWindowBase*);
-		typedef dl_bool(__fastcall* OnNcMouseLeave_t)(const GUIWindowBase*);
-		typedef dl_bool(__fastcall* OnVirtualInput_t)(const GUIWindowBase*, const VirtualInput&);
-		typedef dl_bool(__fastcall* OnNcCalcSize_t)(const GUIWindowBase*, Rect&);
-		typedef GUI_NCHIT(__fastcall* OnNcHitTest_t)(const GUIWindowBase*, const Point2D&);
-		typedef dl_bool(__fastcall* OnCreate_t)(const GUIWindowBase*);
-		typedef dl_bool(__fastcall* OnPreCreate_t)(const GUIWindowBase*);
-		typedef dl_bool(__fastcall* OnClose_t)(const GUIWindowBase*);
-		typedef void(__fastcall* OnRender_t)(const GUIWindowBase*, GraphicsContext&);
-		typedef void(__fastcall* OnNcRender_t)(const GUIWindowBase*, GraphicsContext&);
-		typedef void(__fastcall* OnRenderWindow_t)(const GUIWindowBase*, GraphicsContext&);
+        typedef dl_bool(__fastcall* AddChild_t)(GUIWindowBase*, GUIWindowBase*);
+        typedef DLUT::DLVector<GUIObject*>* (__fastcall* GetChildrenVector_t)(GUIWindowBase*);
+        typedef Rect(__fastcall* GetChildrenBaseCoord_t)(const GUIWindowBase*);
+        typedef GUIWindowBase* (__fastcall* GetNextFocusWindow_t)(const GUIWindowBase*);
+        typedef dl_bool(__fastcall* IsMoveChild_t)(const GUIWindowBase*);
+        typedef dl_bool(__fastcall* IsMoveSelf_t)(const GUIWindowBase*);
+        typedef dl_bool(__fastcall* OnMouseEvent_t)(GUIWindowBase*, const MouseEvent&);
+        typedef dl_bool(__fastcall* OnMouseMove_t)(GUIWindowBase*, const MouseEvent&);
+        typedef dl_bool(__fastcall* OnNcMouseMove_t)(GUIWindowBase*, GUI_NCHIT, const MouseEvent&);
+        typedef dl_bool(__fastcall* OnLButtonDown_t)(GUIWindowBase*, const MouseEvent&);
+        typedef dl_bool(__fastcall* OnLButtonUp_t)(GUIWindowBase*, const MouseEvent&);
+        typedef dl_bool(__fastcall* OnRButtonDown_t)(GUIWindowBase*, const MouseEvent&);
+        typedef dl_bool(__fastcall* OnRButtonUp_t)(GUIWindowBase*, const MouseEvent&);
+        typedef dl_bool(__fastcall* OnMButtonDown_t)(GUIWindowBase*, const MouseEvent&);
+        typedef dl_bool(__fastcall* OnMButtonUp_t)(GUIWindowBase*, const MouseEvent&);
+        typedef dl_bool(__fastcall* OnLButtonDblClk_t)(GUIWindowBase*, const MouseEvent&);
+        typedef dl_bool(__fastcall* OnRButtonDblClk_t)(GUIWindowBase*, const MouseEvent&);
+        typedef dl_bool(__fastcall* OnMButtonDblClk_t)(GUIWindowBase*, const MouseEvent&);
+        typedef dl_bool(__fastcall* OnMouseWheel_t)(GUIWindowBase*, const MouseEvent&);
+        typedef dl_bool(__fastcall* OnNcLButtonDown_t)(GUIWindowBase*, GUI_NCHIT, const MouseEvent&);
+        typedef dl_bool(__fastcall* OnNcLButtonUp_t)(GUIWindowBase*, GUI_NCHIT, const MouseEvent&);
+        typedef dl_bool(__fastcall* OnNcRButtonDown_t)(GUIWindowBase*, GUI_NCHIT, const MouseEvent&);
+        typedef dl_bool(__fastcall* OnNcRButtonUp_t)(GUIWindowBase*, GUI_NCHIT, const MouseEvent&);
+        typedef dl_bool(__fastcall* OnNcMButtonDown_t)(GUIWindowBase*, GUI_NCHIT, const MouseEvent&);
+        typedef dl_bool(__fastcall* OnNcMButtonUp_t)(GUIWindowBase*, GUI_NCHIT, const MouseEvent&);
+        typedef dl_bool(__fastcall* OnNcLButtonDblClk_t)(GUIWindowBase*, GUI_NCHIT, const MouseEvent&);
+        typedef dl_bool(__fastcall* OnNcRButtonDblClk_t)(GUIWindowBase*, GUI_NCHIT, const MouseEvent&);
+        typedef dl_bool(__fastcall* OnNcMButtonDblClk_t)(GUIWindowBase*, GUI_NCHIT, const MouseEvent&);
+        typedef dl_bool(__fastcall* OnNcMouseWheel_t)(GUIWindowBase*, GUI_NCHIT, const MouseEvent&);
+        typedef dl_bool(__fastcall* OnMouseLeave_t)(GUIWindowBase*);
+        typedef dl_bool(__fastcall* OnNcMouseLeave_t)(GUIWindowBase*);
+        typedef dl_bool(__fastcall* OnVirtualInput_t)(GUIWindowBase*, const VirtualInput&);
+        typedef dl_bool(__fastcall* AdjustScroll_t)(GUIWindowBase*);
+        typedef dl_bool(__fastcall* OnNcCalcSize_t)(GUIWindowBase*, Rect&);
+        typedef GUI_NCHIT(__fastcall* OnNcHitTest_t)(const GUIWindowBase*, const Point2D&);
+        typedef dl_bool(__fastcall* OnCommand_t)(GUIWindowBase*, unsigned int);
+        typedef dl_bool(__fastcall* OnSetFocus_t)(GUIWindowBase*);
+        typedef dl_bool(__fastcall* OnKillFocus_t)(GUIWindowBase*);
+        typedef dl_bool(__fastcall* OnActivate_t)(GUIWindowBase*, unsigned int);
+        typedef dl_bool(__fastcall* OnKeyDown_t)(GUIWindowBase*, const KeyEvent&);
+        typedef dl_bool(__fastcall* OnKeyUp_t)(GUIWindowBase*, const KeyEvent&);
+        typedef dl_bool(__fastcall* OnChar_t)(GUIWindowBase*, const KeyEvent&);
+        typedef dl_bool(__fastcall* OnSize_t)(GUIWindowBase*);
+        typedef dl_bool(__fastcall* OnMove_Param_t)(GUIWindowBase*, dl_pointer, dl_pointer);
+        typedef dl_bool(__fastcall* OnMove_Rect_t)(GUIWindowBase*, const Rect&);
+        typedef dl_bool(__fastcall* OnMinimized_t)(GUIWindowBase*);
+        typedef dl_bool(__fastcall* OnRestored_t)(GUIWindowBase*);
+        typedef dl_bool(__fastcall* OnUpdate_t)(GUIWindowBase*, float);
+        typedef dl_bool(__fastcall* OnCreate_t)(GUIWindowBase*);
+        typedef dl_bool(__fastcall* OnPreCreate_t)(GUIWindowBase*);
+        typedef dl_bool(__fastcall* OnClose_t)(GUIWindowBase*);
+        typedef void(__fastcall* OnRender_t)(const GUIWindowBase*, GraphicsContext&);
+        typedef void(__fastcall* OnNcRender_t)(const GUIWindowBase*, GraphicsContext&);
+        typedef void(__fastcall* OnRenderWindow_t)(const GUIWindowBase*, GraphicsContext&);
+        typedef void(__fastcall* OnVirtualInput_Const_t)(const GUIWindowBase*, const VirtualInput&);
     };
 }
