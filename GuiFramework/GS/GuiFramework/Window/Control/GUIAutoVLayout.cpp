@@ -10,6 +10,11 @@ namespace GuiFramework
 		CALL(Constructor_t, 0x5a4690, this, label);
 	}
 
+	DLRF::DLRuntimeClass* GUIAutoVLayout::GetRuntimeClassOfThis() const
+	{
+		return CALL(GetRuntimeClass_t, 0x5a4640, this);
+	}
+
 	GUIAutoVLayout::~GUIAutoVLayout()
 	{
 		CALL(Destructor_t, 0x5a5500, this);
