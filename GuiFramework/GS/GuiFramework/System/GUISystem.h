@@ -5,13 +5,13 @@
 #include "TGUIPoint.inl"
 #include "GuiFramework/Signal/GUISignalManager.h"
 #include "GuiFramework/Window/GUIWindowManager.h"
-#include "GuiFramework/Window/Control/GUIRootWindow.h"
 
 namespace GuiFramework
 {
 	class GUIWindowPainter;
 	class GUIFont;
 	class GUITweakerDialog;
+	class GUIRootWindow;
 
 	class GUISystem : public GUIMsgReceiver
 	{
@@ -50,8 +50,8 @@ namespace GuiFramework
 	protected:
 		dl_int m_isDrawing;
 		TGUIObjectPtr<GUIWindowManager> m_pGUIWindowManager;
-		TGUIObjectPtr<GUIWindowPainter> m_pGUIWindowPainter;
-		TGUIObjectPtr<GUISignalManager> m_pSignalManager;
+		GUIWindowPainter* m_pGUIWindowPainter;
+		GUISignalManager* m_pSignalManager;
 		dl_uint* m_sysInts;
 		dl_float32* m_sysFloats;
 		DLMT::DL_COLOR_32* m_sysColors;

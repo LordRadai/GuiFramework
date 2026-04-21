@@ -5,7 +5,6 @@
 #include "GuiFramework/System/TGUIPoint.inl"
 #include "GuiFramework/System/TGUIObjectPtr.inl"
 #include "GuiFramework/System/GUISystem.h"
-#include "GuiFramework/System/GUIVirtualInput.h"
 #include "GuiFramework/Render/GUIRenderContext.h"
 
 namespace GuiFramework
@@ -107,6 +106,8 @@ namespace GuiFramework
 
     typedef dl_uint _GUI_SCROLLBAR_EVENT;
 
+	class GUIWindowPainter;
+
     class GUIWindowBase : public GUIMsgReceiver
     {
         typedef GUIWindowBase ThisClass;
@@ -181,9 +182,9 @@ namespace GuiFramework
 
     protected:
 		TGUIObjectPtr<GUIWindowBase> m_pParentWindow;
-        GUIWindowBase* m_pVar18;
+        TGUIObjectPtr<GUIWindowBase> m_pVar18;
 		TGUIObjectPtr<GUISystem> m_pGUISystem;
-        dl_pointer* m_pGUIWindowPainter;
+        GUIWindowPainter* m_pGUIWindowPainter;
         TGUILiteralString<dl_wchar> m_name;
         Rect m_position;
         dl_uint m_styleFlags;

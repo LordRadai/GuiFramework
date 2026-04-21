@@ -1,6 +1,5 @@
 #pragma once
-#include "GUIWindowBase.h"
-#include "GuiFramework/System/GUIScroll.h"
+#include "GuiFramework/Window/GUIWindowBase.h"
 
 namespace GuiFramework
 {
