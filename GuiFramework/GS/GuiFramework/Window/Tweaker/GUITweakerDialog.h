@@ -5,6 +5,8 @@ namespace GuiFramework
 {
 	class GUITweakerGroup;
 	class GUITweakerGroupItem;
+	class GUIYawPitchTweaker;
+	class GUIColorTweaker;
 
 	class GUITweakerDialog : public GUIAutoVLayoutScroll
 	{
@@ -24,6 +26,15 @@ namespace GuiFramework
 		virtual dl_bool OnCreate() override;
 		virtual dl_bool OnClose() override;
 
+		GUITweakerGroup* GetCurrentGroup();
+
+		GUITweakerGroup* BeginGroup(TGUISharedString<dl_wchar> label, dl_uint flags);
+		void EndGroup();
+
+		GUIYawPitchTweaker* CreateYawPitchTweaker(TGUISharedString<dl_wchar> label, DLMT::DL_VECTOR2& value, dl_uint flags);
+
+		GUIColorTweaker* CreateColorTweaker(TGUISharedString<dl_wchar> label, DLMT::DL_VECTOR4& value, dl_uint flags);
+		GUIColorTweaker* CreateColorTweaker(TGUISharedString<dl_wchar> label, DLMT::DL_COLOR_32& value, dl_uint flags);
 	private:
 		DLUT::DLVector<GUITweakerGroupItem*> m_items;
 		DLUT::DLVector<GUITweakerGroup*> m_groups;

@@ -7,6 +7,16 @@ namespace GuiFramework
 	typedef void(__fastcall* GUITweakerDialogCtorWithParentAndLabelAndCreate_t)(GUITweakerDialog*, GUIWindowBase*, TGUISharedString<dl_wchar>, const _GUI_CREATE_WINDOW&);
 	typedef void(__fastcall* GUITweakerDialogCtorWithParentAndLabelAndFlags_t)(GUITweakerDialog*, GUIWindowBase*, TGUISharedString<dl_wchar>, dl_uint);
 
+	typedef GUITweakerGroup*(__fastcall* BeginGroup_t)(GUITweakerDialog*, TGUISharedString<dl_wchar>, dl_uint);
+	typedef void(__fastcall* EndGroup_t)(GUITweakerDialog*);
+
+	typedef GUITweakerGroup*(__fastcall* GetCurrentGroup_t)(GUITweakerDialog*);
+
+	typedef GUIYawPitchTweaker*(__fastcall* CreateYawPitchTweaker_t)(GUITweakerDialog*, TGUISharedString<dl_wchar>, DLMT::DL_VECTOR2&, dl_uint);
+
+	typedef GUIColorTweaker* (__fastcall* CreateColorTweakerWithVector4_t)(GUITweakerDialog*, TGUISharedString<dl_wchar>, DLMT::DL_VECTOR4&, dl_uint);
+	typedef GUIColorTweaker* (__fastcall* CreateColorTweakerWithColor32_t)(GUITweakerDialog*, TGUISharedString<dl_wchar>, DLMT::DL_COLOR_32&, dl_uint);
+
 	GUITweakerDialog::GUITweakerDialog(TGUISharedString<dl_wchar> label)
 	{
 		CALL(GUITweakerDialogCtorWithLabel_t, 0x5388e0, this, label);
@@ -55,5 +65,35 @@ namespace GuiFramework
 	dl_bool GUITweakerDialog::OnClose()
 	{
 		CALL(OnClose_t, 0x539d80, this);
+	}
+
+	GUITweakerGroup* GUITweakerDialog::BeginGroup(TGUISharedString<dl_wchar> label, dl_uint flags)
+	{
+		CALL(BeginGroup_t, 0x538c40, this, label, flags);
+	}
+
+	void GUITweakerDialog::EndGroup()
+	{
+		CALL(EndGroup_t, 0x538d60, this);
+	}
+
+	GUITweakerGroup* GUITweakerDialog::GetCurrentGroup()
+	{
+		CALL(GetCurrentGroup_t, 0x539650, this);
+	}
+
+	GUIYawPitchTweaker* GUITweakerDialog::CreateYawPitchTweaker(TGUISharedString<dl_wchar> label, DLMT::DL_VECTOR2& value, dl_uint flags)
+	{
+		CALL(CreateYawPitchTweaker_t, 0x539300, this, label, value, flags);
+	}
+
+	GUIColorTweaker* GUITweakerDialog::CreateColorTweaker(TGUISharedString<dl_wchar> label, DLMT::DL_VECTOR4& value, dl_uint flags)
+	{
+		CALL(CreateColorTweakerWithVector4_t, 0x539200, this, label, value, flags);
+	}
+
+	GUIColorTweaker* GUITweakerDialog::CreateColorTweaker(TGUISharedString<dl_wchar> label, DLMT::DL_COLOR_32& value, dl_uint flags)
+	{
+		CALL(CreateColorTweakerWithColor32_t, 0x538e00, this, label, value, flags);
 	}
 }
