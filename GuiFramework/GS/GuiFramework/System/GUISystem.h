@@ -3,6 +3,7 @@
 #include "TGUIStringStorage.inl"
 #include "TGUIRect.inl"
 #include "TGUIPoint.inl"
+#include "TGUIObjectPtr.inl"
 #include "GuiFramework/Signal/GUISignalManager.h"
 #include "GuiFramework/Window/GUIWindowManager.h"
 
