@@ -5,13 +5,108 @@
 #include "GuiFramework/System/TGUIPoint.inl"
 #include "GuiFramework/System/TGUIObjectPtr.inl"
 #include "GuiFramework/System/GUISystem.h"
-#include "GuiFramework/System/GUIMouse.h"
 #include "GuiFramework/System/GUIVirtualInput.h"
-#include "GuiFramework/System/GUIKeyStroke.h"
 #include "GuiFramework/Render/GUIRenderContext.h"
 
 namespace GuiFramework
 {
+    struct _GUI_SCROLL_POS
+    {
+        dl_uint ScrollPos;
+
+        static void* operator new(dl_size size)
+        {
+            return DLKR::AllocateAligned(size, 8, GUI_ALLOCATOR);
+        }
+
+        static void operator delete(void* p)
+        {
+            DLKR::Free(p, GUI_ALLOCATOR);
+        }
+    };
+
+    struct GUI_MOUSE_INFO
+    {
+        dl_int EventID;
+        dl_int iVar4;
+        dl_int X;
+        dl_int Y;
+
+        static void* operator new(size_t size)
+        {
+            return DLKR::AllocateAligned(size, 8, GUI_ALLOCATOR);
+        }
+
+        static void operator delete(void* block)
+        {
+            return DLKR::Free(block, GUI_ALLOCATOR);
+        }
+    };
+
+    struct _GUI_CREATE_WINDOW
+    {
+        Rect16 Pos;
+        dl_uint Flags;
+        dl_uint iVarC;
+
+        static void* operator new(size_t size)
+        {
+            return DLKR::AllocateAligned(size, 8, GUI_ALLOCATOR);
+        }
+
+        static void operator delete(void* block)
+        {
+            return DLKR::Free(block, GUI_ALLOCATOR);
+        }
+    };
+
+    struct GUI_KEYSTROKE
+    {
+        dl_uint16 VirtualKey;
+        dl_uint16 ScanCode;
+        dl_uint Flags;
+        dl_wchar UnicodeChar;
+
+        static void* operator new(size_t size)
+        {
+            return DLKR::AllocateAligned(size, 8, GUI_ALLOCATOR);
+        }
+
+        static void operator delete(void* block)
+        {
+            return DLKR::Free(block, GUI_ALLOCATOR);
+        }
+    };
+
+    struct _GUI_VIRTUAL_INPUT
+    {
+        dl_int InputID;
+
+        bool IsKeyEvent(dl_char eventID) const
+        {
+            return InputID == eventID;
+        }
+
+        static void* operator new(dl_size size)
+        {
+            return DLKR::AllocateAligned(size, 8, GUI_ALLOCATOR);
+        }
+
+        static void operator delete(void* p)
+        {
+            DLKR::Free(p, GUI_ALLOCATOR);
+        }
+    };
+
+    typedef _GUI_VIRTUAL_INPUT VirtualInput;
+
+    typedef GUI_KEYSTROKE KeyEvent;
+
+    typedef LRESULT GUI_NCHIT;
+    typedef GUI_MOUSE_INFO MouseEvent;
+
+    typedef dl_uint _GUI_SCROLLBAR_EVENT;
+
     class GUIWindowBase : public GUIMsgReceiver
     {
         typedef GUIWindowBase ThisClass;
@@ -79,16 +174,6 @@ namespace GuiFramework
         virtual void OnNcRender(GraphicsContext& gc) const;
         virtual void OnRenderWindow(GraphicsContext& gc) const;
         virtual void OnVirtualInput(const VirtualInput& input) const {}
-
-        static void* operator new(size_t size)
-        {
-            return DLKR::AllocateAligned(size, 8, GUI_ALLOCATOR);
-        }
-
-        static void operator delete(void* block)
-        {
-            return DLKR::Free(block, GUI_ALLOCATOR);
-        }
 
         const dl_wchar* GetLabel() const { return m_name.c_str(); }
 		GUIWindowBase* GetParentWindow() const { return m_pParentWindow.Get(); }

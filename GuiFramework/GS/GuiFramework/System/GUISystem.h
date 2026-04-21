@@ -5,13 +5,13 @@
 #include "TGUIPoint.inl"
 #include "GuiFramework/Signal/GUISignalManager.h"
 #include "GuiFramework/Window/GUIWindowManager.h"
+#include "GuiFramework/Window/Control/GUIRootWindow.h"
 
 namespace GuiFramework
 {
 	class GUIWindowPainter;
 	class GUIFont;
 	class GUITweakerDialog;
-	class GUIRootWindow;
 
 	class GUISystem : public GUIMsgReceiver
 	{
@@ -36,7 +36,7 @@ namespace GuiFramework
 		virtual void OnPreUpdate(dl_float32 dt) {}
 		virtual void OnPostUpdate(dl_float32 dt) {}
 
-		GUIWindowManager* GetWindowManager() const { return m_pGUIWindowManager; }
+		GUIWindowManager* GetWindowManager() const { return m_pGUIWindowManager.Get(); }
 
 		/**
 		 * @brief Connect a signal to a message receiver. The method resolver is used to resolve the method to call on the receiver when the signal is emitted.
@@ -47,25 +47,15 @@ namespace GuiFramework
 		* @brief Create GUISystem editor window.
 		*/
 		void CreateTweaker(GUITweakerDialog* pWnd);
-
-		static void* operator new(size_t size)
-		{
-			return DLKR::AllocateAligned(size, 8, GUI_ALLOCATOR);
-		}
-
-		static void operator delete(void* block)
-		{
-			return DLKR::Free(block, GUI_ALLOCATOR);
-		}
 	protected:
 		dl_int m_isDrawing;
-		GUIWindowManager* m_pGUIWindowManager;
-		GUIWindowPainter* m_pGUIWindowPainter;
-		GUISignalManager* m_pSignalManager;
+		TGUIObjectPtr<GUIWindowManager> m_pGUIWindowManager;
+		TGUIObjectPtr<GUIWindowPainter> m_pGUIWindowPainter;
+		TGUIObjectPtr<GUISignalManager> m_pSignalManager;
 		dl_uint* m_sysInts;
 		dl_float32* m_sysFloats;
 		DLMT::DL_COLOR_32* m_sysColors;
-		GUIFont** m_sysFonts;
+		TGUIObjectPtr<GUIFont>* m_sysFonts;
 		dl_int m_iVar50;
 		dl_float32 m_fVar54;
 		DLTX::DLString m_string;

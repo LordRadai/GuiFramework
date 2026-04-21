@@ -66,9 +66,6 @@
     <ClInclude Include="GuiFramework\Window\GUIWidget.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="GuiFramework\System\GUIMouse.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="GuiFramework\Window\Layouter\GUILayoutItem.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -84,12 +81,6 @@
     <ClInclude Include="GuiFramework\System\TGUISize.inl">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="GuiFramework\System\GUIVirtualInput.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="GuiFramework\System\GUIKeyStroke.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="GuiFramework\Signal\GUISignalDecl.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -102,7 +93,13 @@
     <ClInclude Include="GuiFramework\Window\Control\GUIAutoVLayoutScroll.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="GuiFramework\System\GUIScroll.h">
+    <ClInclude Include="GuiFramework\Window\Control\GUIRootWindow.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="GuiFramework\Window\Tweaker\GUITweakerDialog.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="GuiFramework\GuiFramework.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
@@ -144,6 +141,12 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="GuiFramework\Window\Control\GUIAutoVLayoutScroll.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="GuiFramework\Window\Control\GUIRootWindow.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="GuiFramework\Window\Tweaker\GUITweakerDialog.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

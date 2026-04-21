@@ -18,16 +18,6 @@ namespace GuiFramework
 		virtual dl_bool AutoAdd(GUIWindowBase* pWindow) override;
 		virtual dl_bool AutoRemove(GUIWindowBase* pWindow) override;
 
-		static void* operator new(size_t size)
-		{
-			return DLKR::AllocateAligned(size, 8, GUI_ALLOCATOR);
-		}
-
-		static void operator delete(void* block)
-		{
-			return DLKR::Free(block, GUI_ALLOCATOR);
-		}
-
 	protected:
 		DLUT::DLVector<TGUIObjectPtr<GUILayoutItem>> m_layoutItems;
 		dl_uint16 m_sVar60;

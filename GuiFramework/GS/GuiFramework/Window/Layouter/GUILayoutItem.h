@@ -30,16 +30,6 @@ namespace GuiFramework
 		typedef Rect(__fastcall* GetGeometry_t)(const GUILayoutItem*);
 		typedef dl_bool(__fastcall* IsOwn_t)(const GUILayoutItem*, GUIObject*);
 
-		static void* operator new(size_t size)
-		{
-			return DLKR::AllocateAligned(size, 8, GUI_ALLOCATOR);
-		}
-
-		static void operator delete(void* block)
-		{
-			return DLKR::Free(block, GUI_ALLOCATOR);
-		}
-
 #define SIGNAL_ON_SIZE_CHANGED (GUISignal*)(MODULE_ADDR + 0x1618530);
 	};
 }

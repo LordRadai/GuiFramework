@@ -7,10 +7,7 @@ namespace GuiFramework
 {
 	class GUISignalManager
 	{
-		DLUT::DLVector<GUISignal*> m_pSignals[31];
-		DLUT::DLVector<dl_pointer> m_pVar3E0[2];
-		dl_int m_state;
-
+	public:
 		static void* operator new(size_t size)
 		{
 			return DLKR::AllocateAligned(size, 8, GUI_ALLOCATOR);
@@ -20,6 +17,10 @@ namespace GuiFramework
 		{
 			return DLKR::Free(block, GUI_ALLOCATOR);
 		}
-	public:
+
+	private:
+		DLUT::DLVector<GUISignal*> m_pSignals[31];
+		DLUT::DLVector<dl_pointer> m_pVar3E0[2];
+		dl_int m_state;
 	};
 }

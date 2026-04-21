@@ -140,17 +140,14 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="GuiFramework\Globals.h" />
+    <ClInclude Include="GuiFramework\GuiFramework.h" />
     <ClInclude Include="GuiFramework\Render\GUIRenderContext.h" />
     <ClInclude Include="GuiFramework\Signal\GUISignal.h" />
     <ClInclude Include="GuiFramework\Signal\GUISignalDecl.h" />
     <ClInclude Include="GuiFramework\Signal\GUISignalManager.h" />
     <ClInclude Include="GuiFramework\System\GUIFont.h" />
     <ClInclude Include="GuiFramework\System\GUIInvoker.h" />
-    <ClInclude Include="GuiFramework\System\GUIKeyStroke.h" />
-    <ClInclude Include="GuiFramework\System\GUIMouse.h" />
-    <ClInclude Include="GuiFramework\System\GUIScroll.h" />
     <ClInclude Include="GuiFramework\System\GUISystem.h" />
-    <ClInclude Include="GuiFramework\System\GUIVirtualInput.h" />
     <ClInclude Include="GuiFramework\System\TGUILiteralString.inl" />
     <ClInclude Include="GuiFramework\System\GUIMsgReceiver.h" />
     <ClInclude Include="GuiFramework\System\GUIObject.h" />
@@ -162,6 +159,7 @@
     <ClInclude Include="GuiFramework\System\TGUIStringStorage.inl" />
     <ClInclude Include="GuiFramework\Window\Control\GUIAutoVLayout.h" />
     <ClInclude Include="GuiFramework\Window\Control\GUIAutoVLayoutScroll.h" />
+    <ClInclude Include="GuiFramework\Window\Control\GUIRootWindow.h" />
     <ClInclude Include="GuiFramework\Window\GUIWidget.h" />
     <ClInclude Include="GuiFramework\Window\GUIWindowBase.h" />
     <ClInclude Include="GuiFramework\Window\GUIWindowManager.h" />
@@ -169,6 +167,7 @@
     <ClInclude Include="GuiFramework\Window\Layouter\GUILayoutItem.h" />
     <ClInclude Include="GuiFramework\Window\Layouter\GUILayoutItem_Window.h" />
     <ClInclude Include="GuiFramework\Window\Layouter\GUIVertLayouter.h" />
+    <ClInclude Include="GuiFramework\Window\Tweaker\GUITweakerDialog.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="GuiFramework\System\GUIFont.cpp" />
@@ -177,6 +176,7 @@
     <ClCompile Include="GuiFramework\System\GUISystem.cpp" />
     <ClCompile Include="GuiFramework\Window\Control\GUIAutoVLayout.cpp" />
     <ClCompile Include="GuiFramework\Window\Control\GUIAutoVLayoutScroll.cpp" />
+    <ClCompile Include="GuiFramework\Window\Control\GUIRootWindow.cpp" />
     <ClCompile Include="GuiFramework\Window\GUIWidget.cpp" />
     <ClCompile Include="GuiFramework\Window\GUIWindowBase.cpp" />
     <ClCompile Include="GuiFramework\Window\GUIWindowManager.cpp" />
@@ -184,6 +184,7 @@
     <ClCompile Include="GuiFramework\Window\Layouter\GUILayoutItem.cpp" />
     <ClCompile Include="GuiFramework\Window\Layouter\GUILayoutItem_Window.cpp" />
     <ClCompile Include="GuiFramework\Window\Layouter\GUIVertLayouter.cpp" />
+    <ClCompile Include="GuiFramework\Window\Tweaker\GUITweakerDialog.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

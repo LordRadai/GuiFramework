@@ -17,16 +17,6 @@ namespace GuiFramework
 		virtual ~GUIFont() override;
 		virtual void OnDelete() override {}
 
-		static void* operator new(size_t size)
-		{
-			return DLKR::AllocateAligned(size, 8, GUI_ALLOCATOR);
-		}
-
-		static void operator delete(void* block)
-		{
-			return DLKR::Free(block, GUI_ALLOCATOR);
-		}
-
 		void CreateTweaker(TGUISharedString<dl_wchar>& title, GUITweakerDialog* pWnd);
 
 	private:

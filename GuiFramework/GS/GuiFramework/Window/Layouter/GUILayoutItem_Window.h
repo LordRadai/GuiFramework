@@ -26,15 +26,6 @@ namespace GuiFramework
 		virtual Rect GetGeometry() const override;
 		virtual dl_bool IsOwn(GUIObject* pObject) const override;
 
-		static void* operator new(size_t size)
-		{
-			return DLKR::AllocateAligned(size, 8, GUI_ALLOCATOR);
-		}
-
-		static void operator delete(void* block)
-		{
-			return DLKR::Free(block, GUI_ALLOCATOR);
-		}
 	protected:
 		TGUIObjectPtr<GUIWindowBase> m_pWindow;
 		TGUIObjectPtr<GUISystem> m_pSystem;

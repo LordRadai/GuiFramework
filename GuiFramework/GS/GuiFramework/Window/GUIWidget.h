@@ -51,16 +51,6 @@ namespace GuiFramework
 		virtual dl_bool OnVScroll(_GUI_SCROLLBAR_EVENT event, const _GUI_SCROLL_POS& pos) { return false; }
 		virtual dl_bool OnHScroll(_GUI_SCROLLBAR_EVENT event, const _GUI_SCROLL_POS& pos) { return false; }
 
-		static void* operator new(size_t size)
-		{
-			return DLKR::AllocateAligned(size, 8, GUI_ALLOCATOR);
-		}
-
-		static void operator delete(void* block)
-		{
-			return DLKR::Free(block, GUI_ALLOCATOR);
-		}
-
 	protected:
 		DLUT::DLVector<GUIWidget*> m_childWidgets;
 		GUIScrollBarUtil* m_pScrollBars[2];
