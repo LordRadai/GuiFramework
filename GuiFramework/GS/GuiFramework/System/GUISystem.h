@@ -6,11 +6,11 @@
 #include "TGUIObjectPtr.inl"
 #include "GuiFramework/Signal/GUISignalManager.h"
 #include "GuiFramework/Window/GUIWindowManager.h"
+#include "GUIFont.h"
 
 namespace GuiFramework
 {
 	class GUIWindowPainter;
-	class GUIFont;
 	class GUITweakerDialog;
 	class GUIRootWindow;
 
