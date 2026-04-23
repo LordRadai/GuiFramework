@@ -29,3 +29,4 @@
 #include "Window/Layouter/GUILayoutItem_Window.h"
 
 #include "Window/Tweaker/GUITweakerDialog.h"
+#include "Window/Tweaker/GUITweakerGroup.h"

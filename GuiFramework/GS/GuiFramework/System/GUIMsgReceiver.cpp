@@ -4,7 +4,7 @@ namespace GuiFramework
 {
 	DLRF::DLRuntimeClass* GUIMsgReceiver::GetRuntimeClassOfThis() const
 	{
-		return CALL(GetRuntimeClass_t, 0x527eb0, this);
+		return CALL(GetRuntimeClassOfThis_t, 0x527eb0, this);
 	}
 
 	GUIMsgReceiver::~GUIMsgReceiver()

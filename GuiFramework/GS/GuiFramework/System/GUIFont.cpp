@@ -19,7 +19,7 @@ namespace GuiFramework
 
 	DLRF::DLRuntimeClass* GUIFont::GetRuntimeClassOfThis() const
 	{
-		return CALL(GetRuntimeClass_t, 0x562b90, this);
+		return CALL(GetRuntimeClassOfThis_t, 0x562b90, this);
 	}
 
 	void GUIFont::CreateTweaker(TGUISharedString<dl_wchar>& title, GUITweakerDialog* pWnd)

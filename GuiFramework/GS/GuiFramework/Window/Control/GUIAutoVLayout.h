@@ -10,6 +10,7 @@ namespace GuiFramework
 		typedef GUIWidget SuperClass;
 
 	public:
+		GUIAutoVLayout() {}
 		GUIAutoVLayout(TGUISharedString<dl_wchar>& label);
 
 		virtual DLRF::DLRuntimeClass* GetRuntimeClassOfThis() const override;

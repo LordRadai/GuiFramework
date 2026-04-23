@@ -11,7 +11,7 @@ namespace GuiFramework
 
 	DLRF::DLRuntimeClass* GUIVertLayouter::GetRuntimeClassOfThis() const
 	{
-		return CALL(GetRuntimeClass_t, 0x5c4c40, this);
+		return CALL(GetRuntimeClassOfThis_t, 0x5c4c40, this);
 	}
 
 	GUIVertLayouter::~GUIVertLayouter()

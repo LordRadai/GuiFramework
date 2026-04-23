@@ -11,7 +11,7 @@ namespace GuiFramework
 
 	DLRF::DLRuntimeClass* GUIWindowBase::GetRuntimeClassOfThis() const
 	{
-		return CALL(GetRuntimeClass_t, 0x54f5c0, this);
+		return CALL(GetRuntimeClassOfThis_t, 0x54f5c0, this);
 	}
 
 	GUIWindowBase::~GUIWindowBase()

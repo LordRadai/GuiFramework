@@ -12,7 +12,7 @@ namespace GuiFramework
 
 	DLRF::DLRuntimeClass* GUILayouter::GetRuntimeClassOfThis() const
 	{
-		return CALL(GetRuntimeClass_t, 0x5c08f0, this);
+		return CALL(GetRuntimeClassOfThis_t, 0x5c08f0, this);
 	}
 
 	GUILayouter::~GUILayouter()

@@ -12,7 +12,7 @@ namespace GuiFramework
 
 	DLRF::DLRuntimeClass* GUILayoutItem_Window::GetRuntimeClassOfThis() const
 	{
-		return CALL(GetRuntimeClass_t, 0x5e27e0, this);
+		return CALL(GetRuntimeClassOfThis_t, 0x5e27e0, this);
 	}
 
 	GUILayoutItem_Window::~GUILayoutItem_Window()

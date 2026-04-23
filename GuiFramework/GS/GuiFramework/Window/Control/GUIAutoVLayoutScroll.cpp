@@ -12,7 +12,7 @@ namespace GuiFramework
 
 	DLRF::DLRuntimeClass* GUIAutoVLayoutScroll::GetRuntimeClassOfThis() const
 	{
-		return CALL(GetRuntimeClass_t, 0x591530, this);
+		return CALL(GetRuntimeClassOfThis_t, 0x591530, this);
 	}
 
 	GUIAutoVLayoutScroll::~GUIAutoVLayoutScroll()
