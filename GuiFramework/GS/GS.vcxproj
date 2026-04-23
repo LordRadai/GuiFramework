@@ -169,6 +169,8 @@
     <ClInclude Include="GuiFramework\Window\Layouter\GUIVertLayouter.h" />
     <ClInclude Include="GuiFramework\Window\Tweaker\GUITweakerDialog.h" />
     <ClInclude Include="GuiFramework\Window\Tweaker\GUITweakerGroup.h" />
+    <ClInclude Include="GuiFramework\Window\Tweaker\GUITweakerGroupItem.h" />
+    <ClInclude Include="GuiFramework\Window\Tweaker\GUITweakerItem.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="GuiFramework\System\GUIFont.cpp" />
@@ -187,6 +189,8 @@
     <ClCompile Include="GuiFramework\Window\Layouter\GUIVertLayouter.cpp" />
     <ClCompile Include="GuiFramework\Window\Tweaker\GUITweakerDialog.cpp" />
     <ClCompile Include="GuiFramework\Window\Tweaker\GUITweakerGroup.cpp" />
+    <ClCompile Include="GuiFramework\Window\Tweaker\GUITweakerGroupItem.cpp" />
+    <ClCompile Include="GuiFramework\Window\Tweaker\GUITweakerItem.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

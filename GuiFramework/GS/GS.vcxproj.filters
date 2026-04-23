@@ -105,6 +105,12 @@
     <ClInclude Include="GuiFramework\Window\Tweaker\GUITweakerGroup.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="GuiFramework\Window\Tweaker\GUITweakerItem.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="GuiFramework\Window\Tweaker\GUITweakerGroupItem.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="GuiFramework\System\GUIObject.cpp">
@@ -153,6 +159,12 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="GuiFramework\Window\Tweaker\GUITweakerGroup.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="GuiFramework\Window\Tweaker\GUITweakerItem.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="GuiFramework\Window\Tweaker\GUITweakerGroupItem.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

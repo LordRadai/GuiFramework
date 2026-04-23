@@ -1,10 +1,9 @@
 #pragma once
 #include "GuiFramework/Window/Control/GUIAutoVLayout.h"
+#include "GUITweakerGroupItem.h"
 
 namespace GuiFramework
 {
-	class GUITweakerGroupItem;
-
 	class GUITweakerGroup : public GUIAutoVLayout
 	{
 		typedef GUITweakerGroup ThisClass;
