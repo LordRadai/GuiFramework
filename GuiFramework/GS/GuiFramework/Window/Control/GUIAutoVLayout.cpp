@@ -27,12 +27,12 @@ namespace GuiFramework
 
 	dl_bool GUIAutoVLayout::OnSize()
 	{
-		CALL(OnSize_t, 0x5a4a40, this);
+		return CALL(OnSize_t, 0x5a4a40, this);
 	}
 
 	dl_bool GUIAutoVLayout::OnRestored()
 	{
-		CALL(OnRestored_t, 0x5a4ac0, this);
+		return CALL(OnRestored_t, 0x5a4ac0, this);
 	}
 
 	dl_bool GUIAutoVLayout::OnCreate()
