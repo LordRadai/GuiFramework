@@ -159,6 +159,7 @@
     <ClInclude Include="GuiFramework\System\TGUIStringStorage.inl" />
     <ClInclude Include="GuiFramework\Window\Control\GUIAutoVLayout.h" />
     <ClInclude Include="GuiFramework\Window\Control\GUIAutoVLayoutScroll.h" />
+    <ClInclude Include="GuiFramework\Window\Control\GUIButtonBase.h" />
     <ClInclude Include="GuiFramework\Window\Control\GUIRootWindow.h" />
     <ClInclude Include="GuiFramework\Window\GUIWidget.h" />
     <ClInclude Include="GuiFramework\Window\GUIWindowBase.h" />
@@ -179,6 +180,7 @@
     <ClCompile Include="GuiFramework\System\GUISystem.cpp" />
     <ClCompile Include="GuiFramework\Window\Control\GUIAutoVLayout.cpp" />
     <ClCompile Include="GuiFramework\Window\Control\GUIAutoVLayoutScroll.cpp" />
+    <ClCompile Include="GuiFramework\Window\Control\GUIButtonBase.cpp" />
     <ClCompile Include="GuiFramework\Window\Control\GUIRootWindow.cpp" />
     <ClCompile Include="GuiFramework\Window\GUIWidget.cpp" />
     <ClCompile Include="GuiFramework\Window\GUIWindowBase.cpp" />
