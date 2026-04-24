@@ -37,5 +37,5 @@ namespace GuiFramework
     };
 
 	typedef TGUI_RECT<dl_int16> Rect16;
-    typedef TGUI_RECT<int> Rect;
+    typedef TGUI_RECT<dl_int> Rect;
 }

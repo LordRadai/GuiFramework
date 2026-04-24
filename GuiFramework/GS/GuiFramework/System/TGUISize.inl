@@ -1,5 +1,4 @@
 #pragma once
-#include "GuiFramework/Globals.h"
 #include "TGUIPoint.inl"
 
 namespace GuiFramework

@@ -25,15 +25,15 @@ public:
 	}
 };
 
-typedef void(__fastcall* TGUIStringStorage_ctor_t)(TGUIStringStorage<dl_wchar>* This);
-typedef void(__fastcall* TGUIStringStorage_dtor_t)(TGUIStringStorage<dl_wchar>* This);
+typedef void(__fastcall* WChar_Ctor_t)(TGUIStringStorage<dl_wchar>* This);
+typedef void(__fastcall* WChar_Dtor_t)(TGUIStringStorage<dl_wchar>* This);
 
 template<> TGUIStringStorage<dl_wchar>::TGUIStringStorage()
 {
-	CALL(TGUIStringStorage_ctor_t, 0x52dba0, this);
+	CALL(WChar_Ctor_t, 0x52dba0, this);
 }
 
 template<> TGUIStringStorage<dl_wchar>::~TGUIStringStorage()
 {
-	CALL(TGUIStringStorage_dtor_t, 0x52df30, this);
+	CALL(WChar_Dtor_t, 0x52df30, this);
 }

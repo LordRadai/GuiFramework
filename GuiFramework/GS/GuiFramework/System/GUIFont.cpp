@@ -3,13 +3,13 @@
 
 namespace GuiFramework
 {
-	typedef void(__fastcall* GUIFont_ctor_t)(GUIFont*);
+	typedef void(__fastcall* Ctor_t)(GUIFont*);
 
-	typedef void(__fastcall* GUIFont_CreateTweaker_t)(GUIFont*, TGUISharedString<dl_wchar>&, GUITweakerDialog*);
+	typedef void(__fastcall* CreateTweaker_t)(GUIFont*, TGUISharedString<dl_wchar>&, GUITweakerDialog*);
 
 	GUIFont::GUIFont()
 	{
-		CALL(GUIFont_ctor_t, 0x562be0, this);
+		CALL(Ctor_t, 0x562be0, this);
 	}
 
 	GUIFont::~GUIFont()
@@ -24,6 +24,6 @@ namespace GuiFramework
 
 	void GUIFont::CreateTweaker(TGUISharedString<dl_wchar>& title, GUITweakerDialog* pWnd)
 	{
-		CALL(GUIFont_CreateTweaker_t, 0x562cb0, this, title, pWnd);
+		CALL(CreateTweaker_t, 0x562cb0, this, title, pWnd);
 	}
 }

@@ -50,6 +50,11 @@ namespace GuiFramework
 		virtual dl_bool OnVScroll(_GUI_SCROLLBAR_EVENT event, const _GUI_SCROLL_POS& pos) { return false; }
 		virtual dl_bool OnHScroll(_GUI_SCROLLBAR_EVENT event, const _GUI_SCROLL_POS& pos) { return false; }
 
+		typedef Rect(__fastcall* GetDefaultSizeMin_t)(const GUIWidget*);
+		typedef Rect(__fastcall* GetDefaultSizeMax_t)(const GUIWidget*);
+		typedef void(__fastcall* ComputeNcShapeInfo_t)(const GUIWidget*, const GUIWidget::_GUI_NC_SHAPE_PROP&, GUIWidget::_GUI_NC_SHAPE_INFO&);
+		typedef dl_bool(__fastcall* OnVScroll_t)(GUIWidget*, _GUI_SCROLLBAR_EVENT, const _GUI_SCROLL_POS&);
+		typedef dl_bool(__fastcall* OnHScroll_t)(GUIWidget*, _GUI_SCROLLBAR_EVENT, const _GUI_SCROLL_POS&);
 	protected:
 		DLUT::DLVector<GUIWidget*> m_childWidgets;
 		GUIScrollBarUtil* m_pScrollBars[2];
@@ -63,12 +68,6 @@ namespace GuiFramework
 		dl_int16 m_sVarB8;
 		dl_uchar m_bVarBA[74];
 		dl_int m_iVar104;
-		dl_int m_iVar108;
-
-		typedef Rect(__fastcall* GetDefaultSizeMin_t)(const GUIWidget*);
-		typedef Rect(__fastcall* GetDefaultSizeMax_t)(const GUIWidget*);
-		typedef void(__fastcall* ComputeNcShapeInfo_t)(const GUIWidget*, const GUIWidget::_GUI_NC_SHAPE_PROP&, GUIWidget::_GUI_NC_SHAPE_INFO&);
-		typedef dl_bool(__fastcall* OnVScroll_t)(GUIWidget*, _GUI_SCROLLBAR_EVENT, const _GUI_SCROLL_POS&);
-		typedef dl_bool(__fastcall* OnHScroll_t)(GUIWidget*, _GUI_SCROLLBAR_EVENT, const _GUI_SCROLL_POS&);
+		dl_int m_iVar108;	
 	};
 }

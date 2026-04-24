@@ -23,7 +23,7 @@ namespace GuiFramework
 		dl_uint Paste();
 		dl_uint SelectAll();
 		dl_uint Insert(const dl_wchar* str);
-	private:
+	protected:
 		dl_uint _Insert(const dl_wchar* str, dl_uint size);
 
 		TGUIObjectPtr<GUISystem> m_pAppGUISystem;

@@ -27,11 +27,11 @@ namespace GuiFramework
 
 		void AddRef();
 		void UnRef();
-	protected:
-		dl_uint m_nRefAndFlags;
 
 		typedef DLRF::DLRuntimeClass* (__fastcall* GetRuntimeClassOfThis_t)(const GUIObject*);
 		typedef void(__fastcall* Destructor_t)(GUIObject*);
 		typedef void(__fastcall* OnDelete_t)(GUIObject*);
+	protected:
+		dl_uint m_nRefAndFlags;
 	};
 }

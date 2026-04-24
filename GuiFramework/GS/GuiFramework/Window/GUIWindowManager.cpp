@@ -4,6 +4,8 @@ namespace GuiFramework
 {
 	typedef void(__fastcall* Constructor_t)(GUIWindowManager*, GUISystem*);
 
+	typedef void(__fastcall* SetFocus_t)(GUIWindowManager*, GUIWindowBase*);
+
 	GUIWindowManager::GUIWindowManager(GUISystem* pGUISystem)
 	{
 		CALL(Constructor_t, 0x567130, this, pGUISystem);

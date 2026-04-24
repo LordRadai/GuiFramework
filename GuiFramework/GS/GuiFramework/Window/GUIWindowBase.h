@@ -180,30 +180,6 @@ namespace GuiFramework
 		GUIWindowBase* GetParentWindow() const { return m_pParentWindow.Get(); }
 		GUISystem* GetGUISystem() const { return m_pGUISystem.Get(); }
 
-    protected:
-		TGUIObjectPtr<GUIWindowBase> m_pParentWindow;
-        TGUIObjectPtr<GUIWindowBase> m_pVar18;
-		TGUIObjectPtr<GUISystem> m_pGUISystem;
-        GUIWindowPainter* m_pGUIWindowPainter;
-        TGUILiteralString<dl_wchar> m_name;
-        Rect m_position;
-        dl_uint m_styleFlags;
-        dl_int m_iVar54;
-        Rect16 m_contentOffset;
-		dl_uint16 m_uVar64;
-		dl_uint16 m_uVar66;
-        dl_char m_bVar68;
-        dl_char m_bVar69;
-        dl_char m_bVar6a;
-        dl_char m_bVar6b;
-        dl_char m_bVar6c;
-        dl_char m_bVar6d;
-        dl_char m_bVar6e;
-        dl_char m_bVar6f;
-        dl_int16 m_sVar70;
-        dl_int16 m_sVar72;
-        dl_int m_iVar74;
-
         typedef dl_bool(__fastcall* AddChild_t)(GUIWindowBase*, GUIWindowBase*);
         typedef DLUT::DLVector<GUIObject*>* (__fastcall* GetChildrenVector_t)(GUIWindowBase*);
         typedef Rect(__fastcall* GetChildrenBaseCoord_t)(const GUIWindowBase*);
@@ -259,5 +235,29 @@ namespace GuiFramework
         typedef void(__fastcall* OnNcRender_t)(const GUIWindowBase*, GraphicsContext&);
         typedef void(__fastcall* OnRenderWindow_t)(const GUIWindowBase*, GraphicsContext&);
         typedef void(__fastcall* OnVirtualInput_Const_t)(const GUIWindowBase*, const VirtualInput&);
+
+    protected:
+		TGUIObjectPtr<GUIWindowBase> m_pParentWindow;
+        TGUIObjectPtr<GUIWindowBase> m_pVar18;
+		TGUIObjectPtr<GUISystem> m_pGUISystem;
+        GUIWindowPainter* m_pGUIWindowPainter;
+        TGUILiteralString<dl_wchar> m_name;
+        Rect m_position;
+        dl_uint m_styleFlags;
+        dl_int m_iVar54;
+        Rect16 m_contentOffset;
+		dl_uint16 m_uVar64;
+		dl_uint16 m_uVar66;
+        dl_char m_bVar68;
+        dl_char m_bVar69;
+        dl_char m_bVar6a;
+        dl_char m_bVar6b;
+        dl_char m_bVar6c;
+        dl_char m_bVar6d;
+        dl_char m_bVar6e;
+        dl_char m_bVar6f;
+        dl_int16 m_sVar70;
+        dl_int16 m_sVar72;
+        dl_int m_iVar74;
     };
 }

@@ -40,6 +40,31 @@ namespace GuiFramework
 
         T* operator->() const { return m_ptr; }
         T& operator*() const { return *m_ptr; }
+
+        void operator=(const TGUIObjectPtr& other) 
+        {
+            if (this != &other) 
+            {
+                _UnRef();
+                m_ptr = other.m_ptr;
+
+                if (m_ptr)
+                    _AddRef();
+            }
+		}
+
+        void operator=(TGUIObjectPtr& other) 
+        {
+            if (this != &other)
+            {
+                _UnRef();
+                m_ptr = other.m_ptr;
+
+                if (m_ptr)
+                    _AddRef();
+            }
+		}
+
         T* Get() const { return m_ptr; }
 
         static void* operator new(dl_size size)
