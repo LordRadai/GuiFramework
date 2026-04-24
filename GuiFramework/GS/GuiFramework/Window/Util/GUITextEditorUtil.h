@@ -16,5 +16,9 @@ namespace GuiFramework
 		virtual DLRF::DLRuntimeClass* GetRuntimeClassOfThis() const override;
 		virtual ~GUITextEditorUtil() override;
 		virtual void OnDelete() override;
+
+		dl_uint Insert(const dl_wchar* str);
+	private:
+		dl_uint _Insert(const dl_wchar* str, dl_uint size);
 	};
 }
