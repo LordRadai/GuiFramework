@@ -159,6 +159,7 @@
     <ClInclude Include="GuiFramework\System\TGUIStringStorage.inl" />
     <ClInclude Include="GuiFramework\Window\Control\GUIAutoVLayout.h" />
     <ClInclude Include="GuiFramework\Window\Control\GUIAutoVLayoutScroll.h" />
+    <ClInclude Include="GuiFramework\Window\Control\GUIButton.h" />
     <ClInclude Include="GuiFramework\Window\Control\GUIButtonBase.h" />
     <ClInclude Include="GuiFramework\Window\Control\GUIRootWindow.h" />
     <ClInclude Include="GuiFramework\Window\GUIWidget.h" />

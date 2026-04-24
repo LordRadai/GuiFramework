@@ -32,6 +32,9 @@ namespace GuiFramework
 		void operator=(const ThisClass& other);
 
 		const CharT* c_str() const { return m_pData->m_str.c_str(); }
+		const dl_int empty() const { return m_pData == nullptr || m_pData->m_str.empty(); }
+		const dl_size size() const { return m_pData ? m_pData->m_str.size() : 0; }
+		const dl_size length() const { return size(); }
 
 		static void* operator new(size_t size)
 		{
