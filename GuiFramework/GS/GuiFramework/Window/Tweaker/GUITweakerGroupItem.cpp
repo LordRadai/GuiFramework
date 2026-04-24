@@ -13,7 +13,7 @@ namespace GuiFramework
 
 	DLRF::DLRuntimeClass* GUITweakerGroupItem::GetRuntimeClassOfThis() const
 	{
-		CALL(GetRuntimeClassOfThis_t, 0x555770, this);
+		return CALL(GetRuntimeClassOfThis_t, 0x555770, this);
 	}
 
 	GUITweakerGroupItem::~GUITweakerGroupItem()

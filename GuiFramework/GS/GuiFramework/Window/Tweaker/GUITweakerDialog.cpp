@@ -29,7 +29,7 @@ namespace GuiFramework
 
 	DLRF::DLRuntimeClass* GUITweakerDialog::GetRuntimeClassOfThis() const
 	{
-		CALL(GetRuntimeClassOfThis_t, 0x538b00, this);
+		return CALL(GetRuntimeClassOfThis_t, 0x538b00, this);
 	}
 
 	GUITweakerDialog::~GUITweakerDialog()
@@ -44,27 +44,27 @@ namespace GuiFramework
 
 	dl_bool GUITweakerDialog::OnMouseWheel(const MouseEvent& event)
 	{
-		CALL(OnMouseWheel_t, 0x539840, this, event);
+		return CALL(OnMouseWheel_t, 0x539840, this, event);
 	}
 
 	dl_bool GUITweakerDialog::OnUpdate(dl_float32 fDeltaTime)
 	{
-		CALL(OnUpdate_t, 0x5396d0, this, fDeltaTime);
+		return CALL(OnUpdate_t, 0x5396d0, this, fDeltaTime);
 	}
 
 	dl_bool GUITweakerDialog::OnCreate()
 	{
-		CALL(OnCreate_t, 0x539870, this);
+		return CALL(OnCreate_t, 0x539870, this);
 	}
 
 	dl_bool GUITweakerDialog::OnClose()
 	{
-		CALL(OnClose_t, 0x539d80, this);
+		return CALL(OnClose_t, 0x539d80, this);
 	}
 
 	GUITweakerGroup* GUITweakerDialog::BeginGroup(TGUISharedString<dl_wchar> label, dl_uint flags)
 	{
-		CALL(BeginGroup_t, 0x538c40, this, label, flags);
+		return CALL(BeginGroup_t, 0x538c40, this, label, flags);
 	}
 
 	void GUITweakerDialog::EndGroup()
@@ -74,6 +74,6 @@ namespace GuiFramework
 
 	GUITweakerGroup* GUITweakerDialog::GetCurrentGroup()
 	{
-		CALL(GetCurrentGroup_t, 0x539650, this);
+		return CALL(GetCurrentGroup_t, 0x539650, this);
 	}
 }
