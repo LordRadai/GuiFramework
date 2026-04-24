@@ -8,6 +8,11 @@ namespace GuiFramework
 	typedef dl_uint(__fastcall* Insert_t)(const GUITextEditorUtil*, const dl_wchar*);
 	typedef dl_uint(__fastcall* _Insert_t)(const GUITextEditorUtil*, const dl_wchar*, dl_uint);
 
+	typedef dl_uint(__fastcall* Copy_t)(const GUITextEditorUtil*);
+	typedef dl_uint(__fastcall* Cut_t)(const GUITextEditorUtil*);
+	typedef dl_uint(__fastcall* Paste_t)(const GUITextEditorUtil*);
+	typedef dl_uint(__fastcall* SelectAll_t)(const GUITextEditorUtil*);
+
 	GUITextEditorUtil::GUITextEditorUtil(GUISystem* pGUISystem)
 	{
 		CALL(Constructor_t, 0x5892b0, this, pGUISystem);
@@ -36,5 +41,25 @@ namespace GuiFramework
 	dl_uint GUITextEditorUtil::_Insert(const dl_wchar* str, dl_uint size)
 	{
 		return CALL(_Insert_t, 0x58c650, this, str, size);
+	}
+
+	dl_uint GUITextEditorUtil::Copy()
+	{
+		return CALL(Copy_t, 0x58a0b0, this);
+	}
+
+	dl_uint GUITextEditorUtil::Cut()
+	{
+		return CALL(Cut_t, 0x58a320, this);
+	}
+
+	dl_uint GUITextEditorUtil::Paste()
+	{
+		return CALL(Paste_t, 0x58a2b0, this);
+	}
+
+	dl_uint GUITextEditorUtil::SelectAll()
+	{
+		return CALL(SelectAll_t, 0x58a390, this);
 	}
 }

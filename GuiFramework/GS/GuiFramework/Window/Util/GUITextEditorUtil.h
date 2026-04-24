@@ -17,6 +17,10 @@ namespace GuiFramework
 		virtual ~GUITextEditorUtil() override;
 		virtual void OnDelete() override;
 
+		dl_uint Copy();
+		dl_uint Cut();
+		dl_uint Paste();
+		dl_uint SelectAll();
 		dl_uint Insert(const dl_wchar* str);
 	private:
 		dl_uint _Insert(const dl_wchar* str, dl_uint size);
