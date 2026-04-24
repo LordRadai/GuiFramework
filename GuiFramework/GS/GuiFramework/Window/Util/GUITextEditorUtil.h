@@ -1,10 +1,11 @@
 #pragma once
 #include "GuiFramework/System/GUIMsgReceiver.h"
+#include "GuiFramework/System/TGUIObjectPtr.inl"
+#include "GuiFramework/System/GUISystem.h"
+#include "GuiFramework/System/GUIFont.h"
 
 namespace GuiFramework
 {
-	class GUISystem;
-
 	class GUITextEditorUtil : public GUIMsgReceiver
 	{
 		typedef GUITextEditorUtil ThisClass;
@@ -24,5 +25,19 @@ namespace GuiFramework
 		dl_uint Insert(const dl_wchar* str);
 	private:
 		dl_uint _Insert(const dl_wchar* str, dl_uint size);
+
+		TGUIObjectPtr<GUISystem> m_pAppGUISystem;
+		DLUT::DLVector<dl_wchar*> m_lines;
+		GUIFont* m_pFont;
+		dl_int m_iVar40;
+		dl_int m_selectionStart;
+		dl_int m_iVar48;
+		dl_int m_selectionEnd;
+		dl_int m_iVar50;
+		dl_int m_iVar54;
+		dl_int m_iVar58;
+		dl_int m_iVar5C;
+		dl_int m_iVar60;
+		dl_int m_iVar64;
 	};
 }
