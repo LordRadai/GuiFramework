@@ -13,6 +13,10 @@ namespace GuiFramework
 		typedef GUIPopupMenuItem ThisClass;
 		typedef GUIMsgReceiver SuperClass;
 	public:
+		enum StatusFlags : dl_uint
+		{
+		};
+
 		GUIPopupMenuItem() {}
 		GUIPopupMenuItem(GUISystem* pGUISystem, dl_uint id);
 
@@ -26,5 +30,12 @@ namespace GuiFramework
 		typedef void(__fastcall* OnRender_t)(const GUIPopupMenuItem*, GraphicsContext&);
 		typedef void(__fastcall* OnRenderIcon_t)(const GUIPopupMenuItem*, GraphicsContext&);
 		typedef dl_uint(__fastcall* OnLButtonDown_t)(const GUIPopupMenuItem*, const MouseEvent&, const Rect&);
+
+	protected:
+		dl_uint16 m_width;
+		dl_uint16 m_height;
+		dl_uint m_id;
+		dl_uint m_flags;
+		TGUIObjectPtr<GUISystem> m_pGUISystem;
 	};
 }
