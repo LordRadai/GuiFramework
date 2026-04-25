@@ -218,6 +218,7 @@
     <ClInclude Include="GuiFramework\System\TGUISize.inl" />
     <ClInclude Include="GuiFramework\System\TGUIStringStorage.inl" />
     <ClInclude Include="GuiFramework\Util\GUITimer.h" />
+    <ClInclude Include="GuiFramework\Window\Control\GUIEditBox.h" />
     <ClInclude Include="GuiFramework\Window\PopupMenu\GUIPopupMenu.h" />
     <ClInclude Include="GuiFramework\Window\PopupMenu\GUIPopupMenuItem.h" />
     <ClInclude Include="GuiFramework\Window\PopupMenu\GUIPopupMenuNode.h" />
@@ -247,6 +248,7 @@
     <ClCompile Include="GuiFramework\System\GUIObject.cpp" />
     <ClCompile Include="GuiFramework\System\GUISystem.cpp" />
     <ClCompile Include="GuiFramework\Util\GUITimer.cpp" />
+    <ClCompile Include="GuiFramework\Window\Control\GUIEditBox.cpp" />
     <ClCompile Include="GuiFramework\Window\PopupMenu\GUIPopupMenu.cpp" />
     <ClCompile Include="GuiFramework\Window\PopupMenu\GUIPopupMenuItem.cpp" />
     <ClCompile Include="GuiFramework\Window\PopupMenu\GUIPopupMenuNode.cpp" />

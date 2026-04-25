@@ -16,6 +16,7 @@ namespace GuiFramework
 		virtual DLRF::DLRuntimeClass* GetRuntimeClassOfThis() const override;
 		virtual ~GUITimer() override;
 
+#define SIGNAL_ON_ELAPSED (GUISignalDecl*)(MODULE_ADDR + 0x1617a70);
 	protected:
 		dl_float32 m_fInterval;
 		TGUIObjectPtr<GUISystem> m_pAppGUISystem;

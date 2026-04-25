@@ -81,6 +81,21 @@ namespace GuiFramework
             MaxX -= value;
             MaxY -= value;
 		}
+
+        dl_bool operator==(const TGUI_RECT& other) const
+        {
+            return MinX == other.MinX && MinY == other.MinY && MaxX == other.MaxX && MaxY == other.MaxY;
+		}
+
+        dl_bool operator==(TGUI_RECT& other) const
+        {
+            return MinX == other.MinX && MinY == other.MinY && MaxX == other.MaxX && MaxY == other.MaxY;
+        }
+
+        dl_bool operator!=(const TGUI_RECT& other) const
+        {
+            return !(*this == other);
+        }
     };
 
 	typedef TGUI_RECT<dl_int16> Rect16;

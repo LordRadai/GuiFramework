@@ -12,6 +12,8 @@ namespace GuiFramework
 	typedef dl_uint(__fastcall* Cut_t)(const GUITextEditorUtil*);
 	typedef dl_uint(__fastcall* Paste_t)(const GUITextEditorUtil*);
 	typedef dl_uint(__fastcall* SelectAll_t)(const GUITextEditorUtil*);
+	typedef const dl_wchar*(__fastcall* GetLineString_t)(const GUITextEditorUtil*, dl_uint);
+	typedef dl_uint(__fastcall* OnDragMove_t)(const GUITextEditorUtil*, dl_uint, dl_uint);
 
 	GUITextEditorUtil::GUITextEditorUtil(GUISystem* pGUISystem)
 	{
@@ -61,5 +63,15 @@ namespace GuiFramework
 	dl_uint GUITextEditorUtil::SelectAll()
 	{
 		return CALL(SelectAll_t, 0x58a390, this);
+	}
+
+	const dl_wchar* GUITextEditorUtil::GetLineString(dl_uint lineIndex) const
+	{
+		return CALL(GetLineString_t, 0x58a540, this, lineIndex);
+	}
+
+	dl_uint GUITextEditorUtil::OnDragMove(dl_uint x, dl_uint y)
+	{
+		return CALL(OnDragMove_t, 0x58a5c0, this, x, y);
 	}
 }

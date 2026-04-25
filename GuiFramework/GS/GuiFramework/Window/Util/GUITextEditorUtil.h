@@ -23,12 +23,14 @@ namespace GuiFramework
 		dl_uint Paste();
 		dl_uint SelectAll();
 		dl_uint Insert(const dl_wchar* str);
+		const dl_wchar* GetLineString(dl_uint lineIndex) const;
+		dl_uint OnDragMove(dl_uint x, dl_uint y);
 	protected:
 		dl_uint _Insert(const dl_wchar* str, dl_uint size);
 
-		TGUIObjectPtr<GUISystem> m_pAppGUISystem;
+		TGUIObjectPtr<GUISystem> m_pSystem;
 		DLUT::DLVector<dl_wchar*> m_lines;
-		GUIFont* m_pFont;
+		TGUIObjectPtr<GUIFont> m_pFont;
 		dl_int m_iVar40;
 		dl_int m_selectionStart;
 		dl_int m_iVar48;
