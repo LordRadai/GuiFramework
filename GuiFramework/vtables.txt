@@ -767,3 +767,13 @@ GUIPopUpMenu : GUIWidget
 	61:GUIWidget::ComputeNcShapeInfo
 	62:GUIWidget::OnVScroll
 	63:GUIWidget::OnHScroll
+	
+GUIPopUpMenuItem : GUIMsgReceiver
+	0:GUIPopUpMenuItem::GetRuntimeClassOfThis
+	1:GUIPopUpMenuItem::~GUIObject
+	2:GUIObject::OnDelete
+	3:GUIObject::DeleteThis
+	4:GUIPopUpMenuItem::IsNode
+	5:GUIPopUpMenuItem::OnRender
+	6:GUIPopUpMenuItem::OnRenderIcon
+	7:GUIPopUpMenuItem::OnLButtonDown

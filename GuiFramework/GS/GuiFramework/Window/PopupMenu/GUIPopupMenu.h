@@ -26,6 +26,8 @@ namespace GuiFramework
 		GUIPopupMenu* GetRootPopup();
 		dl_bool Create(GUIWindowBase* pParent, GUIWindowBase* param_2, const Rect& pos);
 		void CreateSubMenu(GUIPopupMenuNode* pNode, const Rect& pos);
+		void FinishPopupMenu(GUIPopupMenuItem* pItem);
+		void Close(GUIPopupMenuItem* pItem);
 	protected:
 		void _BuildItemInfoVector();
 

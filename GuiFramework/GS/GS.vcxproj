@@ -220,6 +220,9 @@
     <ClInclude Include="GuiFramework\Util\GUITimer.h" />
     <ClInclude Include="GuiFramework\Window\PopupMenu\GUIPopupMenu.h" />
     <ClInclude Include="GuiFramework\Window\PopupMenu\GUIPopupMenuItem.h" />
+    <ClInclude Include="GuiFramework\Window\PopupMenu\GUIPopupMenuNode.h" />
+    <ClInclude Include="GuiFramework\Window\PopupMenu\GUIPopupMenuSeparator.h" />
+    <ClInclude Include="GuiFramework\Window\PopupMenu\GUIPopupMenuString.h" />
     <ClInclude Include="GuiFramework\Window\Util\GUITextEditorUtil.h" />
     <ClInclude Include="GuiFramework\Window\Control\GUIAutoVLayout.h" />
     <ClInclude Include="GuiFramework\Window\Control\GUIAutoVLayoutScroll.h" />
@@ -246,6 +249,9 @@
     <ClCompile Include="GuiFramework\Util\GUITimer.cpp" />
     <ClCompile Include="GuiFramework\Window\PopupMenu\GUIPopupMenu.cpp" />
     <ClCompile Include="GuiFramework\Window\PopupMenu\GUIPopupMenuItem.cpp" />
+    <ClCompile Include="GuiFramework\Window\PopupMenu\GUIPopupMenuNode.cpp" />
+    <ClCompile Include="GuiFramework\Window\PopupMenu\GUIPopupMenuSeparator.cpp" />
+    <ClCompile Include="GuiFramework\Window\PopupMenu\GUIPopupMenuString.cpp" />
     <ClCompile Include="GuiFramework\Window\Util\GUITextEditorUtil.cpp" />
     <ClCompile Include="GuiFramework\Window\Control\GUIAutoVLayout.cpp" />
     <ClCompile Include="GuiFramework\Window\Control\GUIAutoVLayoutScroll.cpp" />
