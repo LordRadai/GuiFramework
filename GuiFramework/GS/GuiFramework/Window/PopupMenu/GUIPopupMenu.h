@@ -1,11 +1,10 @@
 #pragma once
 #include "GuiFramework/Window/GUIWidget.h"
 #include "GUIPopupMenuItem.h"
+#include "GUIPopupMenuNode.h"
 
 namespace GuiFramework
 {
-	class GUIPopupMenuNode;
-
 	class GUIPopupMenu : public GUIWidget
 	{
 		typedef GUIPopupMenu ThisClass;
