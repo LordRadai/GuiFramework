@@ -50,6 +50,9 @@ namespace GuiFramework
 		virtual dl_uint OnVScroll(_GUI_SCROLLBAR_EVENT event, const _GUI_SCROLL_POS& pos) { return false; }
 		virtual dl_uint OnHScroll(_GUI_SCROLLBAR_EVENT event, const _GUI_SCROLL_POS& pos) { return false; }
 
+		void Close();
+		dl_bool FadeIn();
+
 		typedef Rect(__fastcall* GetDefaultSizeMin_t)(const GUIWidget*);
 		typedef Rect(__fastcall* GetDefaultSizeMax_t)(const GUIWidget*);
 		typedef void(__fastcall* ComputeNcShapeInfo_t)(const GUIWidget*, const GUIWidget::_GUI_NC_SHAPE_PROP&, GUIWidget::_GUI_NC_SHAPE_INFO&);

@@ -123,6 +123,9 @@
     <ClInclude Include="GuiFramework\Util\GUITimer.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="GuiFramework\Window\PopupMenu\GUIPopupMenu.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="GuiFramework\System\GUIObject.cpp">
@@ -189,6 +192,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="GuiFramework\Util\GUITimer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="GuiFramework\Window\PopupMenu\GUIPopupMenu.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
