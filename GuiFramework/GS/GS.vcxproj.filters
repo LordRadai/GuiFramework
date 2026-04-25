@@ -120,6 +120,9 @@
     <ClInclude Include="GuiFramework\Window\Util\GUITextEditorUtil.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="GuiFramework\Util\GUITimer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="GuiFramework\System\GUIObject.cpp">
@@ -183,6 +186,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="GuiFramework\Window\Util\GUITextEditorUtil.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="GuiFramework\Util\GUITimer.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

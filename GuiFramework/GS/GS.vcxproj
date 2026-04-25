@@ -216,6 +216,7 @@
     <ClInclude Include="GuiFramework\System\TGUISharedString.inl" />
     <ClInclude Include="GuiFramework\System\TGUISize.inl" />
     <ClInclude Include="GuiFramework\System\TGUIStringStorage.inl" />
+    <ClInclude Include="GuiFramework\Util\GUITimer.h" />
     <ClInclude Include="GuiFramework\Window\Util\GUITextEditorUtil.h" />
     <ClInclude Include="GuiFramework\Window\Control\GUIAutoVLayout.h" />
     <ClInclude Include="GuiFramework\Window\Control\GUIAutoVLayoutScroll.h" />
@@ -239,6 +240,7 @@
     <ClCompile Include="GuiFramework\System\GUIMsgReceiver.cpp" />
     <ClCompile Include="GuiFramework\System\GUIObject.cpp" />
     <ClCompile Include="GuiFramework\System\GUISystem.cpp" />
+    <ClCompile Include="GuiFramework\Util\GUITimer.cpp" />
     <ClCompile Include="GuiFramework\Window\Util\GUITextEditorUtil.cpp" />
     <ClCompile Include="GuiFramework\Window\Control\GUIAutoVLayout.cpp" />
     <ClCompile Include="GuiFramework\Window\Control\GUIAutoVLayoutScroll.cpp" />
