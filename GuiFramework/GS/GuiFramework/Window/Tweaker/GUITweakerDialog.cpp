@@ -42,22 +42,22 @@ namespace GuiFramework
 		CALL(OnDelete_t, 0x538b20, this);
 	}
 
-	dl_bool GUITweakerDialog::OnMouseWheel(const MouseEvent& event)
+	dl_uint GUITweakerDialog::OnMouseWheel(const MouseEvent& event)
 	{
 		return CALL(OnMouseWheel_t, 0x539840, this, event);
 	}
 
-	dl_bool GUITweakerDialog::OnUpdate(dl_float32 fDeltaTime)
+	dl_uint GUITweakerDialog::OnUpdate(dl_float32 fDeltaTime)
 	{
 		return CALL(OnUpdate_t, 0x5396d0, this, fDeltaTime);
 	}
 
-	dl_bool GUITweakerDialog::OnCreate()
+	dl_uint GUITweakerDialog::OnCreate()
 	{
 		return CALL(OnCreate_t, 0x539870, this);
 	}
 
-	dl_bool GUITweakerDialog::OnClose()
+	dl_uint GUITweakerDialog::OnClose()
 	{
 		return CALL(OnClose_t, 0x539d80, this);
 	}

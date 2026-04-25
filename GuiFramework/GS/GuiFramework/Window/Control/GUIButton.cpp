@@ -20,7 +20,7 @@ namespace GuiFramework
 		CALL(Destructor_t, 0x5b9950, this);
 	}
 
-	dl_bool GUIButton::OnCreate()
+	dl_uint GUIButton::OnCreate()
 	{
 		return CALL(OnCreate_t, 0x5b8b50, this);
 	}

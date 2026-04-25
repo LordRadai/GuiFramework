@@ -16,13 +16,13 @@ namespace GuiFramework
 		virtual DLRF::DLRuntimeClass* GetRuntimeClassOfThis() const override;
 		virtual ~GUIAutoVLayoutScroll() override;
 		virtual void OnDelete() override;
-		virtual dl_bool OnMouseWheel(const MouseEvent& event) override;
-		virtual dl_bool OnNcMouseWheel(GUI_NCHIT ncHit, const MouseEvent& event) override;
-		virtual dl_bool AdjustScrollByChildFocus(GUIWindowBase* pChild) override;
-		virtual dl_bool OnSize() override;
-		virtual dl_bool OnCreate() override;
-		virtual dl_bool OnVScroll(_GUI_SCROLLBAR_EVENT event, const _GUI_SCROLL_POS& pos) override;
-		virtual dl_bool OnHScroll(_GUI_SCROLLBAR_EVENT event, const _GUI_SCROLL_POS& pos) override;
+		virtual dl_uint OnMouseWheel(const MouseEvent& event) override;
+		virtual dl_uint OnNcMouseWheel(GUI_NCHIT ncHit, const MouseEvent& event) override;
+		virtual dl_uint AdjustScrollByChildFocus(GUIWindowBase* pChild) override;
+		virtual dl_uint OnSize() override;
+		virtual dl_uint OnCreate() override;
+		virtual dl_uint OnVScroll(_GUI_SCROLLBAR_EVENT event, const _GUI_SCROLL_POS& pos) override;
+		virtual dl_uint OnHScroll(_GUI_SCROLLBAR_EVENT event, const _GUI_SCROLL_POS& pos) override;
 
 	protected:
 		TGUIObjectPtr<GUIAutoVLayout> m_pAutoVLayout;

@@ -15,8 +15,8 @@ namespace GuiFramework
 		virtual DLRF::DLRuntimeClass* GetRuntimeClassOfThis() const override;
 		virtual ~GUITweakerGroup() override;
 		virtual void OnDelete() override;
-		virtual dl_bool OnRestored() override;
-		virtual dl_bool OnClose() override;
+		virtual dl_uint OnRestored() override;
+		virtual dl_uint OnClose() override;
 
 	protected:
 		DLUT::DLVector<GUITweakerGroupItem*> m_items;

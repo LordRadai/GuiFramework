@@ -13,7 +13,7 @@ namespace GuiFramework
 
 		virtual DLRF::DLRuntimeClass* GetRuntimeClassOfThis() const override;
 		virtual ~GUIButton();
-		virtual dl_bool OnCreate() override;
+		virtual dl_uint OnCreate() override;
 		virtual void OnRender(GraphicsContext& gc) const override;
 		virtual void OnButtonPressed() override {}
 	};

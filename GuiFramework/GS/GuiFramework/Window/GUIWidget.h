@@ -29,32 +29,32 @@ namespace GuiFramework
 		virtual DLUT::DLVector<GUIObject*>* GetChildrenVector() override;
 		virtual Rect GetChildrenBaseCoord() const override;
 		virtual GUIWindowBase* GetNextFocusWindow() const override;
-		virtual dl_bool OnMouseMove(const MouseEvent& event) override;
-		virtual dl_bool OnNcMouseMove(GUI_NCHIT ncHit, const MouseEvent& event) override;
-		virtual dl_bool OnNcLButtonDown(GUI_NCHIT ncHit, const MouseEvent& event) override;
-		virtual dl_bool OnNcLButtonUp(GUI_NCHIT ncHit, const MouseEvent& event) override;
-		virtual dl_bool OnMouseLeave() override;
-		virtual dl_bool OnNcMouseLeave() override;
-		virtual dl_bool OnVirtualInput(const VirtualInput& input) override;
-		virtual dl_bool OnNcCalcSize(Rect& out) override;
+		virtual dl_uint OnMouseMove(const MouseEvent& event) override;
+		virtual dl_uint OnNcMouseMove(GUI_NCHIT ncHit, const MouseEvent& event) override;
+		virtual dl_uint OnNcLButtonDown(GUI_NCHIT ncHit, const MouseEvent& event) override;
+		virtual dl_uint OnNcLButtonUp(GUI_NCHIT ncHit, const MouseEvent& event) override;
+		virtual dl_uint OnMouseLeave() override;
+		virtual dl_uint OnNcMouseLeave() override;
+		virtual dl_uint OnVirtualInput(const VirtualInput& input) override;
+		virtual dl_uint OnNcCalcSize(Rect& out) override;
 		virtual GUI_NCHIT OnNcHitTest(const Point2D& pt) override;
-		virtual dl_bool OnMove(dl_pointer param_2, dl_pointer param_3) override { return true; }
-		virtual dl_bool OnCreate() override;
-		virtual dl_bool OnPreCreate() override;
-		virtual dl_bool OnClose() override;
+		virtual dl_uint OnMove(dl_pointer param_2, dl_pointer param_3) override { return true; }
+		virtual dl_uint OnCreate() override;
+		virtual dl_uint OnPreCreate() override;
+		virtual dl_uint OnClose() override;
 		virtual void OnRender(GraphicsContext& gc) const override;
 		virtual void OnNcRender(GraphicsContext& gc) const override;
 		virtual Rect GetDefaultSizeMin() const;
 		virtual Rect GetDefaultSizeMax() const;
 		virtual void ComputeNcShapeInfo(const _GUI_NC_SHAPE_PROP& prop, _GUI_NC_SHAPE_INFO& info) const;
-		virtual dl_bool OnVScroll(_GUI_SCROLLBAR_EVENT event, const _GUI_SCROLL_POS& pos) { return false; }
-		virtual dl_bool OnHScroll(_GUI_SCROLLBAR_EVENT event, const _GUI_SCROLL_POS& pos) { return false; }
+		virtual dl_uint OnVScroll(_GUI_SCROLLBAR_EVENT event, const _GUI_SCROLL_POS& pos) { return false; }
+		virtual dl_uint OnHScroll(_GUI_SCROLLBAR_EVENT event, const _GUI_SCROLL_POS& pos) { return false; }
 
 		typedef Rect(__fastcall* GetDefaultSizeMin_t)(const GUIWidget*);
 		typedef Rect(__fastcall* GetDefaultSizeMax_t)(const GUIWidget*);
 		typedef void(__fastcall* ComputeNcShapeInfo_t)(const GUIWidget*, const GUIWidget::_GUI_NC_SHAPE_PROP&, GUIWidget::_GUI_NC_SHAPE_INFO&);
-		typedef dl_bool(__fastcall* OnVScroll_t)(GUIWidget*, _GUI_SCROLLBAR_EVENT, const _GUI_SCROLL_POS&);
-		typedef dl_bool(__fastcall* OnHScroll_t)(GUIWidget*, _GUI_SCROLLBAR_EVENT, const _GUI_SCROLL_POS&);
+		typedef dl_uint(__fastcall* OnVScroll_t)(GUIWidget*, _GUI_SCROLLBAR_EVENT, const _GUI_SCROLL_POS&);
+		typedef dl_uint(__fastcall* OnHScroll_t)(GUIWidget*, _GUI_SCROLLBAR_EVENT, const _GUI_SCROLL_POS&);
 	protected:
 		DLUT::DLVector<GUIWidget*> m_childWidgets;
 		GUIScrollBarUtil* m_pScrollBars[2];

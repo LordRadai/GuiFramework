@@ -26,13 +26,13 @@ namespace GuiFramework
 		virtual void SetGeometry(const Rect& rect) override;
 		virtual Rect GetGeometry() const override;
 		virtual dl_bool IsOwn(GUIObject* pObject) const override;
-		virtual dl_bool OnOwnerSizeChanged(const TGUI_SIZE<int>& size) { return false; }
-		virtual dl_bool AutoAdd(GUIWindowBase* pWindow) { return false; }
-		virtual dl_bool AutoRemove(GUIWindowBase* pWindow) { return false; }
+		virtual dl_uint OnOwnerSizeChanged(const TGUI_SIZE<int>& size) { return false; }
+		virtual dl_uint AutoAdd(GUIWindowBase* pWindow) { return false; }
+		virtual dl_uint AutoRemove(GUIWindowBase* pWindow) { return false; }
 
-		typedef dl_bool(__fastcall* OnOwnerSizeChanged_t)(GUILayouter*, const TGUI_SIZE<int>&);
-		typedef dl_bool(__fastcall* AutoAdd_t)(GUILayouter*, GUIWindowBase*);
-		typedef dl_bool(__fastcall* AutoRemove_t)(GUILayouter*, GUIWindowBase*);
+		typedef dl_uint(__fastcall* OnOwnerSizeChanged_t)(GUILayouter*, const TGUI_SIZE<int>&);
+		typedef dl_uint(__fastcall* AutoAdd_t)(GUILayouter*, GUIWindowBase*);
+		typedef dl_uint(__fastcall* AutoRemove_t)(GUILayouter*, GUIWindowBase*);
 
 	protected:
 		TGUIObjectPtr<GUIWidget> m_pOwner;

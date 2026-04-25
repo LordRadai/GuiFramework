@@ -25,22 +25,22 @@ namespace GuiFramework
 		CALL(OnDelete_t, 0x5a4a00, this);
 	}
 
-	dl_bool GUIAutoVLayout::OnSize()
+	dl_uint GUIAutoVLayout::OnSize()
 	{
 		return CALL(OnSize_t, 0x5a4a40, this);
 	}
 
-	dl_bool GUIAutoVLayout::OnRestored()
+	dl_uint GUIAutoVLayout::OnRestored()
 	{
 		return CALL(OnRestored_t, 0x5a4ac0, this);
 	}
 
-	dl_bool GUIAutoVLayout::OnCreate()
+	dl_uint GUIAutoVLayout::OnCreate()
 	{
 		return CALL(OnCreate_t, 0x5a4870, this);
 	}
 
-	dl_bool GUIAutoVLayout::OnClose()
+	dl_uint GUIAutoVLayout::OnClose()
 	{
 		return CALL(OnClose_t, 0x5a49c0, this);
 	}

@@ -25,12 +25,12 @@ namespace GuiFramework
 		CALL(OnDelete_t, 0x54d190, this);
 	}
 
-	dl_bool GUITweakerGroup::OnRestored()
+	dl_uint GUITweakerGroup::OnRestored()
 	{
 		return CALL(OnRestored_t, 0x54d310, this);
 	}
 
-	dl_bool GUITweakerGroup::OnClose()
+	dl_uint GUITweakerGroup::OnClose()
 	{
 		return CALL(OnClose_t, 0x54d080, this);
 	}

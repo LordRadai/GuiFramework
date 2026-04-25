@@ -19,10 +19,10 @@ namespace GuiFramework
 		virtual DLRF::DLRuntimeClass* GetRuntimeClassOfThis() const override;
 		virtual ~GUIButtonBase() override;
 		virtual void OnDelete() override;
-		virtual dl_bool OnMouseMove(const MouseEvent& event) override;
-		virtual dl_bool OnLButtonDown(const MouseEvent& event) override;
-		virtual dl_bool OnLButtonUp(const MouseEvent& event) override;
-		virtual dl_bool OnMouseLeave() override;
+		virtual dl_uint OnMouseMove(const MouseEvent& event) override;
+		virtual dl_uint OnLButtonDown(const MouseEvent& event) override;
+		virtual dl_uint OnLButtonUp(const MouseEvent& event) override;
+		virtual dl_uint OnMouseLeave() override;
 		virtual void OnButtonPressed() {};
 
 		typedef void(__fastcall* OnButtonPressed_t)();

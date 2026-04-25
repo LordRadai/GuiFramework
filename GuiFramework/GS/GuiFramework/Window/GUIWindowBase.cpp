@@ -24,17 +24,17 @@ namespace GuiFramework
 		CALL(OnDelete_t, 0x551c50, this);
 	}
 
-	dl_bool GUIWindowBase::OnMouseEvent(const MouseEvent& event)
+	dl_uint GuiFramework::GUIWindowBase::OnMouseEvent(const MouseEvent& event)
 	{
 		return CALL(OnMouseEvent_t, 0x550f90, this, event);
 	}
 
-	dl_bool GUIWindowBase::OnVirtualInput(const VirtualInput& input)
+	dl_uint GUIWindowBase::OnVirtualInput(const VirtualInput& input)
 	{
 		return CALL(OnVirtualInput_t, 0x551670, this, input);
 	}
 
-	dl_bool GUIWindowBase::OnNcCalcSize(Rect& out)
+	dl_uint GUIWindowBase::OnNcCalcSize(Rect& out)
 	{
 		return CALL(OnNcCalcSize_t, 0x3c2300, this, out);
 	}

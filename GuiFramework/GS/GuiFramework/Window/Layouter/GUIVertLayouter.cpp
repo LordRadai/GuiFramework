@@ -24,17 +24,17 @@ namespace GuiFramework
 		CALL(OnDelete_t, 0x5c6720, this);
 	}
 
-	dl_bool GUIVertLayouter::OnOwnerSizeChanged(const TGUI_SIZE<int>& size)
+	dl_uint GUIVertLayouter::OnOwnerSizeChanged(const TGUI_SIZE<int>& size)
 	{
 		return CALL(OnOwnerSizeChanged_t, 0x5c6440, this, size);
 	}
 
-	dl_bool GUIVertLayouter::AutoAdd(GUIWindowBase* pWindow)
+	dl_uint GUIVertLayouter::AutoAdd(GUIWindowBase* pWindow)
 	{
 		return CALL(AutoAdd_t, 0x5c6100, this, pWindow);
 	}
 
-	dl_bool GUIVertLayouter::AutoRemove(GUIWindowBase* pWindow)
+	dl_uint GUIVertLayouter::AutoRemove(GUIWindowBase* pWindow)
 	{
 		return CALL(AutoRemove_t, 0x5c62a0, this, pWindow);
 	}

@@ -44,42 +44,42 @@ namespace GuiFramework
 		return CALL(GetNextFocusWindow_t, 0x57ba90, this);
 	}
 
-	dl_bool GUIWidget::OnMouseMove(const MouseEvent& event)
+	dl_uint GuiFramework::GUIWidget::OnMouseMove(const MouseEvent& event)
 	{
 		return CALL(OnMouseMove_t, 0x57fad0, this, event);
 	}
 
-	dl_bool GUIWidget::OnNcMouseMove(GUI_NCHIT ncHit, const MouseEvent& event)
+	dl_uint GuiFramework::GUIWidget::OnNcMouseMove(GUI_NCHIT ncHit, const MouseEvent& event)
 	{
 		return CALL(OnNcMouseMove_t, 0x57e570, this, ncHit, event);
 	}
 
-	dl_bool GUIWidget::OnNcLButtonDown(GUI_NCHIT ncHit, const MouseEvent& event)
+	dl_uint GUIWidget::OnNcLButtonDown(GUI_NCHIT ncHit, const MouseEvent& event)
 	{
 		return CALL(OnNcLButtonDown_t, 0x57edd0, this, ncHit, event);
 	}
 
-	dl_bool GUIWidget::OnNcLButtonUp(GUI_NCHIT ncHit, const MouseEvent& event)
+	dl_uint GUIWidget::OnNcLButtonUp(GUI_NCHIT ncHit, const MouseEvent& event)
 	{
 		return CALL(OnNcLButtonUp_t, 0x57f700, this, ncHit, event);
 	}
 
-	dl_bool GUIWidget::OnMouseLeave()
+	dl_uint GUIWidget::OnMouseLeave()
 	{
 		return CALL(OnMouseLeave_t, 0x57fb00, this);
 	}
 
-	dl_bool GUIWidget::OnNcMouseLeave()
+	dl_uint GUIWidget::OnNcMouseLeave()
 	{
 		return CALL(OnNcMouseLeave_t, 0x57fb30, this);
 	}
 
-	dl_bool GUIWidget::OnVirtualInput(const VirtualInput& input)
+	dl_uint GUIWidget::OnVirtualInput(const VirtualInput& input)
 	{
 		return CALL(OnVirtualInput_t, 0x57fcf0, this, input);
 	}
 
-	dl_bool GUIWidget::OnNcCalcSize(Rect& out)
+	dl_uint GUIWidget::OnNcCalcSize(Rect& out)
 	{
 		return CALL(OnNcCalcSize_t, 0x57cd90, this, out);
 	}
@@ -89,17 +89,17 @@ namespace GuiFramework
 		return CALL(OnNcHitTest_t, 0x537df0, this, pt);
 	}
 
-	dl_bool GUIWidget::OnCreate()
+	dl_uint GUIWidget::OnCreate()
 	{
 		return CALL(OnCreate_t, 0x57cb70, this);
 	}
 
-	dl_bool GUIWidget::OnPreCreate()
+	dl_uint GUIWidget::OnPreCreate()
 	{
 		return CALL(OnPreCreate_t, 0x57cc40, this);
 	}
 
-	dl_bool GUIWidget::OnClose()
+	dl_uint GUIWidget::OnClose()
 	{
 		return CALL(OnClose_t, 0x57e460, this);
 	}

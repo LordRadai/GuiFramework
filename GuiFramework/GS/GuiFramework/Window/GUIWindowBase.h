@@ -124,53 +124,53 @@ namespace GuiFramework
 		virtual DLUT::DLVector<GUIObject*>* GetChildrenVector() { return nullptr; }
 		virtual Rect GetChildrenBaseCoord() const { return Rect(); }
 		virtual GUIWindowBase* GetNextFocusWindow() const { return nullptr; }
-        virtual dl_bool IsMoveChild() const { return true; }
-		virtual dl_bool IsMoveSelf() const { return true; }
-        virtual dl_bool OnMouseEvent(const MouseEvent& event);
-		virtual dl_bool OnMouseMove(const MouseEvent& event) { return false; }
-		virtual dl_bool OnNcMouseMove(GUI_NCHIT ncHit, const MouseEvent& event) { return false; }
-		virtual dl_bool OnLButtonDown(const MouseEvent& event) { return false; }
-		virtual dl_bool OnLButtonUp(const MouseEvent& event) { return false; }
-		virtual dl_bool OnRButtonDown(const MouseEvent& event) { return false; }
-		virtual dl_bool OnRButtonUp(const MouseEvent& event) { return false; }
-		virtual dl_bool OnMButtonDown(const MouseEvent& event) { return false; }
-		virtual dl_bool OnMButtonUp(const MouseEvent& event) { return false; }
-		virtual dl_bool OnLButtonDblClk(const MouseEvent& event) { return false; }
-		virtual dl_bool OnRButtonDblClk(const MouseEvent& event) { return false; }
-		virtual dl_bool OnMButtonDblClk(const MouseEvent& event) { return false; }
-		virtual dl_bool OnMouseWheel(const MouseEvent& event) { return false; }
-		virtual dl_bool OnNcLButtonDown(GUI_NCHIT ncHit, const MouseEvent& event) { return false; }
-		virtual dl_bool OnNcLButtonUp(GUI_NCHIT ncHit, const MouseEvent& event) { return false; }
-		virtual dl_bool OnNcRButtonDown(GUI_NCHIT ncHit, const MouseEvent& event) { return false; }
-		virtual dl_bool OnNcRButtonUp(GUI_NCHIT ncHit, const MouseEvent& event) { return false; }
-		virtual dl_bool OnNcMButtonDown(GUI_NCHIT ncHit, const MouseEvent& event) { return false; }
-		virtual dl_bool OnNcMButtonUp(GUI_NCHIT ncHit, const MouseEvent& event) { return false; }
-		virtual dl_bool OnNcLButtonDblClk(GUI_NCHIT ncHit, const MouseEvent& event) { return false; }
-		virtual dl_bool OnNcRButtonDblClk(GUI_NCHIT ncHit, const MouseEvent& event) { return false; }
-		virtual dl_bool OnNcMButtonDblClk(GUI_NCHIT ncHit, const MouseEvent& event) { return false; }
-		virtual dl_bool OnNcMouseWheel(GUI_NCHIT ncHit, const MouseEvent& event) { return false; }
-		virtual dl_bool OnMouseLeave() { return false; }
-		virtual dl_bool OnNcMouseLeave() { return false; }
-        virtual dl_bool OnVirtualInput(const VirtualInput& input);
-		virtual dl_bool AdjustScrollByChildFocus(GUIWindowBase* pChild) { return false; }
-        virtual dl_bool OnNcCalcSize(Rect& out);
+        virtual dl_uint IsMoveChild() const { return true; }
+        virtual dl_uint IsMoveSelf() const { return true; }
+        virtual dl_uint OnMouseEvent(const MouseEvent& event);
+        virtual dl_uint OnMouseMove(const MouseEvent& event) { return false; }
+        virtual dl_uint OnNcMouseMove(GUI_NCHIT ncHit, const MouseEvent& event) { return false; }
+        virtual dl_uint OnLButtonDown(const MouseEvent& event) { return false; }
+        virtual dl_uint OnLButtonUp(const MouseEvent& event) { return false; }
+        virtual dl_uint OnRButtonDown(const MouseEvent& event) { return false; }
+        virtual dl_uint OnRButtonUp(const MouseEvent& event) { return false; }
+		virtual dl_uint OnMButtonDown(const MouseEvent& event) { return false; }
+		virtual dl_uint OnMButtonUp(const MouseEvent& event) { return false; }
+		virtual dl_uint OnLButtonDblClk(const MouseEvent& event) { return false; }
+		virtual dl_uint OnRButtonDblClk(const MouseEvent& event) { return false; }
+		virtual dl_uint OnMButtonDblClk(const MouseEvent& event) { return false; }
+		virtual dl_uint OnMouseWheel(const MouseEvent& event) { return false; }
+		virtual dl_uint OnNcLButtonDown(GUI_NCHIT ncHit, const MouseEvent& event) { return false; }
+		virtual dl_uint OnNcLButtonUp(GUI_NCHIT ncHit, const MouseEvent& event) { return false; }
+		virtual dl_uint OnNcRButtonDown(GUI_NCHIT ncHit, const MouseEvent& event) { return false; }
+		virtual dl_uint OnNcRButtonUp(GUI_NCHIT ncHit, const MouseEvent& event) { return false; }
+		virtual dl_uint OnNcMButtonDown(GUI_NCHIT ncHit, const MouseEvent& event) { return false; }
+		virtual dl_uint OnNcMButtonUp(GUI_NCHIT ncHit, const MouseEvent& event) { return false; }
+		virtual dl_uint OnNcLButtonDblClk(GUI_NCHIT ncHit, const MouseEvent& event) { return false; }
+		virtual dl_uint OnNcRButtonDblClk(GUI_NCHIT ncHit, const MouseEvent& event) { return false; }
+		virtual dl_uint OnNcMButtonDblClk(GUI_NCHIT ncHit, const MouseEvent& event) { return false; }
+		virtual dl_uint OnNcMouseWheel(GUI_NCHIT ncHit, const MouseEvent& event) { return false; }
+		virtual dl_uint OnMouseLeave() { return false; }
+		virtual dl_uint OnNcMouseLeave() { return false; }
+        virtual dl_uint OnVirtualInput(const VirtualInput& input);
+		virtual dl_uint AdjustScrollByChildFocus(GUIWindowBase* pChild) { return false; }
+        virtual dl_uint OnNcCalcSize(Rect& out);
         virtual GUI_NCHIT OnNcHitTest(const Point2D& pt);
-		virtual dl_bool OnCommand(unsigned int cmdId) { return false; }
-        virtual dl_bool OnSetFocus() { return false; }
-        virtual dl_bool OnKillFocus() { return false; }
-		virtual dl_bool OnActivate(unsigned int state) { return false; }
-		virtual dl_bool OnKeyDown(const KeyEvent& event) { return false; }
-		virtual dl_bool OnKeyUp(const KeyEvent& event) { return false; }
-		virtual dl_bool OnChar(const KeyEvent& event) { return false; }
-		virtual dl_bool OnSize() { return false; }
-		virtual dl_bool OnMove(dl_pointer param_2, dl_pointer param_3) { return false; }
-		virtual dl_bool OnMove(const Rect& rect) { return false; }
-        virtual dl_bool OnMinimized() { return false; }
-        virtual dl_bool OnRestored() { return false; }
-        virtual dl_bool OnUpdate(float fDeltaTime) { return false; }
-        virtual dl_bool OnCreate() { return false; }
-        virtual dl_bool OnPreCreate() { return false; }
-        virtual dl_bool OnClose() { return false; }
+		virtual dl_uint OnCommand(unsigned int cmdId) { return false; }
+        virtual dl_uint OnSetFocus() { return false; }
+        virtual dl_uint OnKillFocus() { return false; }
+		virtual dl_uint OnActivate(unsigned int state) { return false; }
+		virtual dl_uint OnKeyDown(const KeyEvent& event) { return false; }
+		virtual dl_uint OnKeyUp(const KeyEvent& event) { return false; }
+		virtual dl_uint OnChar(const KeyEvent& event) { return false; }
+		virtual dl_uint OnSize() { return false; }
+		virtual dl_uint OnMove(dl_pointer param_2, dl_pointer param_3) { return false; }
+		virtual dl_uint OnMove(const Rect& rect) { return false; }
+        virtual dl_uint OnMinimized() { return false; }
+        virtual dl_uint OnRestored() { return false; }
+        virtual dl_uint OnUpdate(float fDeltaTime) { return false; }
+        virtual dl_uint OnCreate() { return false; }
+        virtual dl_uint OnPreCreate() { return false; }
+        virtual dl_uint OnClose() { return false; }
         virtual void OnRender(GraphicsContext& gc) const;
         virtual void OnNcRender(GraphicsContext& gc) const;
         virtual void OnRenderWindow(GraphicsContext& gc) const;
@@ -184,53 +184,53 @@ namespace GuiFramework
         typedef DLUT::DLVector<GUIObject*>* (__fastcall* GetChildrenVector_t)(GUIWindowBase*);
         typedef Rect(__fastcall* GetChildrenBaseCoord_t)(const GUIWindowBase*);
         typedef GUIWindowBase* (__fastcall* GetNextFocusWindow_t)(const GUIWindowBase*);
-        typedef dl_bool(__fastcall* IsMoveChild_t)(const GUIWindowBase*);
-        typedef dl_bool(__fastcall* IsMoveSelf_t)(const GUIWindowBase*);
-        typedef dl_bool(__fastcall* OnMouseEvent_t)(GUIWindowBase*, const MouseEvent&);
-        typedef dl_bool(__fastcall* OnMouseMove_t)(GUIWindowBase*, const MouseEvent&);
-        typedef dl_bool(__fastcall* OnNcMouseMove_t)(GUIWindowBase*, GUI_NCHIT, const MouseEvent&);
-        typedef dl_bool(__fastcall* OnLButtonDown_t)(GUIWindowBase*, const MouseEvent&);
-        typedef dl_bool(__fastcall* OnLButtonUp_t)(GUIWindowBase*, const MouseEvent&);
-        typedef dl_bool(__fastcall* OnRButtonDown_t)(GUIWindowBase*, const MouseEvent&);
-        typedef dl_bool(__fastcall* OnRButtonUp_t)(GUIWindowBase*, const MouseEvent&);
-        typedef dl_bool(__fastcall* OnMButtonDown_t)(GUIWindowBase*, const MouseEvent&);
-        typedef dl_bool(__fastcall* OnMButtonUp_t)(GUIWindowBase*, const MouseEvent&);
-        typedef dl_bool(__fastcall* OnLButtonDblClk_t)(GUIWindowBase*, const MouseEvent&);
-        typedef dl_bool(__fastcall* OnRButtonDblClk_t)(GUIWindowBase*, const MouseEvent&);
-        typedef dl_bool(__fastcall* OnMButtonDblClk_t)(GUIWindowBase*, const MouseEvent&);
-        typedef dl_bool(__fastcall* OnMouseWheel_t)(GUIWindowBase*, const MouseEvent&);
-        typedef dl_bool(__fastcall* OnNcLButtonDown_t)(GUIWindowBase*, GUI_NCHIT, const MouseEvent&);
-        typedef dl_bool(__fastcall* OnNcLButtonUp_t)(GUIWindowBase*, GUI_NCHIT, const MouseEvent&);
-        typedef dl_bool(__fastcall* OnNcRButtonDown_t)(GUIWindowBase*, GUI_NCHIT, const MouseEvent&);
-        typedef dl_bool(__fastcall* OnNcRButtonUp_t)(GUIWindowBase*, GUI_NCHIT, const MouseEvent&);
-        typedef dl_bool(__fastcall* OnNcMButtonDown_t)(GUIWindowBase*, GUI_NCHIT, const MouseEvent&);
-        typedef dl_bool(__fastcall* OnNcMButtonUp_t)(GUIWindowBase*, GUI_NCHIT, const MouseEvent&);
-        typedef dl_bool(__fastcall* OnNcLButtonDblClk_t)(GUIWindowBase*, GUI_NCHIT, const MouseEvent&);
-        typedef dl_bool(__fastcall* OnNcRButtonDblClk_t)(GUIWindowBase*, GUI_NCHIT, const MouseEvent&);
-        typedef dl_bool(__fastcall* OnNcMButtonDblClk_t)(GUIWindowBase*, GUI_NCHIT, const MouseEvent&);
-        typedef dl_bool(__fastcall* OnNcMouseWheel_t)(GUIWindowBase*, GUI_NCHIT, const MouseEvent&);
-        typedef dl_bool(__fastcall* OnMouseLeave_t)(GUIWindowBase*);
-        typedef dl_bool(__fastcall* OnNcMouseLeave_t)(GUIWindowBase*);
-        typedef dl_bool(__fastcall* OnVirtualInput_t)(GUIWindowBase*, const VirtualInput&);
-        typedef dl_bool(__fastcall* AdjustScrollByChildFocus_t)(GUIWindowBase*, GUIWindowBase*);
-        typedef dl_bool(__fastcall* OnNcCalcSize_t)(GUIWindowBase*, Rect&);
+        typedef dl_uint(__fastcall* IsMoveChild_t)(const GUIWindowBase*);
+        typedef dl_uint(__fastcall* IsMoveSelf_t)(const GUIWindowBase*);
+        typedef dl_uint(__fastcall* OnMouseEvent_t)(GUIWindowBase*, const MouseEvent&);
+        typedef dl_uint(__fastcall* OnMouseMove_t)(GUIWindowBase*, const MouseEvent&);
+        typedef dl_uint(__fastcall* OnNcMouseMove_t)(GUIWindowBase*, GUI_NCHIT, const MouseEvent&);
+        typedef dl_uint(__fastcall* OnLButtonDown_t)(GUIWindowBase*, const MouseEvent&);
+        typedef dl_uint(__fastcall* OnLButtonUp_t)(GUIWindowBase*, const MouseEvent&);
+        typedef dl_uint(__fastcall* OnRButtonDown_t)(GUIWindowBase*, const MouseEvent&);
+        typedef dl_uint(__fastcall* OnRButtonUp_t)(GUIWindowBase*, const MouseEvent&);
+        typedef dl_uint(__fastcall* OnMButtonDown_t)(GUIWindowBase*, const MouseEvent&);
+        typedef dl_uint(__fastcall* OnMButtonUp_t)(GUIWindowBase*, const MouseEvent&);
+        typedef dl_uint(__fastcall* OnLButtonDblClk_t)(GUIWindowBase*, const MouseEvent&);
+        typedef dl_uint(__fastcall* OnRButtonDblClk_t)(GUIWindowBase*, const MouseEvent&);
+        typedef dl_uint(__fastcall* OnMButtonDblClk_t)(GUIWindowBase*, const MouseEvent&);
+        typedef dl_uint(__fastcall* OnMouseWheel_t)(GUIWindowBase*, const MouseEvent&);
+        typedef dl_uint(__fastcall* OnNcLButtonDown_t)(GUIWindowBase*, GUI_NCHIT, const MouseEvent&);
+        typedef dl_uint(__fastcall* OnNcLButtonUp_t)(GUIWindowBase*, GUI_NCHIT, const MouseEvent&);
+        typedef dl_uint(__fastcall* OnNcRButtonDown_t)(GUIWindowBase*, GUI_NCHIT, const MouseEvent&);
+        typedef dl_uint(__fastcall* OnNcRButtonUp_t)(GUIWindowBase*, GUI_NCHIT, const MouseEvent&);
+        typedef dl_uint(__fastcall* OnNcMButtonDown_t)(GUIWindowBase*, GUI_NCHIT, const MouseEvent&);
+        typedef dl_uint(__fastcall* OnNcMButtonUp_t)(GUIWindowBase*, GUI_NCHIT, const MouseEvent&);
+        typedef dl_uint(__fastcall* OnNcLButtonDblClk_t)(GUIWindowBase*, GUI_NCHIT, const MouseEvent&);
+        typedef dl_uint(__fastcall* OnNcRButtonDblClk_t)(GUIWindowBase*, GUI_NCHIT, const MouseEvent&);
+        typedef dl_uint(__fastcall* OnNcMButtonDblClk_t)(GUIWindowBase*, GUI_NCHIT, const MouseEvent&);
+        typedef dl_uint(__fastcall* OnNcMouseWheel_t)(GUIWindowBase*, GUI_NCHIT, const MouseEvent&);
+        typedef dl_uint(__fastcall* OnMouseLeave_t)(GUIWindowBase*);
+        typedef dl_uint(__fastcall* OnNcMouseLeave_t)(GUIWindowBase*);
+        typedef dl_uint(__fastcall* OnVirtualInput_t)(GUIWindowBase*, const VirtualInput&);
+        typedef dl_uint(__fastcall* AdjustScrollByChildFocus_t)(GUIWindowBase*, GUIWindowBase*);
+        typedef dl_uint(__fastcall* OnNcCalcSize_t)(GUIWindowBase*, Rect&);
         typedef GUI_NCHIT(__fastcall* OnNcHitTest_t)(const GUIWindowBase*, const Point2D&);
-        typedef dl_bool(__fastcall* OnCommand_t)(GUIWindowBase*, unsigned int);
-        typedef dl_bool(__fastcall* OnSetFocus_t)(GUIWindowBase*);
-        typedef dl_bool(__fastcall* OnKillFocus_t)(GUIWindowBase*);
-        typedef dl_bool(__fastcall* OnActivate_t)(GUIWindowBase*, unsigned int);
-        typedef dl_bool(__fastcall* OnKeyDown_t)(GUIWindowBase*, const KeyEvent&);
-        typedef dl_bool(__fastcall* OnKeyUp_t)(GUIWindowBase*, const KeyEvent&);
-        typedef dl_bool(__fastcall* OnChar_t)(GUIWindowBase*, const KeyEvent&);
-        typedef dl_bool(__fastcall* OnSize_t)(GUIWindowBase*);
-        typedef dl_bool(__fastcall* OnMove_Param_t)(GUIWindowBase*, dl_pointer, dl_pointer);
-        typedef dl_bool(__fastcall* OnMove_Rect_t)(GUIWindowBase*, const Rect&);
-        typedef dl_bool(__fastcall* OnMinimized_t)(GUIWindowBase*);
-        typedef dl_bool(__fastcall* OnRestored_t)(GUIWindowBase*);
-        typedef dl_bool(__fastcall* OnUpdate_t)(GUIWindowBase*, float);
-        typedef dl_bool(__fastcall* OnCreate_t)(GUIWindowBase*);
-        typedef dl_bool(__fastcall* OnPreCreate_t)(GUIWindowBase*);
-        typedef dl_bool(__fastcall* OnClose_t)(GUIWindowBase*);
+        typedef dl_uint(__fastcall* OnCommand_t)(GUIWindowBase*, unsigned int);
+        typedef dl_uint(__fastcall* OnSetFocus_t)(GUIWindowBase*);
+        typedef dl_uint(__fastcall* OnKillFocus_t)(GUIWindowBase*);
+        typedef dl_uint(__fastcall* OnActivate_t)(GUIWindowBase*, unsigned int);
+        typedef dl_uint(__fastcall* OnKeyDown_t)(GUIWindowBase*, const KeyEvent&);
+        typedef dl_uint(__fastcall* OnKeyUp_t)(GUIWindowBase*, const KeyEvent&);
+        typedef dl_uint(__fastcall* OnChar_t)(GUIWindowBase*, const KeyEvent&);
+        typedef dl_uint(__fastcall* OnSize_t)(GUIWindowBase*);
+        typedef dl_uint(__fastcall* OnMove_Param_t)(GUIWindowBase*, dl_pointer, dl_pointer);
+        typedef dl_uint(__fastcall* OnMove_Rect_t)(GUIWindowBase*, const Rect&);
+        typedef dl_uint(__fastcall* OnMinimized_t)(GUIWindowBase*);
+        typedef dl_uint(__fastcall* OnRestored_t)(GUIWindowBase*);
+        typedef dl_uint(__fastcall* OnUpdate_t)(GUIWindowBase*, float);
+        typedef dl_uint(__fastcall* OnCreate_t)(GUIWindowBase*);
+        typedef dl_uint(__fastcall* OnPreCreate_t)(GUIWindowBase*);
+        typedef dl_uint(__fastcall* OnClose_t)(GUIWindowBase*);
         typedef void(__fastcall* OnRender_t)(const GUIWindowBase*, GraphicsContext&);
         typedef void(__fastcall* OnNcRender_t)(const GUIWindowBase*, GraphicsContext&);
         typedef void(__fastcall* OnRenderWindow_t)(const GUIWindowBase*, GraphicsContext&);

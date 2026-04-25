@@ -25,22 +25,22 @@ namespace GuiFramework
 		CALL(OnDelete_t, 0x596c70, this);
 	}
 
-	dl_bool GUIButtonBase::OnMouseMove(const MouseEvent& event)
+	dl_uint GuiFramework::GUIButtonBase::OnMouseMove(const MouseEvent& event)
 	{
 		return CALL(OnMouseMove_t, 0x596c90, this, event);
 	}
 
-	dl_bool GUIButtonBase::OnLButtonDown(const MouseEvent& event)
+	dl_uint GuiFramework::GUIButtonBase::OnLButtonDown(const MouseEvent& event)
 	{
 		return CALL(OnLButtonDown_t, 0x596db0, this, event);
 	}
 
-	dl_bool GUIButtonBase::OnLButtonUp(const MouseEvent& event)
+	dl_uint GuiFramework::GUIButtonBase::OnLButtonUp(const MouseEvent& event)
 	{
 		return CALL(OnLButtonUp_t, 0x596e20, this, event);
 	}
 
-	dl_bool GUIButtonBase::OnMouseLeave()
+	dl_uint GUIButtonBase::OnMouseLeave()
 	{
 		return CALL(OnMouseLeave_t, 0x596f30, this);
 	}

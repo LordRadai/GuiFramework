@@ -17,10 +17,10 @@ namespace GuiFramework
 		virtual DLRF::DLRuntimeClass* GetRuntimeClassOfThis() const override;
 		virtual ~GUITweakerDialog() override;
 		virtual void OnDelete() override;
-		virtual dl_bool OnMouseWheel(const MouseEvent& event) override;
-		virtual dl_bool OnUpdate(dl_float32 fDeltaTime) override;
-		virtual dl_bool OnCreate() override;
-		virtual dl_bool OnClose() override;
+		virtual dl_uint OnMouseWheel(const MouseEvent& event) override;
+		virtual dl_uint OnUpdate(dl_float32 fDeltaTime) override;
+		virtual dl_uint OnCreate() override;
+		virtual dl_uint OnClose() override;
 
 		GUITweakerGroup* GetCurrentGroup();
 
