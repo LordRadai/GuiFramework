@@ -24,24 +24,6 @@ namespace GuiFramework
         }
     };
 
-    struct GUI_MOUSE_INFO
-    {
-        dl_int EventID;
-        dl_int iVar4;
-        dl_int X;
-        dl_int Y;
-
-        static void* operator new(size_t size)
-        {
-            return DLKR::AllocateAligned(size, 8, GUI_ALLOCATOR);
-        }
-
-        static void operator delete(void* block)
-        {
-            return DLKR::Free(block, GUI_ALLOCATOR);
-        }
-    };
-
     struct _GUI_CREATE_WINDOW
     {
         Rect16 Pos;
@@ -102,7 +84,6 @@ namespace GuiFramework
     typedef GUI_KEYSTROKE KeyEvent;
 
     typedef LRESULT GUI_NCHIT;
-    typedef GUI_MOUSE_INFO MouseEvent;
 
     typedef dl_uint _GUI_SCROLLBAR_EVENT;
 

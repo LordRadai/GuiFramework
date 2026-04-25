@@ -206,6 +206,7 @@
     <ClInclude Include="GuiFramework\Signal\GUISignalManager.h" />
     <ClInclude Include="GuiFramework\System\GUIFont.h" />
     <ClInclude Include="GuiFramework\System\GUIInvoker.h" />
+    <ClInclude Include="GuiFramework\System\GUIMouseEvent.h" />
     <ClInclude Include="GuiFramework\System\GUISystem.h" />
     <ClInclude Include="GuiFramework\System\TGUILiteralString.inl" />
     <ClInclude Include="GuiFramework\System\GUIMsgReceiver.h" />
@@ -218,6 +219,7 @@
     <ClInclude Include="GuiFramework\System\TGUIStringStorage.inl" />
     <ClInclude Include="GuiFramework\Util\GUITimer.h" />
     <ClInclude Include="GuiFramework\Window\PopupMenu\GUIPopupMenu.h" />
+    <ClInclude Include="GuiFramework\Window\PopupMenu\GUIPopupMenuItem.h" />
     <ClInclude Include="GuiFramework\Window\Util\GUITextEditorUtil.h" />
     <ClInclude Include="GuiFramework\Window\Control\GUIAutoVLayout.h" />
     <ClInclude Include="GuiFramework\Window\Control\GUIAutoVLayoutScroll.h" />
@@ -243,6 +245,7 @@
     <ClCompile Include="GuiFramework\System\GUISystem.cpp" />
     <ClCompile Include="GuiFramework\Util\GUITimer.cpp" />
     <ClCompile Include="GuiFramework\Window\PopupMenu\GUIPopupMenu.cpp" />
+    <ClCompile Include="GuiFramework\Window\PopupMenu\GUIPopupMenuItem.cpp" />
     <ClCompile Include="GuiFramework\Window\Util\GUITextEditorUtil.cpp" />
     <ClCompile Include="GuiFramework\Window\Control\GUIAutoVLayout.cpp" />
     <ClCompile Include="GuiFramework\Window\Control\GUIAutoVLayoutScroll.cpp" />
