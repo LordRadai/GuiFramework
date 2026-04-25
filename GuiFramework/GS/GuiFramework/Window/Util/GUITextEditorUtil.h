@@ -25,6 +25,7 @@ namespace GuiFramework
 		dl_uint Insert(const dl_wchar* str);
 		const dl_wchar* GetLineString(dl_uint lineIndex) const;
 		dl_uint OnDragMove(dl_uint x, dl_uint y);
+		dl_uint DeleteAll();
 	protected:
 		dl_uint _Insert(const dl_wchar* str, dl_uint size);
 

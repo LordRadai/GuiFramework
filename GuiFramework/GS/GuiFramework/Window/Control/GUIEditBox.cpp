@@ -7,6 +7,9 @@ namespace GuiFramework
 	typedef void(__fastcall* ConstructorWithCreateParams_t)(const GUIEditBox*, GUIWindowBase*, TGUISharedString<dl_wchar>, const _GUI_CREATE_WINDOW&);
 	typedef void(__fastcall* ConstructorWithNumLines_t)(const GUIEditBox*, GUIWindowBase*, TGUISharedString<dl_wchar>, dl_uint, dl_uint);
 	
+	typedef void(__fastcall* CreateEasy_t)(GUIEditBox*, GUIWindowBase*, TGUISharedString<dl_wchar>, dl_uint, dl_uint);
+	typedef dl_uint(__fastcall* SetEditText_t)(GUIEditBox*, const dl_wchar*, dl_uint);
+
 	GUIEditBox::GUIEditBox(TGUISharedString<dl_wchar> label)
 	{
 		CALL(Constructor_t, 0x532640, this, label);
@@ -17,9 +20,9 @@ namespace GuiFramework
 		CALL(ConstructorWithCreateParams_t, 0x532700, this, pParent, label, createParams);
 	}
 
-	GUIEditBox::GUIEditBox(GUIWindowBase* pParent, TGUISharedString<dl_wchar> label, dl_uint numLines, dl_uint param_4)
+	GUIEditBox::GUIEditBox(GUIWindowBase* pParent, TGUISharedString<dl_wchar> label, dl_uint numLines, dl_uint flags)
 	{
-		CALL(ConstructorWithNumLines_t, 0x5327d0, this, pParent, label, numLines, param_4);
+		CALL(ConstructorWithNumLines_t, 0x5327d0, this, pParent, label, numLines, flags);
 	}
 
 	DLRF::DLRuntimeClass* GUIEditBox::GetRuntimeClassOfThis() const
@@ -105,5 +108,15 @@ namespace GuiFramework
 	void GUIEditBox::OnRender(GraphicsContext& gc) const
 	{
 		CALL(OnRender_t, 0x5330d0, this, gc);
+	}
+
+	void GUIEditBox::CreateEasy(GUIWindowBase* pParent, TGUISharedString<dl_wchar> label, dl_uint numLines, dl_uint flags)
+	{
+		CALL(CreateEasy_t, 0x532940, this, pParent, label, numLines, flags);
+	}
+
+	dl_uint GUIEditBox::SetEditText(const dl_wchar* text, dl_uint numLines)
+	{
+		return CALL(SetEditText_t, 0x532c70, this, text, numLines);
 	}
 }

@@ -16,7 +16,7 @@ namespace GuiFramework
 		GUIEditBox() {}
 		GUIEditBox(TGUISharedString<dl_wchar> label);
 		GUIEditBox(GUIWindowBase* pParent, TGUISharedString<dl_wchar> label, const _GUI_CREATE_WINDOW& createParams);
-		GUIEditBox(GUIWindowBase* pParent, TGUISharedString<dl_wchar> label, dl_uint numLines, dl_uint param_4);
+		GUIEditBox(GUIWindowBase* pParent, TGUISharedString<dl_wchar> label, dl_uint numLines, dl_uint flags);
 
 		virtual DLRF::DLRuntimeClass* GetRuntimeClassOfThis() const override;
 		virtual ~GUIEditBox() override;
@@ -40,6 +40,9 @@ namespace GuiFramework
 
 		typedef void(__fastcall* OnEditChanged_t)(GUIEditBox*);
 		typedef void(__fastcall* OnReturnPressed_t)(GUIEditBox*);
+
+		void CreateEasy(GUIWindowBase* pParent, TGUISharedString<dl_wchar> label, dl_uint numLines, dl_uint flags);
+		dl_uint SetEditText(const dl_wchar* text, dl_uint numLines);
 	protected:
 		TGUIObjectPtr<GUITextEditorUtil> m_pTextEditorUtil;
 		dl_pointer m_pVar118;
