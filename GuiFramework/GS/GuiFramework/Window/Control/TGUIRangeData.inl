@@ -16,24 +16,33 @@ namespace GuiFramework
 
 		virtual dl_bool StringToValue(const dl_wchar* str) override
 		{
-			T oldValue = this->m_value;
-			T newValue = static_cast<T>(std::stoll(str));
+			try
+			{
+				T oldValue = this->m_value;
+				T newValue = static_cast<T>(std::stoll(str));
 
-			if (newValue < this->m_min)
-				newValue = this->m_min;
+				if (newValue < this->m_min)
+					newValue = this->m_min;
 
-			else if (newValue > this->m_max)
-				newValue = this->m_max;
+				else if (newValue > this->m_max)
+					newValue = this->m_max;
 
-			this->m_value = newValue;
+				this->m_value = newValue;
 
-			return (oldValue != this->m_value);
+				return (oldValue != this->m_value);
+			}
+			catch (const std::exception&)
+			{
+				return false;
+			}
 		}
 
 		virtual dl_bool ValueToString(DLTX::DLString& str) const override
 		{
-			T value = this->m_value;
-			DLTX::DLFormat::Format(&str, L"%lld", value);
+			if constexpr (std::is_unsigned_v<T>)
+				DLTX::DLFormat::Format(&str, L"%llu", (dl_uint64)this->m_value);
+			else
+				DLTX::DLFormat::Format(&str, L"%lld", (dl_int64)this->m_value);
 
 			return true;
 		}
