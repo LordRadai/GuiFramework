@@ -150,6 +150,9 @@
     <ClInclude Include="GuiFramework\Window\Control\GUIRangeDataBase.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="GuiFramework\Window\Control\TGUIRangeData.inl">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="GuiFramework\System\GUIObject.cpp">

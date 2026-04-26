@@ -221,6 +221,7 @@
     <ClInclude Include="GuiFramework\Window\Control\GUIEditBox.h" />
     <ClInclude Include="GuiFramework\Window\Control\GUINumericEditBox.h" />
     <ClInclude Include="GuiFramework\Window\Control\GUIRangeDataBase.h" />
+    <ClInclude Include="GuiFramework\Window\Control\TGUIRangeData.inl" />
     <ClInclude Include="GuiFramework\Window\PopupMenu\GUIPopupMenu.h" />
     <ClInclude Include="GuiFramework\Window\PopupMenu\GUIPopupMenuItem.h" />
     <ClInclude Include="GuiFramework\Window\PopupMenu\GUIPopupMenuNode.h" />

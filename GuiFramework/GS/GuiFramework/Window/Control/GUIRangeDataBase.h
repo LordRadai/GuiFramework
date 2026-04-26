@@ -19,5 +19,7 @@ namespace GuiFramework
 		virtual void GetSliderRange(dl_int& min, dl_int& max) const = 0;
 		virtual dl_bool SliderToValue(dl_int sliderPos) = 0;
 		virtual dl_uint ValueToSlider() const = 0;
+
+		void Finalize();
 	};
 }
