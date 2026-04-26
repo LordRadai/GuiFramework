@@ -140,26 +140,33 @@ namespace GuiFramework
 	template<>
 	inline dl_bool TGUIRangeData<dl_float32>::StringToValue(const dl_wchar* str)
 	{
-		dl_float32 oldValue = this->m_value;
-		dl_float32 newValue;
+		try
+		{
+			dl_float32 oldValue = this->m_value;
+			dl_float32 newValue;
 
-		dl_float64 parsedValue = std::stod(str);
+			dl_float64 parsedValue = std::stod(str);
 
-		if (this->m_mult == 1.0f)
-			newValue = static_cast<dl_float32>(parsedValue);
-		else
-			newValue = static_cast<dl_float32>(parsedValue) / this->m_mult;
+			if (this->m_mult == 1.0f)
+				newValue = static_cast<dl_float32>(parsedValue);
+			else
+				newValue = static_cast<dl_float32>(parsedValue) / this->m_mult;
 
-		dl_float32 finalValue = newValue;
+			dl_float32 finalValue = newValue;
 
-		if (newValue < this->m_min)
-			finalValue = this->m_min;
-		else if (newValue > this->m_max)
-			finalValue = this->m_max;
+			if (newValue < this->m_min)
+				finalValue = this->m_min;
+			else if (newValue > this->m_max)
+				finalValue = this->m_max;
 
-		this->m_value = finalValue;
+			this->m_value = finalValue;
 
-		return (oldValue != this->m_value);
+			return (oldValue != this->m_value);
+		}
+		catch (const std::exception&)
+		{
+			return false;
+		}
 	}
 
 	template<>
@@ -178,17 +185,24 @@ namespace GuiFramework
 	template<>
 	inline dl_bool TGUIRangeData<dl_float64>::StringToValue(const dl_wchar* str)
 	{
-		dl_float64 oldValue = this->m_value;
-		dl_float64 newValue = std::stod(str);
+		try
+		{
+			dl_float64 oldValue = this->m_value;
+			dl_float64 newValue = std::stod(str);
 
-		if (newValue < this->m_min)
-			newValue = this->m_min;
-		else if (newValue > this->m_max)
-			newValue = this->m_max;
+			if (newValue < this->m_min)
+				newValue = this->m_min;
+			else if (newValue > this->m_max)
+				newValue = this->m_max;
 
-		this->m_value = newValue;
+			this->m_value = newValue;
 
-		return (oldValue != this->m_value);
+			return (oldValue != this->m_value);
+		}
+		catch (const std::exception&)
+		{
+			return false;
+		}
 	}
 
 	template<>
