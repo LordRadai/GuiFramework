@@ -162,6 +162,9 @@
     <ClInclude Include="GuiFramework\Window\Control\GUIDropDownList.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="GuiFramework\Callback\GUICallbackObjectBase.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="GuiFramework\System\GUIObject.cpp">
@@ -266,5 +269,8 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+    <None Include="GuiFramework\Callback\TGUICallbackObject.inl">
+      <Filter>Header Files</Filter>
+    </None>
   </ItemGroup>
 </Project>

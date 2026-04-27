@@ -198,6 +198,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="GuiFramework\Callback\GUICallbackObjectBase.h" />
     <ClInclude Include="GuiFramework\Globals.h" />
     <ClInclude Include="GuiFramework\GuiFramework.h" />
     <ClInclude Include="GuiFramework\Render\GUIRenderContext.h" />
@@ -284,6 +285,7 @@
     <ClCompile Include="GuiFramework\Window\Tweaker\GUITweakerItem.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="GuiFramework\Callback\TGUICallbackObject.inl" />
     <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

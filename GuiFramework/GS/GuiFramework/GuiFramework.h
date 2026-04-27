@@ -15,6 +15,8 @@
 #include "System/GUISystem.h"
 #include "System/GUIFont.h"
 
+#include "Callback/TGUICallbackObject.inl"
+
 #include "Window/GUIWindowBase.h"
 #include "Window/GUIWidget.h"
 #include "Window/GUIWindowManager.h"
