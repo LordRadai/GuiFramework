@@ -39,10 +39,15 @@ namespace GuiFramework
 
 		virtual dl_bool ValueToString(DLTX::DLString& str) const override
 		{
+			dl_uint64 value = static_cast<dl_uint64>(this->m_value);
+
+			if (this->m_mult != 1.f)
+				value = static_cast<dl_uint64>(this->m_value * this->m_mult);
+
 			if constexpr (std::is_unsigned_v<T>)
-				DLTX::DLFormat::Format(&str, L"%llu", (dl_uint64)this->m_value);
+				DLTX::DLFormat::Format(&str, L"%llu", value);
 			else
-				DLTX::DLFormat::Format(&str, L"%lld", (dl_int64)this->m_value);
+				DLTX::DLFormat::Format(&str, L"%lld", static_cast<dl_int64>(value));
 
 			return true;
 		}
@@ -218,7 +223,12 @@ namespace GuiFramework
 	inline dl_bool TGUIRangeData<dl_float64>::ValueToString(DLTX::DLString& str) const
 	{
 		dl_float64 value = this->m_value;
+
+		if (this->m_mult != 1.f)
+			value = this->m_value * this->m_mult;
+
 		DLTX::DLFormat::Format(&str, L"%.4f", value);
+
 		return true;
 	}
 }
