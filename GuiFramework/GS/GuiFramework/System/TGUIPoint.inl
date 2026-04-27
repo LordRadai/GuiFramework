@@ -22,5 +22,5 @@ namespace GuiFramework
         }
     };
 
-    typedef TGUI_POINT<int> Point2D;
+    typedef TGUI_POINT<dl_int> Point2D;
 }

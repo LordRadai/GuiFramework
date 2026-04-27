@@ -219,6 +219,8 @@
     <ClInclude Include="GuiFramework\System\TGUIStringStorage.inl" />
     <ClInclude Include="GuiFramework\Util\GUITimer.h" />
     <ClInclude Include="GuiFramework\Window\Control\GUIEditBox.h" />
+    <ClInclude Include="GuiFramework\Window\Control\GUIListBox.h" />
+    <ClInclude Include="GuiFramework\Window\Control\GUIListBoxItem.h" />
     <ClInclude Include="GuiFramework\Window\Control\GUINumericEditBox.h" />
     <ClInclude Include="GuiFramework\Window\Control\GUIRangeDataBase.h" />
     <ClInclude Include="GuiFramework\Window\Control\TGUIRangeData.inl" />
@@ -252,6 +254,8 @@
     <ClCompile Include="GuiFramework\System\GUISystem.cpp" />
     <ClCompile Include="GuiFramework\Util\GUITimer.cpp" />
     <ClCompile Include="GuiFramework\Window\Control\GUIEditBox.cpp" />
+    <ClCompile Include="GuiFramework\Window\Control\GUIListBox.cpp" />
+    <ClCompile Include="GuiFramework\Window\Control\GUIListBoxItem.cpp" />
     <ClCompile Include="GuiFramework\Window\Control\GUINumericEditBox.cpp" />
     <ClCompile Include="GuiFramework\Window\Control\GUIRangeDataBase.cpp" />
     <ClCompile Include="GuiFramework\Window\PopupMenu\GUIPopupMenu.cpp" />

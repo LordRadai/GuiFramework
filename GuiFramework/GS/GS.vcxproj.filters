@@ -153,6 +153,12 @@
     <ClInclude Include="GuiFramework\Window\Control\TGUIRangeData.inl">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="GuiFramework\Window\Control\GUIListBox.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="GuiFramework\Window\Control\GUIListBoxItem.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="GuiFramework\System\GUIObject.cpp">
@@ -243,6 +249,12 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="GuiFramework\Window\Control\GUIRangeDataBase.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="GuiFramework\Window\Control\GUIListBox.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="GuiFramework\Window\Control\GUIListBoxItem.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

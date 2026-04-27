@@ -16,13 +16,30 @@ namespace GuiFramework
 
         static void* operator new(dl_size size)
         {
-            return DLKR::AllocateAligned(size, 8, GUI_ALLOCATOR);
+            return DLKR::AllocateAligned(size, 4, GUI_ALLOCATOR);
         }
 
         static void operator delete(void* p)
         {
             DLKR::Free(p, GUI_ALLOCATOR);
         }
+    };
+
+    struct _GUI_SCROLL_INFO
+    {
+		dl_uint iVar0;
+		dl_uint iVar4;
+		dl_uint iVar8;
+
+        static void* operator new(dl_size size)
+        {
+            return DLKR::AllocateAligned(size, 4, GUI_ALLOCATOR);
+        }
+
+        static void operator delete(void* p)
+        {
+            DLKR::Free(p, GUI_ALLOCATOR);
+		}
     };
 
     struct _GUI_CREATE_WINDOW
@@ -33,7 +50,7 @@ namespace GuiFramework
 
         static void* operator new(size_t size)
         {
-            return DLKR::AllocateAligned(size, 8, GUI_ALLOCATOR);
+            return DLKR::AllocateAligned(size, 4, GUI_ALLOCATOR);
         }
 
         static void operator delete(void* block)
@@ -51,7 +68,7 @@ namespace GuiFramework
 
         static void* operator new(size_t size)
         {
-            return DLKR::AllocateAligned(size, 8, GUI_ALLOCATOR);
+            return DLKR::AllocateAligned(size, 4, GUI_ALLOCATOR);
         }
 
         static void operator delete(void* block)
@@ -71,7 +88,7 @@ namespace GuiFramework
 
         static void* operator new(dl_size size)
         {
-            return DLKR::AllocateAligned(size, 8, GUI_ALLOCATOR);
+            return DLKR::AllocateAligned(size, 4, GUI_ALLOCATOR);
         }
 
         static void operator delete(void* p)

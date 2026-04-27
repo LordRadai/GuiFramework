@@ -5,6 +5,14 @@ namespace GuiFramework
 {
 	class GUIScrollBarUtil;
 
+	enum GUI_SCROLLBAR_TYPE : dl_uint
+	{
+		GUI_SCROLLBAR_TYPE_HORZ,
+		GUI_SCROLLBAR_TYPE_VERT,
+
+		GUI_SCROLLBAR_TYPE_MAX
+	};
+
 	class GUIWidget : public GUIWindowBase
 	{
 		typedef GUIWidget ThisClass;
