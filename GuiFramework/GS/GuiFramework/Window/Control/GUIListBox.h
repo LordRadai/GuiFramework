@@ -27,8 +27,9 @@ namespace GuiFramework
 		virtual dl_uint OnPreCreate() override;
 		virtual void OnRender(GraphicsContext& gc) const override;
 		virtual dl_uint OnVScroll(_GUI_SCROLLBAR_EVENT event, const _GUI_SCROLL_POS& pos) override;
-		virtual void OnItemSelected() {}
+		virtual void OnItemSelected(dl_int idx) {}
 
+		typedef void(__fastcall* OnItemSelected_t)(GUIListBox*, dl_int);
 	protected:
 		DLUT::DLVector<TGUIObjectPtr<GUIListBoxItem>> m_items;
 		dl_int m_iVar130;
