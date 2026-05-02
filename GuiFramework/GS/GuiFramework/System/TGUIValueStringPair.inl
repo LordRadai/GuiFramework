@@ -8,9 +8,9 @@ namespace GuiFramework
 	{
 	public:
 		TGUI_VALUE_STRING_PAIR() : m_value(), m_string() {}
-		TGUI_VALUE_STRING_PAIR(const T& value, const TGUI_SHARED_STRING& str) : m_value(value), m_string(str) {}
+		TGUI_VALUE_STRING_PAIR(const T& value, const TGUISharedString<T>& str) : m_value(value), m_string(str) {}
 
-		operator=(const TGUI_VALUE_STRING_PAIR& other)
+		inline TGUI_VALUE_STRING_PAIR<T>& operator=(const TGUI_VALUE_STRING_PAIR<T>& other)
 		{
 			m_string = other.m_string;
 			m_value = other.m_value;
