@@ -32,7 +32,7 @@ namespace GuiFramework
 		return CALL(CreateRootWindow_t, 0x52a9f0, this);
 	}
 
-	void GUISystem::MeasureTextExtent(Point2D* out)
+	void GUISystem::MeasureTextExtent(Point2D& out)
 	{
 		CALL(MeasureTextExtent_t, 0x52aa70, this, out);
 	}
@@ -42,7 +42,7 @@ namespace GuiFramework
 		CALL(SetClipboard_t, 0x52b4e0, this, text);
 	}
 
-	dl_bool GUISystem::GetClipboard(DLTX::DLString* out)
+	dl_bool GUISystem::GetClipboard(DLTX::DLString& out)
 	{
 		return CALL(GetClipboard_t, 0x52b570, this, out);
 	}

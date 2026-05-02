@@ -7,6 +7,10 @@ namespace GuiFramework
 	typedef void(__fastcall* Constructor_Create_t)(GUIListBox*, GUIWindowBase*, TGUISharedString<dl_wchar>, const _GUI_CREATE_WINDOW&);
 	typedef void(__fastcall* Constructor_Full_t)(GUIListBox*, GUIWindowBase*, TGUISharedString<dl_wchar>, dl_uint, dl_uint);
 
+	typedef void(__fastcall* SetCurSel_t)(GUIListBox*, dl_int, dl_int);
+	typedef void(__fastcall* CenteringItem_t)(GUIListBox*, dl_int);
+	typedef GUIListBoxItem*(__fastcall* AddItem_t)(GUIListBox*, TGUISharedString<dl_wchar>, dl_int, dl_float32);
+
 	GUIListBox::GUIListBox(TGUISharedString<dl_wchar> label)
 	{
 		CALL(Constructor_t, 0x5b9e60, this, label);
@@ -85,5 +89,20 @@ namespace GuiFramework
 	dl_uint GUIListBox::OnVScroll(_GUI_SCROLLBAR_EVENT event, const _GUI_SCROLL_POS& pos)
 	{
 		return CALL(OnVScroll_t, 0x5bb600, this, event, pos);
+	}
+
+	void GUIListBox::SetCurSel(dl_int idx, dl_int param_2)
+	{
+		CALL(SetCurSel_t, 0x5ba9e0, this, idx, param_2);
+	}
+
+	void GUIListBox::CenteringItem(dl_int idx)
+	{
+		CALL(CenteringItem_t, 0x5baad0, this, idx);
+	}
+
+	GUIListBoxItem* GUIListBox::AddItem(TGUISharedString<dl_wchar> label, dl_int param_2, dl_float32 param_3)
+	{
+		return CALL(AddItem_t, 0x5ba220, this, label, param_2, param_3);
 	}
 }

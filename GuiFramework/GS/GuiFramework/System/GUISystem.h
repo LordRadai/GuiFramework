@@ -25,10 +25,10 @@ namespace GuiFramework
 		virtual dl_int PopKeyStroke() { return 0; }
 		virtual GUIRootWindow* CreateRootWindow();
 		virtual dl_int BeginFont() { return 0; }
-		virtual void MeasureTextExtent(Point2D* out);
+		virtual void MeasureTextExtent(Point2D& out);
 		virtual void EndFont() {}
 		virtual void SetClipboard(const dl_wchar* text);
-		virtual dl_bool GetClipboard(DLTX::DLString* out);
+		virtual dl_bool GetClipboard(DLTX::DLString& out);
 		virtual dl_uint GetUserIntNum() const { return 0; }
 		virtual dl_uint GetUserFloatNum() const { return 0; }
 		virtual dl_uint GetUserColorNum() const { return 0; }
@@ -51,10 +51,10 @@ namespace GuiFramework
 
 		typedef void(__fastcall* Finalize_t)(GUISystem*);
 		typedef TGUI_RECT<int>(__fastcall* GetMouseInfo_t)(GUISystem*);
-		typedef GUIRootWindow* (__fastcall* CreateRootWindow_t)(GUISystem*);
-		typedef void(__fastcall* MeasureTextExtent_t)(GUISystem*, TGUI_POINT<int>*);
+		typedef GUIRootWindow*(__fastcall* CreateRootWindow_t)(GUISystem*);
+		typedef void(__fastcall* MeasureTextExtent_t)(GUISystem*, TGUI_POINT<dl_int>&);
 		typedef void(__fastcall* SetClipboard_t)(GUISystem*, const dl_wchar*);
-		typedef dl_bool(__fastcall* GetClipboard_t)(GUISystem*, DLTX::DLString*);
+		typedef dl_bool(__fastcall* GetClipboard_t)(GUISystem*, DLTX::DLString&);
 	protected:
 		dl_int m_isDrawing;
 		TGUIObjectPtr<GUIWindowManager> m_pGUIWindowManager;

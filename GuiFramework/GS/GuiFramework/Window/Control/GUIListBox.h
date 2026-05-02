@@ -29,6 +29,11 @@ namespace GuiFramework
 		virtual dl_uint OnVScroll(_GUI_SCROLLBAR_EVENT event, const _GUI_SCROLL_POS& pos) override;
 		virtual void OnItemSelected(dl_int idx) {}
 
+		GUIListBoxItem* AddItem(TGUISharedString<dl_wchar> label, dl_int param_2, dl_float32 param_3);
+
+		void SetCurSel(dl_int idx, dl_int param_2);
+		void CenteringItem(dl_int idx);
+
 		typedef void(__fastcall* OnItemSelected_t)(GUIListBox*, dl_int);
 	protected:
 		DLUT::DLVector<TGUIObjectPtr<GUIListBoxItem>> m_items;
