@@ -227,8 +227,10 @@
     <ClInclude Include="GuiFramework\Window\Control\GUIListBox.h" />
     <ClInclude Include="GuiFramework\Window\Control\GUIListBoxItem.h" />
     <ClInclude Include="GuiFramework\Window\Control\GUINumericEditBox.h" />
+    <ClInclude Include="GuiFramework\Window\Control\GUIPropertyLabel.h" />
     <ClInclude Include="GuiFramework\Window\Control\GUIRangeDataBase.h" />
     <ClInclude Include="GuiFramework\Window\Control\GUISlider.h" />
+    <ClInclude Include="GuiFramework\Window\Control\TGUIPropertyLabel.inl" />
     <ClInclude Include="GuiFramework\Window\Control\TGUIRangeData.inl" />
     <ClInclude Include="GuiFramework\Window\PopupMenu\GUIPopupMenu.h" />
     <ClInclude Include="GuiFramework\Window\PopupMenu\GUIPopupMenuItem.h" />
@@ -266,6 +268,7 @@
     <ClCompile Include="GuiFramework\Window\Control\GUIListBox.cpp" />
     <ClCompile Include="GuiFramework\Window\Control\GUIListBoxItem.cpp" />
     <ClCompile Include="GuiFramework\Window\Control\GUINumericEditBox.cpp" />
+    <ClCompile Include="GuiFramework\Window\Control\GUIPropertyLabel.cpp" />
     <ClCompile Include="GuiFramework\Window\Control\GUIRangeDataBase.cpp" />
     <ClCompile Include="GuiFramework\Window\Control\GUISlider.cpp" />
     <ClCompile Include="GuiFramework\Window\PopupMenu\GUIPopupMenu.cpp" />
