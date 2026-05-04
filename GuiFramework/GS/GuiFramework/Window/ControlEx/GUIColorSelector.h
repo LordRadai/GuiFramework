@@ -51,13 +51,13 @@ namespace GuiFramework
 		DLMT::DL_VECTOR3 m_hsv;
 		DLMT::DL_VECTOR3 m_rgb;
 		dl_float32 m_alpha;
-		dl_float32 m_fVar1d4;
+		dl_float32 m_fVar1D4;
 		dl_uint8 m_lumLimit;
 		dl_uint8 m_alphaLimit;
-		dl_uint8 m_iVar1da;
+		dl_uint8 m_iVar1DA;
 		dl_int m_colorDisplayMode;
 		dl_int m_displayDataType;
 		dl_int m_alphaDisplayDataType;
-		dl_int m_iVar1e8;
+		dl_int m_iVar1E8;
 	};
 }
