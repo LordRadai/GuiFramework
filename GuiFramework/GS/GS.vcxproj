@@ -226,12 +226,12 @@
     <ClInclude Include="GuiFramework\Window\Control\GUIEditBox.h" />
     <ClInclude Include="GuiFramework\Window\Control\GUIListBox.h" />
     <ClInclude Include="GuiFramework\Window\Control\GUIListBoxItem.h" />
-    <ClInclude Include="GuiFramework\Window\Control\GUINumericEditBox.h" />
+    <ClInclude Include="GuiFramework\Window\ControlEx\GUINumericEditBox.h" />
     <ClInclude Include="GuiFramework\Window\Control\GUIPropertyLabel.h" />
     <ClInclude Include="GuiFramework\Window\Control\GUIRangeDataBase.h" />
     <ClInclude Include="GuiFramework\Window\Control\GUISlider.h" />
-    <ClInclude Include="GuiFramework\Window\Control\TGUIPropertyLabel.inl" />
-    <ClInclude Include="GuiFramework\Window\Control\TGUIRangeData.inl" />
+    <ClInclude Include="GuiFramework\Window\ControlEx\TGUIPropertyLabel.inl" />
+    <ClInclude Include="GuiFramework\Window\ControlEx\TGUIRangeData.inl" />
     <ClInclude Include="GuiFramework\Window\PopupMenu\GUIPopupMenu.h" />
     <ClInclude Include="GuiFramework\Window\PopupMenu\GUIPopupMenuItem.h" />
     <ClInclude Include="GuiFramework\Window\PopupMenu\GUIPopupMenuNode.h" />
@@ -240,7 +240,7 @@
     <ClInclude Include="GuiFramework\Window\Util\GUITextEditorUtil.h" />
     <ClInclude Include="GuiFramework\Window\Control\GUIAutoVLayout.h" />
     <ClInclude Include="GuiFramework\Window\Control\GUIAutoVLayoutScroll.h" />
-    <ClInclude Include="GuiFramework\Window\Control\GUIButton.h" />
+    <ClInclude Include="GuiFramework\Window\ControlEx\GUIButton.h" />
     <ClInclude Include="GuiFramework\Window\Control\GUIButtonBase.h" />
     <ClInclude Include="GuiFramework\Window\Control\GUIRootWindow.h" />
     <ClInclude Include="GuiFramework\Window\GUIWidget.h" />
@@ -267,7 +267,7 @@
     <ClCompile Include="GuiFramework\Window\Control\GUIEditBox.cpp" />
     <ClCompile Include="GuiFramework\Window\Control\GUIListBox.cpp" />
     <ClCompile Include="GuiFramework\Window\Control\GUIListBoxItem.cpp" />
-    <ClCompile Include="GuiFramework\Window\Control\GUINumericEditBox.cpp" />
+    <ClCompile Include="GuiFramework\Window\ControlEx\GUINumericEditBox.cpp" />
     <ClCompile Include="GuiFramework\Window\Control\GUIPropertyLabel.cpp" />
     <ClCompile Include="GuiFramework\Window\Control\GUIRangeDataBase.cpp" />
     <ClCompile Include="GuiFramework\Window\Control\GUISlider.cpp" />
@@ -279,7 +279,7 @@
     <ClCompile Include="GuiFramework\Window\Util\GUITextEditorUtil.cpp" />
     <ClCompile Include="GuiFramework\Window\Control\GUIAutoVLayout.cpp" />
     <ClCompile Include="GuiFramework\Window\Control\GUIAutoVLayoutScroll.cpp" />
-    <ClCompile Include="GuiFramework\Window\Control\GUIButton.cpp" />
+    <ClCompile Include="GuiFramework\Window\ControlEx\GUIButton.cpp" />
     <ClCompile Include="GuiFramework\Window\Control\GUIButtonBase.cpp" />
     <ClCompile Include="GuiFramework\Window\Control\GUIRootWindow.cpp" />
     <ClCompile Include="GuiFramework\Window\GUIWidget.cpp" />

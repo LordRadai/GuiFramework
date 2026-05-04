@@ -1,5 +1,5 @@
 #pragma once
-#include "GUIPropertyLabel.h"
+#include "GuiFramework/Window/Control/GUIPropertyLabel.h"
 
 namespace GuiFramework
 {

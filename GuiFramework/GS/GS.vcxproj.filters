@@ -114,7 +114,7 @@
     <ClInclude Include="GuiFramework\Window\Control\GUIButtonBase.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="GuiFramework\Window\Control\GUIButton.h">
+    <ClInclude Include="GuiFramework\Window\ControlEx\GUIButton.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="GuiFramework\Window\Util\GUITextEditorUtil.h">
@@ -144,13 +144,13 @@
     <ClInclude Include="GuiFramework\Window\Control\GUIEditBox.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="GuiFramework\Window\Control\GUINumericEditBox.h">
+    <ClInclude Include="GuiFramework\Window\ControlEx\GUINumericEditBox.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="GuiFramework\Window\Control\GUIRangeDataBase.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="GuiFramework\Window\Control\TGUIRangeData.inl">
+    <ClInclude Include="GuiFramework\Window\ControlEx\TGUIRangeData.inl">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="GuiFramework\Window\Control\GUIListBox.h">
@@ -180,7 +180,7 @@
     <ClInclude Include="GuiFramework\Window\Control\GUIPropertyLabel.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="GuiFramework\Window\Control\TGUIPropertyLabel.inl">
+    <ClInclude Include="GuiFramework\Window\ControlEx\TGUIPropertyLabel.inl">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
@@ -242,7 +242,7 @@
     <ClCompile Include="GuiFramework\Window\Control\GUIButtonBase.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="GuiFramework\Window\Control\GUIButton.cpp">
+    <ClCompile Include="GuiFramework\Window\ControlEx\GUIButton.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="GuiFramework\Window\Util\GUITextEditorUtil.cpp">
@@ -269,7 +269,7 @@
     <ClCompile Include="GuiFramework\Window\Control\GUIEditBox.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="GuiFramework\Window\Control\GUINumericEditBox.cpp">
+    <ClCompile Include="GuiFramework\Window\ControlEx\GUINumericEditBox.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="GuiFramework\Window\Control\GUIRangeDataBase.cpp">

@@ -1,5 +1,5 @@
 #pragma once
-#include "GUIEditBox.h"
+#include "GuiFramework/Window/Control/GUIEditBox.h"
 #include "GuiFramework/Window/Control/GUIRangeDataBase.h"
 
 namespace GuiFramework
