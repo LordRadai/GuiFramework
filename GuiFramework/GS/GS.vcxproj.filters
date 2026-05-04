@@ -189,6 +189,9 @@
     <ClInclude Include="GuiFramework\Window\Control\GUIListView.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="GuiFramework\Window\ControlEx\GUIColorSelector.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="GuiFramework\System\GUIObject.cpp">
@@ -306,6 +309,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="GuiFramework\Window\Control\GUIListView.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="GuiFramework\Window\ControlEx\GUIColorSelector.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
