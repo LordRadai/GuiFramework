@@ -227,6 +227,8 @@
     <ClInclude Include="GuiFramework\Window\Control\GUIListBox.h" />
     <ClInclude Include="GuiFramework\Window\Control\GUIListBoxItem.h" />
     <ClInclude Include="GuiFramework\Window\ControlEx\GUINumericEditBox.h" />
+    <ClInclude Include="GuiFramework\Window\Control\GUIListView.h" />
+    <ClInclude Include="GuiFramework\Window\Control\GUIListViewItem.h" />
     <ClInclude Include="GuiFramework\Window\Control\GUIPropertyLabel.h" />
     <ClInclude Include="GuiFramework\Window\Control\GUIRangeDataBase.h" />
     <ClInclude Include="GuiFramework\Window\Control\GUISlider.h" />
@@ -268,6 +270,8 @@
     <ClCompile Include="GuiFramework\Window\Control\GUIListBox.cpp" />
     <ClCompile Include="GuiFramework\Window\Control\GUIListBoxItem.cpp" />
     <ClCompile Include="GuiFramework\Window\ControlEx\GUINumericEditBox.cpp" />
+    <ClCompile Include="GuiFramework\Window\Control\GUIListView.cpp" />
+    <ClCompile Include="GuiFramework\Window\Control\GUIListViewItem.cpp" />
     <ClCompile Include="GuiFramework\Window\Control\GUIPropertyLabel.cpp" />
     <ClCompile Include="GuiFramework\Window\Control\GUIRangeDataBase.cpp" />
     <ClCompile Include="GuiFramework\Window\Control\GUISlider.cpp" />
