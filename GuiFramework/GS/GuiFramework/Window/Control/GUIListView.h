@@ -51,6 +51,9 @@ namespace GuiFramework
 		virtual void OnItemClick(dl_int itemIndex) {}
 		virtual void OnItemRClick(dl_int itemIndex) {}
 
+		typedef void(__fastcall* OnItemDblClk_t)(GUIListView*, dl_int);
+		typedef void(__fastcall* OnItemClick_t)(GUIListView*, dl_int);
+		typedef void(__fastcall* OnItemRClick_t)(GUIListView*, dl_int);
 	protected:
 		DLUT::DLVector<GUIListViewItem*> m_items;
 		DLUT::DLVector<Column> m_columns;
