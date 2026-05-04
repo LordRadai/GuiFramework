@@ -168,7 +168,7 @@ namespace GuiFramework
         virtual dl_uint OnRestored() { return false; }
         virtual dl_uint OnUpdate(float fDeltaTime) { return false; }
         virtual dl_uint OnCreate() { return false; }
-        virtual dl_uint OnPreCreate() { return false; }
+        virtual dl_uint OnPreCreate(const _GUI_CREATE_WINDOW& createParams) { return false; }
         virtual dl_uint OnClose() { return false; }
         virtual void OnRender(GraphicsContext& gc) const;
         virtual void OnNcRender(GraphicsContext& gc) const;
@@ -228,7 +228,7 @@ namespace GuiFramework
         typedef dl_uint(__fastcall* OnRestored_t)(GUIWindowBase*);
         typedef dl_uint(__fastcall* OnUpdate_t)(GUIWindowBase*, float);
         typedef dl_uint(__fastcall* OnCreate_t)(GUIWindowBase*);
-        typedef dl_uint(__fastcall* OnPreCreate_t)(GUIWindowBase*);
+        typedef dl_uint(__fastcall* OnPreCreate_t)(GUIWindowBase*, const _GUI_CREATE_WINDOW&);
         typedef dl_uint(__fastcall* OnClose_t)(GUIWindowBase*);
         typedef void(__fastcall* OnRender_t)(const GUIWindowBase*, GraphicsContext&);
         typedef void(__fastcall* OnNcRender_t)(const GUIWindowBase*, GraphicsContext&);

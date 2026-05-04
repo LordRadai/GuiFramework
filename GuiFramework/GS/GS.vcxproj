@@ -228,6 +228,7 @@
     <ClInclude Include="GuiFramework\Window\Control\GUIListBoxItem.h" />
     <ClInclude Include="GuiFramework\Window\Control\GUINumericEditBox.h" />
     <ClInclude Include="GuiFramework\Window\Control\GUIRangeDataBase.h" />
+    <ClInclude Include="GuiFramework\Window\Control\GUISlider.h" />
     <ClInclude Include="GuiFramework\Window\Control\TGUIRangeData.inl" />
     <ClInclude Include="GuiFramework\Window\PopupMenu\GUIPopupMenu.h" />
     <ClInclude Include="GuiFramework\Window\PopupMenu\GUIPopupMenuItem.h" />
@@ -266,6 +267,7 @@
     <ClCompile Include="GuiFramework\Window\Control\GUIListBoxItem.cpp" />
     <ClCompile Include="GuiFramework\Window\Control\GUINumericEditBox.cpp" />
     <ClCompile Include="GuiFramework\Window\Control\GUIRangeDataBase.cpp" />
+    <ClCompile Include="GuiFramework\Window\Control\GUISlider.cpp" />
     <ClCompile Include="GuiFramework\Window\PopupMenu\GUIPopupMenu.cpp" />
     <ClCompile Include="GuiFramework\Window\PopupMenu\GUIPopupMenuItem.cpp" />
     <ClCompile Include="GuiFramework\Window\PopupMenu\GUIPopupMenuNode.cpp" />
