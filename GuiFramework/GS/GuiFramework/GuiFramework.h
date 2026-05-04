@@ -34,6 +34,7 @@
 
 #include "Window/ControlEx/GUIButton.h"
 #include "Window/ControlEx/GUINumericEditBox.h"
+#include "Window/ControlEx/GUIYawPitchControl.h"
 #include "Window/ControlEx/TGUIRangeData.inl"
 #include "Window/ControlEx/TGUIPropertyLabel.inl"
 
