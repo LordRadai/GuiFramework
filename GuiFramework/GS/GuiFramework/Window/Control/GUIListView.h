@@ -51,6 +51,9 @@ namespace GuiFramework
 		virtual void OnItemClick(dl_int itemIndex) {}
 		virtual void OnItemRClick(dl_int itemIndex) {}
 
+		GUIListViewItem* AddItem(TGUISharedString<dl_wchar> label, dl_uint id);
+		dl_bool AddColumn(TGUISharedString<dl_wchar> label, dl_uint16 id, dl_uint size, dl_int param_4);
+
 		typedef void(__fastcall* OnItemDblClk_t)(GUIListView*, dl_int);
 		typedef void(__fastcall* OnItemClick_t)(GUIListView*, dl_int);
 		typedef void(__fastcall* OnItemRClick_t)(GUIListView*, dl_int);

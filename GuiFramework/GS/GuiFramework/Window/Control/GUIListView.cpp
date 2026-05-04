@@ -7,6 +7,9 @@ namespace GuiFramework
 	typedef void(__fastcall* ConstructorWithCreateParams_t)(GUIListView*, GUIWindowBase*, TGUISharedString<dl_wchar>, const _GUI_CREATE_WINDOW&);
 	typedef void(__fastcall* ConstructorWithFlags_t)(GUIListView*, GUIWindowBase*, TGUISharedString<dl_wchar>, dl_uint, dl_uint);
 
+	typedef GUIListViewItem*(__fastcall* AddItem_t)(GUIListView*, TGUISharedString<dl_wchar>, dl_uint);
+	typedef dl_bool(__fastcall* AddColumn_t)(GUIListView*, TGUISharedString<dl_wchar>, dl_uint16, dl_uint, dl_int);
+
 	GUIListView::GUIListView(TGUISharedString<dl_wchar> label)
 	{
 		CALL(Constructor_t, 0x5ca3b0, this, label);
@@ -95,5 +98,15 @@ namespace GuiFramework
 	void GUIListView::OnRender(GraphicsContext& gc) const
 	{
 		CALL(OnRender_t, 0x5cc3f0, this, gc);
+	}
+
+	GUIListViewItem* GUIListView::AddItem(TGUISharedString<dl_wchar> label, dl_uint id)
+	{
+		return CALL(AddItem_t, 0x5ca7e0, this, label, id);
+	}
+
+	dl_bool GUIListView::AddColumn(TGUISharedString<dl_wchar> label, dl_uint16 id, dl_uint size, dl_int param_4)
+	{
+		return CALL(AddColumn_t, 0x5ca970, this, label, id, size, param_4);
 	}
 }
