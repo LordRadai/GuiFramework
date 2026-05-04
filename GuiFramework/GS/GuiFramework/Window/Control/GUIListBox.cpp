@@ -76,9 +76,9 @@ namespace GuiFramework
 		return CALL(OnCreate_t, 0x5bad50, this);
 	}
 
-	dl_uint GUIListBox::OnPreCreate()
+	dl_uint GUIListBox::OnPreCreate(const _GUI_CREATE_WINDOW& createParams)
 	{
-		return CALL(OnPreCreate_t, 0x5badc0, this);
+		return CALL(OnPreCreate_t, 0x5badc0, this, createParams);
 	}
 
 	void GUIListBox::OnRender(GraphicsContext& gc) const

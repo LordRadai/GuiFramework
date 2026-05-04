@@ -97,9 +97,9 @@ namespace GuiFramework
 		return CALL(OnCreate_t, 0x57cb70, this);
 	}
 
-	dl_uint GUIWidget::OnPreCreate()
+	dl_uint GUIWidget::OnPreCreate(const _GUI_CREATE_WINDOW& createParams)
 	{
-		return CALL(OnPreCreate_t, 0x57cc40, this);
+		return CALL(OnPreCreate_t, 0x57cc40, this, createParams);
 	}
 
 	dl_uint GUIWidget::OnClose()

@@ -24,7 +24,7 @@ namespace GuiFramework
 		virtual dl_uint OnVirtualInput(const VirtualInput& input) override;
 		virtual dl_uint OnSize() override;
 		virtual dl_uint OnCreate() override;
-		virtual dl_uint OnPreCreate() override;
+		virtual dl_uint OnPreCreate(const _GUI_CREATE_WINDOW& createParams) override;
 		virtual void OnRender(GraphicsContext& gc) const override;
 		virtual dl_uint OnVScroll(_GUI_SCROLLBAR_EVENT event, const _GUI_SCROLL_POS& pos) override;
 		virtual void OnItemSelected(dl_int idx) {}

@@ -48,7 +48,7 @@ namespace GuiFramework
 		virtual GUI_NCHIT OnNcHitTest(const Point2D& pt) override;
 		virtual dl_uint OnMove(dl_pointer param_2, dl_pointer param_3) override { return true; }
 		virtual dl_uint OnCreate() override;
-		virtual dl_uint OnPreCreate() override;
+		virtual dl_uint OnPreCreate(const _GUI_CREATE_WINDOW& createParams) override;
 		virtual dl_uint OnClose() override;
 		virtual void OnRender(GraphicsContext& gc) const override;
 		virtual void OnNcRender(GraphicsContext& gc) const override;
