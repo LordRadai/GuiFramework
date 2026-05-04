@@ -16,5 +16,7 @@ namespace GuiFramework
 		virtual void OnDelete() override;
 		virtual void OnRender(GraphicsContext& gc) const override;
 		virtual dl_bool GetValueString(DLTX::DLString& str) const { return false; }
+
+		typedef dl_bool(__fastcall* GetValueString_t)(const ThisClass*, DLTX::DLString&);
 	};
 }

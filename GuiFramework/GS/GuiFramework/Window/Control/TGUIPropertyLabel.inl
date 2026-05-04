@@ -18,7 +18,7 @@ namespace GuiFramework
 	{
 		static constexpr const dl_wchar* TrueString = L"TRUE";
 		static constexpr const dl_wchar* FalseString = L"FALSE";
-	};;
+	};
 
 	template<typename T, typename Formatter = GUIPropertyFormatter>
 	class TGUIPropertyLabel : public GUIPropertyLabel
