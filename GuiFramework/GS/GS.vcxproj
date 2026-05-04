@@ -220,6 +220,7 @@
     <ClInclude Include="GuiFramework\System\TGUIStringStorage.inl" />
     <ClInclude Include="GuiFramework\System\TGUIValueStringPair.inl" />
     <ClInclude Include="GuiFramework\Util\GUITimer.h" />
+    <ClInclude Include="GuiFramework\Window\Control\GUICheckBox.h" />
     <ClInclude Include="GuiFramework\Window\Control\GUIComboBox.h" />
     <ClInclude Include="GuiFramework\Window\Control\GUIDropDownList.h" />
     <ClInclude Include="GuiFramework\Window\Control\GUIEditBox.h" />
@@ -257,6 +258,7 @@
     <ClCompile Include="GuiFramework\System\GUIObject.cpp" />
     <ClCompile Include="GuiFramework\System\GUISystem.cpp" />
     <ClCompile Include="GuiFramework\Util\GUITimer.cpp" />
+    <ClCompile Include="GuiFramework\Window\Control\GUICheckBox.cpp" />
     <ClCompile Include="GuiFramework\Window\Control\GUIComboBox.cpp" />
     <ClCompile Include="GuiFramework\Window\Control\GUIDropDownList.cpp" />
     <ClCompile Include="GuiFramework\Window\Control\GUIEditBox.cpp" />
