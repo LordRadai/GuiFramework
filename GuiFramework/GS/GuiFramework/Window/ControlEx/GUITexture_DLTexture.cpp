@@ -39,11 +39,6 @@ namespace GuiFramework
 		return this->m_pTexture ? this->m_pTexture->GetHeight() : 0;
 	}
 
-	dl_uint GUITexture_DLTexture::GetDepth()
-	{
-		return 0;
-	}
-
 	dl_int GUITexture_DLTexture::GetTextureType()
 	{
 		dl_int dlType = this->m_pTexture ? this->m_pTexture->GetType() : -1;

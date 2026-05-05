@@ -14,7 +14,6 @@ namespace GuiFramework
 		virtual void OnDelete() override;
 		virtual dl_uint GetWidth() override;
 		virtual dl_uint GetHeight() override;
-		virtual dl_uint GetDepth() override;
 		virtual dl_int GetTextureType() override;
 		virtual dl_int GetFormat() override;
 		virtual dl_uint GetMipMapLevelNum() override;
