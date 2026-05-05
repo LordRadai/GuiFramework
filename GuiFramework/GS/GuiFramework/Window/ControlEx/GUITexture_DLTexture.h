@@ -10,15 +10,15 @@ namespace GuiFramework
 		GUITexture_DLTexture(DLGR::DLTextureBase* pTexture);
 
 		virtual DLRF::DLRuntimeClass* GetRuntimeClassOfThis() const override;
-		virtual ~GUITexture_DLTexture() {}
+		virtual ~GUITexture_DLTexture();
 		virtual void OnDelete() override;
-		virtual dl_uint GetWidth();
-		virtual dl_uint GetHeight();
-		virtual dl_uint GetDepth();
-		virtual dl_int GetTextureFormat();
-		virtual dl_int GetFormat();
-		virtual dl_int GetMipMapLevel();
-		virtual dl_int Apply(dl_uint mipLevel, GUIRenderImplBase* pRenderImpl);
+		virtual dl_uint GetWidth() override;
+		virtual dl_uint GetHeight() override;
+		virtual dl_uint GetDepth() override;
+		virtual dl_int GetTextureType() override;
+		virtual dl_int GetFormat() override;
+		virtual dl_uint GetMipMapLevelNum() override;
+		virtual dl_bool Apply(dl_uint mipLevel, GUIRenderImplBase* pRenderImpl) override;
 
 	protected:
 		DLGR::DLTextureBase* m_pTexture;

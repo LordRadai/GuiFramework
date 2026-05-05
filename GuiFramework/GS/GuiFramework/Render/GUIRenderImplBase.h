@@ -5,12 +5,12 @@
 #include "GuiFramework/System/TGUIRect.inl"
 #include "GuiFramework/System/TGUIPoint.inl"
 
-#include "GuiFramework/Window/Control/GUITextureBase.h"
-
 #undef DrawText
 
 namespace GuiFramework
 {
+	class GUITextureBase;
+
 	enum GUI_PRIMITIVE_TOPOLOGY : dl_uint
 	{};
 
@@ -109,15 +109,15 @@ namespace GuiFramework
 		typedef dl_bool(__fastcall* GetScissorRect_t)(GUIRenderImplBase*, Rect&);
 		typedef void(__fastcall* SetShader_t)(GUIRenderImplBase*, dl_uint);
 		typedef void(__fastcall* SetBlendMode_t)(GUIRenderImplBase*, dl_uint);
-		typedef dl_bool(__fastcall* GetViewport_t)(GUIRenderImplBase*, GUI_VIEWPORT&);
+		typedef dl_bool(__fastcall* GetViewport_t)(const GUIRenderImplBase*, GUI_VIEWPORT&);
 		typedef void(__fastcall* SetDefaultRenderState_t)(GUIRenderImplBase*);
-		typedef void(__fastcall* SetTexture_t)(GUIRenderImplBase*, GUITextureBase*);
-		typedef void(__fastcall* UnsetTexture_t)(GUIRenderImplBase*);
+		typedef void(__fastcall* SetTexture_t)(GUIRenderImplBase*, dl_uint, GUITextureBase*);
+		typedef void(__fastcall* UnSetTexture_t)(GUIRenderImplBase*, dl_uint);
 		typedef void(__fastcall* SetSamplerState_t)(GUIRenderImplBase*, dl_uint, GUI_SAMPLER_STATE&);
 		typedef dl_bool(__fastcall* DrawPrimitiveUP_t)(GUIRenderImplBase*, GUI_PRIMITIVE_TOPOLOGY, dl_uint, const void*, dl_uint);
 		typedef void(__fastcall* FillWindowBasis_t)(GUIRenderImplBase*, const Rect&, dl_float32);
 		typedef void(__fastcall* UploadShaderParameter_t)(GUIRenderImplBase*, const _SHADER_PARAMETER&);
-		typedef void(__fastcall* SetDLTexture_t)(GUIRenderImplBase*, DLGR::DLTextureBase*);
+		typedef void(__fastcall* SetDLTexture_t)(GUIRenderImplBase*, dl_uint, DLGR::DLTextureBase*);
 
 	protected:
 		GUI_TEXT_ATTRIBUTE m_textAttribute;
