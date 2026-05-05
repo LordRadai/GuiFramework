@@ -201,6 +201,15 @@
     <ClInclude Include="GuiFramework\Window\Control\GUITextureBase.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="GuiFramework\Window\ControlEx\GUITexture_DLTexture.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="GuiFramework\Render\GUIRenderImpl.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="GuiFramework\Render\GUIRenderImplBase.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="GuiFramework\System\GUIObject.cpp">
@@ -330,6 +339,15 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="GuiFramework\Window\ControlEx\GUITextureViewer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="GuiFramework\Window\ControlEx\GUITexture_DLTexture.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="GuiFramework\Render\GUIRenderImpl.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="GuiFramework\Render\GUIRenderImplBase.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

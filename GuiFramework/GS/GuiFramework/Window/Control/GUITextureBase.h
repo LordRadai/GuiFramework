@@ -1,6 +1,6 @@
 #pragma once
 #include "GuiFramework/System/GUIObject.h"
-#include "GuiFramework/Render/GUIRenderContext.h"
+#include "GuiFramework/Render/GUIRenderImplBase.h"
 
 namespace GuiFramework
 {
@@ -16,6 +16,6 @@ namespace GuiFramework
 		virtual dl_int GetTextureFormat() { return -1; }
 		virtual dl_int GetFormat() { return 0x86; }
 		virtual dl_int GetMipMapLevel() { return 0; }
-		virtual dl_int Apply(GraphicsContext& gc) { return 0; }
+		virtual dl_int Apply(dl_uint mipLevel, GUIRenderImplBase* pRenderImpl) { return 0; }
 	};
 }

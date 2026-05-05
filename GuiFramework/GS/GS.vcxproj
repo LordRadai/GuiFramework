@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup Label="ProjectConfigurations">
     <ProjectConfiguration Include="Debug|Win32">
@@ -202,6 +202,8 @@
     <ClInclude Include="GuiFramework\Globals.h" />
     <ClInclude Include="GuiFramework\GuiFramework.h" />
     <ClInclude Include="GuiFramework\Render\GUIRenderContext.h" />
+    <ClInclude Include="GuiFramework\Render\GUIRenderImpl.h" />
+    <ClInclude Include="GuiFramework\Render\GUIRenderImplBase.h" />
     <ClInclude Include="GuiFramework\Signal\GUISignal.h" />
     <ClInclude Include="GuiFramework\Signal\GUISignalDecl.h" />
     <ClInclude Include="GuiFramework\Signal\GUISignalManager.h" />
@@ -222,6 +224,7 @@
     <ClInclude Include="GuiFramework\Util\GUITimer.h" />
     <ClInclude Include="GuiFramework\Window\ControlEx\GUIColorSelector.h" />
     <ClInclude Include="GuiFramework\Window\ControlEx\GUITextureViewer.h" />
+    <ClInclude Include="GuiFramework\Window\ControlEx\GUITexture_DLTexture.h" />
     <ClInclude Include="GuiFramework\Window\ControlEx\GUIYawPitchControl.h" />
     <ClInclude Include="GuiFramework\Window\Control\GUICheckBox.h" />
     <ClInclude Include="GuiFramework\Window\Control\GUIComboBox.h" />
@@ -262,6 +265,8 @@
     <ClInclude Include="GuiFramework\Window\Tweaker\GUITweakerItem.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="GuiFramework\Render\GUIRenderImpl.cpp" />
+    <ClCompile Include="GuiFramework\Render\GUIRenderImplBase.cpp" />
     <ClCompile Include="GuiFramework\System\GUIFont.cpp" />
     <ClCompile Include="GuiFramework\System\GUIMsgReceiver.cpp" />
     <ClCompile Include="GuiFramework\System\GUIObject.cpp" />
@@ -269,6 +274,7 @@
     <ClCompile Include="GuiFramework\Util\GUITimer.cpp" />
     <ClCompile Include="GuiFramework\Window\ControlEx\GUIColorSelector.cpp" />
     <ClCompile Include="GuiFramework\Window\ControlEx\GUITextureViewer.cpp" />
+    <ClCompile Include="GuiFramework\Window\ControlEx\GUITexture_DLTexture.cpp" />
     <ClCompile Include="GuiFramework\Window\ControlEx\GUIYawPitchControl.cpp" />
     <ClCompile Include="GuiFramework\Window\Control\GUICheckBox.cpp" />
     <ClCompile Include="GuiFramework\Window\Control\GUIComboBox.cpp" />
