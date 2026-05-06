@@ -161,12 +161,6 @@ namespace GuiFramework
 
         dl_bool SetAfterWindow(GUIWindowBase* pAfter);
 
-        dl_bool Close();
-        dl_bool Minimize(dl_int smooth);
-        dl_bool Restore(dl_int smooth);
-
-        dl_bool FadeIn();
-
         typedef dl_bool(__fastcall* AddChild_t)(GUIWindowBase*, GUIWindowBase*);
         typedef DLUT::DLVector<GUIObject*>* (__fastcall* GetChildrenVector_t)(GUIWindowBase*);
         typedef Rect(__fastcall* GetChildrenBaseCoord_t)(const GUIWindowBase*);
