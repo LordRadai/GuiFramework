@@ -6,7 +6,7 @@ namespace GuiFramework
 {
     struct _GUI_VIRTUAL_INPUT
     {
-        enum GUI_VIRTUAL_INPUT_ID : dl_uint8
+        enum VIRTUAL_INPUT_ID : dl_uint8
         {
             // Basic Action Mappings
             GUI_INPUT_CANCEL = 0,

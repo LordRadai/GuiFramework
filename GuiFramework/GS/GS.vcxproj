@@ -251,6 +251,8 @@
     <ClInclude Include="GuiFramework\Window\PopupMenu\GUIPopupMenuNode.h" />
     <ClInclude Include="GuiFramework\Window\PopupMenu\GUIPopupMenuSeparator.h" />
     <ClInclude Include="GuiFramework\Window\PopupMenu\GUIPopupMenuString.h" />
+    <ClInclude Include="GuiFramework\Window\Tweaker\GUIColorTweaker.h" />
+    <ClInclude Include="GuiFramework\Window\Tweaker\GUITweakerBase.h" />
     <ClInclude Include="GuiFramework\Window\Util\GUITextEditorUtil.h" />
     <ClInclude Include="GuiFramework\Window\Control\GUIAutoVLayout.h" />
     <ClInclude Include="GuiFramework\Window\Control\GUIAutoVLayoutScroll.h" />
@@ -304,6 +306,8 @@
     <ClCompile Include="GuiFramework\Window\PopupMenu\GUIPopupMenuNode.cpp" />
     <ClCompile Include="GuiFramework\Window\PopupMenu\GUIPopupMenuSeparator.cpp" />
     <ClCompile Include="GuiFramework\Window\PopupMenu\GUIPopupMenuString.cpp" />
+    <ClCompile Include="GuiFramework\Window\Tweaker\GUIColorTweaker.cpp" />
+    <ClCompile Include="GuiFramework\Window\Tweaker\GUITweakerBase.cpp" />
     <ClCompile Include="GuiFramework\Window\Util\GUITextEditorUtil.cpp" />
     <ClCompile Include="GuiFramework\Window\Control\GUIAutoVLayout.cpp" />
     <ClCompile Include="GuiFramework\Window\Control\GUIAutoVLayoutScroll.cpp" />

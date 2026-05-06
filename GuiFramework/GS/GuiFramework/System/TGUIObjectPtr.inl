@@ -24,6 +24,13 @@ namespace GuiFramework
             _UnRef();
         }
 
+        bool HasFlag30() 
+        {
+            if (m_ptr == nullptr) return false;
+
+            return (m_ptr->m_nRefCountAndFlags & (1 << 30)) != 0;
+        }
+
         TGUIObjectPtr& operator=(T* pObj) 
         {
             static_assert(std::is_base_of<GUIObject, T>::value, "T must be a child of GUIObject");

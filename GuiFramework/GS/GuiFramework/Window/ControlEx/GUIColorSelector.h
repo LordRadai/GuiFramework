@@ -30,6 +30,15 @@ namespace GuiFramework
 		virtual void OnNcRender(GraphicsContext& gc) const override;
 		virtual void OnVirtualInput(const VirtualInput& input) const override;
 
+		void SetFloatColor(const DLMT::DL_VECTOR4& color, dl_float32 param_2);
+		void SetIntColor(const DLMT::DL_COLOR_32 color);
+		void SetU8Color(const DLMT2::DL_COLOR_U8 color);
+		void SetHDRColor(dl_pointer color);
+
+		void GetIntColor(DLMT::DL_COLOR_32& outColor) const;
+		void GetFloatColor(DLMT::DL_VECTOR4& outColor) const;
+		void GetU8Color(DLMT2::DL_COLOR_U8& outColor) const;
+		void GetHDRColor(dl_pointer outColor) const;
 	protected:
 		Rect16 m_rect110;
 		Rect16 m_rect118;
@@ -49,8 +58,7 @@ namespace GuiFramework
 		Rect16 m_rect188;
 		GUIEditBox* m_pEditBoxes[5];
 		DLMT::DL_VECTOR3 m_hsv;
-		DLMT::DL_VECTOR3 m_rgb;
-		dl_float32 m_alpha;
+		DLMT::DL_VECTOR4 m_rgb;
 		dl_float32 m_fVar1D4;
 		dl_uint8 m_lumLimit;
 		dl_uint8 m_alphaLimit;

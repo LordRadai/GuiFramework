@@ -7,6 +7,16 @@ namespace GuiFramework
 	typedef void(__fastcall* ConstructorWithCreate_t)(GUIColorSelector*, GUIWindowBase*, TGUISharedString<dl_wchar>, const _GUI_CREATE_WINDOW&);
 	typedef void(__fastcall* ConstructorWithFlags_t)(GUIColorSelector*, GUIWindowBase*, TGUISharedString<dl_wchar>, dl_uint, dl_uint);
 
+	typedef void(__fastcall* SetFloatColor_t)(GUIColorSelector*, const DLMT::DL_VECTOR4&, dl_float32);
+	typedef void(__fastcall* SetIntColor_t)(GUIColorSelector*, const DLMT::DL_COLOR_32);
+	typedef void(__fastcall* SetU8Color_t)(GUIColorSelector*, const DLMT2::DL_COLOR_U8);
+	typedef void(__fastcall* SetHDRColor_t)(GUIColorSelector*, dl_pointer);
+
+	typedef void(__fastcall* GetIntColor_t)(const GUIColorSelector*, DLMT::DL_COLOR_32&);
+	typedef void(__fastcall* GetFloatColor_t)(const GUIColorSelector*, DLMT::DL_VECTOR4&);
+	typedef void(__fastcall* GetU8Color_t)(const GUIColorSelector*, DLMT2::DL_COLOR_U8&);
+	typedef void(__fastcall* GetHDRColor_t)(const GUIColorSelector*, dl_pointer);
+
 	GUIColorSelector::GUIColorSelector(TGUISharedString<dl_wchar> label)
 	{
 		CALL(Constructor_t, 0x5d3da0, this, label);
@@ -90,5 +100,45 @@ namespace GuiFramework
 	void GUIColorSelector::OnVirtualInput(const VirtualInput& input) const
 	{
 		CALL(OnVirtualInput_Const_t, 0x5d7ca0, this, input);
+	}
+
+	void GUIColorSelector::SetFloatColor(const DLMT::DL_VECTOR4& color, dl_float32 param_2)
+	{
+		CALL(SetFloatColor_t, 0x5d47c0, this, color, param_2);
+	}
+
+	void GUIColorSelector::SetIntColor(const DLMT::DL_COLOR_32 color)
+	{
+		CALL(SetIntColor_t, 0x5d4600, this, color);
+	}
+
+	void GUIColorSelector::SetU8Color(const DLMT2::DL_COLOR_U8 color)
+	{
+		CALL(SetU8Color_t, 0x5d4710, this, color);
+	}
+
+	void GUIColorSelector::SetHDRColor(dl_pointer color)
+	{
+		throw std::runtime_error("SetHDRColor is not implemented yet");
+	}
+
+	void GUIColorSelector::GetIntColor(DLMT::DL_COLOR_32& outColor) const
+	{
+		CALL(GetIntColor_t, 0x5d4440, this, outColor);
+	}
+
+	void GUIColorSelector::GetFloatColor(DLMT::DL_VECTOR4& outColor) const
+	{
+		CALL(GetFloatColor_t, 0x5d4550, this, outColor);
+	}
+
+	void GUIColorSelector::GetU8Color(DLMT2::DL_COLOR_U8& outColor) const
+	{
+		CALL(GetU8Color_t, 0x5d44e0, this, outColor);
+	}
+
+	void GUIColorSelector::GetHDRColor(dl_pointer outColor) const
+	{
+		throw std::runtime_error("GetHDRColor is not implemented yet");
 	}
 }
