@@ -179,6 +179,8 @@ namespace GuiFramework
 		GUIWindowBase* GetParentWindow() const { return m_pParentWindow.Get(); }
 		GUISystem* GetGUISystem() const { return m_pGUISystem.Get(); }
 
+        dl_bool SetAfterWindow(GUIWindowBase* pAfter);
+
         typedef dl_bool(__fastcall* AddChild_t)(GUIWindowBase*, GUIWindowBase*);
         typedef DLUT::DLVector<GUIObject*>* (__fastcall* GetChildrenVector_t)(GUIWindowBase*);
         typedef Rect(__fastcall* GetChildrenBaseCoord_t)(const GUIWindowBase*);

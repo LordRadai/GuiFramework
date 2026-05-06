@@ -54,7 +54,7 @@ namespace GuiFramework
 		dl_int AddItem(TGUISharedString<dl_wchar> label, dl_int id);
 		dl_bool AddColumn(TGUISharedString<dl_wchar> label, dl_uint16 id, dl_uint size, dl_int param_4);
 
-		GUIListViewItem* GetItem(dl_int index);
+		GUIListViewItem* GetItemFromIndex(dl_int index);
 		dl_size GetNumItems() const { return m_items.size(); }
 
 		dl_bool SetColumnHeaderLabel(dl_uint16 id, TGUISharedString<dl_wchar> label);

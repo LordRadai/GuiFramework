@@ -14,7 +14,7 @@ namespace GuiFramework
 	typedef dl_bool(__fastcall* SetColumnHeaderWidth_t)(GUIListView*, dl_uint16, dl_uint16);
 	typedef void(__fastcall* RemoveAllItem_t)(GUIListView*);
 	typedef dl_bool(__fastcall* RemoveItem_t)(GUIListView*, GUIListViewItem*);
-	typedef GUIListViewItem*(__fastcall* GetItem_t)(GUIListView*, dl_int);
+	typedef GUIListViewItem*(__fastcall* GetItemFromIndex_t)(GUIListView*, dl_int);
 
 	GUIListView::GUIListView(TGUISharedString<dl_wchar> label)
 	{
@@ -155,8 +155,8 @@ namespace GuiFramework
 		return RemoveItem(m_items[idx].Get());
 	}
 
-	GUIListViewItem* GUIListView::GetItem(dl_int index)
+	GUIListViewItem* GUIListView::GetItemFromIndex(dl_int index)
 	{
-		return CALL(GetItem_t, 0x5cb270, this, index);
+		return CALL(GetItemFromIndex_t, 0x5cb270, this, index);
 	}
 }

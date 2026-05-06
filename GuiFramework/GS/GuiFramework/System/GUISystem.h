@@ -39,6 +39,11 @@ namespace GuiFramework
 
 		GUIWindowManager* GetWindowManager() const { return m_pGUIWindowManager.Get(); }
 
+		dl_bool SetAfterWindow(GUIWindowBase* pWindow, GUIWindowBase* pAfter);
+		dl_int RegisterWindow(GUIWindowBase* pWindow);
+
+		dl_int SetFocus(GUIWindowBase* pWindow);
+
 		/**
 		 * @brief Connect a signal to a message receiver. The method resolver is used to resolve the method to call on the receiver when the signal is emitted.
 		 */

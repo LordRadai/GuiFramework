@@ -4,7 +4,13 @@ namespace GuiFramework
 {
 	typedef void(__fastcall* Constructor_t)(GUIWindowManager*, GUISystem*);
 
-	typedef void(__fastcall* SetFocus_t)(GUIWindowManager*, GUIWindowBase*);
+	typedef dl_int(__fastcall* SetFocus_t)(GUIWindowManager*, GUIWindowBase*);
+	typedef dl_bool(__fastcall* SetAfterWindow_t)(GUIWindowManager*, GUIWindowBase*, GUIWindowBase*);
+	typedef dl_int(__fastcall* RegisterWindow_t)(GUIWindowManager*, GUIWindowBase*);
+
+	typedef dl_bool(__fastcall* BeginVirtualInput_t)(GUIWindowManager*, GUIWindowBase*);
+	typedef void(__fastcall* UpdateVirtualInput_t)(GUIWindowManager*, const VirtualInput&);
+	typedef void(__fastcall* EndVirtualInput_t)(GUIWindowManager*);
 
 	GUIWindowManager::GUIWindowManager(GUISystem* pGUISystem)
 	{
@@ -16,8 +22,33 @@ namespace GuiFramework
 		CALL(Destructor_t, 0x570e70, this);
 	}
 
-	void GUIWindowManager::SetFocus(GUIWindowBase* pWindow)
+	dl_int GUIWindowManager::SetFocus(GUIWindowBase* pWindow)
 	{
-		CALL(SetFocus_t, 0x568640, this, pWindow);
+		return CALL(SetFocus_t, 0x568640, this, pWindow);
+	}
+
+	dl_bool GUIWindowManager::SetAfterWindow(GUIWindowBase* pWindow, GUIWindowBase* pAfter)
+	{
+		return CALL(SetAfterWindow_t, 0x568960, this, pWindow, pAfter);
+	}
+
+	dl_int GUIWindowManager::RegisterWindow(GUIWindowBase* pWindow)
+	{
+		return CALL(RegisterWindow_t, 0x567520, this, pWindow);
+	}
+
+	dl_bool GUIWindowManager::BeginVirtualInput(GUIWindowBase* pWindow)
+	{
+		return CALL(BeginVirtualInput_t, 0x568540, this, pWindow);
+	}
+
+	void GUIWindowManager::UpdateVirtualInput(const VirtualInput& input)
+	{
+		CALL(UpdateVirtualInput_t, 0x5685e0, this, input);
+	}
+
+	void GUIWindowManager::EndVirtualInput()
+	{
+		CALL(EndVirtualInput_t, 0x568620, this);
 	}
 }

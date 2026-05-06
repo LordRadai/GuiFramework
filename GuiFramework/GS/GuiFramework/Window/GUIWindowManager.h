@@ -1,11 +1,11 @@
 #pragma once
 #include "GuiFramework/System/GUIObject.h"
+#include "GUIWindowBase.h"
 
 namespace GuiFramework
 {
 	class GUISystem;
 	class GUIRootWindow;
-	class GUIWindowBase;
 
 	class GUIWindowManager : public GUIObject
 	{
@@ -18,7 +18,13 @@ namespace GuiFramework
 
 		virtual ~GUIWindowManager() override;
 
-		void SetFocus(GUIWindowBase* pWindow);
+		dl_int SetFocus(GUIWindowBase* pWindow);
+		dl_bool SetAfterWindow(GUIWindowBase* pWindow, GUIWindowBase* pAfter);
+		dl_int RegisterWindow(GUIWindowBase* pWindow);
+
+		dl_bool BeginVirtualInput(GUIWindowBase* pWindow);
+		void UpdateVirtualInput(const VirtualInput& input);
+		void EndVirtualInput();
 	protected:
 		GUISystem* m_pGUISystem;
 		GUIRootWindow* m_pRootWindow;
@@ -26,8 +32,7 @@ namespace GuiFramework
 		GUIWindowBase* m_pLastActiveWindow;
 		DLUT::DLVector<GUIWindowBase*> m_pWindows;
 		DLUT::DLVector<GUIWindowBase*> m_pCreateWindows;
-		dl_int16 m_sVar70;
-		dl_int16 m_sVar72;
+		dl_int m_nextWindowID;
 		dl_int m_mouseX;
 		dl_int m_mouseY;
 		dl_uint m_mouseActionFlags;

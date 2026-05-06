@@ -1,5 +1,6 @@
 #pragma once
 #include "GuiFramework/Window/Control/GUIListView.h"
+#include "GUIHeapListItem.h"
 
 namespace GuiFramework
 {
@@ -17,6 +18,10 @@ namespace GuiFramework
 		virtual void OnDelete() override;
 		virtual dl_uint OnCreate() override;
 		virtual dl_uint OnClose() override;
+
+		dl_uint AddHeap(TGUISharedString<dl_wchar> label, DLKR::DLAllocator* pHeap, dl_int id);
+		dl_uint RemoveHeap(DLKR::DLAllocator* pHeap);
+		DLKR::DLAllocator* GetHeap(dl_int index);
 	protected:
 		dl_uint8 m_dispFormat;
 		dl_float32 m_fVar178;

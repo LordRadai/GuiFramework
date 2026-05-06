@@ -28,6 +28,6 @@ namespace GuiFramework
 		GUIListView* m_pOwner;
 		TGUISharedString<dl_wchar> m_label;
 		dl_pointer m_pVar28;
-		dl_pointer m_pVar30;
+		dl_pointer m_userData;
 	};
 }

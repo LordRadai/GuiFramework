@@ -7,6 +7,11 @@ namespace GuiFramework
 	typedef void(__fastcall* GUISystem_Connect_t)(GUISystem*, GUIObject*, GUISignalDecl, GUIMsgReceiver*, DLRF::DLMethodResolver<DLRF::DLMethodInvokeContext>*, dl_uint, dl_uint);
 	typedef void(__fastcall* GUISystem_CreateTweaker_t)(GUISystem*, GUITweakerDialog*);
 
+	typedef dl_bool(__fastcall* SetAfterWindow_t)(GUISystem*, GUIWindowBase*, GUIWindowBase*);
+	typedef dl_int(__fastcall* RegisterWindow_t)(GUISystem*, GUIWindowBase*);
+
+	typedef dl_int(__fastcall* SetFocus_t)(GUISystem*, GUIWindowBase*);
+
 	GUISystem::GUISystem()
 	{
 		CALL(GUISystem_ctor_t, 0x528580, this);
@@ -55,5 +60,20 @@ namespace GuiFramework
 	void GUISystem::CreateTweaker(GUITweakerDialog* pWnd)
 	{
 		CALL(GUISystem_CreateTweaker_t, 0x52b640, this, pWnd);
+	}
+
+	dl_bool GUISystem::SetAfterWindow(GUIWindowBase* pWindow, GUIWindowBase* pAfter)
+	{
+		return CALL(SetAfterWindow_t, 0x52a570, this, pWindow, pAfter);
+	}
+
+	dl_int GUISystem::RegisterWindow(GUIWindowBase* pWindow)
+	{
+		return CALL(RegisterWindow_t, 0x52a490, this, pWindow);
+	}
+
+	dl_int GUISystem::SetFocus(GUIWindowBase* pWindow)
+	{
+		return CALL(SetFocus_t, 0x52a510, this, pWindow);
 	}
 }

@@ -22,6 +22,7 @@ namespace GuiFramework
 		virtual dl_uint OnClose() override;
 
 		dl_uint AddTexture(TGUISharedString<dl_wchar> name, GUITextureBase* pTexture, TGUISharedString<dl_wchar> path);
+		dl_uint RemoveTexture(GUITextureBase* pTexture);
 	protected:
 		TGUIObjectPtr<GUITextureViewer> m_pTextureViewer;
 		TGUIObjectPtr<GUIListView> m_pListView;

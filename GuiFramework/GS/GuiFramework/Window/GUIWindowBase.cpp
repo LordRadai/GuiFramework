@@ -4,6 +4,8 @@ namespace GuiFramework
 {
 	typedef void(__fastcall* GUIWindowBase_ctor_t)(GUIWindowBase*, TGUISharedString<dl_wchar>);
 
+	typedef dl_bool(__fastcall* SetAfterWindow_t)(GUIWindowBase*, GUIWindowBase*);
+
 	GUIWindowBase::GUIWindowBase(TGUISharedString<dl_wchar> label)
 	{
 		CALL(GUIWindowBase_ctor_t, 0x54f610, this, label);
@@ -57,5 +59,10 @@ namespace GuiFramework
 	void GUIWindowBase::OnRenderWindow(GraphicsContext& gc) const
 	{
 		CALL(OnRenderWindow_t, 0x5520c0, this, gc);
+	}
+
+	dl_bool GUIWindowBase::SetAfterWindow(GUIWindowBase* pAfter)
+	{
+		return CALL(SetAfterWindow_t, 0x550c20, this, pAfter);
 	}
 }
