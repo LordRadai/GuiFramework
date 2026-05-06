@@ -4,7 +4,6 @@
 #include "GuiFramework/System/TGUIRect.inl"
 #include "GuiFramework/System/TGUIPoint.inl"
 #include "GuiFramework/System/TGUIObjectPtr.inl"
-#include "GuiFramework/System/GUISystem.h"
 #include "GuiFramework/System/GUIMouseEvent.h"
 #include "GuiFramework/Render/GUIRenderContext.h"
 
