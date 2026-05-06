@@ -55,5 +55,9 @@
 #include "Window/Layouter/GUILayoutItem.h"
 #include "Window/Layouter/GUILayoutItem_Window.h"
 
+#include "Window/Tweaker/GUIColorTweaker.h"
+#include "Window/Tweaker/GUITweakerBase.h"
 #include "Window/Tweaker/GUITweakerDialog.h"
 #include "Window/Tweaker/GUITweakerGroup.h"
+#include "Window/Tweaker/GUITweakerGroupItem.h"
+#include "Window/Tweaker/GUITweakerItem.h"
