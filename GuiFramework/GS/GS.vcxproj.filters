@@ -213,6 +213,15 @@
     <ClInclude Include="GuiFramework\Window\ControlEx\GUITextureList.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="GuiFramework\Window\ControlEx\GUIHeapList.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="GuiFramework\Window\ControlEx\GUIHeapListItem.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="GuiFramework\Util\GUIMemorySizeFormatter.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="GuiFramework\System\GUIObject.cpp">
@@ -354,6 +363,15 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="GuiFramework\Window\ControlEx\GUITextureList.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="GuiFramework\Window\ControlEx\GUIHeapList.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="GuiFramework\Window\ControlEx\GUIHeapListItem.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="GuiFramework\Util\GUIMemorySizeFormatter.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
