@@ -29,7 +29,7 @@ namespace GuiFramework
 		virtual void OnUpdate() override;
 
 	protected:
-		void _Destroy() override
+		void _Destroy()
 		{
 			this->OnDelete();
 			this->m_nRefAndFlags &= 0xbfffffff;
