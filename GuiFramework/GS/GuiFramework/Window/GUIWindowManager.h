@@ -24,7 +24,7 @@ namespace GuiFramework
 		dl_int RegisterWindow(GUIWindowBase* pWindow);
 
 		dl_bool BeginVirtualInput(GUIWindowBase* pWindow);
-		void UpdateVirtualInput(const VirtualInput& input);
+		void UpdateVirtualInput(GUIVirtualInput& input);
 		void EndVirtualInput();
 	protected:
 		GUISystem* m_pGUISystem;

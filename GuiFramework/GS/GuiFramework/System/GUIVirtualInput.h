@@ -25,4 +25,26 @@ namespace GuiFramework
     };
 
     typedef _GUI_VIRTUAL_INPUT VirtualInput;
+
+    class GUIVirtualInput
+    {
+    public:
+        VirtualInput* GetVirtualInput(dl_int idx) const
+        {
+            if (idx > m_inputs.size())
+                return nullptr;
+
+            return m_inputs[idx];
+		}
+
+        void AddVirtualInput(VirtualInput* pInput)
+        {
+            m_inputs.push_back(pInput);
+		}
+
+		dl_size GetNumVirtualInputs() const { return m_inputs.size(); }
+
+    protected:
+		DLUT::DLVector<VirtualInput*> m_inputs;
+    };
 }

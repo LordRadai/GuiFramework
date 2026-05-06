@@ -9,7 +9,7 @@ namespace GuiFramework
 	typedef dl_int(__fastcall* RegisterWindow_t)(GUIWindowManager*, GUIWindowBase*);
 
 	typedef dl_bool(__fastcall* BeginVirtualInput_t)(GUIWindowManager*, GUIWindowBase*);
-	typedef void(__fastcall* UpdateVirtualInput_t)(GUIWindowManager*, const VirtualInput&);
+	typedef void(__fastcall* UpdateVirtualInput_t)(GUIWindowManager*, GUIVirtualInput&);
 	typedef void(__fastcall* EndVirtualInput_t)(GUIWindowManager*);
 
 	GUIWindowManager::GUIWindowManager(GUISystem* pGUISystem)
@@ -42,7 +42,7 @@ namespace GuiFramework
 		return CALL(BeginVirtualInput_t, 0x568540, this, pWindow);
 	}
 
-	void GUIWindowManager::UpdateVirtualInput(const VirtualInput& input)
+	void GUIWindowManager::UpdateVirtualInput(GUIVirtualInput& input)
 	{
 		CALL(UpdateVirtualInput_t, 0x5685e0, this, input);
 	}
