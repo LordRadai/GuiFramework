@@ -12,6 +12,10 @@ namespace GuiFramework
 
 	typedef GUITweakerGroup*(__fastcall* GetCurrentGroup_t)(GUITweakerDialog*);
 
+	typedef TGUIColorTweaker<DLMT::DL_COLOR_32>*(__fastcall* CreateColorIntTweaker_t)(GUITweakerDialog*, TGUISharedString<dl_wchar>, DLMT::DL_COLOR_32*, dl_uint);
+	typedef TGUIColorTweaker<DLMT2::DL_COLOR_U8>*(__fastcall* CreateColorU8Tweaker_t)(GUITweakerDialog*, TGUISharedString<dl_wchar>, DLMT2::DL_COLOR_U8*, dl_uint);
+	typedef TGUIColorTweaker<DLMT::DL_VECTOR4>* (__fastcall* CreateColorFloatTweaker_t)(GUITweakerDialog*, TGUISharedString<dl_wchar>, DLMT::DL_VECTOR4*, dl_uint);
+
 	GUITweakerDialog::GUITweakerDialog(TGUISharedString<dl_wchar> label)
 	{
 		CALL(GUITweakerDialogCtorWithLabel_t, 0x5388e0, this, label);
@@ -75,5 +79,20 @@ namespace GuiFramework
 	GUITweakerGroup* GUITweakerDialog::GetCurrentGroup()
 	{
 		return CALL(GetCurrentGroup_t, 0x539650, this);
+	}
+
+	TGUIColorTweaker<DLMT::DL_COLOR_32>* GUITweakerDialog::CreateColorTweaker(TGUISharedString<dl_wchar> label, DLMT::DL_COLOR_32* v, dl_uint flags)
+	{
+		return CALL(CreateColorIntTweaker_t, 0x538e00, this, label, v, flags);
+	}
+
+	TGUIColorTweaker<DLMT2::DL_COLOR_U8>* GUITweakerDialog::CreateColorTweaker(TGUISharedString<dl_wchar> label, DLMT2::DL_COLOR_U8* v, dl_uint flags)
+	{
+		return CALL(CreateColorU8Tweaker_t, 0x538e80, this, label, v, flags);
+	}
+
+	TGUIColorTweaker<DLMT::DL_VECTOR4>* GUITweakerDialog::CreateColorTweaker(TGUISharedString<dl_wchar> label, DLMT::DL_VECTOR4* v, dl_uint flags)
+	{
+		return CALL(CreateColorFloatTweaker_t, 0x538f00, this, label, v, flags);
 	}
 }

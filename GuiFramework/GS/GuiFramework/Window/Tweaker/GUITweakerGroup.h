@@ -1,6 +1,7 @@
 #pragma once
 #include "GuiFramework/Window/Control/GUIAutoVLayout.h"
 #include "GUITweakerGroupItem.h"
+#include "TGUIColorTweaker.inl"
 
 namespace GuiFramework
 {
@@ -17,6 +18,10 @@ namespace GuiFramework
 		virtual void OnDelete() override;
 		virtual dl_uint OnRestored() override;
 		virtual dl_uint OnClose() override;
+
+		TGUIColorTweaker<DLMT::DL_COLOR_32>* CreateColorTweaker(TGUISharedString<dl_wchar> label, DLMT::DL_COLOR_32* v, dl_uint flags);
+		TGUIColorTweaker<DLMT2::DL_COLOR_U8>* CreateColorTweaker(TGUISharedString<dl_wchar> label, DLMT2::DL_COLOR_U8* v, dl_uint flags);
+		TGUIColorTweaker<DLMT::DL_VECTOR4>* CreateColorTweaker(TGUISharedString<dl_wchar> label, DLMT::DL_VECTOR4* v, dl_uint flags);
 
 	protected:
 		DLUT::DLVector<GUITweakerGroupItem*> m_items;
