@@ -276,6 +276,7 @@
     <ClCompile Include="GuiFramework\System\GUIMsgReceiver.cpp" />
     <ClCompile Include="GuiFramework\System\GUIObject.cpp" />
     <ClCompile Include="GuiFramework\System\GUISystem.cpp" />
+    <ClCompile Include="GuiFramework\System\GUIVirtualInput.cpp" />
     <ClCompile Include="GuiFramework\Util\GUIMemorySizeFormatter.cpp" />
     <ClCompile Include="GuiFramework\Util\GUITimer.cpp" />
     <ClCompile Include="GuiFramework\Window\ControlEx\GUIColorSelector.cpp" />

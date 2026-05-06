@@ -377,6 +377,9 @@
     <ClCompile Include="GuiFramework\Util\GUIMemorySizeFormatter.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="GuiFramework\System\GUIVirtualInput.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
