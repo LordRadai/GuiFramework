@@ -211,6 +211,7 @@
     <ClInclude Include="GuiFramework\System\GUIInvoker.h" />
     <ClInclude Include="GuiFramework\System\GUIMouseEvent.h" />
     <ClInclude Include="GuiFramework\System\GUISystem.h" />
+    <ClInclude Include="GuiFramework\System\GUIVirtualInput.h" />
     <ClInclude Include="GuiFramework\System\TGUILiteralString.inl" />
     <ClInclude Include="GuiFramework\System\GUIMsgReceiver.h" />
     <ClInclude Include="GuiFramework\System\GUIObject.h" />

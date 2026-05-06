@@ -13,6 +13,7 @@ namespace GuiFramework
 	class GUIWindowPainter;
 	class GUITweakerDialog;
 	class GUIRootWindow;
+	class GUIWindowBase;
 
 	class GUISystem : public GUIMsgReceiver
 	{

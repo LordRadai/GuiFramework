@@ -1,6 +1,6 @@
 #pragma once
 #include "GuiFramework/System/GUIObject.h"
-#include "GUIWindowBase.h"
+#include "GuiFramework/System/GUIVirtualInput.h"
 
 namespace GuiFramework
 {

@@ -4,7 +4,10 @@
 #include "GuiFramework/System/TGUIRect.inl"
 #include "GuiFramework/System/TGUIPoint.inl"
 #include "GuiFramework/System/TGUIObjectPtr.inl"
+#include "GuiFramework/System/GUISystem.h"
 #include "GuiFramework/System/GUIMouseEvent.h"
+#include "GuiFramework/System/GUIVirtualInput.h"
+
 #include "GuiFramework/Render/GUIRenderContext.h"
 
 namespace GuiFramework
@@ -75,28 +78,6 @@ namespace GuiFramework
             return DLKR::Free(block, GUI_ALLOCATOR);
         }
     };
-
-    struct _GUI_VIRTUAL_INPUT
-    {
-        dl_int InputID;
-
-        bool IsKeyEvent(dl_char eventID) const
-        {
-            return InputID == eventID;
-        }
-
-        static void* operator new(dl_size size)
-        {
-            return DLKR::AllocateAligned(size, 4, GUI_ALLOCATOR);
-        }
-
-        static void operator delete(void* p)
-        {
-            DLKR::Free(p, GUI_ALLOCATOR);
-        }
-    };
-
-    typedef _GUI_VIRTUAL_INPUT VirtualInput;
 
     typedef GUI_KEYSTROKE KeyEvent;
 
