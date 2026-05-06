@@ -32,6 +32,10 @@ namespace GuiFramework
 		typedef void(__fastcall* Destructor_t)(GUIObject*);
 		typedef void(__fastcall* OnDelete_t)(GUIObject*);
 	protected:
+		void _Destroy();
+
+		typedef void(__fastcall* _Destroy_t)(GUIObject*);
+
 		dl_uint m_nRefAndFlags;
 	};
 }

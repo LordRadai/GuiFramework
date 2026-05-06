@@ -22,6 +22,8 @@ namespace GuiFramework
 		typedef void(__fastcall* Update_t)(GUITweakerBase*, dl_float32);
 		typedef void(__fastcall* Close_t)(GUITweakerBase*);
 	protected:
+		void _Destroy();
+
 		dl_uint m_flags;
 		GUICallbackObjectBase* m_pCallback;
 	};

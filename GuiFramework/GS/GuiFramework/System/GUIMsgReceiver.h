@@ -13,5 +13,8 @@ namespace GuiFramework
 
 		virtual DLRF::DLRuntimeClass* GetRuntimeClassOfThis() const override;
 		virtual ~GUIMsgReceiver() override;
+
+	protected:
+		void _Destroy();
 	};
 }

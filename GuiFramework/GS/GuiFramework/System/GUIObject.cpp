@@ -37,4 +37,9 @@ namespace GuiFramework
 	{
 		CALL(UnRef_t, 0x30b4e0, this);
 	}
+
+	void GUIObject::_Destroy()
+	{
+		CALL(_Destroy_t, 0x5277f0, this);
+	}
 }

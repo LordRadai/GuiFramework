@@ -20,17 +20,20 @@ namespace GuiFramework
 		virtual void OnUpdate() {}
 
 		void SetColor(const DLMT::DL_VECTOR4& color);
-		void SetColor(const DLMT::DL_COLOR_32 color);
-		void SetColor(const DLMT2::DL_COLOR_U8 color);
-		void SetColor(dl_pointer color);
+		void SetColor(const DLMT::DL_COLOR_32& color);
+		void SetColor(const DLMT2::DL_COLOR_U8& color);
+		//void SetColor(dl_pointer color);
 
 		void GetFloatColor(DLMT::DL_VECTOR4& outColor) const;
 		void GetIntColor(DLMT::DL_COLOR_32& outColor) const;
 		void GetU8Color(DLMT2::DL_COLOR_U8& outColor) const;
-		void GetHDRColor(dl_pointer outColor) const;
+		//void GetHDRColor(dl_pointer outColor) const;
 
 		typedef void(__fastcall* OnUpdate_t)(GUIColorTweaker*);
 	protected:
+		void _Destroy();
+
 		TGUIObjectPtr<GUIColorSelector> m_pColorSelector;
+		dl_uint m_iVar28;
 	};
 }

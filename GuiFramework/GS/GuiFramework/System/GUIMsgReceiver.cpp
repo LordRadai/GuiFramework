@@ -11,4 +11,9 @@ namespace GuiFramework
 	{
 		CALL(Destructor_t, 0x528100, this);
 	}
+
+	void GUIMsgReceiver::_Destroy()
+	{
+		CALL(_Destroy_t, 0x527f40, this);
+	}
 }

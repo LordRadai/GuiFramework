@@ -31,4 +31,9 @@ namespace GuiFramework
 	{
 		CALL(InvokeCallback_t, 0x5415a0, this);
 	}
+
+	void GUITweakerBase::_Destroy()
+	{
+		CALL(_Destroy_t, 0x5414f0, this);
+	}
 }

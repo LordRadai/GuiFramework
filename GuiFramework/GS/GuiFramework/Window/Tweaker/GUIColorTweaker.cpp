@@ -50,20 +50,22 @@ namespace GuiFramework
 		CALL(SetFloatColor_t, 0x5b1300, this, color);
 	}
 
-	void GUIColorTweaker::SetColor(const DLMT::DL_COLOR_32 color)
+	void GUIColorTweaker::SetColor(const DLMT::DL_COLOR_32& color)
 	{
 		CALL(SetIntColor_t, 0x5b1240, this, color);
 	}
 
-	void GUIColorTweaker::SetColor(const DLMT2::DL_COLOR_U8 color)
+	void GUIColorTweaker::SetColor(const DLMT2::DL_COLOR_U8& color)
 	{
 		CALL(SetU8Color_t, 0x5b12a0, this, color);
 	}
 
+	/*
 	void GUIColorTweaker::SetColor(dl_pointer color)
 	{
 		throw std::runtime_error("SetColor with dl_pointer is not implemented yet");
 	}
+	*/
 
 	void GUIColorTweaker::GetFloatColor(DLMT::DL_VECTOR4& outColor) const
 	{
@@ -80,8 +82,15 @@ namespace GuiFramework
 		CALL(GetU8Color_t, 0x5b1640, this, outColor);
 	}
 
+	/*
 	void GUIColorTweaker::GetHDRColor(dl_pointer outColor) const
 	{
 		throw std::runtime_error("GetHDRColor is not implemented yet");
+	}
+	*/
+
+	void GUIColorTweaker::_Destroy()
+	{
+		CALL(_Destroy_t, 0x5b1150, this);
 	}
 }

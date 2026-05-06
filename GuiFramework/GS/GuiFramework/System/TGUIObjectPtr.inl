@@ -16,12 +16,12 @@ namespace GuiFramework
         {
             static_assert(std::is_base_of<GUIObject, T>::value, "T must be a child of GUIObject");
             if (m_ptr)
-                _AddRef();
+                AddRef();
         }
 
         ~TGUIObjectPtr() 
         {
-            _UnRef();
+            UnRef();
         }
 
         bool HasFlag30() 
@@ -31,15 +31,27 @@ namespace GuiFramework
             return (m_ptr->m_nRefCountAndFlags & (1 << 30)) != 0;
         }
 
+        void UnRef()
+        {
+            if (m_ptr)
+                m_ptr->UnRef();
+        }
+
+        void AddRef()
+        {
+            if (m_ptr)
+                m_ptr->AddRef();
+        }
+
         TGUIObjectPtr& operator=(T* pObj) 
         {
             static_assert(std::is_base_of<GUIObject, T>::value, "T must be a child of GUIObject");
             if (m_ptr != pObj) 
             {
-                _UnRef();
+                UnRef();
                 m_ptr = pObj;
                 if (m_ptr)
-                    _AddRef();
+                    AddRef();
             }
 
             return *this;
@@ -52,11 +64,11 @@ namespace GuiFramework
         {
             if (this != &other) 
             {
-                _UnRef();
+                UnRef();
                 m_ptr = other.m_ptr;
 
                 if (m_ptr)
-                    _AddRef();
+                    AddRef();
             }
 		}
 
@@ -64,11 +76,11 @@ namespace GuiFramework
         {
             if (this != &other)
             {
-                _UnRef();
+                UnRef();
                 m_ptr = other.m_ptr;
 
                 if (m_ptr)
-                    _AddRef();
+                    AddRef();
             }
 		}
 
@@ -85,17 +97,5 @@ namespace GuiFramework
         }
     private:
         T* m_ptr;
-
-        void _UnRef() 
-        {
-            if (m_ptr)
-                m_ptr->UnRef();
-        }
-
-        void _AddRef() 
-        {
-            if (m_ptr)
-                m_ptr->AddRef();
-        }
     };
 }

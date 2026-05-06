@@ -14,4 +14,9 @@ namespace GuiFramework
 	{
 		CALL(Destructor_t, 0x555cf0, this);
 	}
+
+	void GUITweakerItem::_Destroy()
+	{
+		CALL(_Destroy_t, 0x5556c0, this);
+	}
 }
