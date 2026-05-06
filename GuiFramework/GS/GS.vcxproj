@@ -223,6 +223,7 @@
     <ClInclude Include="GuiFramework\System\TGUIValueStringPair.inl" />
     <ClInclude Include="GuiFramework\Util\GUITimer.h" />
     <ClInclude Include="GuiFramework\Window\ControlEx\GUIColorSelector.h" />
+    <ClInclude Include="GuiFramework\Window\ControlEx\GUITextureList.h" />
     <ClInclude Include="GuiFramework\Window\ControlEx\GUITextureViewer.h" />
     <ClInclude Include="GuiFramework\Window\ControlEx\GUITexture_DLTexture.h" />
     <ClInclude Include="GuiFramework\Window\ControlEx\GUIYawPitchControl.h" />
@@ -273,6 +274,7 @@
     <ClCompile Include="GuiFramework\System\GUISystem.cpp" />
     <ClCompile Include="GuiFramework\Util\GUITimer.cpp" />
     <ClCompile Include="GuiFramework\Window\ControlEx\GUIColorSelector.cpp" />
+    <ClCompile Include="GuiFramework\Window\ControlEx\GUITextureList.cpp" />
     <ClCompile Include="GuiFramework\Window\ControlEx\GUITextureViewer.cpp" />
     <ClCompile Include="GuiFramework\Window\ControlEx\GUITexture_DLTexture.cpp" />
     <ClCompile Include="GuiFramework\Window\ControlEx\GUIYawPitchControl.cpp" />

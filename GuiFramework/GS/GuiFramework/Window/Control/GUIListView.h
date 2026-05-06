@@ -13,16 +13,16 @@ namespace GuiFramework
 		{
 			TGUISharedString<dl_wchar> Label;
 			dl_uint16 Width;
-			dl_uint16 Index;
+			dl_uint16 ID;
 			dl_int iVar14;
 
-			Column(TGUISharedString<dl_wchar> label, dl_uint16 width, dl_uint16 index) : Label(label), Width(width), Index(index), iVar14(0) {}
+			Column(TGUISharedString<dl_wchar> label, dl_uint16 width, dl_uint16 index) : Label(label), Width(width), ID(index), iVar14(0) {}
 
 			void operator=(const Column& other)
 			{
 				Label = other.Label;
 				Width = other.Width;
-				Index = other.Index;
+				ID = other.ID;
 				iVar14 = other.iVar14;
 			}
 		};
@@ -51,14 +51,27 @@ namespace GuiFramework
 		virtual void OnItemClick(dl_int itemIndex) {}
 		virtual void OnItemRClick(dl_int itemIndex) {}
 
-		GUIListViewItem* AddItem(TGUISharedString<dl_wchar> label, dl_uint id);
+		GUIListViewItem* AddItem(TGUISharedString<dl_wchar> label, dl_int id);
 		dl_bool AddColumn(TGUISharedString<dl_wchar> label, dl_uint16 id, dl_uint size, dl_int param_4);
+
+		GUIListViewItem* GetItem(dl_int index);
+		dl_size GetNumItems() const { return m_items.size(); }
+
+		dl_bool SetColumnHeaderLabel(dl_uint16 id, TGUISharedString<dl_wchar> label);
+		dl_bool SetColumnHeaderWidth(dl_uint16 id, dl_uint16 width);
+
+		Column* GetColumn(dl_uint16 id);
+		dl_size GetNumColumns() const { return m_columns.size(); }
+
+		void RemoveAllItem();
+		dl_bool RemoveItem(GUIListViewItem* pItem);
+		dl_bool RemoveItem(dl_uint16 idx);
 
 		typedef void(__fastcall* OnItemDblClk_t)(GUIListView*, dl_int);
 		typedef void(__fastcall* OnItemClick_t)(GUIListView*, dl_int);
 		typedef void(__fastcall* OnItemRClick_t)(GUIListView*, dl_int);
 	protected:
-		DLUT::DLVector<GUIListViewItem*> m_items;
+		DLUT::DLVector<TGUIObjectPtr<GUIListViewItem>> m_items;
 		DLUT::DLVector<Column> m_columns;
 		dl_int16 m_textHeight;
 		dl_int16 m_lineHeight;

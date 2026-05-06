@@ -20,6 +20,8 @@ namespace GuiFramework
 		virtual void OnDelete() override;
 		virtual dl_uint GetRenderText(DLTX::DLString& out) const { return false; }
 
+		void OnRemoveItem();
+		dl_bool SetItemText(dl_int idx, TGUISharedString<dl_wchar> label);
 	protected:
 		GUIListView* m_pOwner;
 		TGUISharedString<dl_wchar> m_label;

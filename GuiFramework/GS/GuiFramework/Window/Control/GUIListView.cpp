@@ -7,8 +7,14 @@ namespace GuiFramework
 	typedef void(__fastcall* ConstructorWithCreateParams_t)(GUIListView*, GUIWindowBase*, TGUISharedString<dl_wchar>, const _GUI_CREATE_WINDOW&);
 	typedef void(__fastcall* ConstructorWithFlags_t)(GUIListView*, GUIWindowBase*, TGUISharedString<dl_wchar>, dl_uint, dl_uint);
 
-	typedef GUIListViewItem*(__fastcall* AddItem_t)(GUIListView*, TGUISharedString<dl_wchar>, dl_uint);
+	typedef GUIListViewItem*(__fastcall* AddItem_t)(GUIListView*, TGUISharedString<dl_wchar>, dl_int);
 	typedef dl_bool(__fastcall* AddColumn_t)(GUIListView*, TGUISharedString<dl_wchar>, dl_uint16, dl_uint, dl_int);
+
+	typedef dl_bool(__fastcall* SetColumnHeaderLabel_t)(GUIListView*, dl_uint16, TGUISharedString<dl_wchar>);
+	typedef dl_bool(__fastcall* SetColumnHeaderWidth_t)(GUIListView*, dl_uint16, dl_uint16);
+	typedef void(__fastcall* RemoveAllItem_t)(GUIListView*);
+	typedef dl_bool(__fastcall* RemoveItem_t)(GUIListView*, GUIListViewItem*);
+	typedef GUIListViewItem*(__fastcall* GetItem_t)(GUIListView*, dl_int);
 
 	GUIListView::GUIListView(TGUISharedString<dl_wchar> label)
 	{
@@ -100,7 +106,7 @@ namespace GuiFramework
 		CALL(OnRender_t, 0x5cc3f0, this, gc);
 	}
 
-	GUIListViewItem* GUIListView::AddItem(TGUISharedString<dl_wchar> label, dl_uint id)
+	GUIListViewItem* GUIListView::AddItem(TGUISharedString<dl_wchar> label, dl_int id)
 	{
 		return CALL(AddItem_t, 0x5ca7e0, this, label, id);
 	}
@@ -108,5 +114,49 @@ namespace GuiFramework
 	dl_bool GUIListView::AddColumn(TGUISharedString<dl_wchar> label, dl_uint16 id, dl_uint size, dl_int param_4)
 	{
 		return CALL(AddColumn_t, 0x5ca970, this, label, id, size, param_4);
+	}
+
+	dl_bool GUIListView::SetColumnHeaderLabel(dl_uint16 id, TGUISharedString<dl_wchar> label)
+	{
+		return CALL(SetColumnHeaderLabel_t, 0x5cac70, this, id, label);
+	}
+
+	dl_bool GUIListView::SetColumnHeaderWidth(dl_uint16 id, dl_uint16 width)
+	{
+		return CALL(SetColumnHeaderWidth_t, 0x5cad90, this, id, width);
+	}
+
+	GUIListView::Column* GUIListView::GetColumn(dl_uint16 id)
+	{
+		for (dl_size i = 0; i < m_columns.size(); i++)
+		{
+			if (m_columns[i].ID == id)
+				return &m_columns[i];
+		}
+
+		return nullptr;
+	}
+
+	void GUIListView::RemoveAllItem()
+	{
+		CALL(RemoveAllItem_t, 0x5caf40, this);
+	}
+
+	dl_bool GUIListView::RemoveItem(GUIListViewItem* pItem)
+	{
+		return CALL(RemoveItem_t, 0x5caef0, this, pItem);
+	}
+
+	dl_bool GUIListView::RemoveItem(dl_uint16 idx)
+	{
+		if (idx >= m_items.size())
+			return false;
+
+		return RemoveItem(m_items[idx].Get());
+	}
+
+	GUIListViewItem* GUIListView::GetItem(dl_int index)
+	{
+		return CALL(GetItem_t, 0x5cb270, this, index);
 	}
 }
