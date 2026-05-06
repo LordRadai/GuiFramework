@@ -6,6 +6,7 @@ namespace GuiFramework
 {
 	class GUISystem;
 	class GUIRootWindow;
+	class GUIWindowBase;
 
 	class GUIWindowManager : public GUIObject
 	{
