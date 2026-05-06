@@ -4,6 +4,18 @@
 
 namespace GuiFramework
 {
+	enum GUI_TEXTURE_TYPE : dl_int
+	{
+		GUITEXTYPE_INVALID = -1,
+		GUITEXTYPE_NONE,
+		GUITEXTYPE_CUBE,
+		GUITEXTYPE_2,
+		GUITEXTYPE_3,
+		GUITEXTYPE_2D,
+
+		GUITEXTYPE_NUM
+	};
+
 	class GUITextureBase : public GUIObject
 	{
 	public:

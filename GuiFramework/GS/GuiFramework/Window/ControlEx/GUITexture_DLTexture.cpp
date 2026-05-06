@@ -2,7 +2,6 @@
 
 namespace GuiFramework
 {
-	
 	GUITexture_DLTexture::GUITexture_DLTexture(DLGR::DLTextureBase* pTexture) : GUITextureBase(), m_pTexture(pTexture)
 	{
 		if (this->m_pTexture)
@@ -41,22 +40,22 @@ namespace GuiFramework
 
 	dl_int GUITexture_DLTexture::GetTextureType()
 	{
-		dl_int dlType = this->m_pTexture ? this->m_pTexture->GetType() : -1;
+		dl_int dlType = this->m_pTexture ? this->m_pTexture->GetType() : GUITEXTYPE_INVALID;
 
 		switch (dlType)
 		{
-		case 0:		return 0;
-		case 1:		return 2;
-		case 2:		return 3;
-		case 3:		return 4;
-		case 4:		return 1;
-		default:	return -1;
+		case DLGR::DLTEXTYPE_NONE:		return GUITEXTYPE_NONE;
+		case DLGR::DLTEXTYPE_1:			return GUITEXTYPE_2;
+		case DLGR::DLTEXTYPE_2:			return GUITEXTYPE_3;
+		case DLGR::DLTEXTYPE_2D:		return GUITEXTYPE_2D;
+		case DLGR::DLTEXTYPE_CUBE:		return GUITEXTYPE_CUBE;
+		default:						return GUITEXTYPE_INVALID;
 		}
 	}
 
 	dl_int GUITexture_DLTexture::GetFormat()
 	{
-		return this->m_pTexture ? this->m_pTexture->GetFormat() : 0x86;
+		return this->m_pTexture ? this->m_pTexture->GetDLTextureFormat() : DLGR::DLTEXFMT_D24S8;
 	}
 
 	dl_uint GUITexture_DLTexture::GetMipMapLevelNum()
