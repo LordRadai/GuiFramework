@@ -4,9 +4,6 @@ namespace GuiFramework
 {
 	typedef void(__fastcall* ctor_t)(GUIWidget*, TGUISharedString<dl_wchar>);
 
-	typedef void(__fastcall* Close_t)(GUIWidget*);
-	typedef dl_bool(__fastcall* FadeIn_t)(GUIWidget*);
-
 	GUIWidget::GUIWidget(TGUISharedString<dl_wchar> label) : GUIWindowBase(label)
 	{
 		CALL(ctor_t, 0x57a910, this, label);
@@ -130,15 +127,5 @@ namespace GuiFramework
 	void GUIWidget::ComputeNcShapeInfo(const _GUI_NC_SHAPE_PROP& prop, _GUI_NC_SHAPE_INFO& info) const
 	{
 		CALL(ComputeNcShapeInfo_t, 0x57cec0, this, prop, info);
-	}
-
-	void GUIWidget::Close()
-	{
-		CALL(Close_t, 0x54fa10, this);
-	}
-
-	dl_bool GUIWidget::FadeIn()
-	{
-		return CALL(FadeIn_t, 0x57b1d0, this);
 	}
 }
