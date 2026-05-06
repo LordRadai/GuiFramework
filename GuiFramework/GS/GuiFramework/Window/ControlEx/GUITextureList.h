@@ -19,7 +19,7 @@ namespace GuiFramework
 		virtual void OnDelete() override;
 		virtual dl_uint OnSize() override;
 		virtual dl_uint OnCreate() override;
-		virtual void OnDelete() override;
+		virtual dl_uint OnClose() override;
 
 		dl_uint AddTexture(TGUISharedString<dl_wchar> name, GUITextureBase* pTexture, TGUISharedString<dl_wchar> path);
 	protected:

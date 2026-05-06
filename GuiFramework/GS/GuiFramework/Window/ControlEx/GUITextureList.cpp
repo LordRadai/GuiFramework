@@ -49,6 +49,11 @@ namespace GuiFramework
 		return CALL(OnCreate_t, 0x5abd30, this);
 	}
 
+	dl_uint GUITextureList::OnClose()
+	{
+		return CALL(OnClose_t, 0x5ac3c0, this);
+	}
+
 	dl_uint GUITextureList::AddTexture(TGUISharedString<dl_wchar> name, GUITextureBase* pTexture, TGUISharedString<dl_wchar> path)
 	{
 		return CALL(AddTexture_t, 0x5ab370, this, name, pTexture, path);
