@@ -6,7 +6,12 @@ namespace GuiFramework
 {
     struct _GUI_VIRTUAL_INPUT
     {
-        dl_int InputID;
+        dl_uint8 InputID;
+		dl_float32 Param1;
+		dl_float32 Param2;
+
+		_GUI_VIRTUAL_INPUT() : InputID(0), Param1(0), Param2(0) {}
+		_GUI_VIRTUAL_INPUT(dl_uint8 inputID, dl_float32 param1 = 0.f, dl_float32 param2 = 0.f) : InputID(inputID), Param1(param1), Param2(param2) {}
 
         bool IsKeyEvent(dl_char eventID) const
         {
@@ -29,22 +34,14 @@ namespace GuiFramework
     class GUIVirtualInput
     {
     public:
-        VirtualInput* GetVirtualInput(dl_int idx) const
-        {
-            if (idx > m_inputs.size())
-                return nullptr;
+		virtual ~GUIVirtualInput() {}
 
-            return m_inputs[idx];
-		}
-
-        void AddVirtualInput(VirtualInput* pInput)
-        {
-            m_inputs.push_back(pInput);
-		}
+        VirtualInput& GetVirtualInput(dl_int idx);
+		void PushInput(const VirtualInput& input);
 
 		dl_size GetNumVirtualInputs() const { return m_inputs.size(); }
 
     protected:
-		DLUT::DLVector<VirtualInput*> m_inputs;
+		DLUT::DLVector<VirtualInput> m_inputs;
     };
 }
