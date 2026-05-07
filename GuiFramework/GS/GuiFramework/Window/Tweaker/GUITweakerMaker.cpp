@@ -190,6 +190,7 @@ namespace GuiFramework
         DL_ASSERT(!this->m_groups.empty());
 
         GUITweakerGroup* pBack = m_groups.back();
+
         if (pBack != nullptr)
             pBack->UnRef();
 
