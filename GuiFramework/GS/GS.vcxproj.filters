@@ -234,6 +234,12 @@
     <ClInclude Include="GuiFramework\Window\Tweaker\TGUIColorTweaker.inl">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="GuiFramework\System\TGUIBitFieldProxy.inl">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="GuiFramework\Window\Tweaker\GUITweakerMaker.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="GuiFramework\System\GUIObject.cpp">
@@ -396,6 +402,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="GuiFramework\Window\Tweaker\TGUIColorTweaker.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="GuiFramework\Window\Tweaker\GUITweakerMaker.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

@@ -27,6 +27,8 @@ namespace GuiFramework
 
 		void AddRef();
 		void UnRef();
+		dl_uint GetRefAndFlags() const { return m_nRefAndFlags; }
+		dl_bool IsFlagSet(dl_uint flag) const { return (m_nRefAndFlags & flag) != 0; }
 
 		typedef DLRF::DLRuntimeClass* (__fastcall* GetRuntimeClassOfThis_t)(const GUIObject*);
 		typedef void(__fastcall* Destructor_t)(GUIObject*);

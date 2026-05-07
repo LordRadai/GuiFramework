@@ -212,6 +212,7 @@
     <ClInclude Include="GuiFramework\System\GUIMouseEvent.h" />
     <ClInclude Include="GuiFramework\System\GUISystem.h" />
     <ClInclude Include="GuiFramework\System\GUIVirtualInput.h" />
+    <ClInclude Include="GuiFramework\System\TGUIBitFieldProxy.inl" />
     <ClInclude Include="GuiFramework\System\TGUILiteralString.inl" />
     <ClInclude Include="GuiFramework\System\GUIMsgReceiver.h" />
     <ClInclude Include="GuiFramework\System\GUIObject.h" />
@@ -253,6 +254,7 @@
     <ClInclude Include="GuiFramework\Window\PopupMenu\GUIPopupMenuString.h" />
     <ClInclude Include="GuiFramework\Window\Tweaker\GUIColorTweaker.h" />
     <ClInclude Include="GuiFramework\Window\Tweaker\GUITweakerBase.h" />
+    <ClInclude Include="GuiFramework\Window\Tweaker\GUITweakerMaker.h" />
     <ClInclude Include="GuiFramework\Window\Tweaker\TGUIColorTweaker.inl" />
     <ClInclude Include="GuiFramework\Window\Util\GUITextEditorUtil.h" />
     <ClInclude Include="GuiFramework\Window\Control\GUIAutoVLayout.h" />
@@ -309,6 +311,7 @@
     <ClCompile Include="GuiFramework\Window\PopupMenu\GUIPopupMenuString.cpp" />
     <ClCompile Include="GuiFramework\Window\Tweaker\GUIColorTweaker.cpp" />
     <ClCompile Include="GuiFramework\Window\Tweaker\GUITweakerBase.cpp" />
+    <ClCompile Include="GuiFramework\Window\Tweaker\GUITweakerMaker.cpp" />
     <ClCompile Include="GuiFramework\Window\Tweaker\TGUIColorTweaker.cpp" />
     <ClCompile Include="GuiFramework\Window\Util\GUITextEditorUtil.cpp" />
     <ClCompile Include="GuiFramework\Window\Control\GUIAutoVLayout.cpp" />

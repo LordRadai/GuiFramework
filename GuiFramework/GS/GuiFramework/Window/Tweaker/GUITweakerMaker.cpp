@@ -1,0 +1,175 @@
+#include "GUITweakerMaker.h"
+
+namespace GuiFramework
+{
+	GUITweakerMaker::GUITweakerMaker(GUITweakerMaker* pTweakerMaker)
+	{
+        if (pTweakerMaker == nullptr)
+            return;
+
+        _PushGroup(pTweakerMaker->GetCurrentGroup());
+	}
+
+	GUITweakerMaker::GUITweakerMaker(GUITweakerGroup* pGroup)
+	{
+        if (pGroup == nullptr)
+            return;
+
+		_PushGroup(pGroup);
+	}
+
+	GUITweakerMaker::GUITweakerMaker(GUITweakerDialog* pDialog)
+	{
+        if (pDialog == nullptr)
+            return;
+
+		_PushGroup(pDialog->GetCurrentGroup());
+	}
+
+	GUITweakerGroup* GUITweakerMaker::BeginGroup(TGUISharedString<dl_wchar> label, dl_uint flags)
+	{
+		assert(!this->m_groups.empty());
+
+		GUITweakerGroup* pCurrentGroup = this->GetCurrentGroup();
+
+        if (pCurrentGroup == nullptr)
+			return nullptr;
+
+		GUITweakerGroup* pNewGroup = pCurrentGroup->CreateSubGroup(label, flags);
+
+		_PushGroup(pNewGroup);
+
+		return pNewGroup;
+	}
+
+	void GUITweakerMaker::EndGroup()
+	{
+		_PopGroup();
+	}
+
+	GUITweakerGroup* GUITweakerMaker::GetCurrentGroup()
+	{
+        return this->m_groups.back();
+    }
+
+    void GUITweakerMaker::AddItem(GUITweakerGroupItem* pItem)
+    {
+		assert(!this->m_groups.empty());
+
+        if (pItem == nullptr)
+            return;
+
+        GUITweakerGroup* pGroup = this->GetCurrentGroup();
+
+        if (pGroup == nullptr)
+            return;
+
+        pGroup->AddItem(pItem);
+	}
+
+    void GUITweakerMaker::SetFirstOpenCallback(GUITweakerGroup::FirstOpenCallback_t pCallback, dl_size param1, dl_size param2)
+    {
+		assert(!this->m_groups.empty());
+
+        GUITweakerGroup* pGroup = this->GetCurrentGroup();
+
+        if (pGroup == nullptr)
+            return;
+
+		pGroup->SetFirstOpenCallback(pCallback, param1, param2);
+    }
+
+    TGUIColorTweaker<DLMT::DL_COLOR_32>* GUITweakerMaker::CreateColorTweaker(TGUISharedString<dl_wchar> label, DLMT::DL_COLOR_32* v, dl_uint flags)
+    {
+		assert(!this->m_groups.empty());
+
+        GUITweakerGroup* pGroup = this->GetCurrentGroup();
+
+        if (pGroup == nullptr)
+            return nullptr;
+
+		return pGroup->CreateColorTweaker(label, v, flags);
+    }
+
+    TGUIColorTweaker<DLMT2::DL_COLOR_U8>* GUITweakerMaker::CreateColorTweaker(TGUISharedString<dl_wchar> label, DLMT2::DL_COLOR_U8* v, dl_uint flags)
+    {
+        assert(!this->m_groups.empty());
+
+		GUITweakerGroup* pGroup = this->GetCurrentGroup();
+
+        if (pGroup == nullptr)
+			return nullptr;
+
+		return pGroup->CreateColorTweaker(label, v, flags);
+    }
+
+    TGUIColorTweaker<DLMT::DL_VECTOR4>* GUITweakerMaker::CreateColorTweaker(TGUISharedString<dl_wchar> label, DLMT::DL_VECTOR4* v, dl_uint flags)
+    {
+        assert(!this->m_groups.empty());
+
+		GUITweakerGroup* pGroup = this->GetCurrentGroup();
+
+		if (pGroup == nullptr)
+			return nullptr;
+
+		return pGroup->CreateColorTweaker(label, v, flags);
+    }
+
+    void GUITweakerMaker::_PushGroup(GUITweakerGroup* pGroup)
+    {
+        if (pGroup != nullptr)
+            pGroup->AddRef();
+
+        if (!m_groups.empty() &&
+            m_groups.size() >= m_groups.capacity() &&
+            m_groups.capacity() > 0x14)
+        {
+            auto it = m_groups.begin();
+            while (it != m_groups.end())
+            {
+                if ((*it)->IsFlagSet(2))
+                {
+                    ++it;
+                    continue;
+                }
+
+                auto dst = it;
+                auto src = it + 1;
+                while (src != m_groups.end())
+                {
+                    if (*src != *dst)
+                    {
+                        if (*dst != nullptr)
+                            (*dst)->UnRef();
+                        *dst = *src;
+                        if (*src != nullptr)
+                            (*src)->AddRef();
+                    }
+                    ++dst;
+                    ++src;
+                }
+
+                if (m_groups.back() != nullptr)
+                    m_groups.back()->UnRef();
+
+                m_groups.pop_back();
+            }
+        }
+
+        m_groups.push_back(pGroup);
+
+        if (pGroup != nullptr)
+            pGroup->UnRef();
+    }
+
+    void GUITweakerMaker::_PopGroup()
+    {
+		assert(!this->m_groups.empty());
+
+        GUITweakerGroup* pBack = m_groups.back();
+        if (pBack != nullptr)
+            pBack->UnRef();
+
+        m_groups.pop_back();
+	}
+}
