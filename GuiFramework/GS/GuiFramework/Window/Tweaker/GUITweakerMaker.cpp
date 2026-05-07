@@ -140,6 +140,8 @@ namespace GuiFramework
 
     void GUITweakerMaker::_PushGroup(GUITweakerGroup* pGroup)
     {
+		DL_ASSERT(pGroup == nullptr || !m_groups.empty());
+
         if (pGroup != nullptr)
             pGroup->AddRef();
 
