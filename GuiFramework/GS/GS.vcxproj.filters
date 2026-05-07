@@ -409,7 +409,6 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="packages.config" />
     <None Include="GuiFramework\Callback\TGUICallbackObject.inl">
       <Filter>Header Files</Filter>
     </None>
