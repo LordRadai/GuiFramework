@@ -11,6 +11,8 @@ namespace GuiFramework
 		GUITweakerMaker(GUITweakerGroup* pGroup);
 		GUITweakerMaker(GUITweakerDialog* pDialog);
 
+		~GUITweakerMaker();
+
 		GUITweakerGroup* BeginGroup(TGUISharedString<dl_wchar> label, dl_uint flags);
 		void EndGroup();
 		GUITweakerGroup* GetCurrentGroup();

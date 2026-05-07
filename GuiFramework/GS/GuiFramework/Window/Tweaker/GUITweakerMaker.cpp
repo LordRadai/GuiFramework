@@ -26,6 +26,29 @@ namespace GuiFramework
 		_PushGroup(pDialog->GetCurrentGroup());
 	}
 
+    GUITweakerMaker::~GUITweakerMaker()
+    {
+        assert(m_groups.size() <= 1);
+
+        if (m_groups.size() == 1)
+        {
+            GUITweakerGroup* pBack = m_groups.back();
+
+            if (pBack != nullptr)
+                pBack->UnRef();
+
+            m_groups.pop_back();
+        }
+
+        for (auto* pGroup : m_groups)
+        {
+            if (pGroup != nullptr)
+                pGroup->UnRef();
+        }
+
+        m_groups.clear();
+	}
+
 	GUITweakerGroup* GUITweakerMaker::BeginGroup(TGUISharedString<dl_wchar> label, dl_uint flags)
 	{
 		assert(!this->m_groups.empty());
