@@ -28,7 +28,7 @@ namespace GuiFramework
 
     GUITweakerMaker::~GUITweakerMaker()
     {
-        assert(m_groups.size() <= 1);
+        DL_ASSERT(m_groups.size() <= 1);
 
         if (m_groups.size() == 1)
         {
@@ -51,7 +51,7 @@ namespace GuiFramework
 
 	GUITweakerGroup* GUITweakerMaker::BeginGroup(TGUISharedString<dl_wchar> label, dl_uint flags)
 	{
-		assert(!this->m_groups.empty());
+        DL_ASSERT(!this->m_groups.empty());
 
 		GUITweakerGroup* pCurrentGroup = this->GetCurrentGroup();
 
@@ -77,7 +77,7 @@ namespace GuiFramework
 
     void GUITweakerMaker::AddItem(GUITweakerGroupItem* pItem)
     {
-		assert(!this->m_groups.empty());
+        DL_ASSERT(!this->m_groups.empty());
 
         if (pItem == nullptr)
             return;
@@ -92,7 +92,7 @@ namespace GuiFramework
 
     void GUITweakerMaker::SetFirstOpenCallback(GUITweakerGroup::FirstOpenCallback_t pCallback, dl_size param1, dl_size param2)
     {
-		assert(!this->m_groups.empty());
+        DL_ASSERT(!this->m_groups.empty());
 
         GUITweakerGroup* pGroup = this->GetCurrentGroup();
 
@@ -104,7 +104,7 @@ namespace GuiFramework
 
     TGUIColorTweaker<DLMT::DL_COLOR_32>* GUITweakerMaker::CreateColorTweaker(TGUISharedString<dl_wchar> label, DLMT::DL_COLOR_32* v, dl_uint flags)
     {
-		assert(!this->m_groups.empty());
+        DL_ASSERT(!this->m_groups.empty());
 
         GUITweakerGroup* pGroup = this->GetCurrentGroup();
 
@@ -116,7 +116,7 @@ namespace GuiFramework
 
     TGUIColorTweaker<DLMT2::DL_COLOR_U8>* GUITweakerMaker::CreateColorTweaker(TGUISharedString<dl_wchar> label, DLMT2::DL_COLOR_U8* v, dl_uint flags)
     {
-        assert(!this->m_groups.empty());
+        DL_ASSERT(!this->m_groups.empty());
 
 		GUITweakerGroup* pGroup = this->GetCurrentGroup();
 
@@ -128,7 +128,7 @@ namespace GuiFramework
 
     TGUIColorTweaker<DLMT::DL_VECTOR4>* GUITweakerMaker::CreateColorTweaker(TGUISharedString<dl_wchar> label, DLMT::DL_VECTOR4* v, dl_uint flags)
     {
-        assert(!this->m_groups.empty());
+        DL_ASSERT(!this->m_groups.empty());
 
 		GUITweakerGroup* pGroup = this->GetCurrentGroup();
 
@@ -145,7 +145,7 @@ namespace GuiFramework
 
         if (!m_groups.empty() &&
             m_groups.size() >= m_groups.capacity() &&
-            m_groups.capacity() > 0x14)
+            m_groups.capacity() > 20)
         {
             auto it = m_groups.begin();
             while (it != m_groups.end())
@@ -187,7 +187,7 @@ namespace GuiFramework
 
     void GUITweakerMaker::_PopGroup()
     {
-		assert(!this->m_groups.empty());
+        DL_ASSERT(!this->m_groups.empty());
 
         GUITweakerGroup* pBack = m_groups.back();
         if (pBack != nullptr)
