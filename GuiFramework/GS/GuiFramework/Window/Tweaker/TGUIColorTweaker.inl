@@ -11,6 +11,7 @@ namespace GuiFramework
 	public:
 		virtual ~TGUIColorTweaker() override
 		{
+			OnDelete();
 			_Destroy();
 		}
 

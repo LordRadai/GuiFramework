@@ -1,5 +1,6 @@
 #pragma once
 #include "GuiFramework/Window/ControlEx/GUINumericEditBox.h"
+#include "GuiFramework/Window/ControlEx/TGUIRangeData.inl"
 
 namespace GuiFramework
 {
@@ -27,6 +28,27 @@ namespace GuiFramework
 		virtual void OnRender(GraphicsContext& gc) const override;
 		virtual void OnVirtualInputRender(GraphicsContext& gc) const override;
 
+		void Reflesh(dl_int idx);
+		void SetRangeData(dl_int idx, GUIRangeDataBase* pRangeData);
+
+		template<typename T>
+		TGUIRangeData<T>* GetRangeData(dl_int idx) const
+		{
+			if (idx > this->m_numValues)
+				return nullptr;
+
+			GUIRangeDataBase* pRangeData = this->m_editors[idx].pRangeData.Get();
+
+			if (pRangeData == nullptr)
+			{
+				TGUIRangeData<T>* pRangeDataTyped = new TGUIRangeData<T>(0, 1000, 1);
+				this->m_editors[idx].pRangeData = pRangeDataTyped;
+
+				return pRangeDataTyped;
+			}
+
+			return dynamic_cast<TGUIRangeData<T>*>(pRangeData);
+		}
 	protected:
 		dl_uint16 m_iVar110;
 		dl_uint8 m_numValues;

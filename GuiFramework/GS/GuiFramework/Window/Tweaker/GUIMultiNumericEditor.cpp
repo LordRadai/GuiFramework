@@ -5,6 +5,9 @@ namespace GuiFramework
 {
 	typedef void(__fastcall* Constructor_t)(GUIMultiNumericEditor*, dl_uint, TGUISharedString<dl_wchar>);
 
+	typedef void(__fastcall* Reflesh_t)(GUIMultiNumericEditor*, dl_int);
+	typedef void(__fastcall* SetRangeData_t)(GUIMultiNumericEditor*, dl_int, GUIRangeDataBase*);
+
 	GUIMultiNumericEditor::GUIMultiNumericEditor(dl_uint numValues, TGUISharedString<dl_wchar> label)
 	{
 		CALL(Constructor_t, 0x5b48e0, this, numValues, label);
@@ -48,5 +51,15 @@ namespace GuiFramework
 	void GUIMultiNumericEditor::OnVirtualInputRender(GraphicsContext& gc) const
 	{
 		CALL(OnVirtualInputRender_t, 0x5b5190, this, gc);
+	}
+
+	void GUIMultiNumericEditor::Reflesh(dl_int idx)
+	{
+		CALL(Reflesh_t, 0x5b4bb0, this, idx);
+	}
+
+	void GUIMultiNumericEditor::SetRangeData(dl_int idx, GUIRangeDataBase* pRangeData)
+	{
+		CALL(SetRangeData_t, 0x5b4c10, this, idx, pRangeData);
 	}
 }

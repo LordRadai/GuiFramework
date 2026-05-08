@@ -9,6 +9,10 @@ namespace GuiFramework
 		typedef TGUIRangeData<T> ThisClass;
 		typedef GUIRangeDataBase SuperClass;
 	public:
+		TGUIRangeData(T min, T max, T step, dl_float32 mult = 1.f) : m_value(0.f), m_min(min), m_max(max), m_step(step), m_original(0.f), m_mult(mult)
+		{
+		}
+
 		virtual ~TGUIRangeData() override
 		{
 			Finalize();
@@ -57,7 +61,7 @@ namespace GuiFramework
 			dl_int oldValue = this->m_value;
 			dl_int multiplier = (isLargeStep == 0) ? 1 : 10;
 
-			dl_int offset = this->m_stepSize * direction * multiplier;
+			dl_int offset = this->m_step * direction * multiplier;
 			this->m_value += offset;
 
 			if (direction < 1)
@@ -100,6 +104,24 @@ namespace GuiFramework
 		{
 			return _ValueToSlider(this->m_value);
 		}
+
+		T GetValue() const { return this->m_value; }
+
+		void SetValue(T value)
+		{
+			if (value < this->m_min)
+				value = this->m_min;
+
+			else if (value > this->m_max)
+				value = this->m_max;
+
+			this->m_value = value;
+		}
+
+		T GetMin() const { return this->m_min; }
+		T GetMax() const { return this->m_max; }
+		T GetStep() const { return this->m_step; }
+		dl_float32 GetMult() const { return this->m_mult; }
 	private:
 		void _GetSliderRange(dl_int& min, dl_int& max, ...) const
 		{
@@ -148,7 +170,7 @@ namespace GuiFramework
 		T m_value;
 		T m_step;
 		T m_original;
-		T m_mult;
+		dl_float32 m_mult;
 	};
 
 	template<>
@@ -191,7 +213,7 @@ namespace GuiFramework
 		if (this->m_mult != 1.f)
 			value = this->m_value * this->m_mult;
 
-		DLTX::DLFormat::Format(&str, L"%.4f", value);
+		DLTX::DLFormat<dl_wchar>::Format(str, L"%.4f", value);
 
 		return true;
 	}
@@ -227,7 +249,7 @@ namespace GuiFramework
 		if (this->m_mult != 1.f)
 			value = this->m_value * this->m_mult;
 
-		DLTX::DLFormat::Format(&str, L"%.4f", value);
+		DLTX::DLFormat<dl_wchar>::Format(str, L"%.4f", value);
 
 		return true;
 	}

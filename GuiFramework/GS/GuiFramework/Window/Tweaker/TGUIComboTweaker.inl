@@ -23,6 +23,7 @@ namespace GuiFramework
 
 		virtual ~TGUIComboTweaker() override 
 		{
+			OnDelete();
 			_Destroy();
 		}
 
