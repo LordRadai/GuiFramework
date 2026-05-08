@@ -97,9 +97,9 @@ namespace GuiFramework
 		CALL(OnNcRender_t, 0x5d5790, this, gc);
 	}
 
-	void GUIColorSelector::OnVirtualInputRender(const VirtualInput& input) const
+	void GUIColorSelector::OnVirtualInputRender(GraphicsContext& gc) const
 	{
-		CALL(OnVirtualInputRender_t, 0x5d7ca0, this, input);
+		CALL(OnVirtualInputRender_t, 0x5d7ca0, this, gc);
 	}
 
 	void GUIColorSelector::SetFloatColor(const DLMT::DL_VECTOR4& color, dl_float32 param_2)
