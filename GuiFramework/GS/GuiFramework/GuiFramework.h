@@ -56,8 +56,11 @@
 #include "Window/Layouter/GUILayoutItem_Window.h"
 
 #include "Window/Tweaker/GUIColorTweaker.h"
+#include "Window/Tweaker/GUIComboTweaker.h"
 #include "Window/Tweaker/GUITweakerBase.h"
 #include "Window/Tweaker/GUITweakerDialog.h"
 #include "Window/Tweaker/GUITweakerGroup.h"
 #include "Window/Tweaker/GUITweakerGroupItem.h"
 #include "Window/Tweaker/GUITweakerItem.h"
+#include "Window/Tweaker/TGUIColorTweaker.inl"
+#include "Window/Tweaker/TGUIComboTweaker.inl"

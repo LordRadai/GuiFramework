@@ -7,6 +7,8 @@ namespace GuiFramework
 	typedef void(__fastcall* GUIComboBox_Ctor_2_t)(GUIComboBox*, GUIWindowBase*, TGUISharedString<dl_wchar>, _GUI_CREATE_WINDOW&);
 	typedef void(__fastcall* GUIComboBox_Ctor_3_t)(GUIComboBox*, GUIWindowBase*, TGUISharedString<dl_wchar>, dl_uint, dl_uint);
 
+	typedef dl_bool(__fastcall* SetCurSel_t)(GUIComboBox*, dl_int, dl_uint);
+
 	GUIComboBox::GUIComboBox(TGUISharedString<dl_wchar> label)
 	{
 		CALL(GUIComboBox_Ctor_t, 0x59d7c0, this, label);
@@ -50,5 +52,10 @@ namespace GuiFramework
 	void GUIComboBox::OnRender(GraphicsContext& gc) const
 	{
 		CALL(OnRender_t, 0x59eed0, this, gc);
+	}
+
+	dl_bool GUIComboBox::SetCurSel(dl_int index, dl_uint param_2)
+	{
+		return CALL(SetCurSel_t, 0x59e0f0, this, index, param_2);
 	}
 }

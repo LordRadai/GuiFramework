@@ -95,4 +95,76 @@ namespace GuiFramework
 	{
 		return CALL(CreateColorFloatTweaker_t, 0x538f00, this, label, v, flags);
 	}
+
+	TGUIComboTweaker<dl_int8>* GUITweakerDialog::CreateComboTweaker(TGUISharedString<dl_wchar> label, dl_int8* v, dl_uint numItems, TGUI_COMBO_TWEAKER_ITEM<dl_int8>* items)
+	{
+		GUITweakerGroup* pGroup = GetCurrentGroup();
+
+		DL_ASSERT(pGroup);
+
+		if (pGroup == nullptr)
+			return nullptr;
+
+		return pGroup->CreateComboTweaker(label, v, numItems, items);
+	}
+
+	TGUIComboTweaker<dl_uint8>* GUITweakerDialog::CreateComboTweaker(TGUISharedString<dl_wchar> label, dl_uint8* v, dl_uint numItems, TGUI_COMBO_TWEAKER_ITEM<dl_uint8>* items)
+	{
+		GUITweakerGroup* pGroup = GetCurrentGroup();
+
+		DL_ASSERT(pGroup);
+
+		if (pGroup == nullptr)
+			return nullptr;
+
+		return pGroup->CreateComboTweaker(label, v, numItems, items);
+	}
+
+	TGUIComboTweaker<dl_int16>* GUITweakerDialog::CreateComboTweaker(TGUISharedString<dl_wchar> label, dl_int16* v, dl_uint numItems, TGUI_COMBO_TWEAKER_ITEM<dl_int16>* items)
+	{
+		GUITweakerGroup* pGroup = GetCurrentGroup();
+
+		DL_ASSERT(pGroup);
+
+		if (pGroup == nullptr)
+			return nullptr;
+
+		return pGroup->CreateComboTweaker(label, v, numItems, items);
+	}
+
+	TGUIComboTweaker<dl_uint16>* GUITweakerDialog::CreateComboTweaker(TGUISharedString<dl_wchar> label, dl_uint16* v, dl_uint numItems, TGUI_COMBO_TWEAKER_ITEM<dl_uint16>* items)
+	{
+		GUITweakerGroup* pGroup = GetCurrentGroup();
+
+		DL_ASSERT(pGroup);
+
+		if (pGroup == nullptr)
+			return nullptr;
+
+		return pGroup->CreateComboTweaker(label, v, numItems, items);
+	}
+
+	TGUIComboTweaker<dl_int>* GUITweakerDialog::CreateComboTweaker(TGUISharedString<dl_wchar> label, dl_int* v, dl_uint numItems, TGUI_COMBO_TWEAKER_ITEM<dl_int>* items)
+	{
+		GUITweakerGroup* pGroup = GetCurrentGroup();
+
+		DL_ASSERT(pGroup);
+
+		if (pGroup == nullptr)
+			return nullptr;
+
+		return pGroup->CreateComboTweaker(label, v, numItems, items);
+	}
+
+	TGUIComboTweaker<dl_uint>* GUITweakerDialog::CreateComboTweaker(TGUISharedString<dl_wchar> label, dl_uint* v, dl_uint numItems, TGUI_COMBO_TWEAKER_ITEM<dl_uint>* items)
+	{
+		GUITweakerGroup* pGroup = GetCurrentGroup();
+
+		DL_ASSERT(pGroup);
+
+		if (pGroup == nullptr)
+			return nullptr;
+
+		return pGroup->CreateComboTweaker(label, v, numItems, items);
+	}
 }

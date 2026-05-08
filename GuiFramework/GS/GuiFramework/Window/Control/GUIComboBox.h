@@ -26,6 +26,8 @@ namespace GuiFramework
 		virtual dl_uint OnLButtonDown(const MouseEvent& event) override;
 		virtual dl_uint OnCreate() override;
 		virtual void OnRender(GraphicsContext& gc) const override;
+
+		dl_bool SetCurSel(dl_int index, dl_uint param_2);
 	private:
 		DLUT::DLVector<_ComboItem> m_items;
 		Rect16 m_itemRect;

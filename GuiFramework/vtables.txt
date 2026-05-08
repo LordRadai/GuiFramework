@@ -777,3 +777,19 @@ GUIPopUpMenuItem : GUIMsgReceiver
 	5:GUIPopUpMenuItem::OnRender
 	6:GUIPopUpMenuItem::OnRenderIcon
 	7:GUIPopUpMenuItem::OnLButtonDown
+	
+GUITweakerItem : GUIMsgReceiver
+	0:GUITweakerItem::GetRuntimeClassOfThis
+	1:GUITweakerItem::~GUITweakerItem
+	2:GUITweakerItem::OnDelete
+	3:GUIObject::DeleteThis
+	4:GUITweakerItem::Update
+	5:GUITweakerItem::Close
+	
+GUITweakerBase : GUITweakerItem
+	0:GUITweakerBase::GetRuntimeClassOfThis
+	1:GUITweakerBase::~GUITweakerItem
+	2:GUITweakerBase::OnDelete
+	3:GUIObject::DeleteThis
+	4:GUITweakerBase::Update
+	5:GUITweakerBase::Close
