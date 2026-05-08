@@ -153,7 +153,7 @@ namespace GuiFramework
         virtual void OnRender(GraphicsContext& gc) const;
         virtual void OnNcRender(GraphicsContext& gc) const;
         virtual void OnRenderWindow(GraphicsContext& gc) const;
-        virtual void OnVirtualInput(const VirtualInput& input) const {}
+        virtual void OnVirtualInputRender(GraphicsContext& gc) const {}
 
         const dl_wchar* GetLabel() const { return m_name.c_str(); }
 		GUIWindowBase* GetParentWindow() const { return m_pParentWindow.Get(); }
@@ -215,7 +215,7 @@ namespace GuiFramework
         typedef void(__fastcall* OnRender_t)(const GUIWindowBase*, GraphicsContext&);
         typedef void(__fastcall* OnNcRender_t)(const GUIWindowBase*, GraphicsContext&);
         typedef void(__fastcall* OnRenderWindow_t)(const GUIWindowBase*, GraphicsContext&);
-        typedef void(__fastcall* OnVirtualInput_Const_t)(const GUIWindowBase*, const VirtualInput&);
+        typedef void(__fastcall* OnVirtualInputRender_t)(const GUIWindowBase*, GraphicsContext&);
 
     protected:
 		TGUIObjectPtr<GUIWindowBase> m_pParentWindow;

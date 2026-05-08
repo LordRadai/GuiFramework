@@ -1,0 +1,52 @@
+#include "GUIMultiNumericEditor.h"
+#include <Call.h>
+
+namespace GuiFramework
+{
+	typedef void(__fastcall* Constructor_t)(GUIMultiNumericEditor*, dl_uint, TGUISharedString<dl_wchar>);
+
+	GUIMultiNumericEditor::GUIMultiNumericEditor(dl_uint numValues, TGUISharedString<dl_wchar> label)
+	{
+		CALL(Constructor_t, 0x5b48e0, this, numValues, label);
+	}
+
+	DLRF::DLRuntimeClass* GUIMultiNumericEditor::GetRuntimeClassOfThis() const
+	{
+		return CALL(GetRuntimeClassOfThis_t, 0x5b4890, this);
+	}
+
+	GUIMultiNumericEditor::~GUIMultiNumericEditor()
+	{
+		CALL(Destructor_t, 0x5b5c90, this);
+	}
+
+	void GUIMultiNumericEditor::OnDelete()
+	{
+		CALL(OnDelete_t, 0x5b5840, this);
+	}
+
+	dl_uint GUIMultiNumericEditor::OnVirtualInput(const VirtualInput& input)
+	{
+		return CALL(OnVirtualInput_t, 0x5b5660, this, input);
+	}
+
+	dl_uint GUIMultiNumericEditor::OnSize()
+	{
+		return CALL(OnSize_t, 0x5b4ff0, this);
+	}
+
+	dl_uint GUIMultiNumericEditor::OnCreate()
+	{
+		return CALL(OnCreate_t, 0x5b4de0, this);
+	}
+
+	void GUIMultiNumericEditor::OnRender(GraphicsContext& gc) const
+	{
+		CALL(OnRender_t, 0x5b5020, this, gc);
+	}
+
+	void GUIMultiNumericEditor::OnVirtualInputRender(GraphicsContext& gc) const
+	{
+		CALL(OnVirtualInputRender_t, 0x5b5190, this, gc);
+	}
+}

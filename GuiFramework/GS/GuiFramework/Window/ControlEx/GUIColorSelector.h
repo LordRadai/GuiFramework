@@ -28,7 +28,7 @@ namespace GuiFramework
 		virtual dl_uint OnCreate() override;
 		virtual void OnRender(GraphicsContext& gc) const override;
 		virtual void OnNcRender(GraphicsContext& gc) const override;
-		virtual void OnVirtualInput(const VirtualInput& input) const override;
+		virtual void OnVirtualInputRender(const VirtualInput& input) const override;
 
 		void SetFloatColor(const DLMT::DL_VECTOR4& color, dl_float32 param_2);
 		void SetIntColor(const DLMT::DL_COLOR_32 color);

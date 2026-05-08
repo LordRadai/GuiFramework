@@ -255,6 +255,7 @@
     <ClInclude Include="GuiFramework\Window\Tweaker\GUIColorTweaker.h" />
     <ClInclude Include="GuiFramework\Window\Tweaker\GUIComboTweaker.h" />
     <ClInclude Include="GuiFramework\Window\Tweaker\GUIComboTweakWidget.h" />
+    <ClInclude Include="GuiFramework\Window\Tweaker\GUIMultiNumericEditor.h" />
     <ClInclude Include="GuiFramework\Window\Tweaker\GUITweakerBase.h" />
     <ClInclude Include="GuiFramework\Window\Tweaker\GUITweakerMaker.h" />
     <ClInclude Include="GuiFramework\Window\Tweaker\TGUIColorTweaker.inl" />
@@ -315,6 +316,7 @@
     <ClCompile Include="GuiFramework\Window\Tweaker\GUIColorTweaker.cpp" />
     <ClCompile Include="GuiFramework\Window\Tweaker\GUIComboTweaker.cpp" />
     <ClCompile Include="GuiFramework\Window\Tweaker\GUIComboTweakWidget.cpp" />
+    <ClCompile Include="GuiFramework\Window\Tweaker\GUIMultiNumericEditor.cpp" />
     <ClCompile Include="GuiFramework\Window\Tweaker\GUITweakerBase.cpp" />
     <ClCompile Include="GuiFramework\Window\Tweaker\GUITweakerMaker.cpp" />
     <ClCompile Include="GuiFramework\Window\Tweaker\TGUIColorTweaker.cpp" />
