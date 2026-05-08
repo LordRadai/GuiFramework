@@ -198,7 +198,7 @@ namespace GuiFramework
         return pGroup->CreateComboTweaker(label, v, numItems, items);
     }
 
-    TGUIComboTweaker<dl_uint8>* GUITweakerMaker::CreateComboTweaker(TGUISharedString<dl_wchar> label, dl_uint8* v, dl_uint numItems, TGUI_COMBO_TWEAKER_ITEM<dl_uint8>* items)
+    TGUIComboTweaker<dl_uint>* GUITweakerMaker::CreateComboTweaker(TGUISharedString<dl_wchar> label, dl_uint* v, dl_uint numItems, TGUI_COMBO_TWEAKER_ITEM<dl_uint>* items)
     {
         DL_ASSERT(!this->m_groups.empty());
 

@@ -47,9 +47,9 @@ namespace GuiFramework
 				AddPair(items[i].Value, items[i].Name);
 		}
 
-		void AddPair(const T& value, const TGUISharedString<T>& str)
+		void AddPair(const T& value, const dl_wchar* str)
 		{
-			TGUI_VALUE_STRING_PAIR<T>* pNewPair = new TGUI_VALUE_STRING_PAIR<T>(value, str);
+			TGUI_COMBO_TWEAKER_ITEM<T>* pNewPair = new TGUI_COMBO_TWEAKER_ITEM<T>(str, value);
 			m_pairs.push_back(pNewPair);
 		}
 

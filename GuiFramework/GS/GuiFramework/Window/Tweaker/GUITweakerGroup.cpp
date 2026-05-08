@@ -75,6 +75,8 @@ namespace GuiFramework
 
 		if (pTweaker)
 			this->AddItem(pTweaker);
+
+		return pTweaker;
 	}
 
 	TGUIComboTweaker<dl_uint8>* GUITweakerGroup::CreateComboTweaker(TGUISharedString<dl_wchar> label, dl_uint8* v, dl_uint numItems, TGUI_COMBO_TWEAKER_ITEM<dl_uint8>* items)
@@ -84,6 +86,8 @@ namespace GuiFramework
 
 		if (pTweaker)
 			this->AddItem(pTweaker);
+
+		return pTweaker;
 	}
 
 	TGUIComboTweaker<dl_int16>* GUITweakerGroup::CreateComboTweaker(TGUISharedString<dl_wchar> label, dl_int16* v, dl_uint numItems, TGUI_COMBO_TWEAKER_ITEM<dl_int16>* items)
@@ -93,6 +97,8 @@ namespace GuiFramework
 
 		if (pTweaker)
 			this->AddItem(pTweaker);
+
+		return pTweaker;
 	}
 
 	TGUIComboTweaker<dl_uint16>* GUITweakerGroup::CreateComboTweaker(TGUISharedString<dl_wchar> label, dl_uint16* v, dl_uint numItems, TGUI_COMBO_TWEAKER_ITEM<dl_uint16>* items)
@@ -102,6 +108,8 @@ namespace GuiFramework
 
 		if (pTweaker)
 			this->AddItem(pTweaker);
+
+		return pTweaker;
 	}
 
 	TGUIComboTweaker<dl_int>* GUITweakerGroup::CreateComboTweaker(TGUISharedString<dl_wchar> label, dl_int* v, dl_uint numItems, TGUI_COMBO_TWEAKER_ITEM<dl_int>* items)
@@ -111,6 +119,8 @@ namespace GuiFramework
 
 		if (pTweaker)
 			this->AddItem(pTweaker);
+
+		return pTweaker;
 	}
 
 	TGUIComboTweaker<dl_uint>* GUITweakerGroup::CreateComboTweaker(TGUISharedString<dl_wchar> label, dl_uint* v, dl_uint numItems, TGUI_COMBO_TWEAKER_ITEM<dl_uint>* items)
@@ -120,6 +130,8 @@ namespace GuiFramework
 
 		if (pTweaker)
 			this->AddItem(pTweaker);
+
+		return pTweaker;
 	}
 
 	void GUITweakerGroup::SetFirstOpenCallback(FirstOpenCallback_t pCallback, dl_size param1, dl_size param2)

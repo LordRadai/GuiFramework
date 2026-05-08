@@ -12,7 +12,7 @@ namespace GuiFramework
 		typedef GUIComboTweaker SuperClass;
 	public:
 		TGUIComboTweaker() : SuperClass(), m_pValue(nullptr) {}
-		TGUIComboTweaker(GUIWindowBase* pParent, TGUISharedString<dl_wchar> label, T* pValue, TGUIValueStringPairData<T>* items) : SuperClass(pParent, label)
+		TGUIComboTweaker(GUIWindowBase* pParent, TGUISharedString<dl_wchar> label, T* pValue, TGUIValueStringPairData<T>* items) : SuperClass(pParent, label, 0)
 		{
 			this->m_pValue = pValue;
 			this->m_valueOld = *pValue;
@@ -51,7 +51,7 @@ namespace GuiFramework
 		}
 
 	protected:
-		virtual void _OnComboSelChanged(dl_uint idx) const override
+		virtual void _OnComboSelChanged(dl_int idx) override
 		{
 			if ((this->m_flags & 1) == 0)
 			{

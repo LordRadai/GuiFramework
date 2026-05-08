@@ -21,7 +21,7 @@ namespace GuiFramework
 		void SetComboCurSel(dl_int index);
 	protected:
 		void _Destroy();
-		virtual void _OnComboSelectionChanged(dl_uint idx) const {}
+		virtual void _OnComboSelChanged(dl_int idx) {}
 
 		typedef void(__fastcall* OnComboSelectionChanged_t)(GUIComboTweaker*);
 
