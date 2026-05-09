@@ -16,7 +16,7 @@ namespace GuiFramework
 
 			dl_bool bValueOn = (*pValue != static_cast<T>(0));
 
-			SetCheckBoxToggle(bValueOn);
+			SetCheck(bValueOn);
 		}
 
 		virtual ~TGUIOnOffTweaker() override
@@ -55,14 +55,14 @@ namespace GuiFramework
 					}
 					else
 					{
-						SetCheckBoxToggle(this->m_valueOld != 0);
+						SetCheck(this->m_valueOld != 0);
 					}
 				}
 			}
 			else
 			{
 				this->m_valueOld = *this->m_pValue;
-				SetCheckBoxToggle(this->m_valueOld != 0);
+				SetCheck(this->m_valueOld != 0);
 			}
 		}
 

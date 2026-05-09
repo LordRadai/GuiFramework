@@ -17,8 +17,8 @@ namespace GuiFramework
 		virtual void OnDelete() override;
 		virtual void Close() override;
 
-		void SetCheckBoxToggle(dl_bool bToggled);
-		dl_bool IsCheckBoxToggled() const;
+		void SetCheck(dl_uint check);
+		dl_bool IsChecked() const;
 	protected:
 		TGUIObjectPtr<GUICheckBox> m_pCheckBox;
 	};

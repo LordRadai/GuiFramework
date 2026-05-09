@@ -5,8 +5,8 @@ namespace GuiFramework
 {
 	typedef void(__fastcall* Constructor_t)(GUIOnOffTweaker*, GUIWidget*, TGUISharedString<dl_wchar>);
 
-	typedef void(__fastcall* SetCheckBoxToggle_t)(GUIOnOffTweaker*, dl_bool);
-	typedef dl_bool(__fastcall* IsCheckBoxToggled_t)(const GUIOnOffTweaker*);
+	typedef void(__fastcall* SetCheck_t)(GUIOnOffTweaker*, dl_bool);
+	typedef dl_bool(__fastcall* IsChecked_t)(const GUIOnOffTweaker*);
 
 	GUIOnOffTweaker::GUIOnOffTweaker(GUIWidget* pParent, TGUISharedString<dl_wchar> label)
 	{
@@ -33,13 +33,13 @@ namespace GuiFramework
 		CALL(Close_t, 0x54aa00, this);
 	}
 
-	void GUIOnOffTweaker::SetCheckBoxToggle(dl_bool bToggled)
+	void GUIOnOffTweaker::SetCheck(dl_uint check)
 	{
-		CALL(SetCheckBoxToggle_t, 0x54ab00, this, bToggled);
+		CALL(SetCheck_t, 0x54ab00, this, check);
 	}
 
-	dl_bool GUIOnOffTweaker::IsCheckBoxToggled() const
+	dl_bool GUIOnOffTweaker::IsChecked() const
 	{
-		return CALL(IsCheckBoxToggled_t, 0x54aa90, this);
+		return CALL(IsChecked_t, 0x54aa90, this);
 	}
 }

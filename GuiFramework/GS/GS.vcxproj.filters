@@ -264,6 +264,9 @@
     <ClInclude Include="GuiFramework\Window\Tweaker\TGUIOnOffTweaker.inl">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="GuiFramework\Window\Tweaker\TGUIProxyOnOffTweaker.inl">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="GuiFramework\System\GUIObject.cpp">

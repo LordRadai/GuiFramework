@@ -19,22 +19,30 @@ namespace GuiFramework
 		{
 		}
 
+		T GetMask() const
+		{
+			return (static_cast<T>(1) << m_numBits) - 1;
+		}
+
 		T GetValue() const
 		{
 			if (!m_pValue) return 0;
-			return (*m_pValue >> m_bitIndex) & ((1 << m_numBits) - 1);
+			return (*m_pValue >> m_bitIndex) & GetMask();
 		}
 
 		TGUIBitFieldProxy& operator=(T value)
 		{
-			if (!m_pValue) return *this;
+			if (!pValue) return *this;
 
-			T mask = ((1 << m_numBits) - 1) << m_bitIndex;
-			*m_pValue = (*m_pValue & ~mask) | ((value << m_bitIndex) & mask);
+			T mask = GetMask();
+			*m_pValue = (*m_pValue & ~(mask << m_bitIndex)) | ((value & mask) << m_bitIndex);
 
 			return *this;
 		}
 
+		operator T() const { return GetValue(); }
+
+		dl_size GetDataBitSize() const { return sizeof(T) * 8; }
 	protected:
 		T* m_pValue;
 		dl_uint8 m_bitIndex;
