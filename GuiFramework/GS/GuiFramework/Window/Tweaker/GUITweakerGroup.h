@@ -3,6 +3,7 @@
 #include "GUITweakerGroupItem.h"
 #include "TGUIColorTweaker.inl"
 #include "TGUIComboTweaker.inl"
+#include "TGUIMultiTweaker.inl"
 
 namespace GuiFramework
 {
@@ -29,13 +30,29 @@ namespace GuiFramework
 		TGUIColorTweaker<DLMT2::DL_COLOR_U8>* CreateColorTweaker(TGUISharedString<dl_wchar> label, DLMT2::DL_COLOR_U8* v, dl_uint flags);
 		TGUIColorTweaker<DLMT::DL_VECTOR4>* CreateColorTweaker(TGUISharedString<dl_wchar> label, DLMT::DL_VECTOR4* v, dl_uint flags);
 
-		TGUIComboTweaker<dl_int8>* CreateComboTweaker(TGUISharedString<dl_wchar> label, dl_int8* v, dl_uint numItems, TGUI_COMBO_TWEAKER_ITEM<dl_int8>* items);
-		TGUIComboTweaker<dl_uint8>* CreateComboTweaker(TGUISharedString<dl_wchar> label, dl_uint8* v, dl_uint numItems, TGUI_COMBO_TWEAKER_ITEM<dl_uint8>* items);
-		TGUIComboTweaker<dl_int16>* CreateComboTweaker(TGUISharedString<dl_wchar> label, dl_int16* v, dl_uint numItems, TGUI_COMBO_TWEAKER_ITEM<dl_int16>* items);
-		TGUIComboTweaker<dl_uint16>* CreateComboTweaker(TGUISharedString<dl_wchar> label, dl_uint16* v, dl_uint numItems, TGUI_COMBO_TWEAKER_ITEM<dl_uint16>* items);
-		TGUIComboTweaker<dl_int>* CreateComboTweaker(TGUISharedString<dl_wchar> label, dl_int* v, dl_uint numItems, TGUI_COMBO_TWEAKER_ITEM<dl_int>* items);
-		TGUIComboTweaker<dl_uint>* CreateComboTweaker(TGUISharedString<dl_wchar> label, dl_uint* v, dl_uint numItems, TGUI_COMBO_TWEAKER_ITEM<dl_uint>* items);
+		template<typename T>
+		TGUIComboTweaker<T>* CreateComboTweaker(TGUISharedString<dl_wchar> label, T* v, dl_uint numItems, TGUI_COMBO_TWEAKER_ITEM<T>* items)
+		{
+			TGUIValueStringPairData<T>* data = new TGUIValueStringPairData<T>(items, numItems);
+			TGUIComboTweaker<T>* pTweaker = new TGUIComboTweaker<T>(this, label, v, data);
 
+			if (pTweaker)
+				this->AddItem(pTweaker);
+
+			return pTweaker;
+		}
+
+		template<typename T>
+		TGUIMultiTweaker<T>* CreateMultiTweaker(TGUISharedString<dl_wchar> label, dl_uint numValues, T* v, T min, T max, T step, dl_float32 mult = 1.f)
+		{
+			TGUIMultiTweaker<T>* pTweaker = new TGUIMultiTweaker<T>(this, label, numValues, v, min, max, step, mult);
+
+			if (pTweaker)
+				this->AddItem(pTweaker);
+
+			return pTweaker;
+		}
+		
 		void SetFirstOpenCallback(FirstOpenCallback_t pCallback, dl_size param1, dl_size param2);
 	protected:
 		DLUT::DLVector<GUITweakerGroupItem*> m_items;
