@@ -24,6 +24,9 @@ namespace GuiFramework
 		TGUIColorTweaker<DLMT2::DL_COLOR_U8>* CreateColorTweaker(TGUISharedString<dl_wchar> label, DLMT2::DL_COLOR_U8* v, dl_uint flags);
 		TGUIColorTweaker<DLMT::DL_VECTOR4>* CreateColorTweaker(TGUISharedString<dl_wchar> label, DLMT::DL_VECTOR4* v, dl_uint flags);
 
+		GUITextureList* CreateTextureList(TGUISharedString<dl_wchar> label);
+		GUITextureViewer* CreateTextureViewer(TGUISharedString<dl_wchar> label, GUITextureBase* pTexture);
+
 		template<typename T>
 		TGUIComboTweaker<T>* CreateComboTweaker(TGUISharedString<dl_wchar> label, T* v, dl_uint numItems, TGUI_COMBO_TWEAKER_ITEM<T>* items)
 		{
@@ -48,6 +51,19 @@ namespace GuiFramework
 				return nullptr;
 
 			return pGroup->CreateMultiTweaker<T>(label, numValues, v, min, max, step, mult);
+		}
+
+		template<typename T>
+		TGUIOnOffTweaker<T>* CreateOnOffTweaker(TGUISharedString<dl_wchar> label, T* v)
+		{
+			DL_ASSERT(!this->m_groups.empty());
+
+			GUITweakerGroup* pGroup = this->GetCurrentGroup();
+
+			if (pGroup == nullptr)
+				return nullptr;
+
+			return pGroup->CreateOnOffTweaker<T>(label, v);
 		}
 
 	protected:

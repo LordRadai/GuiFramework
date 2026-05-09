@@ -258,6 +258,12 @@
     <ClInclude Include="GuiFramework\Window\Tweaker\TGUIMultiTweaker.inl">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="GuiFramework\Window\Tweaker\GUIOnOffTweaker.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="GuiFramework\Window\Tweaker\TGUIOnOffTweaker.inl">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="GuiFramework\System\GUIObject.cpp">
@@ -435,6 +441,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="GuiFramework\Window\Tweaker\GUIMultiTweaker.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="GuiFramework\Window\Tweaker\GUIOnOffTweaker.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

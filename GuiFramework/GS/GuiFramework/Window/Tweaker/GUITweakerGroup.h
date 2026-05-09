@@ -4,6 +4,9 @@
 #include "TGUIColorTweaker.inl"
 #include "TGUIComboTweaker.inl"
 #include "TGUIMultiTweaker.inl"
+#include "TGUIOnOffTweaker.inl"
+#include "GuiFramework/Window/ControlEx/GUITextureViewer.h"
+#include "GuiFramework/Window/ControlEx/GUITextureList.h"
 
 namespace GuiFramework
 {
@@ -30,6 +33,9 @@ namespace GuiFramework
 		TGUIColorTweaker<DLMT2::DL_COLOR_U8>* CreateColorTweaker(TGUISharedString<dl_wchar> label, DLMT2::DL_COLOR_U8* v, dl_uint flags);
 		TGUIColorTweaker<DLMT::DL_VECTOR4>* CreateColorTweaker(TGUISharedString<dl_wchar> label, DLMT::DL_VECTOR4* v, dl_uint flags);
 
+		GUITextureList* CreateTextureList(TGUISharedString<dl_wchar> label);
+		GUITextureViewer* CreateTextureViewer(TGUISharedString<dl_wchar> label, GUITextureBase* pTexture);
+
 		template<typename T>
 		TGUIComboTweaker<T>* CreateComboTweaker(TGUISharedString<dl_wchar> label, T* v, dl_uint numItems, TGUI_COMBO_TWEAKER_ITEM<T>* items)
 		{
@@ -53,6 +59,17 @@ namespace GuiFramework
 			return pTweaker;
 		}
 		
+		template<typename T>
+		TGUIOnOffTweaker<T>* CreateOnOffTweaker(TGUISharedString<dl_wchar> label, T* v)
+		{
+			TGUIOnOffTweaker<T>* pTweaker = new TGUIOnOffTweaker<T>(this, label, v);
+
+			if (pTweaker)
+				this->AddItem(pTweaker);
+
+			return pTweaker;
+		}
+
 		void SetFirstOpenCallback(FirstOpenCallback_t pCallback, dl_size param1, dl_size param2);
 	protected:
 		DLUT::DLVector<GUITweakerGroupItem*> m_items;

@@ -138,6 +138,30 @@ namespace GuiFramework
 		return pGroup->CreateColorTweaker(label, v, flags);
     }
 
+    GUITextureList* GUITweakerMaker::CreateTextureList(TGUISharedString<dl_wchar> label)
+    {
+		DL_ASSERT(!this->m_groups.empty());
+
+		GUITweakerGroup* pGroup = this->GetCurrentGroup();
+
+		if (pGroup == nullptr)
+			return nullptr;
+
+        return pGroup->CreateTextureList(label);
+	}
+
+    GUITextureViewer* GUITweakerMaker::CreateTextureViewer(TGUISharedString<dl_wchar> label, GUITextureBase* pTexture)
+    {
+		DL_ASSERT(!this->m_groups.empty());
+
+		GUITweakerGroup* pGroup = this->GetCurrentGroup();
+
+		if (pGroup == nullptr)
+			return nullptr;
+
+		return pGroup->CreateTextureViewer(label, pTexture);
+    }
+
     void GUITweakerMaker::_PushGroup(GUITweakerGroup* pGroup)
     {
 		DL_ASSERT(pGroup == nullptr || !m_groups.empty());
