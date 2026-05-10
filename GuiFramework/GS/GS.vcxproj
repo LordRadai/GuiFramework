@@ -207,7 +207,9 @@
     <ClInclude Include="GuiFramework\Signal\GUISignal.h" />
     <ClInclude Include="GuiFramework\Signal\GUISignalDecl.h" />
     <ClInclude Include="GuiFramework\Signal\GUISignalManager.h" />
+    <ClInclude Include="GuiFramework\System\GUIBitsetProxy.h" />
     <ClInclude Include="GuiFramework\System\GUIFont.h" />
+    <ClInclude Include="GuiFramework\System\GUIFormatter.h" />
     <ClInclude Include="GuiFramework\System\GUIInvoker.h" />
     <ClInclude Include="GuiFramework\System\GUIMouseEvent.h" />
     <ClInclude Include="GuiFramework\System\GUISystem.h" />
@@ -232,6 +234,7 @@
     <ClInclude Include="GuiFramework\Window\ControlEx\GUITextureViewer.h" />
     <ClInclude Include="GuiFramework\Window\ControlEx\GUITexture_DLTexture.h" />
     <ClInclude Include="GuiFramework\Window\ControlEx\GUIYawPitchControl.h" />
+    <ClInclude Include="GuiFramework\Window\ControlEx\TGUIProxyPropertyLabel.inl" />
     <ClInclude Include="GuiFramework\Window\Control\GUICheckBox.h" />
     <ClInclude Include="GuiFramework\Window\Control\GUIComboBox.h" />
     <ClInclude Include="GuiFramework\Window\Control\GUIDropDownList.h" />
