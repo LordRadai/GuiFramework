@@ -19,6 +19,16 @@ namespace GuiFramework
 		{
 		}
 
+		~TGUIBitFieldProxy()
+		{
+			Finalize();
+		}
+
+		void Finalize()
+		{
+			m_pValue = nullptr;
+		}
+
 		T GetMask() const
 		{
 			return (static_cast<T>(1) << m_numBits) - 1;

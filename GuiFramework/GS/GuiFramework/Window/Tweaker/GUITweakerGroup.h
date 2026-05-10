@@ -5,6 +5,7 @@
 #include "TGUIComboTweaker.inl"
 #include "TGUIMultiTweaker.inl"
 #include "TGUIOnOffTweaker.inl"
+#include "TGUIProxyOnOffTweaker.inl"
 #include "GuiFramework/Window/ControlEx/GUITextureViewer.h"
 #include "GuiFramework/Window/ControlEx/GUITextureList.h"
 
@@ -63,6 +64,17 @@ namespace GuiFramework
 		TGUIOnOffTweaker<T>* CreateOnOffTweaker(TGUISharedString<dl_wchar> label, T* v)
 		{
 			TGUIOnOffTweaker<T>* pTweaker = new TGUIOnOffTweaker<T>(this, label, v);
+
+			if (pTweaker)
+				this->AddItem(pTweaker);
+
+			return pTweaker;
+		}
+
+		template<typename T>
+		TGUIProxyOnOffTweaker<T>* CreateProxyOnOffTweaker(TGUISharedString<dl_wchar> label, T* v)
+		{
+			TGUIProxyOnOffTweaker<T>* pTweaker = new TGUIProxyOnOffTweaker<T>(this, label, v);
 
 			if (pTweaker)
 				this->AddItem(pTweaker);

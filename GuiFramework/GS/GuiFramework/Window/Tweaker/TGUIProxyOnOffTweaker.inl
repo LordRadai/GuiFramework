@@ -4,29 +4,72 @@
 
 namespace GuiFramework
 {
-#pragma once
-#include "GUIOnOffTweaker.h"
+    template<class ProxyClass>
+    class TGUIProxyOnOffTweaker : public GUIOnOffTweaker
+    {};
 
-    namespace GuiFramework
+    template<typename T>
+    class TGUIProxyOnOffTweaker<TGUIBitFieldProxy<T>> : public GUIOnOffTweaker
     {
-        template<class ProxyClass>
-        class TGUIProxyOnOffTweaker : public GUIOnOffTweaker
+        typedef TGUIProxyOnOffTweaker<TGUIBitFieldProxy<T>> ThisClass;
+        typedef GUIOnOffTweaker SuperClass;
+    public:
+        virtual ~TGUIProxyOnOffTweaker() override
         {
-            typedef TGUIProxyOnOffTweaker<ProxyClass> ThisClass;
-            typedef GUIOnOffTweaker SuperClass;
-        public:
-            using ValueType = decltype(std::declval<ProxyClass>().GetValue());
+            OnDelete();
+            UnRef();
+            SuperClass::~GUIOnOffTweaker();
+        }
 
-            TGUIProxyOnOffTweaker(GUIWidget* pParent, TGUISharedString<dl_wchar> label, ProxyClass proxy) : SuperClass(pParent, label), m_proxy(proxy), m_valueOld(proxy.GetValue())
+        virtual void OnDelete() override
+        {
+            m_proxy.Finalize();
+            SuperClass::OnDelete();
+        }
+
+        virtual void Update(dl_float32 dt) override
+        {
+            if (this->m_proxy.pValue == nullptr)
+                return;
+
+            T currentBitValue = this->m_proxy.GetValue();
+
+            if (currentBitValue == this->m_valueOld)
             {
-                SetCheck(IsCheckBoxToggled());
-			}
+                dl_uint32 uiChecked = this->IsChecked();
 
-            virtual void Update(dl_float32 dt) override;
+                bool bUiState = (uiChecked != 0);
+                bool bCacheState = (this->m_valueOld != 0);
 
-        protected:
-            ProxyClass m_proxy;
-            ValueType  m_valueOld;
+                if (bUiState != bCacheState)
+                {
+                    if (this->m_flags < 0)
+                    {
+                        this->SetCheck(this->m_valueOld != 0);
+                    }
+                    else
+                    {
+                        this->m_valueOld = bUiState ? (T)1 : (T)0;
+                        this->m_proxy = this->m_valueOld;
+                        this->InvokeCallback();
+                    }
+                }
+            }
+            else
+            {
+                this->m_valueOld = currentBitValue;
+                this->SetCheck(this->m_valueOld != 0);
+            }
+        }
+
+        virtual void Close() override
+        {
+            m_proxy.Finalize();
+            SuperClass::Close();
         };
-    }
+
+    protected:
+        TGUIBitFieldProxy<T> m_proxy;
+        T m_valueOld;
+    };
 }

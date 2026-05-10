@@ -66,6 +66,19 @@ namespace GuiFramework
 			return pGroup->CreateOnOffTweaker<T>(label, v);
 		}
 
+		template<typename T>
+		TGUIProxyOnOffTweaker<T>* CreateProxyOnOffTweaker(TGUISharedString<dl_wchar> label, T* v)
+		{
+			DL_ASSERT(!this->m_groups.empty());
+
+			GUITweakerGroup* pGroup = this->GetCurrentGroup();
+
+			if (pGroup == nullptr)
+				return nullptr;
+
+			return pGroup->CreateProxyOnOffTweaker<T>(label, v);
+		}
+
 	protected:
 		void _PushGroup(GUITweakerGroup* pGroup);
 		void _PopGroup();

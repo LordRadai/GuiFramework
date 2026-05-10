@@ -72,7 +72,19 @@ namespace GuiFramework
 
 			return pGroup->CreateOnOffTweaker(label, v);
 		}
+		
+		template<typename T>
+		TGUIProxyOnOffTweaker<T>* CreateProxyOnOffTweaker(TGUISharedString<dl_wchar> label, T* v)
+		{
+			GUITweakerGroup* pGroup = GetCurrentGroup();
 
+			DL_ASSERT(pGroup);
+
+			if (pGroup == nullptr)
+				return nullptr;
+
+			return pGroup->CreateProxyOnOffTweaker(label, v);
+		}
 	private:
 		DLUT::DLVector<GUITweakerGroupItem*> m_items;
 		DLUT::DLVector<GUITweakerGroup*> m_groups;
