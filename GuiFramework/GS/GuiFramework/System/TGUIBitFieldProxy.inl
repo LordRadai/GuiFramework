@@ -8,7 +8,7 @@ namespace GuiFramework
 	{
 		typedef TGUIBitFieldProxy<T> ThisClass;
 	public:
-		TGUIBitFieldProxy() : m_pValue(nullptr), m_bitIndex(0), m_numBits(0) 
+		TGUIBitFieldProxy() : m_pValue(nullptr), m_bitIndex(0), m_numBits(0)
 		{
 		}
 
@@ -42,7 +42,7 @@ namespace GuiFramework
 
 		TGUIBitFieldProxy& operator=(T value)
 		{
-			if (!pValue) return *this;
+			if (!m_pValue) return *this;
 
 			T mask = GetMask();
 			*m_pValue = (*m_pValue & ~(mask << m_bitIndex)) | ((value & mask) << m_bitIndex);
@@ -56,6 +56,6 @@ namespace GuiFramework
 	protected:
 		T* m_pValue;
 		dl_uint8 m_bitIndex;
-		dl_uint8 m_bitMask;
+		dl_uint8 m_numBits;
 	};
 }
