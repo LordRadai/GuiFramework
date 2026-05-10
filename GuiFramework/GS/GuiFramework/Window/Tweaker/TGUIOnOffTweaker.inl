@@ -39,14 +39,14 @@ namespace GuiFramework
 
 			if (*this->m_pValue == this->m_valueOld) 
 			{
-				dl_bool bToggled = IsCheckBoxToggled();
+				dl_bool bToggled = IsChecked();
 				dl_bool bValueOn = (this->m_valueOld != 0);
 
 				if (bValueOn != bToggled)
 				{
 					if ((this->m_flags & 1) == 0) 
 					{
-						bool newState = IsCheckBoxToggled();
+						bool newState = IsChecked();
 
 						this->m_valueOld = newState;
 						*this->m_pValue = newState;
