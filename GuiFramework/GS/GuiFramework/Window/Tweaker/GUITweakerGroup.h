@@ -6,6 +6,8 @@
 #include "TGUIMultiTweaker.inl"
 #include "TGUIOnOffTweaker.inl"
 #include "TGUIProxyOnOffTweaker.inl"
+#include "TGUITweakerItem.h"
+#include "GuiFramework/Window/ControlEx/TGUIPropertyLabel.inl"
 #include "GuiFramework/Window/ControlEx/GUITextureViewer.h"
 #include "GuiFramework/Window/ControlEx/GUITextureList.h"
 
@@ -80,6 +82,27 @@ namespace GuiFramework
 				this->AddItem(pTweaker);
 
 			return pTweaker;
+		}
+
+		template<typename T>
+		TGUIPropertyLabel<T>* CreatePropertyLabel(TGUISharedString<dl_wchar> label, T* v)
+		{
+			TGUIPropertyLabel<T>* pLabel = new TGUIPropertyLabel<T>(this, label, v, 1);
+
+			if (pLabel == nullptr)
+				return nullptr;
+
+			TGUITweakerItem<TGUIPropertyLabel<T>>* pItem = new TGUITweakerItem<TGUIPropertyLabel<T>>();
+
+			if (pItem == nullptr)
+			{
+				pLabel->UnRef();
+				return nullptr;
+			}
+
+			AddItem(pItem);
+
+			return pLabel;
 		}
 
 		void SetFirstOpenCallback(FirstOpenCallback_t pCallback, dl_size param1, dl_size param2);

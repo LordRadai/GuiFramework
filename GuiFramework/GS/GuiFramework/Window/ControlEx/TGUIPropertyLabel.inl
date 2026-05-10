@@ -26,6 +26,29 @@ namespace GuiFramework
 		typedef TGUIPropertyLabel<T, Formatter> ThisClass;
 		typedef GUIPropertyLabel SuperClass;
 	public:
+		TGUIPropertyLabel(GUIWindowBase* pParent, TGUISharedString<dl_wchar> label, T* value, dl_int flags) : SuperClass(pParent, label, flags), m_value(value)
+		{
+		}
+
+		virtual ~TGUIPropertyLabel() override
+		{
+			OnDelete();
+			UnRef();
+			SuperClass::_Destroy();
+		}
+
+		virtual void OnDelete() override
+		{
+			this->m_value = nullptr;
+			SuperClass::OnDelete();
+		}
+
+		virtual dl_uint OnClose() override
+		{
+			this->m_value = nullptr;
+			return SuperClass::OnClose();
+		}
+
 		virtual dl_bool GetValueString(DLTX::DLString& str) const override
 		{
 			DLTX::DLFormat<dl_wchar>::Format(str, Formatter::IntegerFormatString, *m_value);

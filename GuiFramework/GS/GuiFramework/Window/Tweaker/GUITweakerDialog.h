@@ -85,6 +85,20 @@ namespace GuiFramework
 
 			return pGroup->CreateProxyOnOffTweaker(label, v);
 		}
+
+		template<typename T>
+		TGUIPropertyLabel<T>* CreatePropertyLabel(TGUISharedString<dl_wchar> label, T* v)
+		{
+			GUITweakerGroup* pGroup = GetCurrentGroup();
+
+			DL_ASSERT(pGroup);
+
+			if (pGroup == nullptr)
+				return nullptr;
+
+			return pGroup->CreatePropertyLabel(label, v);
+		}
+
 	private:
 		DLUT::DLVector<GUITweakerGroupItem*> m_items;
 		DLUT::DLVector<GUITweakerGroup*> m_groups;
