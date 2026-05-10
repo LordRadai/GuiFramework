@@ -28,7 +28,7 @@ namespace GuiFramework
 	public:
 		virtual dl_bool GetValueString(DLTX::DLString& str) const override
 		{
-			DLTX::DLFormat::Format(&str, Formatter::IntegerFormatString, *m_value);
+			DLTX::DLFormat<dl_wchar>::Format(str, Formatter::IntegerFormatString, *m_value);
 
 			return true;
 		}
@@ -48,28 +48,28 @@ namespace GuiFramework
 	template<>
 	inline dl_bool TGUIPropertyLabel<dl_float32, GUIPropertyFormatter>::GetValueString(DLTX::DLString& str) const
 	{
-		DLTX::DLFormat::Format(&str, GUIPropertyFormatter::FloatFormatString, *m_value);
+		DLTX::DLFormat<dl_wchar>::Format(str, GUIPropertyFormatter::FloatFormatString, *m_value);
 		return true;
 	}
 
 	template<>
 	inline dl_bool TGUIPropertyLabel<DLMT::DL_VECTOR2, GUIPropertyFormatter>::GetValueString(DLTX::DLString& str) const
 	{
-		DLTX::DLFormat::Format(&str, GUIPropertyFormatter::Vector2FormatString, m_value->x, m_value->y);
+		DLTX::DLFormat<dl_wchar>::Format(str, GUIPropertyFormatter::Vector2FormatString, m_value->x, m_value->y);
 		return true;
 	}
 
 	template<>
 	inline dl_bool TGUIPropertyLabel<DLMT::DL_VECTOR3, GUIPropertyFormatter>::GetValueString(DLTX::DLString& str) const
 	{
-		DLTX::DLFormat::Format(&str, GUIPropertyFormatter::Vector3FormatString, m_value->x, m_value->y, m_value->z);
+		DLTX::DLFormat<dl_wchar>::Format(str, GUIPropertyFormatter::Vector3FormatString, m_value->x, m_value->y, m_value->z);
 		return true;
 	}
 
 	template<>
 	inline dl_bool TGUIPropertyLabel<DLMT::DL_VECTOR4, GUIPropertyFormatter>::GetValueString(DLTX::DLString& str) const
 	{
-		DLTX::DLFormat::Format(&str, GUIPropertyFormatter::Vector4FormatString, m_value->x, m_value->y, m_value->z, m_value->w);
+		DLTX::DLFormat<dl_wchar>::Format(str, GUIPropertyFormatter::Vector4FormatString, m_value->x, m_value->y, m_value->z, m_value->w);
 		return true;
 	}
 }
