@@ -7,6 +7,7 @@
 #include "TGUIOnOffTweaker.inl"
 #include "TGUIProxyOnOffTweaker.inl"
 #include "TGUITweakerItem.inl"
+#include "TGUIRangeTweaker.inl"
 #include "GuiFramework/Window/ControlEx/TGUIPropertyLabel.inl"
 #include "GuiFramework/Window/ControlEx/GUITextureViewer.h"
 #include "GuiFramework/Window/ControlEx/GUITextureList.h"
@@ -103,6 +104,20 @@ namespace GuiFramework
 			AddItem(pItem);
 
 			return pLabel;
+		}
+
+		template<typename T>
+		TGUIRangeTweaker<T>* CreateTweaker(TGUISharedString<dl_wchar> label, T* v, T min, T max, T step, dl_float32 mult = 1.f)
+		{
+			TGUIRangeTweaker<T>* pTweaker = new TGUIRangeTweaker<T>(label, new TGUIRangeData<T>(min, max, step, mult));
+
+			if (pTweaker)
+			{
+				pTweaker->m_pValue = v;
+				this->AddItem(pTweaker);
+			}
+
+			return pTweaker;
 		}
 
 		void SetFirstOpenCallback(FirstOpenCallback_t pCallback, dl_size param1, dl_size param2);

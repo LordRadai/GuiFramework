@@ -11,6 +11,14 @@ namespace GuiFramework
 		typedef TGUIRangeTweaker ThisClass;
 		typedef GUIRangeTweaker SuperClass;
 	public:
+		TGUIRangeTweaker(GUIWindowBase* pParent, TGUISharedString<dl_wchar> label, T* pValue, T min, T max, T step, dl_float32 mult = 1.f) : SuperClass()
+			, m_pValue(pValue)
+		{
+			TGUIRangeData<T>* pRangeData = new TGUIRangeData<T>(min, max, step, mult);
+			this->m_pRangeData = pRangeData;
+			Create(pParent, label);
+		}
+
 		virtual ~TGUIRangeTweaker() override
 		{
 			_Destroy();

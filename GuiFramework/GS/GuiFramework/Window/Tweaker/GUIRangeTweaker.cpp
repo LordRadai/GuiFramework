@@ -2,13 +2,19 @@
 
 namespace GuiFramework
 {
-	typedef void(_fastcall* Constructor_t)(GUIRangeTweaker*, TGUISharedString<dl_wchar>, GUIRangeDataBase*);
+	typedef void(_fastcall* Constructor1_t)(GUIRangeTweaker*);
+	typedef void(_fastcall* Constructor2_t)(GUIRangeTweaker*, TGUISharedString<dl_wchar>, GUIRangeDataBase*);
 
 	typedef void(_fastcall* Create_t)(GUIRangeTweaker*, GUIWindowBase*, TGUISharedString<dl_wchar>);
 
+	GUIRangeTweaker::GUIRangeTweaker() 
+	{
+		CALL(Constructor1_t, 0x541ca0, this);
+	}
+
 	GUIRangeTweaker::GUIRangeTweaker(TGUISharedString<dl_wchar> label, GUIRangeDataBase* pRangeData) 
 	{
-		CALL(Constructor_t, 0x541ca0, this, label, pRangeData);
+		CALL(Constructor2_t, 0x541ca0, this, label, pRangeData);
 	}
 
 	DLRF::DLRuntimeClass* GUIRangeTweaker::GetRuntimeClassOfThis() const
