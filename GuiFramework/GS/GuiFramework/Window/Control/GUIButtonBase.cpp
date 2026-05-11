@@ -5,6 +5,8 @@ namespace GuiFramework
 {
 	typedef void(_fastcall* Constructor_t)(const GUIButtonBase*, TGUISharedString<dl_wchar>);
 
+	typedef dl_uint(_fastcall* Press_t)(const GUIButtonBase*, dl_uint);
+
 	GUIButtonBase::GUIButtonBase(TGUISharedString<dl_wchar> label)
 	{
 		CALL(Constructor_t, 0x596ac0, this, label);
@@ -43,5 +45,10 @@ namespace GuiFramework
 	dl_uint GUIButtonBase::OnMouseLeave()
 	{
 		return CALL(OnMouseLeave_t, 0x596f30, this);
+	}
+
+	dl_uint GUIButtonBase::Press(dl_uint state) const
+	{
+		return CALL(Press_t, 0x596b90, this, state);
 	}
 }

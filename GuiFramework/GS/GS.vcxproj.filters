@@ -288,6 +288,12 @@
     <ClInclude Include="GuiFramework\Window\Tweaker\TGUIRangeTweaker.inl">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="GuiFramework\Window\Tweaker\GUITriggerTweakWidget.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="GuiFramework\Window\Tweaker\GUITriggerTweaker.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="GuiFramework\System\GUIObject.cpp">
@@ -474,6 +480,12 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="GuiFramework\Window\Tweaker\GUIRangeTweaker.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="GuiFramework\Window\Tweaker\GUITriggerTweakWidget.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="GuiFramework\Window\Tweaker\GUITriggerTweaker.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

@@ -34,6 +34,8 @@ namespace GuiFramework
 		GUITextureList* CreateTextureList(TGUISharedString<dl_wchar> label);
 		GUITextureViewer* CreateTextureViewer(TGUISharedString<dl_wchar> label, GUITextureBase* pTexture);
 
+		GUITriggerTweaker* CreateTrigger(TGUISharedString<dl_wchar> label);
+
 		template<typename T>
 		TGUIComboTweaker<T>* CreateComboTweaker(TGUISharedString<dl_wchar> label, T* v, dl_uint numItems, TGUI_COMBO_TWEAKER_ITEM<T>* items)
 		{

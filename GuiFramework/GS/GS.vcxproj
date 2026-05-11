@@ -263,6 +263,8 @@
     <ClInclude Include="GuiFramework\Window\Tweaker\GUIOnOffTweaker.h" />
     <ClInclude Include="GuiFramework\Window\Tweaker\GUIRangeTweaker.h" />
     <ClInclude Include="GuiFramework\Window\Tweaker\GUIRangeTweakWidget.h" />
+    <ClInclude Include="GuiFramework\Window\Tweaker\GUITriggerTweaker.h" />
+    <ClInclude Include="GuiFramework\Window\Tweaker\GUITriggerTweakWidget.h" />
     <ClInclude Include="GuiFramework\Window\Tweaker\GUITweakerBase.h" />
     <ClInclude Include="GuiFramework\Window\Tweaker\GUITweakerMaker.h" />
     <ClInclude Include="GuiFramework\Window\Tweaker\TGUIColorTweaker.inl" />
@@ -333,6 +335,8 @@
     <ClCompile Include="GuiFramework\Window\Tweaker\GUIOnOffTweaker.cpp" />
     <ClCompile Include="GuiFramework\Window\Tweaker\GUIRangeTweaker.cpp" />
     <ClCompile Include="GuiFramework\Window\Tweaker\GUIRangeTweakWidget.cpp" />
+    <ClCompile Include="GuiFramework\Window\Tweaker\GUITriggerTweaker.cpp" />
+    <ClCompile Include="GuiFramework\Window\Tweaker\GUITriggerTweakWidget.cpp" />
     <ClCompile Include="GuiFramework\Window\Tweaker\GUITweakerBase.cpp" />
     <ClCompile Include="GuiFramework\Window\Tweaker\GUITweakerMaker.cpp" />
     <ClCompile Include="GuiFramework\Window\Tweaker\TGUIColorTweaker.cpp" />

@@ -16,6 +16,8 @@ namespace GuiFramework
 	typedef GUITextureList*(_fastcall* CreateTextureList_t)(GUITweakerGroup*, TGUISharedString<dl_wchar>);
 	typedef GUITextureViewer*(_fastcall* CreateTextureViewer_t)(GUITweakerGroup*, TGUISharedString<dl_wchar>, GUITextureBase*);
 
+	typedef GUITriggerTweaker*(_fastcall* CreateTrigger_t)(GUITweakerGroup*, TGUISharedString<dl_wchar>);
+
 	GUITweakerGroup::GUITweakerGroup(TGUISharedString<dl_wchar> label)
 	{
 		CALL(Constructor_t, 0x54b390, this, label);
@@ -79,6 +81,11 @@ namespace GuiFramework
 	GUITextureViewer* GUITweakerGroup::CreateTextureViewer(TGUISharedString<dl_wchar> label, GUITextureBase* pTexture)
 	{
 		return CALL(CreateTextureViewer_t, 0x54ca80, this, label, pTexture);
+	}
+
+	GUITriggerTweaker* GUITweakerGroup::CreateTrigger(TGUISharedString<dl_wchar> label)
+	{
+		return CALL(CreateTrigger_t, 0x54cf60, this, label);
 	}
 
 	void GUITweakerGroup::SetFirstOpenCallback(FirstOpenCallback_t pCallback, dl_size param1, dl_size param2)

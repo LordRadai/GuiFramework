@@ -1,6 +1,6 @@
 #pragma once
 #include "GUITweakerItem.h"
-#include "GuiFramework/Callback/TGUICallbackObject.inl"
+#include "GuiFramework/System/TGUICallbackObject.inl"
 
 namespace GuiFramework
 {

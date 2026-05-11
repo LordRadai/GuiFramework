@@ -83,9 +83,6 @@ namespace GuiFramework
 
 		DL_ASSERT(pGroup);
 
-		if (pGroup == nullptr)
-			return nullptr;
-
 		return pGroup->CreateColorTweaker(label, v, flags);
 	}
 
@@ -94,9 +91,6 @@ namespace GuiFramework
 		GUITweakerGroup* pGroup = GetCurrentGroup();
 
 		DL_ASSERT(pGroup);
-
-		if (pGroup == nullptr)
-			return nullptr;
 
 		return pGroup->CreateColorTweaker(label, v, flags);
 	}
@@ -107,9 +101,6 @@ namespace GuiFramework
 
 		DL_ASSERT(pGroup);
 
-		if (pGroup == nullptr)
-			return nullptr;
-
 		return pGroup->CreateColorTweaker(label, v, flags);
 	}
 
@@ -118,9 +109,6 @@ namespace GuiFramework
 		GUITweakerGroup* pGroup = GetCurrentGroup();
 
 		DL_ASSERT(pGroup);
-
-		if (pGroup == nullptr)
-			return nullptr;
 
 		return pGroup->CreateTextureList(label);
 	}
@@ -131,9 +119,15 @@ namespace GuiFramework
 
 		DL_ASSERT(pGroup);
 
-		if (pGroup == nullptr)
-			return nullptr;
-
 		return pGroup->CreateTextureViewer(label, pTexture);
+	}
+
+	GUITriggerTweaker* GUITweakerDialog::CreateTrigger(TGUISharedString<dl_wchar> label)
+	{
+		GUITweakerGroup* pGroup = GetCurrentGroup();
+
+		DL_ASSERT(pGroup);
+
+		return pGroup->CreateTrigger(label);
 	}
 }

@@ -84,9 +84,6 @@ namespace GuiFramework
 
         GUITweakerGroup* pGroup = this->GetCurrentGroup();
 
-        if (pGroup == nullptr)
-            return;
-
         pGroup->AddItem(pItem);
 	}
 
@@ -95,9 +92,6 @@ namespace GuiFramework
         DL_ASSERT(!this->m_groups.empty());
 
         GUITweakerGroup* pGroup = this->GetCurrentGroup();
-
-        if (pGroup == nullptr)
-            return;
 
 		pGroup->SetFirstOpenCallback(pCallback, param1, param2);
     }
@@ -108,9 +102,6 @@ namespace GuiFramework
 
         GUITweakerGroup* pGroup = this->GetCurrentGroup();
 
-        if (pGroup == nullptr)
-            return nullptr;
-
 		return pGroup->CreateColorTweaker(label, v, flags);
     }
 
@@ -119,9 +110,6 @@ namespace GuiFramework
         DL_ASSERT(!this->m_groups.empty());
 
 		GUITweakerGroup* pGroup = this->GetCurrentGroup();
-
-        if (pGroup == nullptr)
-			return nullptr;
 
 		return pGroup->CreateColorTweaker(label, v, flags);
     }
@@ -132,9 +120,6 @@ namespace GuiFramework
 
 		GUITweakerGroup* pGroup = this->GetCurrentGroup();
 
-		if (pGroup == nullptr)
-			return nullptr;
-
 		return pGroup->CreateColorTweaker(label, v, flags);
     }
 
@@ -143,9 +128,6 @@ namespace GuiFramework
 		DL_ASSERT(!this->m_groups.empty());
 
 		GUITweakerGroup* pGroup = this->GetCurrentGroup();
-
-		if (pGroup == nullptr)
-			return nullptr;
 
         return pGroup->CreateTextureList(label);
 	}
@@ -156,10 +138,16 @@ namespace GuiFramework
 
 		GUITweakerGroup* pGroup = this->GetCurrentGroup();
 
-		if (pGroup == nullptr)
-			return nullptr;
-
 		return pGroup->CreateTextureViewer(label, pTexture);
+    }
+
+    GUITriggerTweaker* GUITweakerMaker::CreateTrigger(TGUISharedString<dl_wchar> label)
+    {
+        DL_ASSERT(!this->m_groups.empty());
+
+        GUITweakerGroup* pGroup = this->GetCurrentGroup();
+
+        return pGroup->CreateTrigger(label);
     }
 
     void GUITweakerMaker::_PushGroup(GUITweakerGroup* pGroup)

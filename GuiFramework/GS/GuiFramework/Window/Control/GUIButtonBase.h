@@ -25,6 +25,8 @@ namespace GuiFramework
 		virtual dl_uint OnMouseLeave() override;
 		virtual void OnButtonPressed() {};
 
+		dl_uint Press(dl_uint state) const;
+
 		typedef void(_fastcall* OnButtonPressed_t)(ThisClass*);
 	protected:
 		dl_uint m_interactionFlags;
