@@ -162,7 +162,7 @@
     <ClInclude Include="GuiFramework\Window\Control\GUIDropDownList.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="GuiFramework\Callback\GUICallbackObjectBase.h">
+    <ClInclude Include="GuiFramework\System\GUICallbackObjectBase.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="GuiFramework\Window\Control\GUIComboBox.h">
@@ -273,7 +273,7 @@
     <ClInclude Include="GuiFramework\Window\ControlEx\TGUIProxyPropertyLabel.inl">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="GuiFramework\System\GUIBitsetProxy.h">
+    <ClInclude Include="GuiFramework\System\GUIBitsetProxy.inl">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="GuiFramework\System\GUIFormatter.h">
@@ -478,7 +478,7 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="GuiFramework\Callback\TGUICallbackObject.inl">
+    <None Include="GuiFramework\System\TGUICallbackObject.inl">
       <Filter>Header Files</Filter>
     </None>
   </ItemGroup>

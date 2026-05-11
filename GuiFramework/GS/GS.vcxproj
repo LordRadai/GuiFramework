@@ -198,7 +198,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="GuiFramework\Callback\GUICallbackObjectBase.h" />
+    <ClInclude Include="GuiFramework\System\GUICallbackObjectBase.h" />
     <ClInclude Include="GuiFramework\Globals.h" />
     <ClInclude Include="GuiFramework\GuiFramework.h" />
     <ClInclude Include="GuiFramework\Render\GUIRenderContext.h" />
@@ -207,7 +207,7 @@
     <ClInclude Include="GuiFramework\Signal\GUISignal.h" />
     <ClInclude Include="GuiFramework\Signal\GUISignalDecl.h" />
     <ClInclude Include="GuiFramework\Signal\GUISignalManager.h" />
-    <ClInclude Include="GuiFramework\System\GUIBitsetProxy.h" />
+    <ClInclude Include="GuiFramework\System\GUIBitsetProxy.inl" />
     <ClInclude Include="GuiFramework\System\GUIFont.h" />
     <ClInclude Include="GuiFramework\System\GUIFormatter.h" />
     <ClInclude Include="GuiFramework\System\GUIInvoker.h" />
@@ -355,7 +355,7 @@
     <ClCompile Include="GuiFramework\Window\Tweaker\GUITweakerItem.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="GuiFramework\Callback\TGUICallbackObject.inl" />
+    <None Include="GuiFramework\System\TGUICallbackObject.inl" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets" />

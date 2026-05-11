@@ -1,14 +1,12 @@
 #pragma once
-#include <dantelion2.h>
 #include <bitset>
 
 namespace GuiFramework
 {
 	template<unsigned int N>
-	struct GUIBitsetProxy
+	class GUIBitsetProxy : std::bitset<N>
 	{
+	public:
 		GUIBitsetProxy() {}
-
-		std::bitset<N> Bitset;
 	};
 }
