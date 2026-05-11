@@ -3,10 +3,10 @@
 
 namespace GuiFramework
 {
-	typedef void(__fastcall* Constructor_t)(GUIMultiNumericEditor*, dl_uint, TGUISharedString<dl_wchar>);
+	typedef void(_fastcall* Constructor_t)(GUIMultiNumericEditor*, dl_uint, TGUISharedString<dl_wchar>);
 
-	typedef void(__fastcall* Reflesh_t)(GUIMultiNumericEditor*, dl_int);
-	typedef void(__fastcall* SetRangeData_t)(GUIMultiNumericEditor*, dl_int, GUIRangeDataBase*);
+	typedef void(_fastcall* Reflesh_t)(GUIMultiNumericEditor*, dl_int);
+	typedef void(_fastcall* SetRangeData_t)(GUIMultiNumericEditor*, dl_int, GUIRangeDataBase*);
 
 	GUIMultiNumericEditor::GUIMultiNumericEditor(dl_uint numValues, TGUISharedString<dl_wchar> label)
 	{

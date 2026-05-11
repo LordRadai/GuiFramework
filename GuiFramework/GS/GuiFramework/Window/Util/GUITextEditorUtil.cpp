@@ -3,18 +3,18 @@
 
 namespace GuiFramework
 {
-	typedef void(__fastcall* Constructor_t)(const GUITextEditorUtil*, GUISystem*);
+	typedef void(_fastcall* Constructor_t)(const GUITextEditorUtil*, GUISystem*);
 
-	typedef dl_uint(__fastcall* Insert_t)(const GUITextEditorUtil*, const dl_wchar*);
-	typedef dl_uint(__fastcall* _Insert_t)(const GUITextEditorUtil*, const dl_wchar*, dl_uint);
+	typedef dl_uint(_fastcall* Insert_t)(const GUITextEditorUtil*, const dl_wchar*);
+	typedef dl_uint(_fastcall* _Insert_t)(const GUITextEditorUtil*, const dl_wchar*, dl_uint);
 
-	typedef dl_uint(__fastcall* Copy_t)(const GUITextEditorUtil*);
-	typedef dl_uint(__fastcall* Cut_t)(const GUITextEditorUtil*);
-	typedef dl_uint(__fastcall* Paste_t)(const GUITextEditorUtil*);
-	typedef dl_uint(__fastcall* SelectAll_t)(const GUITextEditorUtil*);
-	typedef const dl_wchar*(__fastcall* GetLineString_t)(const GUITextEditorUtil*, dl_uint);
-	typedef dl_uint(__fastcall* OnDragMove_t)(const GUITextEditorUtil*, dl_uint, dl_uint);
-	typedef dl_uint(__fastcall* DeleteAll_t)(const GUITextEditorUtil*);
+	typedef dl_uint(_fastcall* Copy_t)(const GUITextEditorUtil*);
+	typedef dl_uint(_fastcall* Cut_t)(const GUITextEditorUtil*);
+	typedef dl_uint(_fastcall* Paste_t)(const GUITextEditorUtil*);
+	typedef dl_uint(_fastcall* SelectAll_t)(const GUITextEditorUtil*);
+	typedef const dl_wchar*(_fastcall* GetLineString_t)(const GUITextEditorUtil*, dl_uint);
+	typedef dl_uint(_fastcall* OnDragMove_t)(const GUITextEditorUtil*, dl_uint, dl_uint);
+	typedef dl_uint(_fastcall* DeleteAll_t)(const GUITextEditorUtil*);
 
 	GUITextEditorUtil::GUITextEditorUtil(GUISystem* pGUISystem)
 	{

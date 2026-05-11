@@ -3,12 +3,12 @@
 
 namespace GuiFramework
 {
-	typedef void(__fastcall* Constructor_t)(const GUIEditBox*, TGUISharedString<dl_wchar>);
-	typedef void(__fastcall* ConstructorWithCreateParams_t)(const GUIEditBox*, GUIWindowBase*, TGUISharedString<dl_wchar>, const _GUI_CREATE_WINDOW&);
-	typedef void(__fastcall* ConstructorWithNumLines_t)(const GUIEditBox*, GUIWindowBase*, TGUISharedString<dl_wchar>, dl_uint, dl_uint);
+	typedef void(_fastcall* Constructor_t)(const GUIEditBox*, TGUISharedString<dl_wchar>);
+	typedef void(_fastcall* ConstructorWithCreateParams_t)(const GUIEditBox*, GUIWindowBase*, TGUISharedString<dl_wchar>, const _GUI_CREATE_WINDOW&);
+	typedef void(_fastcall* ConstructorWithNumLines_t)(const GUIEditBox*, GUIWindowBase*, TGUISharedString<dl_wchar>, dl_uint, dl_uint);
 	
-	typedef void(__fastcall* CreateEasy_t)(GUIEditBox*, GUIWindowBase*, TGUISharedString<dl_wchar>, dl_uint, dl_uint);
-	typedef dl_uint(__fastcall* SetEditText_t)(GUIEditBox*, const dl_wchar*, dl_uint);
+	typedef void(_fastcall* CreateEasy_t)(GUIEditBox*, GUIWindowBase*, TGUISharedString<dl_wchar>, dl_uint, dl_uint);
+	typedef dl_uint(_fastcall* SetEditText_t)(GUIEditBox*, const dl_wchar*, dl_uint);
 
 	GUIEditBox::GUIEditBox(TGUISharedString<dl_wchar> label)
 	{

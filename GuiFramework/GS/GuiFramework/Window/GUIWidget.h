@@ -64,11 +64,11 @@ namespace GuiFramework
 		dl_bool Minimize(dl_int smooth);
 		dl_bool Restore(dl_int smooth);
 
-		typedef Rect(__fastcall* GetDefaultSizeMin_t)(const GUIWidget*);
-		typedef Rect(__fastcall* GetDefaultSizeMax_t)(const GUIWidget*);
-		typedef void(__fastcall* ComputeNcShapeInfo_t)(const GUIWidget*, const GUIWidget::_GUI_NC_SHAPE_PROP&, GUIWidget::_GUI_NC_SHAPE_INFO&);
-		typedef dl_uint(__fastcall* OnVScroll_t)(GUIWidget*, _GUI_SCROLLBAR_EVENT, const _GUI_SCROLL_POS&);
-		typedef dl_uint(__fastcall* OnHScroll_t)(GUIWidget*, _GUI_SCROLLBAR_EVENT, const _GUI_SCROLL_POS&);
+		typedef Rect(_fastcall* GetDefaultSizeMin_t)(const GUIWidget*);
+		typedef Rect(_fastcall* GetDefaultSizeMax_t)(const GUIWidget*);
+		typedef void(_fastcall* ComputeNcShapeInfo_t)(const GUIWidget*, const GUIWidget::_GUI_NC_SHAPE_PROP&, GUIWidget::_GUI_NC_SHAPE_INFO&);
+		typedef dl_uint(_fastcall* OnVScroll_t)(GUIWidget*, _GUI_SCROLLBAR_EVENT, const _GUI_SCROLL_POS&);
+		typedef dl_uint(_fastcall* OnHScroll_t)(GUIWidget*, _GUI_SCROLLBAR_EVENT, const _GUI_SCROLL_POS&);
 	protected:
 		DLUT::DLVector<GUIWidget*> m_childWidgets;
 		GUIScrollBarUtil* m_pScrollBars[2];

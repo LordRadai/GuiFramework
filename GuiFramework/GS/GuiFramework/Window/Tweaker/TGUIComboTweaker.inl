@@ -75,7 +75,7 @@ namespace GuiFramework
 
 		void _Init()
 		{
-			typedef void(__fastcall* Init_t)(TGUIComboTweaker<T>*);
+			typedef void(_fastcall* Init_t)(TGUIComboTweaker<T>*);
 			CALL(Init_t, 0x566310, this);
 		}
 

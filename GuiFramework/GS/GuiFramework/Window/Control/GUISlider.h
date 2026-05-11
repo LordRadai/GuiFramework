@@ -28,6 +28,9 @@ namespace GuiFramework
 		virtual dl_uint OnCreate() override;
 		virtual dl_uint OnPreCreate(const _GUI_CREATE_WINDOW& createParams) override;
 		virtual void OnRender(GraphicsContext& gc) const override;
+
+		void SetPos(dl_int pos, dl_uint param_2);
+		void SetRange(dl_int min, dl_int max);
 	protected:
 		Rect16 m_innerRect;
 		dl_uint m_min;

@@ -3,7 +3,7 @@
 
 namespace GuiFramework
 {
-	typedef void(__fastcall* Constructor_t)(GUIListBoxItem*, TGUISharedString<dl_wchar>, dl_float32);
+	typedef void(_fastcall* Constructor_t)(GUIListBoxItem*, TGUISharedString<dl_wchar>, dl_float32);
 
 	GUIListBoxItem::GUIListBoxItem()
 	{

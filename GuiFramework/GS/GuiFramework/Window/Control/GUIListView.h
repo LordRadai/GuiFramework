@@ -67,9 +67,9 @@ namespace GuiFramework
 		dl_bool RemoveItem(GUIListViewItem* pItem);
 		dl_bool RemoveItem(dl_uint16 idx);
 
-		typedef void(__fastcall* OnItemDblClk_t)(GUIListView*, dl_int);
-		typedef void(__fastcall* OnItemClick_t)(GUIListView*, dl_int);
-		typedef void(__fastcall* OnItemRClick_t)(GUIListView*, dl_int);
+		typedef void(_fastcall* OnItemDblClk_t)(GUIListView*, dl_int);
+		typedef void(_fastcall* OnItemClick_t)(GUIListView*, dl_int);
+		typedef void(_fastcall* OnItemRClick_t)(GUIListView*, dl_int);
 	protected:
 		DLUT::DLVector<TGUIObjectPtr<GUIListViewItem>> m_items;
 		DLUT::DLVector<Column> m_columns;

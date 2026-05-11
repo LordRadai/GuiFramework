@@ -2,9 +2,9 @@
 
 namespace GuiFramework
 {
-	typedef void(__fastcall* GUIWindowBase_ctor_t)(GUIWindowBase*, TGUISharedString<dl_wchar>);
+	typedef void(_fastcall* GUIWindowBase_ctor_t)(GUIWindowBase*, TGUISharedString<dl_wchar>);
 
-	typedef dl_bool(__fastcall* SetAfterWindow_t)(GUIWindowBase*, GUIWindowBase*);
+	typedef dl_bool(_fastcall* SetAfterWindow_t)(GUIWindowBase*, GUIWindowBase*);
 
 	GUIWindowBase::GUIWindowBase(TGUISharedString<dl_wchar> label)
 	{

@@ -3,7 +3,7 @@
 
 namespace GuiFramework
 {
-	typedef void(__fastcall* Ctor_t)(GUILayoutItem_Window*, GUIWindowBase*);
+	typedef void(_fastcall* Ctor_t)(GUILayoutItem_Window*, GUIWindowBase*);
 
 	GUILayoutItem_Window::GUILayoutItem_Window(GUIWindowBase* pWindow)
 	{

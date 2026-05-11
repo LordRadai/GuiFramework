@@ -3,10 +3,10 @@
 
 namespace GuiFramework
 {
-	typedef void(__fastcall* Constructor_t)(GUIMultiTweaker*, dl_uint, TGUISharedString<dl_wchar>);
+	typedef void(_fastcall* Constructor_t)(GUIMultiTweaker*, dl_uint, TGUISharedString<dl_wchar>);
 
-	typedef void(__fastcall* Destroy_t)(GUIMultiTweaker*);
-	typedef dl_bool(__fastcall* Create_t)(GUIMultiTweaker*, GUIWindowBase*, TGUISharedString<dl_wchar>);
+	typedef void(_fastcall* Destroy_t)(GUIMultiTweaker*);
+	typedef dl_bool(_fastcall* Create_t)(GUIMultiTweaker*, GUIWindowBase*, TGUISharedString<dl_wchar>);
 
 	GUIMultiTweaker::GUIMultiTweaker(dl_uint numValues, TGUISharedString<dl_wchar> label)
 	{

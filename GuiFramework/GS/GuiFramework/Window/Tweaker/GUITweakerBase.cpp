@@ -3,9 +3,9 @@
 
 namespace GuiFramework
 {
-	typedef void(__fastcall* Constructor_t)(GUITweakerBase*);
+	typedef void(_fastcall* Constructor_t)(GUITweakerBase*);
 
-	typedef void(__fastcall* InvokeCallback_t)(GUITweakerBase*);
+	typedef void(_fastcall* InvokeCallback_t)(GUITweakerBase*);
 
 	GUITweakerBase::GUITweakerBase() : m_flags(0), m_pCallback(nullptr)
 	{

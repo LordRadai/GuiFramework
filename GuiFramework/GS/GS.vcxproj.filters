@@ -267,7 +267,7 @@
     <ClInclude Include="GuiFramework\Window\Tweaker\TGUIProxyOnOffTweaker.inl">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="GuiFramework\Window\Tweaker\TGUITweakerItem.h">
+    <ClInclude Include="GuiFramework\Window\Tweaker\TGUITweakerItem.inl">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="GuiFramework\Window\ControlEx\TGUIProxyPropertyLabel.inl">
@@ -277,6 +277,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="GuiFramework\System\GUIFormatter.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="GuiFramework\Window\Tweaker\GUIRangeTweakWidget.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

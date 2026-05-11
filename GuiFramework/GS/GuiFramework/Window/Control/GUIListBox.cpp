@@ -3,13 +3,13 @@
 
 namespace GuiFramework
 {
-	typedef void(__fastcall* Constructor_t)(GUIListBox*, TGUISharedString<dl_wchar>);
-	typedef void(__fastcall* Constructor_Create_t)(GUIListBox*, GUIWindowBase*, TGUISharedString<dl_wchar>, const _GUI_CREATE_WINDOW&);
-	typedef void(__fastcall* Constructor_Full_t)(GUIListBox*, GUIWindowBase*, TGUISharedString<dl_wchar>, dl_uint, dl_uint);
+	typedef void(_fastcall* Constructor_t)(GUIListBox*, TGUISharedString<dl_wchar>);
+	typedef void(_fastcall* Constructor_Create_t)(GUIListBox*, GUIWindowBase*, TGUISharedString<dl_wchar>, const _GUI_CREATE_WINDOW&);
+	typedef void(_fastcall* Constructor_Full_t)(GUIListBox*, GUIWindowBase*, TGUISharedString<dl_wchar>, dl_uint, dl_uint);
 
-	typedef void(__fastcall* SetCurSel_t)(GUIListBox*, dl_int, dl_int);
-	typedef void(__fastcall* CenteringItem_t)(GUIListBox*, dl_int);
-	typedef GUIListBoxItem*(__fastcall* AddItem_t)(GUIListBox*, TGUISharedString<dl_wchar>, dl_int, dl_float32);
+	typedef void(_fastcall* SetCurSel_t)(GUIListBox*, dl_int, dl_int);
+	typedef void(_fastcall* CenteringItem_t)(GUIListBox*, dl_int);
+	typedef GUIListBoxItem*(_fastcall* AddItem_t)(GUIListBox*, TGUISharedString<dl_wchar>, dl_int, dl_float32);
 
 	GUIListBox::GUIListBox(TGUISharedString<dl_wchar> label)
 	{

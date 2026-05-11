@@ -47,13 +47,13 @@ namespace GuiFramework
 		}
 	};
 
-	typedef void(__fastcall* TGUISharedStringCtor_t)(TGUISharedString<dl_wchar>*, const dl_wchar*);
-	typedef void(__fastcall* TGUISharedStringCopyCtor_t)(TGUISharedString<dl_wchar>*, const TGUISharedString<dl_wchar>*);
-	typedef void(__fastcall* TGUISharedStringDtor_t)(TGUISharedString<dl_wchar>*);
+	typedef void(_fastcall* TGUISharedStringCtor_t)(TGUISharedString<dl_wchar>*, const dl_wchar*);
+	typedef void(_fastcall* TGUISharedStringCopyCtor_t)(TGUISharedString<dl_wchar>*, const TGUISharedString<dl_wchar>*);
+	typedef void(_fastcall* TGUISharedStringDtor_t)(TGUISharedString<dl_wchar>*);
 
-	typedef void(__fastcall* TGUISharedStringAttach_t)(TGUISharedString<dl_wchar>*, const dl_wchar*);
+	typedef void(_fastcall* TGUISharedStringAttach_t)(TGUISharedString<dl_wchar>*, const dl_wchar*);
 
-	typedef void(__fastcall* TGUISharedStringAssign_t)(TGUISharedString<dl_wchar>*, const TGUISharedString<dl_wchar>*);
+	typedef void(_fastcall* TGUISharedStringAssign_t)(TGUISharedString<dl_wchar>*, const TGUISharedString<dl_wchar>*);
 
 	template<> inline TGUISharedString<dl_wchar>::TGUISharedString(const dl_wchar* str)
 	{

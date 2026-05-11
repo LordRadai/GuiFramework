@@ -2,7 +2,7 @@
 
 namespace GuiFramework
 {
-	typedef void(__fastcall* Ctor_t)(GUIVertLayouter*, GUIWidget*);
+	typedef void(_fastcall* Ctor_t)(GUIVertLayouter*, GUIWidget*);
 
 	GUIVertLayouter::GUIVertLayouter(GUIWidget* pOwner) : GUILayouter(pOwner)
 	{

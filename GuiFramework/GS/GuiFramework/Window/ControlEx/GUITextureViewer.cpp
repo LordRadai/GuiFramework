@@ -3,9 +3,9 @@
 
 namespace GuiFramework
 {
-	typedef void(__fastcall* ConstructorWithLabel_t)(GUITextureViewer*, TGUISharedString<dl_wchar>);
-	typedef void(__fastcall* ConstructorWithParentAndLabelAndCreateParams_t)(GUITextureViewer*, GUIWindowBase*, TGUISharedString<dl_wchar>, const _GUI_CREATE_WINDOW&);
-	typedef void(__fastcall* ConstructorWithParentAndLabelAndFlags_t)(GUITextureViewer*, GUIWindowBase*, TGUISharedString<dl_wchar>, dl_uint, dl_uint);
+	typedef void(_fastcall* ConstructorWithLabel_t)(GUITextureViewer*, TGUISharedString<dl_wchar>);
+	typedef void(_fastcall* ConstructorWithParentAndLabelAndCreateParams_t)(GUITextureViewer*, GUIWindowBase*, TGUISharedString<dl_wchar>, const _GUI_CREATE_WINDOW&);
+	typedef void(_fastcall* ConstructorWithParentAndLabelAndFlags_t)(GUITextureViewer*, GUIWindowBase*, TGUISharedString<dl_wchar>, dl_uint, dl_uint);
 
 	GUITextureViewer::GUITextureViewer(TGUISharedString<dl_wchar> label)
 	{

@@ -3,7 +3,7 @@
 
 namespace GuiFramework
 {
-	typedef void(__fastcall* Ctor_t)(GUILayouter*, GUIWidget*);
+	typedef void(_fastcall* Ctor_t)(GUILayouter*, GUIWidget*);
 
 	GUILayouter::GUILayouter(GUIWidget* pOwner)
 	{

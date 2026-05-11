@@ -3,12 +3,12 @@
 
 namespace GuiFramework
 {
-	typedef void(__fastcall* Constructor_t)(GUIHeapList*, TGUISharedString<dl_wchar>);
-	typedef void(__fastcall* ConstructorWithCreateParams_t)(GUIHeapList*, GUIWindowBase*, TGUISharedString<dl_wchar>, const _GUI_CREATE_WINDOW&);
+	typedef void(_fastcall* Constructor_t)(GUIHeapList*, TGUISharedString<dl_wchar>);
+	typedef void(_fastcall* ConstructorWithCreateParams_t)(GUIHeapList*, GUIWindowBase*, TGUISharedString<dl_wchar>, const _GUI_CREATE_WINDOW&);
 
-	typedef dl_uint(__fastcall* AddHeap_t)(GUIHeapList*, TGUISharedString<dl_wchar>, DLKR::DLAllocator*, dl_int);
-	typedef dl_uint(__fastcall* RemoveHeap_t)(GUIHeapList*, DLKR::DLAllocator*);
-	typedef DLKR::DLAllocator*(__fastcall* GetHeap_t)(GUIHeapList*, dl_int);
+	typedef dl_uint(_fastcall* AddHeap_t)(GUIHeapList*, TGUISharedString<dl_wchar>, DLKR::DLAllocator*, dl_int);
+	typedef dl_uint(_fastcall* RemoveHeap_t)(GUIHeapList*, DLKR::DLAllocator*);
+	typedef DLKR::DLAllocator*(_fastcall* GetHeap_t)(GUIHeapList*, dl_int);
 
 	GUIHeapList::GUIHeapList(TGUISharedString<dl_wchar> label)
 	{

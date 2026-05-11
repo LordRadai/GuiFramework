@@ -2,15 +2,15 @@
 
 namespace GuiFramework
 {
-	typedef void(__fastcall* GUISystem_ctor_t)(GUISystem*);
+	typedef void(_fastcall* GUISystem_ctor_t)(GUISystem*);
 
-	typedef void(__fastcall* GUISystem_Connect_t)(GUISystem*, GUIObject*, GUISignalDecl, GUIMsgReceiver*, DLRF::DLMethodResolver<DLRF::DLMethodInvokeContext>*, dl_uint, dl_uint);
-	typedef void(__fastcall* GUISystem_CreateTweaker_t)(GUISystem*, GUITweakerDialog*);
+	typedef void(_fastcall* GUISystem_Connect_t)(GUISystem*, GUIObject*, GUISignalDecl, GUIMsgReceiver*, DLRF::DLMethodResolver<DLRF::DLMethodInvokeContext>*, dl_uint, dl_uint);
+	typedef void(_fastcall* GUISystem_CreateTweaker_t)(GUISystem*, GUITweakerDialog*);
 
-	typedef dl_bool(__fastcall* SetAfterWindow_t)(GUISystem*, GUIWindowBase*, GUIWindowBase*);
-	typedef dl_int(__fastcall* RegisterWindow_t)(GUISystem*, GUIWindowBase*);
+	typedef dl_bool(_fastcall* SetAfterWindow_t)(GUISystem*, GUIWindowBase*, GUIWindowBase*);
+	typedef dl_int(_fastcall* RegisterWindow_t)(GUISystem*, GUIWindowBase*);
 
-	typedef dl_int(__fastcall* SetFocus_t)(GUISystem*, GUIWindowBase*);
+	typedef dl_int(_fastcall* SetFocus_t)(GUISystem*, GUIWindowBase*);
 
 	GUISystem::GUISystem()
 	{

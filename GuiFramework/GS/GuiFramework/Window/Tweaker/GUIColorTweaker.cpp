@@ -3,17 +3,17 @@
 
 namespace GuiFramework
 {
-	typedef void(__fastcall* Constructor_t)(GUIColorTweaker*, GUIWidget*, TGUISharedString<dl_wchar>, dl_uint);
+	typedef void(_fastcall* Constructor_t)(GUIColorTweaker*, GUIWidget*, TGUISharedString<dl_wchar>, dl_uint);
 
-	typedef void(__fastcall* SetFloatColor_t)(GUIColorTweaker*, const DLMT::DL_VECTOR4&);
-	typedef void(__fastcall* SetIntColor_t)(GUIColorTweaker*, const DLMT::DL_COLOR_32&);
-	typedef void(__fastcall* SetU8Color_t)(GUIColorTweaker*, const DLMT2::DL_COLOR_U8&);
-	typedef void(__fastcall* SetHDRColor_t)(GUIColorTweaker*, dl_pointer);
+	typedef void(_fastcall* SetFloatColor_t)(GUIColorTweaker*, const DLMT::DL_VECTOR4&);
+	typedef void(_fastcall* SetIntColor_t)(GUIColorTweaker*, const DLMT::DL_COLOR_32&);
+	typedef void(_fastcall* SetU8Color_t)(GUIColorTweaker*, const DLMT2::DL_COLOR_U8&);
+	typedef void(_fastcall* SetHDRColor_t)(GUIColorTweaker*, dl_pointer);
 
-	typedef void(__fastcall* GetFloatColor_t)(const GUIColorTweaker*, DLMT::DL_VECTOR4&);
-	typedef void(__fastcall* GetIntColor_t)(const GUIColorTweaker*, DLMT::DL_COLOR_32&);
-	typedef void(__fastcall* GetU8Color_t)(const GUIColorTweaker*, DLMT2::DL_COLOR_U8&);
-	typedef void(__fastcall* GetHDRColor_t)(const GUIColorTweaker*, dl_pointer);
+	typedef void(_fastcall* GetFloatColor_t)(const GUIColorTweaker*, DLMT::DL_VECTOR4&);
+	typedef void(_fastcall* GetIntColor_t)(const GUIColorTweaker*, DLMT::DL_COLOR_32&);
+	typedef void(_fastcall* GetU8Color_t)(const GUIColorTweaker*, DLMT2::DL_COLOR_U8&);
+	typedef void(_fastcall* GetHDRColor_t)(const GUIColorTweaker*, dl_pointer);
 
 	GUIColorTweaker::GUIColorTweaker(GUIWidget* pParent, TGUISharedString<dl_wchar> label, dl_uint flags)
 	{

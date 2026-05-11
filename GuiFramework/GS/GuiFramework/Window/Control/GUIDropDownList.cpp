@@ -3,7 +3,7 @@
 
 namespace GuiFramework
 {
-	typedef void(__fastcall* Constructor_t)(GUIDropDownList*, GUIWindowBase*, TGUISharedString<dl_wchar>, dl_uint, dl_uint);
+	typedef void(_fastcall* Constructor_t)(GUIDropDownList*, GUIWindowBase*, TGUISharedString<dl_wchar>, dl_uint, dl_uint);
 
 	GUIDropDownList::GUIDropDownList(GUIWindowBase* pParent, TGUISharedString<dl_wchar> label, dl_uint flags, dl_uint param_4)
 	{

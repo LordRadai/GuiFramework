@@ -3,14 +3,14 @@
 
 namespace GuiFramework
 {
-	typedef void(__fastcall* GUITweakerDialogCtorWithLabel_t)(GUITweakerDialog*, TGUISharedString<dl_wchar>);
-	typedef void(__fastcall* GUITweakerDialogCtorWithParentAndLabelAndCreate_t)(GUITweakerDialog*, GUIWindowBase*, TGUISharedString<dl_wchar>, const _GUI_CREATE_WINDOW&);
-	typedef void(__fastcall* GUITweakerDialogCtorWithParentAndLabelAndFlags_t)(GUITweakerDialog*, GUIWindowBase*, TGUISharedString<dl_wchar>, dl_uint);
+	typedef void(_fastcall* GUITweakerDialogCtorWithLabel_t)(GUITweakerDialog*, TGUISharedString<dl_wchar>);
+	typedef void(_fastcall* GUITweakerDialogCtorWithParentAndLabelAndCreate_t)(GUITweakerDialog*, GUIWindowBase*, TGUISharedString<dl_wchar>, const _GUI_CREATE_WINDOW&);
+	typedef void(_fastcall* GUITweakerDialogCtorWithParentAndLabelAndFlags_t)(GUITweakerDialog*, GUIWindowBase*, TGUISharedString<dl_wchar>, dl_uint);
 
-	typedef GUITweakerGroup*(__fastcall* BeginGroup_t)(GUITweakerDialog*, TGUISharedString<dl_wchar>, dl_uint);
-	typedef void(__fastcall* EndGroup_t)(GUITweakerDialog*);
+	typedef GUITweakerGroup*(_fastcall* BeginGroup_t)(GUITweakerDialog*, TGUISharedString<dl_wchar>, dl_uint);
+	typedef void(_fastcall* EndGroup_t)(GUITweakerDialog*);
 
-	typedef GUITweakerGroup*(__fastcall* GetCurrentGroup_t)(GUITweakerDialog*);
+	typedef GUITweakerGroup*(_fastcall* GetCurrentGroup_t)(GUITweakerDialog*);
 
 	GUITweakerDialog::GUITweakerDialog(TGUISharedString<dl_wchar> label)
 	{

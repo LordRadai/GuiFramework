@@ -22,13 +22,13 @@ namespace GuiFramework
 		virtual Rect GetGeometry() const = 0;
 		virtual dl_bool IsOwn(GUIObject* pObject) const = 0;
 
-		typedef GUISystem* (__fastcall* GetGUISystem_t)(const GUILayoutItem*);
-		typedef Rect(__fastcall* GetMaxSize_t)(const GUILayoutItem*);
-		typedef Rect(__fastcall* GetMinSize_t)(const GUILayoutItem*);
-		typedef Rect(__fastcall* GetIdealSize_t)(const GUILayoutItem*);
-		typedef void(__fastcall* SetGeometry_t)(GUILayoutItem*, const Rect&);
-		typedef Rect(__fastcall* GetGeometry_t)(const GUILayoutItem*);
-		typedef dl_bool(__fastcall* IsOwn_t)(const GUILayoutItem*, GUIObject*);
+		typedef GUISystem* (_fastcall* GetGUISystem_t)(const GUILayoutItem*);
+		typedef Rect(_fastcall* GetMaxSize_t)(const GUILayoutItem*);
+		typedef Rect(_fastcall* GetMinSize_t)(const GUILayoutItem*);
+		typedef Rect(_fastcall* GetIdealSize_t)(const GUILayoutItem*);
+		typedef void(_fastcall* SetGeometry_t)(GUILayoutItem*, const Rect&);
+		typedef Rect(_fastcall* GetGeometry_t)(const GUILayoutItem*);
+		typedef dl_bool(_fastcall* IsOwn_t)(const GUILayoutItem*, GUIObject*);
 
 #define SIGNAL_ON_SIZE_CHANGED (GUISignal*)(MODULE_ADDR + 0x1618530);
 	};

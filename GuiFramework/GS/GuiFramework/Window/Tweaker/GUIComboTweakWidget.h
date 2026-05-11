@@ -22,7 +22,7 @@ namespace GuiFramework
 		virtual void OnRender(GraphicsContext& gc) const override;
 		virtual void InitComboBox(GUIComboBox* pComboBox) {}
 
-		typedef void(__fastcall* InitComboBox_t)(GUIComboTweakWidget*, GUIComboBox*);
+		typedef void(_fastcall* InitComboBox_t)(GUIComboTweakWidget*, GUIComboBox*);
 	protected:
 		TGUIObjectPtr<GUIComboBox> m_pComboBox;
 		dl_uint16 m_iVar118;

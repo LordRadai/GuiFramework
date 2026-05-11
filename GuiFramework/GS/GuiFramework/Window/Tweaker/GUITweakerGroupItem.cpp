@@ -4,7 +4,7 @@
 
 namespace GuiFramework
 {
-	typedef void(__fastcall* Constructor_t)(GUITweakerGroupItem*, GUITweakerGroup*);
+	typedef void(_fastcall* Constructor_t)(GUITweakerGroupItem*, GUITweakerGroup*);
 
 	GUITweakerGroupItem::GUITweakerGroupItem(GUITweakerGroup* pGroup)
 	{

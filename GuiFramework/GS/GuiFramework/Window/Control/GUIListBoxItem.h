@@ -21,7 +21,7 @@ namespace GuiFramework
 		virtual void OnDelete() override;
 		virtual Rect GetSize() const;
 
-		typedef Rect(__fastcall* GetSize_t)(const GUIListBoxItem*);
+		typedef Rect(_fastcall* GetSize_t)(const GUIListBoxItem*);
 	protected:
 		TGUIObjectPtr<GUIListBox> m_pListBox;
 		TGUISharedString<dl_wchar> m_label;

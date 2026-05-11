@@ -3,18 +3,18 @@
 
 namespace GuiFramework
 {
-	typedef void(__fastcall* Constructor_t)(const GUITweakerGroup*, TGUISharedString<dl_wchar>);
+	typedef void(_fastcall* Constructor_t)(const GUITweakerGroup*, TGUISharedString<dl_wchar>);
 
-	typedef void(__fastcall* AddItem_t)(GUITweakerGroup*, GUITweakerItem*);
+	typedef void(_fastcall* AddItem_t)(GUITweakerGroup*, GUITweakerItem*);
 
-	typedef GUITweakerGroup*(__fastcall* CreateSubGroup_t)(GUITweakerGroup*, TGUISharedString<dl_wchar>, dl_uint);
+	typedef GUITweakerGroup*(_fastcall* CreateSubGroup_t)(GUITweakerGroup*, TGUISharedString<dl_wchar>, dl_uint);
 
-	typedef TGUIColorTweaker<DLMT::DL_COLOR_32>*(__fastcall* CreateColorTweakerInt_t)(GUITweakerGroup*, TGUISharedString<dl_wchar>, DLMT::DL_COLOR_32*, dl_uint);
-	typedef TGUIColorTweaker<DLMT2::DL_COLOR_U8>*(__fastcall* CreateColorTweakerU8_t)(GUITweakerGroup*, TGUISharedString<dl_wchar>, DLMT2::DL_COLOR_U8*, dl_uint);
-	typedef TGUIColorTweaker<DLMT::DL_VECTOR4>* (__fastcall* CreateColorTweakerFloat_t)(GUITweakerGroup*, TGUISharedString<dl_wchar>, DLMT::DL_VECTOR4*, dl_uint);
+	typedef TGUIColorTweaker<DLMT::DL_COLOR_32>*(_fastcall* CreateColorTweakerInt_t)(GUITweakerGroup*, TGUISharedString<dl_wchar>, DLMT::DL_COLOR_32*, dl_uint);
+	typedef TGUIColorTweaker<DLMT2::DL_COLOR_U8>*(_fastcall* CreateColorTweakerU8_t)(GUITweakerGroup*, TGUISharedString<dl_wchar>, DLMT2::DL_COLOR_U8*, dl_uint);
+	typedef TGUIColorTweaker<DLMT::DL_VECTOR4>* (_fastcall* CreateColorTweakerFloat_t)(GUITweakerGroup*, TGUISharedString<dl_wchar>, DLMT::DL_VECTOR4*, dl_uint);
 
-	typedef GUITextureList*(__fastcall* CreateTextureList_t)(GUITweakerGroup*, TGUISharedString<dl_wchar>);
-	typedef GUITextureViewer*(__fastcall* CreateTextureViewer_t)(GUITweakerGroup*, TGUISharedString<dl_wchar>, GUITextureBase*);
+	typedef GUITextureList*(_fastcall* CreateTextureList_t)(GUITweakerGroup*, TGUISharedString<dl_wchar>);
+	typedef GUITextureViewer*(_fastcall* CreateTextureViewer_t)(GUITweakerGroup*, TGUISharedString<dl_wchar>, GUITextureBase*);
 
 	GUITweakerGroup::GUITweakerGroup(TGUISharedString<dl_wchar> label)
 	{

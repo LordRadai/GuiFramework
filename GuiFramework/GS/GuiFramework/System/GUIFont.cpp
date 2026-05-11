@@ -3,9 +3,9 @@
 
 namespace GuiFramework
 {
-	typedef void(__fastcall* Ctor_t)(GUIFont*);
+	typedef void(_fastcall* Ctor_t)(GUIFont*);
 
-	typedef void(__fastcall* CreateTweaker_t)(GUIFont*, TGUISharedString<dl_wchar>&, GUITweakerDialog*);
+	typedef void(_fastcall* CreateTweaker_t)(GUIFont*, TGUISharedString<dl_wchar>&, GUITweakerDialog*);
 
 	GUIFont::GUIFont()
 	{

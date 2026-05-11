@@ -3,7 +3,7 @@
 
 namespace GuiFramework
 {
-	typedef void(__fastcall* Constructor_t)(GUIAutoVLayout*, TGUISharedString<dl_wchar>&);
+	typedef void(_fastcall* Constructor_t)(GUIAutoVLayout*, TGUISharedString<dl_wchar>&);
 
 	GUIAutoVLayout::GUIAutoVLayout(TGUISharedString<dl_wchar>& label)
 	{

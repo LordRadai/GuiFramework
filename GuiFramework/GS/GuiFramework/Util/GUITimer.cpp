@@ -3,7 +3,7 @@
 
 namespace GuiFramework
 {
-	typedef void(__fastcall* Constructor_t)(GUITimer*, GUISystem*);
+	typedef void(_fastcall* Constructor_t)(GUITimer*, GUISystem*);
 
 	GUITimer::GUITimer(GUISystem* pGUISystem)
 	{

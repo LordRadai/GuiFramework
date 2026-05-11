@@ -38,8 +38,8 @@ namespace GuiFramework
 		virtual void OnEditChanged() {}
 		virtual void OnReturnPressed() {}
 
-		typedef void(__fastcall* OnEditChanged_t)(GUIEditBox*);
-		typedef void(__fastcall* OnReturnPressed_t)(GUIEditBox*);
+		typedef void(_fastcall* OnEditChanged_t)(GUIEditBox*);
+		typedef void(_fastcall* OnReturnPressed_t)(GUIEditBox*);
 
 		void CreateEasy(GUIWindowBase* pParent, TGUISharedString<dl_wchar> label, dl_uint numLines, dl_uint flags);
 		dl_uint SetEditText(const dl_wchar* text, dl_uint numLines);

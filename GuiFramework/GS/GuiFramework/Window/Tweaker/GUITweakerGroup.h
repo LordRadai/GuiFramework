@@ -6,7 +6,7 @@
 #include "TGUIMultiTweaker.inl"
 #include "TGUIOnOffTweaker.inl"
 #include "TGUIProxyOnOffTweaker.inl"
-#include "TGUITweakerItem.h"
+#include "TGUITweakerItem.inl"
 #include "GuiFramework/Window/ControlEx/TGUIPropertyLabel.inl"
 #include "GuiFramework/Window/ControlEx/GUITextureViewer.h"
 #include "GuiFramework/Window/ControlEx/GUITextureList.h"
@@ -18,7 +18,7 @@ namespace GuiFramework
 		typedef GUITweakerGroup ThisClass;
 		typedef GUIAutoVLayout SuperClass;
 	public:
-		typedef void(__fastcall* FirstOpenCallback_t)(GUITweakerGroup*, dl_size, dl_size);
+		typedef void(_fastcall* FirstOpenCallback_t)(GUITweakerGroup*, dl_size, dl_size);
 
 		GUITweakerGroup() {}
 		GUITweakerGroup(TGUISharedString<dl_wchar> label);

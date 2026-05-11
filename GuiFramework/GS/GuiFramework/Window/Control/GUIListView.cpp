@@ -3,18 +3,18 @@
 
 namespace GuiFramework
 {
-	typedef void(__fastcall* Constructor_t)(GUIListView*, TGUISharedString<dl_wchar>);
-	typedef void(__fastcall* ConstructorWithCreateParams_t)(GUIListView*, GUIWindowBase*, TGUISharedString<dl_wchar>, const _GUI_CREATE_WINDOW&);
-	typedef void(__fastcall* ConstructorWithFlags_t)(GUIListView*, GUIWindowBase*, TGUISharedString<dl_wchar>, dl_uint, dl_uint);
+	typedef void(_fastcall* Constructor_t)(GUIListView*, TGUISharedString<dl_wchar>);
+	typedef void(_fastcall* ConstructorWithCreateParams_t)(GUIListView*, GUIWindowBase*, TGUISharedString<dl_wchar>, const _GUI_CREATE_WINDOW&);
+	typedef void(_fastcall* ConstructorWithFlags_t)(GUIListView*, GUIWindowBase*, TGUISharedString<dl_wchar>, dl_uint, dl_uint);
 
-	typedef dl_int(__fastcall* AddItem_t)(GUIListView*, TGUISharedString<dl_wchar>, dl_int);
-	typedef dl_bool(__fastcall* AddColumn_t)(GUIListView*, TGUISharedString<dl_wchar>, dl_uint16, dl_uint, dl_int);
+	typedef dl_int(_fastcall* AddItem_t)(GUIListView*, TGUISharedString<dl_wchar>, dl_int);
+	typedef dl_bool(_fastcall* AddColumn_t)(GUIListView*, TGUISharedString<dl_wchar>, dl_uint16, dl_uint, dl_int);
 
-	typedef dl_bool(__fastcall* SetColumnHeaderLabel_t)(GUIListView*, dl_uint16, TGUISharedString<dl_wchar>);
-	typedef dl_bool(__fastcall* SetColumnHeaderWidth_t)(GUIListView*, dl_uint16, dl_uint16);
-	typedef void(__fastcall* RemoveAllItem_t)(GUIListView*);
-	typedef dl_bool(__fastcall* RemoveItem_t)(GUIListView*, GUIListViewItem*);
-	typedef GUIListViewItem*(__fastcall* GetItemFromIndex_t)(GUIListView*, dl_int);
+	typedef dl_bool(_fastcall* SetColumnHeaderLabel_t)(GUIListView*, dl_uint16, TGUISharedString<dl_wchar>);
+	typedef dl_bool(_fastcall* SetColumnHeaderWidth_t)(GUIListView*, dl_uint16, dl_uint16);
+	typedef void(_fastcall* RemoveAllItem_t)(GUIListView*);
+	typedef dl_bool(_fastcall* RemoveItem_t)(GUIListView*, GUIListViewItem*);
+	typedef GUIListViewItem*(_fastcall* GetItemFromIndex_t)(GUIListView*, dl_int);
 
 	GUIListView::GUIListView(TGUISharedString<dl_wchar> label)
 	{

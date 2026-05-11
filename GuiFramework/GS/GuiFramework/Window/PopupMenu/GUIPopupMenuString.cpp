@@ -3,7 +3,7 @@
 
 namespace GuiFramework
 {
-	typedef void(__fastcall* Constructor_t)(GUIPopupMenuString*, GUISystem*, TGUISharedString<dl_wchar>, dl_uint);
+	typedef void(_fastcall* Constructor_t)(GUIPopupMenuString*, GUISystem*, TGUISharedString<dl_wchar>, dl_uint);
 
 	GUIPopupMenuString::GUIPopupMenuString(GUISystem* pSystem, TGUISharedString<dl_wchar> str, dl_uint id)
 	{

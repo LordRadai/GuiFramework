@@ -25,8 +25,8 @@ public:
 	}
 };
 
-typedef void(__fastcall* WChar_Ctor_t)(TGUIStringStorage<dl_wchar>* This);
-typedef void(__fastcall* WChar_Dtor_t)(TGUIStringStorage<dl_wchar>* This);
+typedef void(_fastcall* WChar_Ctor_t)(TGUIStringStorage<dl_wchar>* This);
+typedef void(_fastcall* WChar_Dtor_t)(TGUIStringStorage<dl_wchar>* This);
 
 template<> TGUIStringStorage<dl_wchar>::TGUIStringStorage()
 {

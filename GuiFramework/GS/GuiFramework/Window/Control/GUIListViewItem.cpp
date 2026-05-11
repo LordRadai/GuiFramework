@@ -6,8 +6,8 @@ namespace GuiFramework
 	typedef void(_fastcall* Constructor1_t)(GUIListViewItem*, TGUISharedString<dl_wchar>);
 	typedef void(_fastcall* Constructor2_t)(GUIListViewItem*, GUIListView*, TGUISharedString<dl_wchar>);
 
-	typedef void(__fastcall* OnRemoveItem_t)(GUIListViewItem*);
-	typedef dl_bool(__fastcall* SetItemText_t)(GUIListViewItem*, dl_int, TGUISharedString<dl_wchar>);
+	typedef void(_fastcall* OnRemoveItem_t)(GUIListViewItem*);
+	typedef dl_bool(_fastcall* SetItemText_t)(GUIListViewItem*, dl_int, TGUISharedString<dl_wchar>);
 	
 	GUIListViewItem::GUIListViewItem(TGUISharedString<dl_wchar> label)
 	{

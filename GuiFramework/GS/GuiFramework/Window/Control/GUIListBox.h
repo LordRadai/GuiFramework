@@ -34,7 +34,7 @@ namespace GuiFramework
 		void SetCurSel(dl_int idx, dl_int param_2);
 		void CenteringItem(dl_int idx);
 
-		typedef void(__fastcall* OnItemSelected_t)(GUIListBox*, dl_int);
+		typedef void(_fastcall* OnItemSelected_t)(GUIListBox*, dl_int);
 	protected:
 		DLUT::DLVector<TGUIObjectPtr<GUIListBoxItem>> m_items;
 		dl_int m_iVar130;

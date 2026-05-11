@@ -3,11 +3,11 @@
 
 namespace GuiFramework
 {
-	typedef void(__fastcall* GUIComboBox_Ctor_t)(GUIComboBox*, TGUISharedString<dl_wchar>);
-	typedef void(__fastcall* GUIComboBox_Ctor_2_t)(GUIComboBox*, GUIWindowBase*, TGUISharedString<dl_wchar>, _GUI_CREATE_WINDOW&);
-	typedef void(__fastcall* GUIComboBox_Ctor_3_t)(GUIComboBox*, GUIWindowBase*, TGUISharedString<dl_wchar>, dl_uint, dl_uint);
+	typedef void(_fastcall* GUIComboBox_Ctor_t)(GUIComboBox*, TGUISharedString<dl_wchar>);
+	typedef void(_fastcall* GUIComboBox_Ctor_2_t)(GUIComboBox*, GUIWindowBase*, TGUISharedString<dl_wchar>, _GUI_CREATE_WINDOW&);
+	typedef void(_fastcall* GUIComboBox_Ctor_3_t)(GUIComboBox*, GUIWindowBase*, TGUISharedString<dl_wchar>, dl_uint, dl_uint);
 
-	typedef dl_bool(__fastcall* SetCurSel_t)(GUIComboBox*, dl_int, dl_uint);
+	typedef dl_bool(_fastcall* SetCurSel_t)(GUIComboBox*, dl_int, dl_uint);
 
 	GUIComboBox::GUIComboBox(TGUISharedString<dl_wchar> label)
 	{

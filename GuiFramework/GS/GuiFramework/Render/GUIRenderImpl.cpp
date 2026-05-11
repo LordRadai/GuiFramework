@@ -2,7 +2,7 @@
 
 namespace GuiFramework
 {
-	typedef void(__fastcall* Constructor_t)(GUIRenderImpl*);
+	typedef void(_fastcall* Constructor_t)(GUIRenderImpl*);
 
 	GUIRenderImpl::GUIRenderImpl()
 	{

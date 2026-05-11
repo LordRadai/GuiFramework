@@ -2,15 +2,15 @@
 
 namespace GuiFramework
 {
-	typedef void(__fastcall* Constructor_t)(GUIWindowManager*, GUISystem*);
+	typedef void(_fastcall* Constructor_t)(GUIWindowManager*, GUISystem*);
 
-	typedef dl_int(__fastcall* SetFocus_t)(GUIWindowManager*, GUIWindowBase*);
-	typedef dl_bool(__fastcall* SetAfterWindow_t)(GUIWindowManager*, GUIWindowBase*, GUIWindowBase*);
-	typedef dl_int(__fastcall* RegisterWindow_t)(GUIWindowManager*, GUIWindowBase*);
+	typedef dl_int(_fastcall* SetFocus_t)(GUIWindowManager*, GUIWindowBase*);
+	typedef dl_bool(_fastcall* SetAfterWindow_t)(GUIWindowManager*, GUIWindowBase*, GUIWindowBase*);
+	typedef dl_int(_fastcall* RegisterWindow_t)(GUIWindowManager*, GUIWindowBase*);
 
-	typedef dl_bool(__fastcall* BeginVirtualInput_t)(GUIWindowManager*, GUIWindowBase*);
-	typedef void(__fastcall* UpdateVirtualInput_t)(GUIWindowManager*, GUIVirtualInput&);
-	typedef void(__fastcall* EndVirtualInput_t)(GUIWindowManager*);
+	typedef dl_bool(_fastcall* BeginVirtualInput_t)(GUIWindowManager*, GUIWindowBase*);
+	typedef void(_fastcall* UpdateVirtualInput_t)(GUIWindowManager*, GUIVirtualInput&);
+	typedef void(_fastcall* EndVirtualInput_t)(GUIWindowManager*);
 
 	GUIWindowManager::GUIWindowManager(GUISystem* pGUISystem)
 	{

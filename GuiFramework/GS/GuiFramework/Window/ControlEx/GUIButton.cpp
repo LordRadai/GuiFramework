@@ -3,7 +3,7 @@
 
 namespace GuiFramework
 {
-	typedef void(__fastcall* Constructor_t)(const GUIButton*, GUITriggerTweakWidget*, TGUISharedString<dl_wchar>, dl_uint);
+	typedef void(_fastcall* Constructor_t)(const GUIButton*, GUITriggerTweakWidget*, TGUISharedString<dl_wchar>, dl_uint);
 
 	GUIButton::GUIButton(GUITriggerTweakWidget* pTriggerTweakWidget, TGUISharedString<dl_wchar> label, dl_uint flags)
 	{

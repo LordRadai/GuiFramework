@@ -261,6 +261,7 @@
     <ClInclude Include="GuiFramework\Window\Tweaker\GUIMultiNumericEditor.h" />
     <ClInclude Include="GuiFramework\Window\Tweaker\GUIMultiTweaker.h" />
     <ClInclude Include="GuiFramework\Window\Tweaker\GUIOnOffTweaker.h" />
+    <ClInclude Include="GuiFramework\Window\Tweaker\GUIRangeTweakWidget.h" />
     <ClInclude Include="GuiFramework\Window\Tweaker\GUITweakerBase.h" />
     <ClInclude Include="GuiFramework\Window\Tweaker\GUITweakerMaker.h" />
     <ClInclude Include="GuiFramework\Window\Tweaker\TGUIColorTweaker.inl" />
@@ -268,7 +269,7 @@
     <ClInclude Include="GuiFramework\Window\Tweaker\TGUIMultiTweaker.inl" />
     <ClInclude Include="GuiFramework\Window\Tweaker\TGUIOnOffTweaker.inl" />
     <ClInclude Include="GuiFramework\Window\Tweaker\TGUIProxyOnOffTweaker.inl" />
-    <ClInclude Include="GuiFramework\Window\Tweaker\TGUITweakerItem.h" />
+    <ClInclude Include="GuiFramework\Window\Tweaker\TGUITweakerItem.inl" />
     <ClInclude Include="GuiFramework\Window\Util\GUITextEditorUtil.h" />
     <ClInclude Include="GuiFramework\Window\Control\GUIAutoVLayout.h" />
     <ClInclude Include="GuiFramework\Window\Control\GUIAutoVLayoutScroll.h" />

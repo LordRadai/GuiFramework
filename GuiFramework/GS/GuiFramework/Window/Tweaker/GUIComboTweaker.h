@@ -23,7 +23,7 @@ namespace GuiFramework
 		void _Destroy();
 		virtual void _OnComboSelChanged(dl_int idx) {}
 
-		typedef void(__fastcall* OnComboSelectionChanged_t)(GUIComboTweaker*);
+		typedef void(_fastcall* OnComboSelectionChanged_t)(GUIComboTweaker*);
 
 		TGUIObjectPtr<GUIComboTweakWidget> m_pComboTweakWidget;
 	};

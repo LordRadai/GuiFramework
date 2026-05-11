@@ -3,12 +3,12 @@
 
 namespace GuiFramework
 {
-	typedef void(__fastcall* Constructor_t)(GUIPopupMenuNode*, GUISystem*, TGUISharedString<wchar_t>, dl_uint);
+	typedef void(_fastcall* Constructor_t)(GUIPopupMenuNode*, GUISystem*, TGUISharedString<wchar_t>, dl_uint);
 
-	typedef GUIPopupMenuItem*(__fastcall* AddItem_t)(GUIPopupMenuNode*, GUIPopupMenuItem*, dl_uint);
-	typedef GUIPopupMenuString*(__fastcall* AddString_t)(GUIPopupMenuNode*, TGUISharedString<dl_wchar>, dl_uint, dl_uint);
-	typedef GUIPopupMenuSeparator*(__fastcall* AddSeparator_t)(GUIPopupMenuNode*, dl_uint, dl_uint);
-	typedef GUIPopupMenuNode*(__fastcall* AddSubNode_t)(GUIPopupMenuNode*, TGUISharedString<dl_wchar>, dl_uint, dl_uint);
+	typedef GUIPopupMenuItem*(_fastcall* AddItem_t)(GUIPopupMenuNode*, GUIPopupMenuItem*, dl_uint);
+	typedef GUIPopupMenuString*(_fastcall* AddString_t)(GUIPopupMenuNode*, TGUISharedString<dl_wchar>, dl_uint, dl_uint);
+	typedef GUIPopupMenuSeparator*(_fastcall* AddSeparator_t)(GUIPopupMenuNode*, dl_uint, dl_uint);
+	typedef GUIPopupMenuNode*(_fastcall* AddSubNode_t)(GUIPopupMenuNode*, TGUISharedString<dl_wchar>, dl_uint, dl_uint);
 
 	GUIPopupMenuNode::GUIPopupMenuNode(GUISystem* pSystem, TGUISharedString<wchar_t> label, dl_uint id)
 	{

@@ -3,7 +3,7 @@
 
 namespace GuiFramework
 {
-	typedef void(__fastcall* Constructor_t)(GUIAutoVLayoutScroll*, TGUISharedString<dl_wchar>&);
+	typedef void(_fastcall* Constructor_t)(GUIAutoVLayoutScroll*, TGUISharedString<dl_wchar>&);
 
 	GUIAutoVLayoutScroll::GUIAutoVLayoutScroll(TGUISharedString<dl_wchar>& label)
 	{

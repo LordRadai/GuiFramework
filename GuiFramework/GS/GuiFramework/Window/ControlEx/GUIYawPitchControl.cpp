@@ -3,10 +3,10 @@
 
 namespace GuiFramework
 {
-	typedef void(__fastcall* Constructor_t)(GUIYawPitchControl*, TGUISharedString<dl_wchar>);
-	typedef void(__fastcall* ConstructorEx_t)(GUIYawPitchControl*, GUIWindowBase*, TGUISharedString<dl_wchar>, dl_uint, dl_uint);
+	typedef void(_fastcall* Constructor_t)(GUIYawPitchControl*, TGUISharedString<dl_wchar>);
+	typedef void(_fastcall* ConstructorEx_t)(GUIYawPitchControl*, GUIWindowBase*, TGUISharedString<dl_wchar>, dl_uint, dl_uint);
 
-	typedef dl_float32(__fastcall* GetAngle_t)(const GUIYawPitchControl*);
+	typedef dl_float32(_fastcall* GetAngle_t)(const GUIYawPitchControl*);
 
 	GUIYawPitchControl::GUIYawPitchControl(TGUISharedString<dl_wchar> label)
 	{

@@ -3,10 +3,10 @@
 
 namespace GuiFramework
 {
-	typedef void(__fastcall* Constructor_t)(GUIOnOffTweaker*, GUIWidget*, TGUISharedString<dl_wchar>);
+	typedef void(_fastcall* Constructor_t)(GUIOnOffTweaker*, GUIWidget*, TGUISharedString<dl_wchar>);
 
-	typedef void(__fastcall* SetCheck_t)(GUIOnOffTweaker*, dl_bool);
-	typedef dl_bool(__fastcall* IsChecked_t)(const GUIOnOffTweaker*);
+	typedef void(_fastcall* SetCheck_t)(GUIOnOffTweaker*, dl_bool);
+	typedef dl_bool(_fastcall* IsChecked_t)(const GUIOnOffTweaker*);
 
 	GUIOnOffTweaker::GUIOnOffTweaker(GUIWidget* pParent, TGUISharedString<dl_wchar> label)
 	{

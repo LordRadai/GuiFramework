@@ -2,12 +2,12 @@
 
 namespace GuiFramework
 {
-	typedef void(__fastcall* ctor_t)(GUIWidget*, TGUISharedString<dl_wchar>);
+	typedef void(_fastcall* ctor_t)(GUIWidget*, TGUISharedString<dl_wchar>);
 
-	typedef dl_bool(__fastcall* Close_t)(GUIWidget*);
-	typedef dl_bool(__fastcall* Minimize_t)(GUIWidget*, dl_int);
-	typedef dl_bool(__fastcall* Restore_t)(GUIWidget*, dl_int);
-	typedef dl_bool(__fastcall* FadeIn_t)(GUIWidget*);
+	typedef dl_bool(_fastcall* Close_t)(GUIWidget*);
+	typedef dl_bool(_fastcall* Minimize_t)(GUIWidget*, dl_int);
+	typedef dl_bool(_fastcall* Restore_t)(GUIWidget*, dl_int);
+	typedef dl_bool(_fastcall* FadeIn_t)(GUIWidget*);
 
 	GUIWidget::GUIWidget(TGUISharedString<dl_wchar> label) : GUIWindowBase(label)
 	{

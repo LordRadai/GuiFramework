@@ -15,8 +15,8 @@ namespace GuiFramework
 		virtual void Update(dl_float32 dt) {}
 		virtual void Close() {}
 
-		typedef void(__fastcall* Update_t)(GUITweakerItem*, dl_float32);
-		typedef void(__fastcall* Close_t)(GUITweakerItem*);
+		typedef void(_fastcall* Update_t)(GUITweakerItem*, dl_float32);
+		typedef void(_fastcall* Close_t)(GUITweakerItem*);
 	protected:
 		void _Destroy();
 	};

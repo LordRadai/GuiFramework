@@ -3,7 +3,7 @@
 
 namespace GuiFramework
 {
-	typedef void(__fastcall* Constructor_t)(GUITweakerItem*);
+	typedef void(_fastcall* Constructor_t)(GUITweakerItem*);
 
 	GUITweakerItem::GUITweakerItem()
 	{

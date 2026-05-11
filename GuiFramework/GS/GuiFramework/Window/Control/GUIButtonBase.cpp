@@ -3,7 +3,7 @@
 
 namespace GuiFramework
 {
-	typedef void(__fastcall* Constructor_t)(const GUIButtonBase*, TGUISharedString<dl_wchar>);
+	typedef void(_fastcall* Constructor_t)(const GUIButtonBase*, TGUISharedString<dl_wchar>);
 
 	GUIButtonBase::GUIButtonBase(TGUISharedString<dl_wchar> label)
 	{

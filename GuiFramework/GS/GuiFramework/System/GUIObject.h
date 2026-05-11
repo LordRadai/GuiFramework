@@ -30,13 +30,13 @@ namespace GuiFramework
 		dl_uint GetRefAndFlags() const { return m_nRefAndFlags; }
 		dl_bool IsFlagSet(dl_uint flag) const { return (m_nRefAndFlags & flag) != 0; }
 
-		typedef DLRF::DLRuntimeClass* (__fastcall* GetRuntimeClassOfThis_t)(const GUIObject*);
-		typedef void(__fastcall* Destructor_t)(GUIObject*);
-		typedef void(__fastcall* OnDelete_t)(GUIObject*);
+		typedef DLRF::DLRuntimeClass* (_fastcall* GetRuntimeClassOfThis_t)(const GUIObject*);
+		typedef void(_fastcall* Destructor_t)(GUIObject*);
+		typedef void(_fastcall* OnDelete_t)(GUIObject*);
 	protected:
 		void _Destroy();
 
-		typedef void(__fastcall* _Destroy_t)(GUIObject*);
+		typedef void(_fastcall* _Destroy_t)(GUIObject*);
 
 		dl_uint m_nRefAndFlags;
 	};

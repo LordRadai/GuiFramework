@@ -24,7 +24,7 @@ namespace GuiFramework
 		}
 	};
 
-	typedef void(__fastcall* TGUILiteralStringCtor_t)(TGUILiteralString<dl_wchar>*, const dl_wchar*);
+	typedef void(_fastcall* TGUILiteralStringCtor_t)(TGUILiteralString<dl_wchar>*, const dl_wchar*);
 
 	template<> inline TGUILiteralString<dl_wchar>::TGUILiteralString(const dl_wchar* str)
 	{

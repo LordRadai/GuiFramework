@@ -55,12 +55,12 @@ namespace GuiFramework
 		*/
 		void CreateTweaker(GUITweakerDialog* pWnd);
 
-		typedef void(__fastcall* Finalize_t)(GUISystem*);
-		typedef TGUI_RECT<int>(__fastcall* GetMouseInfo_t)(GUISystem*);
-		typedef GUIRootWindow*(__fastcall* CreateRootWindow_t)(GUISystem*);
-		typedef void(__fastcall* MeasureTextExtent_t)(GUISystem*, TGUI_POINT<dl_int>&);
-		typedef void(__fastcall* SetClipboard_t)(GUISystem*, const dl_wchar*);
-		typedef dl_bool(__fastcall* GetClipboard_t)(GUISystem*, DLTX::DLString&);
+		typedef void(_fastcall* Finalize_t)(GUISystem*);
+		typedef TGUI_RECT<int>(_fastcall* GetMouseInfo_t)(GUISystem*);
+		typedef GUIRootWindow*(_fastcall* CreateRootWindow_t)(GUISystem*);
+		typedef void(_fastcall* MeasureTextExtent_t)(GUISystem*, TGUI_POINT<dl_int>&);
+		typedef void(_fastcall* SetClipboard_t)(GUISystem*, const dl_wchar*);
+		typedef dl_bool(_fastcall* GetClipboard_t)(GUISystem*, DLTX::DLString&);
 	protected:
 		dl_int m_isDrawing;
 		TGUIObjectPtr<GUIWindowManager> m_pGUIWindowManager;

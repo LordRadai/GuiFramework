@@ -4,9 +4,9 @@
 
 namespace GuiFramework
 {
-	typedef void(__fastcall* GUIObject_ctor_t)(GUIObject*);
-	typedef void(__fastcall* AddRef_t)(GUIObject*);
-	typedef void(__fastcall* UnRef_t)(GUIObject*);
+	typedef void(_fastcall* GUIObject_ctor_t)(GUIObject*);
+	typedef void(_fastcall* AddRef_t)(GUIObject*);
+	typedef void(_fastcall* UnRef_t)(GUIObject*);
 
 	GUIObject::GUIObject()
 	{

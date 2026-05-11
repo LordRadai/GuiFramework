@@ -3,8 +3,8 @@
 
 namespace GuiFramework
 {
-	typedef void(__fastcall* Constructor_t)(const GUIRangeDataBase*);
-	typedef void(__fastcall* Finalize_t)(const GUIRangeDataBase*);
+	typedef void(_fastcall* Constructor_t)(const GUIRangeDataBase*);
+	typedef void(_fastcall* Finalize_t)(const GUIRangeDataBase*);
 
 	GUIRangeDataBase::GUIRangeDataBase()
 	{

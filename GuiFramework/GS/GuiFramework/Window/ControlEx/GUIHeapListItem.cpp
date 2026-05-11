@@ -4,8 +4,8 @@
 
 namespace GuiFramework
 {
-	typedef void(__fastcall* Constructor_t)(GUIHeapListItem*, TGUISharedString<dl_wchar>, DLKR::DLAllocator*);
-	typedef void(__fastcall* ConstructorWithOwner_t)(GUIHeapListItem*, GUIHeapList*, TGUISharedString<dl_wchar>, DLKR::DLAllocator*);
+	typedef void(_fastcall* Constructor_t)(GUIHeapListItem*, TGUISharedString<dl_wchar>, DLKR::DLAllocator*);
+	typedef void(_fastcall* ConstructorWithOwner_t)(GUIHeapListItem*, GUIHeapList*, TGUISharedString<dl_wchar>, DLKR::DLAllocator*);
 
 	GUIHeapListItem::GUIHeapListItem(TGUISharedString<dl_wchar> label, DLKR::DLAllocator* pHeap)
 	{

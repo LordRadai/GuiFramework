@@ -3,19 +3,19 @@
 
 namespace GuiFramework
 {
-	typedef void(__fastcall* Constructor_t)(GUIColorSelector*, TGUISharedString<dl_wchar>);
-	typedef void(__fastcall* ConstructorWithCreate_t)(GUIColorSelector*, GUIWindowBase*, TGUISharedString<dl_wchar>, const _GUI_CREATE_WINDOW&);
-	typedef void(__fastcall* ConstructorWithFlags_t)(GUIColorSelector*, GUIWindowBase*, TGUISharedString<dl_wchar>, dl_uint, dl_uint);
+	typedef void(_fastcall* Constructor_t)(GUIColorSelector*, TGUISharedString<dl_wchar>);
+	typedef void(_fastcall* ConstructorWithCreate_t)(GUIColorSelector*, GUIWindowBase*, TGUISharedString<dl_wchar>, const _GUI_CREATE_WINDOW&);
+	typedef void(_fastcall* ConstructorWithFlags_t)(GUIColorSelector*, GUIWindowBase*, TGUISharedString<dl_wchar>, dl_uint, dl_uint);
 
-	typedef void(__fastcall* SetFloatColor_t)(GUIColorSelector*, const DLMT::DL_VECTOR4&, dl_float32);
-	typedef void(__fastcall* SetIntColor_t)(GUIColorSelector*, const DLMT::DL_COLOR_32);
-	typedef void(__fastcall* SetU8Color_t)(GUIColorSelector*, const DLMT2::DL_COLOR_U8);
-	typedef void(__fastcall* SetHDRColor_t)(GUIColorSelector*, dl_pointer);
+	typedef void(_fastcall* SetFloatColor_t)(GUIColorSelector*, const DLMT::DL_VECTOR4&, dl_float32);
+	typedef void(_fastcall* SetIntColor_t)(GUIColorSelector*, const DLMT::DL_COLOR_32);
+	typedef void(_fastcall* SetU8Color_t)(GUIColorSelector*, const DLMT2::DL_COLOR_U8);
+	typedef void(_fastcall* SetHDRColor_t)(GUIColorSelector*, dl_pointer);
 
-	typedef void(__fastcall* GetIntColor_t)(const GUIColorSelector*, DLMT::DL_COLOR_32&);
-	typedef void(__fastcall* GetFloatColor_t)(const GUIColorSelector*, DLMT::DL_VECTOR4&);
-	typedef void(__fastcall* GetU8Color_t)(const GUIColorSelector*, DLMT2::DL_COLOR_U8&);
-	typedef void(__fastcall* GetHDRColor_t)(const GUIColorSelector*, dl_pointer);
+	typedef void(_fastcall* GetIntColor_t)(const GUIColorSelector*, DLMT::DL_COLOR_32&);
+	typedef void(_fastcall* GetFloatColor_t)(const GUIColorSelector*, DLMT::DL_VECTOR4&);
+	typedef void(_fastcall* GetU8Color_t)(const GUIColorSelector*, DLMT2::DL_COLOR_U8&);
+	typedef void(_fastcall* GetHDRColor_t)(const GUIColorSelector*, dl_pointer);
 
 	GUIColorSelector::GUIColorSelector(TGUISharedString<dl_wchar> label)
 	{

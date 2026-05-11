@@ -87,37 +87,37 @@ namespace GuiFramework
 		virtual void UploadShaderParameter(const _SHADER_PARAMETER& param) {}
 		virtual void SetDLTexture(dl_uint id, DLGR::DLTextureBase* pTexture) {}
 
-		typedef void(__fastcall* Destructor_t)(GUIRenderImplBase*);
-		typedef dl_bool(__fastcall* BeginTextARGB_t)(GUIRenderImplBase*, const GUIFont&, DLMT2::DL_COLOR_U8);
-		typedef dl_bool(__fastcall* BeginText_t)(GUIRenderImplBase*, const GUIFont&, DLMT::DL_COLOR_32);
-		typedef void(__fastcall* DrawText_Rect_t)(GUIRenderImplBase*, const Rect&, const dl_wchar*);
-		typedef void(__fastcall* DrawText_Coords_t)(GUIRenderImplBase*, dl_int, dl_int, const dl_wchar*);
-		typedef dl_float32(__fastcall* GetTextHeight_t)(GUIRenderImplBase*);
-		typedef void(__fastcall* SetTextScale_Point_t)(GUIRenderImplBase*, const Point2D&);
-		typedef void(__fastcall* SetTextScale_Vector_t)(GUIRenderImplBase*, const DLMT::DL_VECTOR2&);
-		typedef void(__fastcall* SetTextShadowEnable_t)(GUIRenderImplBase*, dl_uint);
-		typedef void(__fastcall* SetTextColorARGB_t)(GUIRenderImplBase*, DLMT2::DL_COLOR_U8, DLMT2::DL_COLOR_U8);
-		typedef void(__fastcall* SetTextColor_t)(GUIRenderImplBase*, DLMT::DL_COLOR_32, DLMT::DL_COLOR_32);
-		typedef void(__fastcall* SetTextAttributeARGB_t)(GUIRenderImplBase*, const GUI_TEXT_ATTRIBUTE&, DLMT2::DL_COLOR_U8);
-		typedef void(__fastcall* SetTextAttribute_t)(GUIRenderImplBase*, const GUI_TEXT_ATTRIBUTE&, DLMT::DL_COLOR_32);
-		typedef void(__fastcall* SetHAlign_t)(GUIRenderImplBase*, dl_uint8);
-		typedef void(__fastcall* SetVAlign_t)(GUIRenderImplBase*, dl_uint8);
-		typedef DLMT::DL_FRECT(__fastcall* GetTextExtent_Rect_t)(const GUIRenderImplBase*, const DLMT::DL_FRECT&, const dl_wchar*);
-		typedef DLMT::DL_FRECT(__fastcall* GetTextExtent_Coords_t)(const GUIRenderImplBase*, dl_int, dl_int, const dl_wchar*);
-		typedef void(__fastcall* EndText_t)(GUIRenderImplBase*);
-		typedef dl_bool(__fastcall* SetScissorRect_t)(GUIRenderImplBase*, const Rect&);
-		typedef dl_bool(__fastcall* GetScissorRect_t)(GUIRenderImplBase*, Rect&);
-		typedef void(__fastcall* SetShader_t)(GUIRenderImplBase*, dl_uint);
-		typedef void(__fastcall* SetBlendMode_t)(GUIRenderImplBase*, dl_uint);
-		typedef dl_bool(__fastcall* GetViewport_t)(const GUIRenderImplBase*, GUI_VIEWPORT&);
-		typedef void(__fastcall* SetDefaultRenderState_t)(GUIRenderImplBase*);
-		typedef void(__fastcall* SetTexture_t)(GUIRenderImplBase*, dl_uint, GUITextureBase*);
-		typedef void(__fastcall* UnSetTexture_t)(GUIRenderImplBase*, dl_uint);
-		typedef void(__fastcall* SetSamplerState_t)(GUIRenderImplBase*, dl_uint, GUI_SAMPLER_STATE&);
-		typedef dl_bool(__fastcall* DrawPrimitiveUP_t)(GUIRenderImplBase*, GUI_PRIMITIVE_TOPOLOGY, dl_uint, const void*, dl_uint);
-		typedef void(__fastcall* FillWindowBasis_t)(GUIRenderImplBase*, const Rect&, dl_float32);
-		typedef void(__fastcall* UploadShaderParameter_t)(GUIRenderImplBase*, const _SHADER_PARAMETER&);
-		typedef void(__fastcall* SetDLTexture_t)(GUIRenderImplBase*, dl_uint, DLGR::DLTextureBase*);
+		typedef void(_fastcall* Destructor_t)(GUIRenderImplBase*);
+		typedef dl_bool(_fastcall* BeginTextARGB_t)(GUIRenderImplBase*, const GUIFont&, DLMT2::DL_COLOR_U8);
+		typedef dl_bool(_fastcall* BeginText_t)(GUIRenderImplBase*, const GUIFont&, DLMT::DL_COLOR_32);
+		typedef void(_fastcall* DrawText_Rect_t)(GUIRenderImplBase*, const Rect&, const dl_wchar*);
+		typedef void(_fastcall* DrawText_Coords_t)(GUIRenderImplBase*, dl_int, dl_int, const dl_wchar*);
+		typedef dl_float32(_fastcall* GetTextHeight_t)(GUIRenderImplBase*);
+		typedef void(_fastcall* SetTextScale_Point_t)(GUIRenderImplBase*, const Point2D&);
+		typedef void(_fastcall* SetTextScale_Vector_t)(GUIRenderImplBase*, const DLMT::DL_VECTOR2&);
+		typedef void(_fastcall* SetTextShadowEnable_t)(GUIRenderImplBase*, dl_uint);
+		typedef void(_fastcall* SetTextColorARGB_t)(GUIRenderImplBase*, DLMT2::DL_COLOR_U8, DLMT2::DL_COLOR_U8);
+		typedef void(_fastcall* SetTextColor_t)(GUIRenderImplBase*, DLMT::DL_COLOR_32, DLMT::DL_COLOR_32);
+		typedef void(_fastcall* SetTextAttributeARGB_t)(GUIRenderImplBase*, const GUI_TEXT_ATTRIBUTE&, DLMT2::DL_COLOR_U8);
+		typedef void(_fastcall* SetTextAttribute_t)(GUIRenderImplBase*, const GUI_TEXT_ATTRIBUTE&, DLMT::DL_COLOR_32);
+		typedef void(_fastcall* SetHAlign_t)(GUIRenderImplBase*, dl_uint8);
+		typedef void(_fastcall* SetVAlign_t)(GUIRenderImplBase*, dl_uint8);
+		typedef DLMT::DL_FRECT(_fastcall* GetTextExtent_Rect_t)(const GUIRenderImplBase*, const DLMT::DL_FRECT&, const dl_wchar*);
+		typedef DLMT::DL_FRECT(_fastcall* GetTextExtent_Coords_t)(const GUIRenderImplBase*, dl_int, dl_int, const dl_wchar*);
+		typedef void(_fastcall* EndText_t)(GUIRenderImplBase*);
+		typedef dl_bool(_fastcall* SetScissorRect_t)(GUIRenderImplBase*, const Rect&);
+		typedef dl_bool(_fastcall* GetScissorRect_t)(GUIRenderImplBase*, Rect&);
+		typedef void(_fastcall* SetShader_t)(GUIRenderImplBase*, dl_uint);
+		typedef void(_fastcall* SetBlendMode_t)(GUIRenderImplBase*, dl_uint);
+		typedef dl_bool(_fastcall* GetViewport_t)(const GUIRenderImplBase*, GUI_VIEWPORT&);
+		typedef void(_fastcall* SetDefaultRenderState_t)(GUIRenderImplBase*);
+		typedef void(_fastcall* SetTexture_t)(GUIRenderImplBase*, dl_uint, GUITextureBase*);
+		typedef void(_fastcall* UnSetTexture_t)(GUIRenderImplBase*, dl_uint);
+		typedef void(_fastcall* SetSamplerState_t)(GUIRenderImplBase*, dl_uint, GUI_SAMPLER_STATE&);
+		typedef dl_bool(_fastcall* DrawPrimitiveUP_t)(GUIRenderImplBase*, GUI_PRIMITIVE_TOPOLOGY, dl_uint, const void*, dl_uint);
+		typedef void(_fastcall* FillWindowBasis_t)(GUIRenderImplBase*, const Rect&, dl_float32);
+		typedef void(_fastcall* UploadShaderParameter_t)(GUIRenderImplBase*, const _SHADER_PARAMETER&);
+		typedef void(_fastcall* SetDLTexture_t)(GUIRenderImplBase*, dl_uint, DLGR::DLTextureBase*);
 
 	protected:
 		GUI_TEXT_ATTRIBUTE m_textAttribute;

@@ -3,12 +3,12 @@
 
 namespace GuiFramework
 {
-	typedef void(__fastcall* Constructor_t)(GUITextureList*, TGUISharedString<dl_wchar>);
-	typedef void(__fastcall* ConstructorWithCreateParams_t)(GUITextureList*, GUIWindowBase*, TGUISharedString<dl_wchar>, const _GUI_CREATE_WINDOW&);
-	typedef void(__fastcall* ConstructorWithFlags_t)(GUITextureList*, GUIWindowBase*, TGUISharedString<dl_wchar>, dl_uint, dl_uint);
+	typedef void(_fastcall* Constructor_t)(GUITextureList*, TGUISharedString<dl_wchar>);
+	typedef void(_fastcall* ConstructorWithCreateParams_t)(GUITextureList*, GUIWindowBase*, TGUISharedString<dl_wchar>, const _GUI_CREATE_WINDOW&);
+	typedef void(_fastcall* ConstructorWithFlags_t)(GUITextureList*, GUIWindowBase*, TGUISharedString<dl_wchar>, dl_uint, dl_uint);
 
-	typedef dl_uint(__fastcall* AddTexture_t)(GUITextureList*, TGUISharedString<dl_wchar>, GUITextureBase*, TGUISharedString<dl_wchar>);
-	typedef dl_uint(__fastcall* RemoveTexture_t)(GUITextureList*, GUITextureBase*);
+	typedef dl_uint(_fastcall* AddTexture_t)(GUITextureList*, TGUISharedString<dl_wchar>, GUITextureBase*, TGUISharedString<dl_wchar>);
+	typedef dl_uint(_fastcall* RemoveTexture_t)(GUITextureList*, GUITextureBase*);
 
 	GUITextureList::GUITextureList(TGUISharedString<dl_wchar> label)
 	{

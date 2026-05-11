@@ -3,7 +3,7 @@
 
 namespace GuiFramework
 {
-	typedef void(__fastcall* Constructor_t)(GUIPopupMenuSeparator*, GUISystem*, dl_uint);
+	typedef void(_fastcall* Constructor_t)(GUIPopupMenuSeparator*, GUISystem*, dl_uint);
 
 	GUIPopupMenuSeparator::GUIPopupMenuSeparator(GUISystem* pSystem, dl_uint id)
 	{

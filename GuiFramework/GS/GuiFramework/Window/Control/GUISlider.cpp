@@ -7,6 +7,9 @@ namespace GuiFramework
 	typedef void(_fastcall* ConstructorWithCreateParams_t)(GUISlider*, GUIWindowBase*, TGUISharedString<dl_wchar>, const _GUI_CREATE_WINDOW&);
 	typedef void(_fastcall* ConstructorWithFlags_t)(GUISlider*, GUIWindowBase*, TGUISharedString<dl_wchar>, dl_uint, dl_uint);
 
+	typedef void(_fastcall* SetPos_t)(GUISlider*, dl_int, dl_uint);
+	typedef void(_fastcall* SetRange_t)(GUISlider*, dl_int, dl_int);
+
 	GUISlider::GUISlider(TGUISharedString<dl_wchar> label)
 	{
 		CALL(Constructor_t, 0x5976c0, this, label);
@@ -75,5 +78,15 @@ namespace GuiFramework
 	void GUISlider::OnRender(GraphicsContext& gc) const
 	{
 		CALL(OnRender_t, 0x597fb0, this, gc);
+	}
+
+	void GUISlider::SetPos(dl_int pos, dl_uint param_2)
+	{
+		CALL(SetPos_t, 0x597d60, this, pos, param_2);
+	}
+
+	void GUISlider::SetRange(dl_int min, dl_int max)
+	{
+		CALL(SetRange_t, 0x597b00, this, min, max);
 	}
 }

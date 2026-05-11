@@ -30,9 +30,9 @@ namespace GuiFramework
 		virtual dl_uint AutoAdd(GUIWindowBase* pWindow) { return false; }
 		virtual dl_uint AutoRemove(GUIWindowBase* pWindow) { return false; }
 
-		typedef dl_uint(__fastcall* OnOwnerSizeChanged_t)(GUILayouter*, const TGUI_SIZE<int>&);
-		typedef dl_uint(__fastcall* AutoAdd_t)(GUILayouter*, GUIWindowBase*);
-		typedef dl_uint(__fastcall* AutoRemove_t)(GUILayouter*, GUIWindowBase*);
+		typedef dl_uint(_fastcall* OnOwnerSizeChanged_t)(GUILayouter*, const TGUI_SIZE<int>&);
+		typedef dl_uint(_fastcall* AutoAdd_t)(GUILayouter*, GUIWindowBase*);
+		typedef dl_uint(_fastcall* AutoRemove_t)(GUILayouter*, GUIWindowBase*);
 
 	protected:
 		TGUIObjectPtr<GUIWidget> m_pOwner;

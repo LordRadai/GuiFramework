@@ -2,7 +2,7 @@
 
 namespace GuiFramework
 {
-	typedef void(__fastcall* Constructor_t)(GUIPopupMenuItem*, GUISystem*, dl_uint);
+	typedef void(_fastcall* Constructor_t)(GUIPopupMenuItem*, GUISystem*, dl_uint);
 
 	GUIPopupMenuItem::GUIPopupMenuItem(GUISystem* pGUISystem, dl_uint id)
 	{

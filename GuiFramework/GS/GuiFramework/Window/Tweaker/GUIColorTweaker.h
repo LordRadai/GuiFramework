@@ -29,7 +29,7 @@ namespace GuiFramework
 		void GetU8Color(DLMT2::DL_COLOR_U8& outColor) const;
 		//void GetHDRColor(dl_pointer outColor) const;
 
-		typedef void(__fastcall* OnUpdate_t)(GUIColorTweaker*);
+		typedef void(_fastcall* OnUpdate_t)(GUIColorTweaker*);
 	protected:
 		void _Destroy();
 

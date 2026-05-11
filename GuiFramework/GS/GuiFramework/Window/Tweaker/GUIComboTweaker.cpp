@@ -3,9 +3,9 @@
 
 namespace GuiFramework
 {
-	typedef void(__fastcall* Constructor_t)(GUIComboTweaker*, GUIWindowBase*, TGUISharedString<dl_wchar>, dl_uint);
+	typedef void(_fastcall* Constructor_t)(GUIComboTweaker*, GUIWindowBase*, TGUISharedString<dl_wchar>, dl_uint);
 
-	typedef void(__fastcall* SetComboCurSel_t)(GUIComboTweaker*, dl_int);
+	typedef void(_fastcall* SetComboCurSel_t)(GUIComboTweaker*, dl_int);
 
 	GUIComboTweaker::GUIComboTweaker(GUIWindowBase* pParent, TGUISharedString<dl_wchar> label, dl_uint flags) : SuperClass()
 	{

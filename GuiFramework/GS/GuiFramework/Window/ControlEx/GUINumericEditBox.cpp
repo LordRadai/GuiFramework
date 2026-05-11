@@ -2,9 +2,9 @@
 
 namespace GuiFramework
 {
-	typedef void(__fastcall* ConstructorWithRangeData_t)(const GUINumericEditBox*, GUIRangeDataBase*, TGUISharedString<dl_wchar>);
-	typedef void(__fastcall* ConstructorWithRangeDataAndFlags_t)(const GUINumericEditBox*, GUIWindowBase*, GUIRangeDataBase*, TGUISharedString<dl_wchar>, dl_uint);
-	typedef void(__fastcall* ConstructorWithRangeDataNumLinesAndFlags_t)(const GUINumericEditBox*, GUIWindowBase*, GUIRangeDataBase*, TGUISharedString<dl_wchar>, dl_uint, dl_uint);
+	typedef void(_fastcall* ConstructorWithRangeData_t)(const GUINumericEditBox*, GUIRangeDataBase*, TGUISharedString<dl_wchar>);
+	typedef void(_fastcall* ConstructorWithRangeDataAndFlags_t)(const GUINumericEditBox*, GUIWindowBase*, GUIRangeDataBase*, TGUISharedString<dl_wchar>, dl_uint);
+	typedef void(_fastcall* ConstructorWithRangeDataNumLinesAndFlags_t)(const GUINumericEditBox*, GUIWindowBase*, GUIRangeDataBase*, TGUISharedString<dl_wchar>, dl_uint, dl_uint);
 	
 	GUINumericEditBox::GUINumericEditBox(GUIRangeDataBase* pRangeData, TGUISharedString<dl_wchar> label)
 	{

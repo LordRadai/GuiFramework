@@ -3,7 +3,7 @@
 
 namespace GuiFramework
 {
-	typedef void(__fastcall* Ctor_t)(GUIRootWindow*, TGUISharedString<dl_wchar>&);
+	typedef void(_fastcall* Ctor_t)(GUIRootWindow*, TGUISharedString<dl_wchar>&);
 
 	GUIRootWindow::GUIRootWindow(TGUISharedString<dl_wchar>& label)
 	{

@@ -3,14 +3,14 @@
 
 namespace GuiFramework
 {
-	typedef void(__fastcall* Constructor_t)(GUIPopupMenu*, GUIPopupMenuNode*);
+	typedef void(_fastcall* Constructor_t)(GUIPopupMenu*, GUIPopupMenuNode*);
 
-	typedef void(__fastcall* BuildItemInfoVector_t)(GUIPopupMenu*);
-	typedef GUIPopupMenu*(__fastcall* GetRootPopup_t)(const GUIPopupMenu*);
-	typedef dl_bool(__fastcall* Create_t)(GUIPopupMenu*, GUIWindowBase*, GUIWindowBase*, const Rect&);
-	typedef void(__fastcall* CreateSubMenu_t)(GUIPopupMenu*, GUIPopupMenuNode*, const Rect&);
-	typedef void(__fastcall* FinishPopupMenu_t)(GUIPopupMenu*, GUIPopupMenuItem*);
-	typedef void(__fastcall* Close_t)(GUIPopupMenu*, GUIPopupMenuItem*);
+	typedef void(_fastcall* BuildItemInfoVector_t)(GUIPopupMenu*);
+	typedef GUIPopupMenu*(_fastcall* GetRootPopup_t)(const GUIPopupMenu*);
+	typedef dl_bool(_fastcall* Create_t)(GUIPopupMenu*, GUIWindowBase*, GUIWindowBase*, const Rect&);
+	typedef void(_fastcall* CreateSubMenu_t)(GUIPopupMenu*, GUIPopupMenuNode*, const Rect&);
+	typedef void(_fastcall* FinishPopupMenu_t)(GUIPopupMenu*, GUIPopupMenuItem*);
+	typedef void(_fastcall* Close_t)(GUIPopupMenu*, GUIPopupMenuItem*);
 
 	GUIPopupMenu::GUIPopupMenu(GUIPopupMenuNode* pNode)
 	{
