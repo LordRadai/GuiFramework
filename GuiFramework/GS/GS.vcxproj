@@ -329,6 +329,7 @@
     <ClCompile Include="GuiFramework\Window\Tweaker\GUIMultiNumericEditor.cpp" />
     <ClCompile Include="GuiFramework\Window\Tweaker\GUIMultiTweaker.cpp" />
     <ClCompile Include="GuiFramework\Window\Tweaker\GUIOnOffTweaker.cpp" />
+    <ClCompile Include="GuiFramework\Window\Tweaker\GUIRangeTweakWidget.cpp" />
     <ClCompile Include="GuiFramework\Window\Tweaker\GUITweakerBase.cpp" />
     <ClCompile Include="GuiFramework\Window\Tweaker\GUITweakerMaker.cpp" />
     <ClCompile Include="GuiFramework\Window\Tweaker\TGUIColorTweaker.cpp" />

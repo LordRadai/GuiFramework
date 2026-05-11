@@ -464,6 +464,9 @@
     <ClCompile Include="GuiFramework\Window\Tweaker\GUIOnOffTweaker.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="GuiFramework\Window\Tweaker\GUIRangeTweakWidget.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="GuiFramework\Callback\TGUICallbackObject.inl">
