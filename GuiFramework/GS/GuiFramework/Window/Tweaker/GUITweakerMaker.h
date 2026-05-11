@@ -92,6 +92,18 @@ namespace GuiFramework
 			return pGroup->CreatePropertyLabel<T>(label, v);
 		}
 
+		template<typename T>
+		TGUIRangeTweaker<T>* CreateTweaker(TGUISharedString<dl_wchar> label, T* pValue, T min, T max, T step, dl_float32 mult = 1.f)
+		{
+			DL_ASSERT(!this->m_groups.empty());
+
+			GUITweakerGroup* pGroup = this->GetCurrentGroup();
+
+			if (pGroup == nullptr)
+				return nullptr;
+
+			return pGroup->CreateTweaker<T>(label, pValue, min, max, step, mult);
+		}
 	protected:
 		void _PushGroup(GUITweakerGroup* pGroup);
 		void _PopGroup();

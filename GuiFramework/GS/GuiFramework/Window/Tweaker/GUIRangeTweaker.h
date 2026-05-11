@@ -9,6 +9,7 @@ namespace GuiFramework
 		typedef GUIRangeTweaker ThisClass;
 		typedef GUITweakerBase SuperClass;
 	public:
+		GUIRangeTweaker();
 		GUIRangeTweaker(TGUISharedString<dl_wchar> label, GUIRangeDataBase* pRangeData);
 		virtual DLRF::DLRuntimeClass* GetRuntimeClassOfThis() const;
 		virtual ~GUIRangeTweaker() override;

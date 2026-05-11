@@ -109,13 +109,10 @@ namespace GuiFramework
 		template<typename T>
 		TGUIRangeTweaker<T>* CreateTweaker(TGUISharedString<dl_wchar> label, T* v, T min, T max, T step, dl_float32 mult = 1.f)
 		{
-			TGUIRangeTweaker<T>* pTweaker = new TGUIRangeTweaker<T>(label, new TGUIRangeData<T>(min, max, step, mult));
+			TGUIRangeTweaker<T>* pTweaker = new TGUIRangeTweaker<T>(this, label, v, min, max, step, mult);
 
 			if (pTweaker)
-			{
-				pTweaker->m_pValue = v;
 				this->AddItem(pTweaker);
-			}
 
 			return pTweaker;
 		}

@@ -99,6 +99,19 @@ namespace GuiFramework
 			return pGroup->CreatePropertyLabel(label, v);
 		}
 
+		template<typename T>
+		TGUIRangeTweaker<T>* CreateTweaker(TGUISharedString<dl_wchar> label, T* pValue, T min, T max, T step, dl_float32 mult = 1.f)
+		{
+			GUITweakerGroup* pGroup = GetCurrentGroup();
+
+			DL_ASSERT(pGroup);
+
+			if (pGroup == nullptr)
+				return nullptr;
+
+			return pGroup->CreateTweaker(label, pValue, min, max, step, mult);
+		}
+
 	private:
 		DLUT::DLVector<GUITweakerGroupItem*> m_items;
 		DLUT::DLVector<GUITweakerGroup*> m_groups;
