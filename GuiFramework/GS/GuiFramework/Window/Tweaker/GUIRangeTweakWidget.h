@@ -24,6 +24,8 @@ namespace GuiFramework
 		virtual void OnRender(GraphicsContext& gc) const override;
 		virtual GUINumericEditBox* CreateEditBox();
 
+		void Reflesh();
+
 		typedef GUINumericEditBox* (_fastcall* CreateEditBox_t)(GUIRangeTweakWidget*);
 	protected:
 		void _Destroy();

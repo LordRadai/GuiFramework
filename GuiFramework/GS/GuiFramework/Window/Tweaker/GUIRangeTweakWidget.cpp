@@ -5,6 +5,8 @@ namespace GuiFramework
 {
 	typedef void(_fastcall* Constructor_t)(GUIRangeTweakWidget*, TGUISharedString<dl_wchar>, GUIRangeDataBase*);
 
+	typedef void(_fastcall* Reflesh_t)(GUIRangeTweakWidget*);
+
 	GUIRangeTweakWidget::GUIRangeTweakWidget(TGUISharedString<dl_wchar> label, GUIRangeDataBase* pRangeData) 
 	{
 		CALL(Constructor_t, 0x5431c0, this, label, pRangeData);
@@ -53,6 +55,11 @@ namespace GuiFramework
 	GUINumericEditBox* GUIRangeTweakWidget::CreateEditBox()
 	{
 		return CALL(CreateEditBox_t, 0x5437a0, this);
+	}
+
+	void GUIRangeTweakWidget::Reflesh()
+	{
+		CALL(Reflesh_t, 0x5435f0, this);
 	}
 
 	void GUIRangeTweakWidget::_Destroy()
