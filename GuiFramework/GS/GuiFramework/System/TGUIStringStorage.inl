@@ -28,12 +28,12 @@ public:
 typedef void(_fastcall* WChar_Ctor_t)(TGUIStringStorage<dl_wchar>* This);
 typedef void(_fastcall* WChar_Dtor_t)(TGUIStringStorage<dl_wchar>* This);
 
-template<> TGUIStringStorage<dl_wchar>::TGUIStringStorage()
+template<> inline TGUIStringStorage<dl_wchar>::TGUIStringStorage()
 {
 	CALL(WChar_Ctor_t, 0x52dba0, this);
 }
 
-template<> TGUIStringStorage<dl_wchar>::~TGUIStringStorage()
+template<> inline TGUIStringStorage<dl_wchar>::~TGUIStringStorage()
 {
 	CALL(WChar_Dtor_t, 0x52df30, this);
 }
