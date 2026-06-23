@@ -26,6 +26,9 @@ namespace GuiFramework
 		dl_bool BeginVirtualInput(GUIWindowBase* pWindow);
 		void UpdateVirtualInput(GUIVirtualInput& input);
 		void EndVirtualInput();
+
+		GUIRootWindow* GetRootWindow() const { return m_pRootWindow; }
+		GUIWindowBase* GetActiveWindow() const { return m_pActiveWindow; }
 	protected:
 		GUISystem* m_pGUISystem;
 		GUIRootWindow* m_pRootWindow;
