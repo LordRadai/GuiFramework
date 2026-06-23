@@ -23,10 +23,10 @@ namespace GuiFramework
 		virtual void OnRender(GraphicsContext& gc) const override;
 		virtual dl_uint OnLButtonDown(const MouseEvent& event, const Rect& rect) override;
 
-		GUIPopupMenuItem* AddItem(GUIPopupMenuItem* item, dl_uint idx);
-		GUIPopupMenuString* AddString(TGUISharedString<dl_wchar> str, dl_uint id, dl_uint idx);
-		GUIPopupMenuSeparator* AddSeparator(dl_uint id, dl_uint idx);
-		GUIPopupMenuNode* AddSubNode(TGUISharedString<dl_wchar> label, dl_uint id, dl_uint idx);
+		GUIPopupMenuItem* AddItem(GUIPopupMenuItem* item, dl_uint idx = -1);
+		GUIPopupMenuString* AddString(TGUISharedString<dl_wchar> str, dl_uint id, dl_uint idx = -1);
+		GUIPopupMenuSeparator* AddSeparator(dl_uint id, dl_uint idx = -1);
+		GUIPopupMenuNode* AddSubNode(TGUISharedString<dl_wchar> label, dl_uint id, dl_uint idx = -1);
 	protected:
 		DLUT::DLVector<TGUIObjectPtr<GUIPopupMenuItem>> m_items;
 		TGUISharedString<wchar_t> m_label;
