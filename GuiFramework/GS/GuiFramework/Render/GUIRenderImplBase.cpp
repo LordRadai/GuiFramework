@@ -38,12 +38,12 @@ namespace GuiFramework
 		CALL(SetVAlign_t, 0xc57d40, this, align);
 	}
 
-	DLMT::DL_FRECT GUIRenderImplBase::GetTextExtent(const DLMT::DL_FRECT& pos, const dl_wchar* text) const
+	DLGR::DL_FRECT GUIRenderImplBase::GetTextExtent(const DLGR::DL_FRECT& pos, const dl_wchar* text) const
 	{
 		return CALL(GetTextExtent_Rect_t, 0xc57bd0, this, pos, text);
 	}
 
-	DLMT::DL_FRECT GUIRenderImplBase::GetTextExtent(dl_int x, dl_int y, const dl_wchar* text) const
+	DLGR::DL_FRECT GUIRenderImplBase::GetTextExtent(dl_int x, dl_int y, const dl_wchar* text) const
 	{
 		return CALL(GetTextExtent_Coords_t, 0xc57c20, this, x, y, text);
 	}
