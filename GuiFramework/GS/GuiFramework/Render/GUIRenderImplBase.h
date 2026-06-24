@@ -70,8 +70,8 @@ namespace GuiFramework
 		virtual void SetTextAttribute(const GUI_TEXT_ATTRIBUTE& attr, DLMT::DL_COLOR_32 color) {}
 		virtual void SetTextHAlign(dl_uint8 align);
 		virtual void SetTextVAlign(dl_uint8 align);
-		virtual DLMT::DL_FRECT GetTextExtent(const DLMT::DL_FRECT& pos, const dl_wchar* text) const;
-		virtual DLMT::DL_FRECT GetTextExtent(dl_int x, dl_int y, const dl_wchar* text) const;
+		virtual DLGR::DL_FRECT GetTextExtent(const DLGR::DL_FRECT& pos, const dl_wchar* text) const;
+		virtual DLGR::DL_FRECT GetTextExtent(dl_int x, dl_int y, const dl_wchar* text) const;
 		virtual void EndText() {}
 		virtual dl_bool SetScissorRect(const Rect& rect) { return false; }
 		virtual dl_bool GetScissorRect(Rect& rect) const { return false; }
@@ -102,8 +102,8 @@ namespace GuiFramework
 		typedef void(_fastcall* SetTextAttribute_t)(GUIRenderImplBase*, const GUI_TEXT_ATTRIBUTE&, DLMT::DL_COLOR_32);
 		typedef void(_fastcall* SetHAlign_t)(GUIRenderImplBase*, dl_uint8);
 		typedef void(_fastcall* SetVAlign_t)(GUIRenderImplBase*, dl_uint8);
-		typedef DLMT::DL_FRECT(_fastcall* GetTextExtent_Rect_t)(const GUIRenderImplBase*, const DLMT::DL_FRECT&, const dl_wchar*);
-		typedef DLMT::DL_FRECT(_fastcall* GetTextExtent_Coords_t)(const GUIRenderImplBase*, dl_int, dl_int, const dl_wchar*);
+		typedef DLGR::DL_FRECT(_fastcall* GetTextExtent_Rect_t)(const GUIRenderImplBase*, const DLGR::DL_FRECT&, const dl_wchar*);
+		typedef DLGR::DL_FRECT(_fastcall* GetTextExtent_Coords_t)(const GUIRenderImplBase*, dl_int, dl_int, const dl_wchar*);
 		typedef void(_fastcall* EndText_t)(GUIRenderImplBase*);
 		typedef dl_bool(_fastcall* SetScissorRect_t)(GUIRenderImplBase*, const Rect&);
 		typedef dl_bool(_fastcall* GetScissorRect_t)(GUIRenderImplBase*, Rect&);
