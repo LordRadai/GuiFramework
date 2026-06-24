@@ -26,11 +26,12 @@ namespace GuiFramework
 	template<typename T>
 	struct TGUI_COMBO_TWEAKER_ITEM
 	{
+		dl_pointer pVar0;
 		const dl_wchar* Name;
 		T Value;
 
-		TGUI_COMBO_TWEAKER_ITEM() : Name(nullptr), Value() {}
-		TGUI_COMBO_TWEAKER_ITEM(const dl_wchar* name, T value) : Name(name), Value(value) {}
+		TGUI_COMBO_TWEAKER_ITEM() : pVar0(nullptr), Name(nullptr), Value() {}
+		TGUI_COMBO_TWEAKER_ITEM(const dl_wchar* name, T value) : pVar0(nullptr), Name(name), Value(value) {}
 	};
 
 	template<typename T>
@@ -49,8 +50,7 @@ namespace GuiFramework
 
 		void AddPair(const T& value, const dl_wchar* str)
 		{
-			TGUI_COMBO_TWEAKER_ITEM<T>* pNewPair = new TGUI_COMBO_TWEAKER_ITEM<T>(str, value);
-			m_pairs.push_back(pNewPair);
+			m_pairs.push_back(TGUI_COMBO_TWEAKER_ITEM<T>(str, value));
 		}
 
 		void RemovePair(dl_int index)
@@ -77,15 +77,15 @@ namespace GuiFramework
 			m_pairs.clear();
 		}
 
-		TGUI_COMBO_TWEAKER_ITEM<T>* GetValueStringPair(dl_int index) const
+		TGUI_COMBO_TWEAKER_ITEM<T>* GetValueStringPair(dl_int index)
 		{
 			if (index < 0 || index >= m_pairs.size())
 				return nullptr;
 
-			return m_pairs[index];
+			return &m_pairs[index];
 		}
 
-		T GetValueByIndex(dl_int index) const
+		T GetValueByIndex(dl_int index)
 		{
 			TGUI_COMBO_TWEAKER_ITEM<T>* pPair = GetValueStringPair(index);
 			return pPair ? pPair->Value : T();
@@ -95,9 +95,9 @@ namespace GuiFramework
 		{
 			for (dl_int i = 0; i < m_pairs.size(); ++i)
 			{
-				TGUI_COMBO_TWEAKER_ITEM<T>* pPair = m_pairs[i];
+				TGUI_COMBO_TWEAKER_ITEM<T>* pPair = &m_pairs[i];
 
-				if (pPair != nullptr && pPair->Name == str)
+				if (pPair->Name == str)
 					return pPair->Value;
 			}
 
@@ -108,10 +108,10 @@ namespace GuiFramework
 		{
 			for (dl_int i = 0; i < m_pairs.size(); ++i)
 			{
-				TGUI_COMBO_TWEAKER_ITEM<T>* pPair = m_pairs[i];
+				TGUI_COMBO_TWEAKER_ITEM<T> pair = m_pairs[i];
 
-				if (pPair != nullptr && pPair->Value == value)
-					return pPair->Name;
+				if (pair.Value == value)
+					return pair.Name;
 			}
 
 			return nullptr;
@@ -121,9 +121,9 @@ namespace GuiFramework
 		{
 			for (dl_int i = 0; i < m_pairs.size(); ++i)
 			{
-				TGUI_COMBO_TWEAKER_ITEM<T>* pPair = m_pairs[i];
+				TGUI_COMBO_TWEAKER_ITEM<T> pair = m_pairs[i];
 
-				if (pPair != nullptr && pPair->Value == value)
+				if (pair.Value == value)
 					return i;
 			}
 
@@ -131,8 +131,7 @@ namespace GuiFramework
 		}
 
 		dl_size GetNumPairs() const { return m_pairs.size(); }
-
 	protected:
-		DLUT::DLVector<TGUI_COMBO_TWEAKER_ITEM<T>*> m_pairs;
+		DLUT::DLVector<TGUI_COMBO_TWEAKER_ITEM<T>> m_pairs;
 	};
 }
