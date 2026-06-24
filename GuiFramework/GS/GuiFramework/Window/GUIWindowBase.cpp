@@ -5,6 +5,7 @@ namespace GuiFramework
 	typedef void(_fastcall* GUIWindowBase_ctor_t)(GUIWindowBase*, TGUISharedString<dl_wchar>);
 
 	typedef dl_bool(_fastcall* SetAfterWindow_t)(GUIWindowBase*, GUIWindowBase*);
+	typedef void(_fastcall* SetForeground_t)(GUIWindowBase*);
 
 	GUIWindowBase::GUIWindowBase(TGUISharedString<dl_wchar> label)
 	{
@@ -64,5 +65,10 @@ namespace GuiFramework
 	dl_bool GUIWindowBase::SetAfterWindow(GUIWindowBase* pAfter)
 	{
 		return CALL(SetAfterWindow_t, 0x550c20, this, pAfter);
+	}
+
+	void GUIWindowBase::SetForeground()
+	{
+		CALL(SetForeground_t, 0x550b20, this);
 	}
 }

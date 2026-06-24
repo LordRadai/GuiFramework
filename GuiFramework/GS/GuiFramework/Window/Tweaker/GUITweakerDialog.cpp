@@ -81,7 +81,7 @@ namespace GuiFramework
 	{
 		GUITweakerGroup* pGroup = GetCurrentGroup();
 
-		DL_ASSERT(pGroup);
+		DL_ASSERT(pGroup, L"No tweaker group was created. Create one before calling this.");
 
 		return pGroup->CreateColorTweaker(label, v, flags);
 	}
@@ -90,7 +90,7 @@ namespace GuiFramework
 	{
 		GUITweakerGroup* pGroup = GetCurrentGroup();
 
-		DL_ASSERT(pGroup);
+		DL_ASSERT(pGroup, L"No tweaker group was created. Create one before calling this.");
 
 		return pGroup->CreateColorTweaker(label, v, flags);
 	}
@@ -99,7 +99,7 @@ namespace GuiFramework
 	{
 		GUITweakerGroup* pGroup = GetCurrentGroup();
 
-		DL_ASSERT(pGroup);
+		DL_ASSERT(pGroup, L"No tweaker group was created. Create one before calling this.");
 
 		return pGroup->CreateColorTweaker(label, v, flags);
 	}
@@ -108,7 +108,7 @@ namespace GuiFramework
 	{
 		GUITweakerGroup* pGroup = GetCurrentGroup();
 
-		DL_ASSERT(pGroup);
+		DL_ASSERT(pGroup, L"No tweaker group was created. Create one before calling this.");
 
 		return pGroup->CreateTextureList(label);
 	}
@@ -117,7 +117,7 @@ namespace GuiFramework
 	{
 		GUITweakerGroup* pGroup = GetCurrentGroup();
 
-		DL_ASSERT(pGroup);
+		DL_ASSERT(pGroup, L"No tweaker group was created. Create one before calling this.");
 
 		return pGroup->CreateTextureViewer(label, pTexture);
 	}
@@ -126,7 +126,7 @@ namespace GuiFramework
 	{
 		GUITweakerGroup* pGroup = GetCurrentGroup();
 
-		DL_ASSERT(pGroup);
+		DL_ASSERT(pGroup, L"No tweaker group was created. Create one before calling this.");
 
 		return pGroup->CreateTrigger(label);
 	}

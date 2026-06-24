@@ -28,7 +28,7 @@ namespace GuiFramework
 
     GUITweakerMaker::~GUITweakerMaker()
     {
-        DL_ASSERT(m_groups.size() <= 1);
+        DL_ASSERT(m_groups.size() <= 1, L"Cannot destroy GUITweakerMaker with multiple groups");
 
         if (m_groups.size() == 1)
         {
@@ -51,7 +51,7 @@ namespace GuiFramework
 
 	GUITweakerGroup* GUITweakerMaker::BeginGroup(TGUISharedString<dl_wchar> label, dl_uint flags)
 	{
-        DL_ASSERT(!this->m_groups.empty());
+        DL_ASSERT(!this->m_groups.empty(), L"No tweaker group was created. Create one before calling this.");
 
 		GUITweakerGroup* pCurrentGroup = this->GetCurrentGroup();
 
@@ -77,7 +77,7 @@ namespace GuiFramework
 
     void GUITweakerMaker::AddItem(GUITweakerGroupItem* pItem)
     {
-        DL_ASSERT(!this->m_groups.empty());
+        DL_ASSERT(!this->m_groups.empty(), L"No tweaker group was created. Create one before calling this.");
 
         if (pItem == nullptr)
             return;
@@ -89,7 +89,7 @@ namespace GuiFramework
 
     void GUITweakerMaker::SetFirstOpenCallback(GUITweakerGroup::FirstOpenCallback_t pCallback, dl_size param1, dl_size param2)
     {
-        DL_ASSERT(!this->m_groups.empty());
+        DL_ASSERT(!this->m_groups.empty(), L"No tweaker group was created. Create one before calling this.");
 
         GUITweakerGroup* pGroup = this->GetCurrentGroup();
 
@@ -98,7 +98,7 @@ namespace GuiFramework
 
     TGUIColorTweaker<DLMT::DL_COLOR_32>* GUITweakerMaker::CreateColorTweaker(TGUISharedString<dl_wchar> label, DLMT::DL_COLOR_32* v, dl_uint flags)
     {
-        DL_ASSERT(!this->m_groups.empty());
+        DL_ASSERT(!this->m_groups.empty(), L"No tweaker group was created. Create one before calling this.");
 
         GUITweakerGroup* pGroup = this->GetCurrentGroup();
 
@@ -107,7 +107,7 @@ namespace GuiFramework
 
     TGUIColorTweaker<DLMT2::DL_COLOR_U8>* GUITweakerMaker::CreateColorTweaker(TGUISharedString<dl_wchar> label, DLMT2::DL_COLOR_U8* v, dl_uint flags)
     {
-        DL_ASSERT(!this->m_groups.empty());
+        DL_ASSERT(!this->m_groups.empty(), L"No tweaker group was created. Create one before calling this.");
 
 		GUITweakerGroup* pGroup = this->GetCurrentGroup();
 
@@ -116,7 +116,7 @@ namespace GuiFramework
 
     TGUIColorTweaker<DLMT::DL_VECTOR4>* GUITweakerMaker::CreateColorTweaker(TGUISharedString<dl_wchar> label, DLMT::DL_VECTOR4* v, dl_uint flags)
     {
-        DL_ASSERT(!this->m_groups.empty());
+        DL_ASSERT(!this->m_groups.empty(), L"No tweaker group was created. Create one before calling this.");
 
 		GUITweakerGroup* pGroup = this->GetCurrentGroup();
 
@@ -125,7 +125,7 @@ namespace GuiFramework
 
     GUITextureList* GUITweakerMaker::CreateTextureList(TGUISharedString<dl_wchar> label)
     {
-		DL_ASSERT(!this->m_groups.empty());
+		DL_ASSERT(!this->m_groups.empty(), L"No tweaker group was created. Create one before calling this.");
 
 		GUITweakerGroup* pGroup = this->GetCurrentGroup();
 
@@ -134,7 +134,7 @@ namespace GuiFramework
 
     GUITextureViewer* GUITweakerMaker::CreateTextureViewer(TGUISharedString<dl_wchar> label, GUITextureBase* pTexture)
     {
-		DL_ASSERT(!this->m_groups.empty());
+		DL_ASSERT(!this->m_groups.empty(), L"No tweaker group was created. Create one before calling this.");
 
 		GUITweakerGroup* pGroup = this->GetCurrentGroup();
 
@@ -143,7 +143,7 @@ namespace GuiFramework
 
     GUITriggerTweaker* GUITweakerMaker::CreateTrigger(TGUISharedString<dl_wchar> label)
     {
-        DL_ASSERT(!this->m_groups.empty());
+        DL_ASSERT(!this->m_groups.empty(), L"No tweaker group was created. Create one before calling this.");
 
         GUITweakerGroup* pGroup = this->GetCurrentGroup();
 
@@ -152,7 +152,7 @@ namespace GuiFramework
 
     void GUITweakerMaker::_PushGroup(GUITweakerGroup* pGroup)
     {
-		DL_ASSERT(pGroup == nullptr || !m_groups.empty());
+		DL_ASSERT(pGroup == nullptr || !m_groups.empty(), L"No tweaker group was created. Create one before calling this.");
 
         if (pGroup != nullptr)
             pGroup->AddRef();
@@ -201,7 +201,7 @@ namespace GuiFramework
 
     void GUITweakerMaker::_PopGroup()
     {
-        DL_ASSERT(!this->m_groups.empty());
+        DL_ASSERT(!this->m_groups.empty(), L"No tweaker group was created. Create one before calling this.");
 
         GUITweakerGroup* pBack = m_groups.back();
 

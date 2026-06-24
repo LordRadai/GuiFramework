@@ -32,7 +32,7 @@ namespace GuiFramework
 		template<typename T>
 		TGUIComboTweaker<T>* CreateComboTweaker(TGUISharedString<dl_wchar> label, T* v, dl_uint numItems, TGUI_COMBO_TWEAKER_ITEM<T>* items)
 		{
-			DL_ASSERT(!this->m_groups.empty());
+			DL_ASSERT(!this->m_groups.empty(), L"There are no tweaker groups on the stack");
 
 			GUITweakerGroup* pGroup = this->GetCurrentGroup();
 
@@ -45,7 +45,7 @@ namespace GuiFramework
 		template<typename T>
 		TGUIMultiTweaker<T>* CreateMultiTweaker(TGUISharedString<dl_wchar> label, dl_uint numValues, T* v, T min, T max, T step, dl_float32 mult = 1.f)
 		{
-			DL_ASSERT(!this->m_groups.empty());
+			DL_ASSERT(!this->m_groups.empty(), L"There are no tweaker groups on the stack");
 
 			GUITweakerGroup* pGroup = this->GetCurrentGroup();
 
@@ -58,7 +58,7 @@ namespace GuiFramework
 		template<typename T>
 		TGUIOnOffTweaker<T>* CreateOnOffTweaker(TGUISharedString<dl_wchar> label, T* v)
 		{
-			DL_ASSERT(!this->m_groups.empty());
+			DL_ASSERT(!this->m_groups.empty(), L"There are no tweaker groups on the stack");
 
 			GUITweakerGroup* pGroup = this->GetCurrentGroup();
 
@@ -71,7 +71,7 @@ namespace GuiFramework
 		template<typename T>
 		TGUIProxyOnOffTweaker<T>* CreateProxyOnOffTweaker(TGUISharedString<dl_wchar> label, T* v)
 		{
-			DL_ASSERT(!this->m_groups.empty());
+			DL_ASSERT(!this->m_groups.empty(), L"There are no tweaker groups on the stack");
 
 			GUITweakerGroup* pGroup = this->GetCurrentGroup();
 
@@ -84,7 +84,7 @@ namespace GuiFramework
 		template<typename T>
 		TGUIPropertyLabel<T>* CreatePropertyLabel(TGUISharedString<dl_wchar> label, T* v)
 		{
-			DL_ASSERT(!this->m_groups.empty());
+			DL_ASSERT(!this->m_groups.empty(), L"There are no tweaker groups on the stack");
 
 			GUITweakerGroup* pGroup = this->GetCurrentGroup();
 
@@ -97,7 +97,7 @@ namespace GuiFramework
 		template<typename T>
 		TGUIRangeTweaker<T>* CreateTweaker(TGUISharedString<dl_wchar> label, T* pValue, T min, T max, T step, dl_float32 mult = 1.f)
 		{
-			DL_ASSERT(!this->m_groups.empty());
+			DL_ASSERT(!this->m_groups.empty(), L"There are no tweaker groups on the stack");
 
 			GUITweakerGroup* pGroup = this->GetCurrentGroup();
 

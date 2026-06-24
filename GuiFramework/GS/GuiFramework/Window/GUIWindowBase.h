@@ -160,6 +160,7 @@ namespace GuiFramework
 		GUISystem* GetGUISystem() const { return m_pGUISystem.Get(); }
 
         dl_bool SetAfterWindow(GUIWindowBase* pAfter);
+        void SetForeground();
 
         typedef dl_bool(_fastcall* AddChild_t)(GUIWindowBase*, GUIWindowBase*);
         typedef DLUT::DLVector<GUIObject*>* (_fastcall* GetChildrenVector_t)(GUIWindowBase*);
@@ -224,7 +225,7 @@ namespace GuiFramework
         GUIWindowPainter* m_pGUIWindowPainter;
         TGUILiteralString<dl_wchar> m_name;
         Rect m_position;
-        dl_uint m_styleFlags;
+        dl_uint m_flags;
         dl_int m_iVar54;
         Rect16 m_contentOffset;
 		dl_uint16 m_uVar64;

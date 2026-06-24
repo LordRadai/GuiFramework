@@ -41,7 +41,7 @@ namespace GuiFramework
 		{
 			GUITweakerGroup* pGroup = GetCurrentGroup();
 
-			DL_ASSERT(pGroup);
+			DL_ASSERT(pGroup, L"No tweaker group was created. Create one before calling this.");
 
 			if (pGroup == nullptr)
 				return nullptr;
@@ -54,7 +54,7 @@ namespace GuiFramework
 		{
 			GUITweakerGroup* pGroup = GetCurrentGroup();
 
-			DL_ASSERT(pGroup);
+			DL_ASSERT(pGroup, L"No tweaker group was created. Create one before calling this.");
 
 			if (pGroup == nullptr)
 				return nullptr;
@@ -67,7 +67,7 @@ namespace GuiFramework
 		{
 			GUITweakerGroup* pGroup = GetCurrentGroup();
 
-			DL_ASSERT(pGroup);
+			DL_ASSERT(pGroup, L"No tweaker group was created. Create one before calling this.");
 
 			if (pGroup == nullptr)
 				return nullptr;
@@ -80,7 +80,7 @@ namespace GuiFramework
 		{
 			GUITweakerGroup* pGroup = GetCurrentGroup();
 
-			DL_ASSERT(pGroup);
+			DL_ASSERT(pGroup, L"No tweaker group was created. Create one before calling this.");
 
 			if (pGroup == nullptr)
 				return nullptr;
@@ -93,7 +93,7 @@ namespace GuiFramework
 		{
 			GUITweakerGroup* pGroup = GetCurrentGroup();
 
-			DL_ASSERT(pGroup);
+			DL_ASSERT(pGroup, L"No tweaker group was created. Create one before calling this.");
 
 			if (pGroup == nullptr)
 				return nullptr;
@@ -106,7 +106,7 @@ namespace GuiFramework
 		{
 			GUITweakerGroup* pGroup = GetCurrentGroup();
 
-			DL_ASSERT(pGroup);
+			DL_ASSERT(pGroup, L"No tweaker group was created. Create one before calling this.");
 
 			if (pGroup == nullptr)
 				return nullptr;
