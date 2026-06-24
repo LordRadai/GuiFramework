@@ -49,9 +49,9 @@ namespace GuiFramework
 				value = static_cast<dl_uint64>(this->m_value * this->m_mult);
 
 			if (std::is_unsigned_v<T>)
-				DLTX::DLFormat<dl_wchar>::Format(&str, L"%llu", value);
+				DLTX::DLFormat<dl_wchar>::Format(str, L"%llu", value);
 			else
-				DLTX::DLFormat<dl_wchar>::Format(&str, L"%lld", static_cast<dl_int64>(value));
+				DLTX::DLFormat<dl_wchar>::Format(str, L"%lld", static_cast<dl_int64>(value));
 
 			return true;
 		}
