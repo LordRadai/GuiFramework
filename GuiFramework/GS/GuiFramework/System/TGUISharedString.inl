@@ -78,7 +78,7 @@ namespace GuiFramework
 
 	typedef void(_fastcall* TGUISharedStringAssign_t)(TGUISharedString<dl_wchar>*, const TGUISharedString<dl_wchar>*);
 
-	typedef DLTX::DLBasicString<wchar_t, std::char_traits<dl_wchar>, DLKR::DLAllocator>* (*TGUISharedStringUnshared_t)(const TGUISharedString<wchar_t>*);			
+	typedef DLTX::DLBasicString<wchar_t, std::char_traits<dl_wchar>>* (*TGUISharedStringUnshared_t)(const TGUISharedString<wchar_t>*);			
 
 	template<> inline TGUISharedString<dl_wchar>::TGUISharedString(const dl_wchar* str)
 	{
