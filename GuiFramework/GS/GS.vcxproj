@@ -162,6 +162,7 @@
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <LanguageStandard>Default</LanguageStandard>
+      <AdditionalIncludeDirectories>$(SolutionDir)dantelion2\dantelion2\dantelion2;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -176,6 +177,7 @@
       <ConformanceMode>true</ConformanceMode>
       <LanguageStandard>Default</LanguageStandard>
       <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <AdditionalIncludeDirectories>$(SolutionDir)dantelion2\dantelion2\dantelion2;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -191,6 +193,7 @@
       <PreprocessorDefinitions>NDEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <LanguageStandard>Default</LanguageStandard>
+      <AdditionalIncludeDirectories>$(SolutionDir)dantelion2\dantelion2\dantelion2;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -296,6 +299,7 @@
     <ClCompile Include="GuiFramework\Render\GUIRenderImpl.cpp" />
     <ClCompile Include="GuiFramework\Render\GUIRenderImplBase.cpp" />
     <ClCompile Include="GuiFramework\System\GUIFont.cpp" />
+    <ClCompile Include="GuiFramework\System\GUIFormatter.cpp" />
     <ClCompile Include="GuiFramework\System\GUIMsgReceiver.cpp" />
     <ClCompile Include="GuiFramework\System\GUIObject.cpp" />
     <ClCompile Include="GuiFramework\System\GUISystem.cpp" />

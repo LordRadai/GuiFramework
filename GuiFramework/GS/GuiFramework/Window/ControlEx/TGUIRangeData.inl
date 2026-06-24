@@ -48,7 +48,7 @@ namespace GuiFramework
 			if (this->m_mult != 1.f)
 				value = static_cast<dl_uint64>(this->m_value * this->m_mult);
 
-			if constexpr (std::is_unsigned_v<T>)
+			if (std::is_unsigned_v<T>)
 				DLTX::DLFormat<dl_wchar>::Format(&str, L"%llu", value);
 			else
 				DLTX::DLFormat<dl_wchar>::Format(&str, L"%lld", static_cast<dl_int64>(value));
@@ -126,7 +126,7 @@ namespace GuiFramework
 		void _GetSliderRange(dl_int& min, dl_int& max, ...) const
 		{
 			min = 0;
-			if constexpr (std::is_floating_point_v<T>)
+			if (std::is_floating_point<T>::value)
 				max = static_cast<dl_int>(std::ceil((this->m_max - this->m_min) / this->m_step));
 			else
 				max = static_cast<dl_int>((this->m_max - this->m_min + this->m_step - 1) / this->m_step);

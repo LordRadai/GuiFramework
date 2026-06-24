@@ -488,6 +488,9 @@
     <ClCompile Include="GuiFramework\Window\Tweaker\GUITriggerTweaker.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="GuiFramework\System\GUIFormatter.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="GuiFramework\System\TGUICallbackObject.inl">

@@ -1,5 +1,7 @@
 #include "GUIVirtualInput.h"
 
+#include <algorithm>
+
 namespace GuiFramework
 {
 	GUIVirtualInput::~GUIVirtualInput()
