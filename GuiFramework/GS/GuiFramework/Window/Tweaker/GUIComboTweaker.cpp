@@ -9,7 +9,7 @@ namespace GuiFramework
 
 	GUIComboTweaker::GUIComboTweaker(GUIWindowBase* pParent, TGUISharedString<dl_wchar> label, dl_uint flags) : SuperClass()
 	{
-		CALL(Constructor_t, 0x59c3e0, this, pParent, label, flags);
+		CALL(Constructor_t, 0x547be0, this, pParent, label, flags);
 	}
 
 	DLRF::DLRuntimeClass* GUIComboTweaker::GetRuntimeClassOfThis() const
