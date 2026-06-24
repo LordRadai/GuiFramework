@@ -12,7 +12,7 @@ namespace GuiFramework
 		GUITweakerDialog() {}
 		GUITweakerDialog(TGUISharedString<dl_wchar> label);
 		GUITweakerDialog(GUIWindowBase* pParent, TGUISharedString<dl_wchar> label, const _GUI_CREATE_WINDOW&);
-		GUITweakerDialog(GUIWindowBase* pParent, TGUISharedString<dl_wchar> label, dl_uint flags);
+		GUITweakerDialog(GUIWindowBase* pParent, TGUISharedString<dl_wchar> label, dl_uint flags = 0x51502);
 
 		virtual DLRF::DLRuntimeClass* GetRuntimeClassOfThis() const override;
 		virtual ~GUITweakerDialog() override;
@@ -24,7 +24,7 @@ namespace GuiFramework
 
 		GUITweakerGroup* GetCurrentGroup();
 
-		GUITweakerGroup* BeginGroup(TGUISharedString<dl_wchar> label, dl_uint flags);
+		GUITweakerGroup* BeginGroup(TGUISharedString<dl_wchar> label, dl_uint flags = 0);
 		void EndGroup();
 
 		TGUIColorTweaker<DLMT::DL_COLOR_32>* CreateColorTweaker(TGUISharedString<dl_wchar> label, DLMT::DL_COLOR_32* v, dl_uint flags);

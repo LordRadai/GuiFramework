@@ -30,4 +30,6 @@ namespace GuiFramework
 	{
 		CALL(TGUILiteralStringCtor_t, 0x5237d0, this, str);
 	}
+
+	typedef TGUILiteralString<dl_wchar> GUIString;
 }
