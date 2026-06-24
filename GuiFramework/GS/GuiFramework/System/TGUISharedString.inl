@@ -119,4 +119,6 @@ namespace GuiFramework
 	{
 		return CALL(TGUISharedStringUnshared_t, 0x523a20, this);
 	}
+
+	typedef TGUISharedString<dl_wchar> GUISharedString;
 }
