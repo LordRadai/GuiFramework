@@ -5,7 +5,7 @@ namespace GuiFramework
 	GUITexture_DLTexture::GUITexture_DLTexture(DLGR::DLTextureBase* pTexture) : GUITextureBase(), m_pTexture(pTexture)
 	{
 		if (this->m_pTexture)
-			this->m_pTexture->Ref();
+			this->m_pTexture->AddRef();
 	}
 
 	DLRF::DLRuntimeClass* GUITexture_DLTexture::GetRuntimeClassOfThis() const
@@ -16,14 +16,14 @@ namespace GuiFramework
 	GUITexture_DLTexture::~GUITexture_DLTexture()
 	{
 		if (this->m_pTexture)
-			this->m_pTexture->Unref();
+			this->m_pTexture->UnRef();
 	}
 
 	void GUITexture_DLTexture::OnDelete()
 	{
 		if (this->m_pTexture)
 		{
-			this->m_pTexture->Unref();
+			this->m_pTexture->UnRef();
 			this->m_pTexture = nullptr;
 		}
 	}
