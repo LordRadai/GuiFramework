@@ -44,6 +44,8 @@ namespace GuiFramework
 
 		TGUIValueStringPairData(TGUI_COMBO_TWEAKER_ITEM<T>* items, dl_uint numItems) : SuperClass()
 		{
+			m_pairs = DLUT::DLVector<TGUI_COMBO_TWEAKER_ITEM<T>>(numItems, GUI_ALLOCATOR);
+
 			for (dl_uint i = 0; i < numItems; ++i)
 				AddPair(items[i].Value, items[i].Name);
 		}
