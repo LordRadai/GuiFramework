@@ -42,10 +42,8 @@ namespace GuiFramework
 	public:
 		TGUIValueStringPairData() : SuperClass() {}
 
-		TGUIValueStringPairData(TGUI_COMBO_TWEAKER_ITEM<T>* items, dl_uint numItems) : SuperClass()
+		TGUIValueStringPairData(TGUI_COMBO_TWEAKER_ITEM<T>* items, dl_uint numItems) : SuperClass(), m_pairs(GUI_ALLOCATOR)
 		{
-			m_pairs = DLUT::DLVector<TGUI_COMBO_TWEAKER_ITEM<T>>(numItems, GUI_ALLOCATOR);
-
 			for (dl_uint i = 0; i < numItems; ++i)
 				AddPair(items[i].Value, items[i].Name);
 		}
@@ -60,7 +58,7 @@ namespace GuiFramework
 			if (index < 0 || index >= m_pairs.size())
 				return;
 
-			TGUI_VALUE_STRING_PAIR<T>* pPair = m_pairs[index];
+			TGUI_COMBO_TWEAKER_ITEM<T>* pPair = &m_pairs[index];
 
 			if (pPair != nullptr)
 				delete pPair;
