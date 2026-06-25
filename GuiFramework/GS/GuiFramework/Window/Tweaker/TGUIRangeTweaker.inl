@@ -43,7 +43,7 @@ namespace GuiFramework
 					{
 						this->m_valueOld = this->m_pRangeData->GetValue();
 						*this->m_pValue = this->m_valueOld;
-						InvokeCallback();
+						this->InvokeCallback();
 					}
 					else
 					{

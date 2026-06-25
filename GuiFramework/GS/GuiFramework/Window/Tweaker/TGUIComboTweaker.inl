@@ -61,6 +61,8 @@ namespace GuiFramework
 
 				this->m_valueOld = this->m_valueStringPairs->GetValueByIndex(idx);
 				*this->m_pValue = this->m_valueOld;
+				
+				this->InvokeCallback();
 			}
 		}
 
