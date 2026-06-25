@@ -44,13 +44,24 @@ namespace GuiFramework
 
 		DLTX::DLBasicString<CharT>* GetUnSharedString() const;
 
-		const CharT* c_str() const { return m_pData->m_str.c_str(); }
+		const CharT* c_str() const
+		{
+			if (m_pStr == nullptr && m_pData != nullptr)
+				return m_pData->m_str.c_str();
+
+			return m_pStr;
+		}
 
 		const CharT* safe_c_str() const 
 		{
-			static const DLTX::DLBasicString<CharT, std::char_traits<CharT>> c;
+			if (m_pStr == nullptr)
+			{
+				static const DLTX::DLBasicString<CharT, std::char_traits<CharT>> c;
 
-			return m_pData ? m_pData->m_str.c_str() : c.c_str(); 
+				return m_pData ? m_pData->m_str.c_str() : c.c_str();
+			}
+
+			return m_pStr;
 		}
 
 		const dl_int empty() const { return m_pData == nullptr || m_pData->m_str.empty(); }
