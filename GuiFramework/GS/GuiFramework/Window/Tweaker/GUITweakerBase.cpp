@@ -7,7 +7,7 @@ namespace GuiFramework
 
 	typedef void(_fastcall* InvokeCallback_t)(GUITweakerBase*);
 
-	GUITweakerBase::GUITweakerBase() : m_flags(0), m_pCallback(nullptr)
+	GUITweakerBase::GUITweakerBase() : m_flags(0), m_pOnValueChangedCb(nullptr)
 	{
 		CALL(Constructor_t, 0x541490, this);
 	}
