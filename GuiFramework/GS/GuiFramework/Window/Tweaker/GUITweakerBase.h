@@ -18,7 +18,7 @@ namespace GuiFramework
 		virtual void Close() override {}
 		
 		void InvokeCallback();
-		void SetOnValueChangedCb(GUICallbackObjectBase* pCallback) { m_pOnValueChangedCb = pCallback; }
+		void SetOnValueChangedCallback(GUICallbackObjectBase* pCb) { m_pOnValueChangedCb = pCb; }
 	protected:
 		void _Destroy();
 
