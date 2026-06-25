@@ -1,8 +1,6 @@
 #pragma once
 #include "GuiFramework/System/GUIMsgReceiver.h"
 
-#include <functional>
-
 namespace GuiFramework
 {
 	class GUICallbackObjectBase : public GUIMsgReceiver

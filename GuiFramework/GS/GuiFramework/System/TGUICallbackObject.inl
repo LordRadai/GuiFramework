@@ -1,6 +1,8 @@
 #pragma once
 #include "GUICallbackObjectBase.h"
 
+#include <functional>
+
 namespace GuiFramework
 {
 	class TGUICallbackObject0 : public GUICallbackObjectBase
