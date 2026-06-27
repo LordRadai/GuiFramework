@@ -55,6 +55,9 @@ namespace GuiFramework
 		*/
 		void CreateTweaker(GUITweakerDialog* pWnd);
 
+		GuiFramework::GUIRootWindow* GetRootWindow() const { return m_pGUIWindowManager->GetRootWindow(); }
+		GuiFramework::GUIWindowBase* GetActiveWindow() const { return m_pGUIWindowManager->GetActiveWindow(); }
+
 		typedef void(_fastcall* Finalize_t)(GUISystem*);
 		typedef TGUI_RECT<int>(_fastcall* GetMouseInfo_t)(GUISystem*);
 		typedef GUIRootWindow*(_fastcall* CreateRootWindow_t)(GUISystem*);
