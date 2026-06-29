@@ -12,6 +12,10 @@ namespace GuiFramework
 	public:
 		enum StatusFlags : dl_uint
 		{
+			STATUS_NONE = 0,
+			STATUS_SELECTABLE = 1 << 0,
+			STATUS_CHECKBOX = 1 << 1,
+			STATUS_ENABLED = 1 << 2,
 		};
 
 		GUIPopupMenuNode() {}
@@ -25,8 +29,10 @@ namespace GuiFramework
 
 		GUIPopupMenuItem* AddItem(GUIPopupMenuItem* item, dl_uint idx = -1);
 		GUIPopupMenuString* AddString(TGUISharedString<dl_wchar> str, dl_uint id, dl_uint idx = -1);
-		GUIPopupMenuSeparator* AddSeparator(dl_uint id, dl_uint idx = -1);
+		GUIPopupMenuString* AddCheckBox(TGUISharedString<dl_wchar> str, dl_uint id, dl_bool bChecked, dl_bool bAllowInteraction = true, dl_uint idx = -1);
+		GUIPopupMenuSeparator* AddSeparator(dl_uint id = -1, dl_uint idx = -1);
 		GUIPopupMenuNode* AddSubNode(TGUISharedString<dl_wchar> label, dl_uint id, dl_uint idx = -1);
+		void SetItemFlags(dl_uint id, dl_uint setMask, dl_uint clearMask);
 	protected:
 		DLUT::DLVector<TGUIObjectPtr<GUIPopupMenuItem>> m_items;
 		TGUISharedString<wchar_t> m_label;

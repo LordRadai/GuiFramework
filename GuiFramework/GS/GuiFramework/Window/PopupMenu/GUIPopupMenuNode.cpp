@@ -9,6 +9,7 @@ namespace GuiFramework
 	typedef GUIPopupMenuString*(_fastcall* AddString_t)(GUIPopupMenuNode*, TGUISharedString<dl_wchar>, dl_uint, dl_uint);
 	typedef GUIPopupMenuSeparator*(_fastcall* AddSeparator_t)(GUIPopupMenuNode*, dl_uint, dl_uint);
 	typedef GUIPopupMenuNode*(_fastcall* AddSubNode_t)(GUIPopupMenuNode*, TGUISharedString<dl_wchar>, dl_uint, dl_uint);
+	typedef void(_fastcall* SetItemFlags_t)(GUIPopupMenuNode*, dl_uint, dl_uint, dl_uint);
 
 	GUIPopupMenuNode::GUIPopupMenuNode(GUISystem* pSystem, TGUISharedString<wchar_t> label, dl_uint id)
 	{
@@ -45,6 +46,28 @@ namespace GuiFramework
 		return CALL(AddString_t, 0x524c60, this, str, id, idx);
 	}
 
+	GUIPopupMenuString* GUIPopupMenuNode::AddCheckBox(TGUISharedString<dl_wchar> str, dl_uint id, dl_bool bChecked, dl_bool bAllowInteraction, dl_uint idx)
+	{
+		GUIPopupMenuString* pItem = AddString(str, id, idx);
+
+		if (bAllowInteraction)
+		{
+			if (bChecked)
+				this->SetItemFlags(id, GUIPopupMenuNode::STATUS_SELECTABLE | GUIPopupMenuNode::STATUS_CHECKBOX | GUIPopupMenuNode::STATUS_ENABLED, 0);
+			else
+				this->SetItemFlags(id, GUIPopupMenuNode::STATUS_SELECTABLE | GUIPopupMenuNode::STATUS_CHECKBOX, 0);
+		}
+		else
+		{
+			if (bChecked)
+				this->SetItemFlags(id, GUIPopupMenuNode::STATUS_CHECKBOX | GUIPopupMenuNode::STATUS_ENABLED, 0);
+			else
+				this->SetItemFlags(id, GUIPopupMenuNode::STATUS_CHECKBOX, 0);
+		}
+
+		return pItem;
+	}
+
 	GUIPopupMenuSeparator* GUIPopupMenuNode::AddSeparator(dl_uint id, dl_uint idx)
 	{
 		return CALL(AddSeparator_t, 0x5250c0, this, id, idx);
@@ -53,5 +76,10 @@ namespace GuiFramework
 	GUIPopupMenuNode* GUIPopupMenuNode::AddSubNode(TGUISharedString<dl_wchar> label, dl_uint id, dl_uint idx)
 	{
 		return CALL(AddSubNode_t, 0x5251d0, this, label, id, idx);
+	}
+
+	void GUIPopupMenuNode::SetItemFlags(dl_uint id, dl_uint setMask, dl_uint clearMask)
+	{
+		CALL(SetItemFlags_t, 0x525350, this, id, setMask, clearMask);
 	}
 }

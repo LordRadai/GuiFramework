@@ -75,3 +75,9 @@
 #include "Window/Tweaker/TGUIProxyOnOffTweaker.inl"
 #include "Window/Tweaker/TGUIRangeTweaker.inl"
 #include "Window/Tweaker/TGUITweakerItem.inl"
+
+#include "Window/PopupMenu/GUIPopupMenu.h"
+#include "Window/PopupMenu/GUIPopupMenuItem.h"
+#include "Window/PopupMenu/GUIPopupMenuNode.h"
+#include "Window/PopupMenu/GUIPopupMenuSeparator.h"
+#include "Window/PopupMenu/GUIPopupMenuString.h"
