@@ -37,7 +37,7 @@ namespace GuiFramework
 
 			if (*this->m_pValue == this->m_valueOld)
 			{
-				if (this->m_valueOld == this->m_pRangeData->GetValue())
+				if (this->m_valueOld != this->m_pRangeData->GetValue())
 				{
 					if (this->m_flags & 1)
 					{
