@@ -4,5 +4,7 @@
 namespace GuiFramework
 {
 	template <typename T>
-	using TGUI_SIZE = TGUI_POINT<T>;
+	struct TGUI_SIZE : public TGUI_POINT<T>
+	{
+	};
 }
