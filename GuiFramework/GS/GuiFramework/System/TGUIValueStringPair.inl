@@ -133,6 +133,7 @@ namespace GuiFramework
 		}
 
 		dl_size GetNumPairs() const { return m_pairs.size(); }
+		TGUI_COMBO_TWEAKER_ITEM<T>* GetPairs() { return m_pairs.data(); }
 	protected:
 		DLUT::DLVector<TGUI_COMBO_TWEAKER_ITEM<T>> m_pairs;
 	};
