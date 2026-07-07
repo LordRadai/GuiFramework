@@ -14,7 +14,7 @@ namespace GuiFramework
 
 	DLRF::DLRuntimeClass* GUITriggerTweaker::GetRuntimeClassOfThis() const
 	{
-		return CALL(GetRuntimeClassOfThis_t, 0x53d010, this);
+		return CALL(GetRuntimeClassOfThis_t, 0x53cfc0, this);
 	}
 
 	GUITriggerTweaker::~GUITriggerTweaker()
