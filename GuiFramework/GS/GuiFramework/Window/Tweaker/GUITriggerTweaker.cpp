@@ -9,7 +9,7 @@ namespace GuiFramework
 
 	GUITriggerTweaker::GUITriggerTweaker(GUIWidget* pParent, TGUISharedString<dl_wchar> label)
 	{
-		CALL(Constructor_t, 0x53cfc0, this, pParent, label);
+		CALL(Constructor_t, 0x53d010, this, pParent, label);
 	}
 
 	DLRF::DLRuntimeClass* GUITriggerTweaker::GetRuntimeClassOfThis() const

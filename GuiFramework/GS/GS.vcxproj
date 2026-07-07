@@ -301,6 +301,7 @@
   <ItemGroup>
     <ClCompile Include="GuiFramework\Render\GUIRenderImpl.cpp" />
     <ClCompile Include="GuiFramework\Render\GUIRenderImplBase.cpp" />
+    <ClCompile Include="GuiFramework\System\GUICallbackObjectBase.cpp" />
     <ClCompile Include="GuiFramework\System\GUIFont.cpp" />
     <ClCompile Include="GuiFramework\System\GUIFormatter.cpp" />
     <ClCompile Include="GuiFramework\System\GUIMsgReceiver.cpp" />

@@ -8,6 +8,7 @@ namespace GuiFramework
 	public:
 		GUICallbackObjectBase() : GUIMsgReceiver() {}
 
+		virtual DLRF::DLRuntimeClass* GetRuntimeClassOfThis() const override;
 		virtual ~GUICallbackObjectBase() override {}
 		virtual void OnDelete() override {};
 		virtual void Invoke() {};
