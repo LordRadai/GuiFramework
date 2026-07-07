@@ -152,8 +152,6 @@ namespace GuiFramework
 
     void GUITweakerMaker::_PushGroup(GUITweakerGroup* pGroup)
     {
-		DL_ASSERT(pGroup == nullptr || !m_groups.empty(), L"No tweaker group was created. Create one before calling this.");
-
         if (pGroup != nullptr)
             pGroup->AddRef();
 
@@ -201,8 +199,6 @@ namespace GuiFramework
 
     void GUITweakerMaker::_PopGroup()
     {
-        DL_ASSERT(!this->m_groups.empty(), L"No tweaker group was created. Create one before calling this.");
-
         GUITweakerGroup* pBack = m_groups.back();
 
         if (pBack != nullptr)

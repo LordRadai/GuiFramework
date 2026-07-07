@@ -13,7 +13,7 @@ namespace GuiFramework
 
 		~GUITweakerMaker();
 
-		GUITweakerGroup* BeginGroup(TGUISharedString<dl_wchar> label, dl_uint flags);
+		GUITweakerGroup* BeginGroup(TGUISharedString<dl_wchar> label, dl_uint flags = 0);
 		void EndGroup();
 		GUITweakerGroup* GetCurrentGroup();
 
