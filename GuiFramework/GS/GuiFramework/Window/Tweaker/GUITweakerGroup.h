@@ -32,7 +32,7 @@ namespace GuiFramework
 		virtual dl_uint OnClose() override;
 
 		void AddItem(GUITweakerItem* pItem);
-		GUITweakerGroup* CreateSubGroup(TGUISharedString<dl_wchar> label, dl_uint flags);
+		GUITweakerGroupItem* CreateSubGroup(TGUISharedString<dl_wchar> label, dl_uint flags);
 
 		TGUIColorTweaker<DLMT::DL_COLOR_32>* CreateColorTweaker(TGUISharedString<dl_wchar> label, DLMT::DL_COLOR_32* v, dl_uint flags);
 		TGUIColorTweaker<DLMT2::DL_COLOR_U8>* CreateColorTweaker(TGUISharedString<dl_wchar> label, DLMT2::DL_COLOR_U8* v, dl_uint flags);

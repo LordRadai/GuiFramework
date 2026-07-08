@@ -19,6 +19,7 @@ namespace GuiFramework
 		virtual void Update(dl_float32 dt) override;
 		virtual void Close() override {}
 
+		GUITweakerGroup* GetGroup() const { return m_pGroup; }
 	private:
 		GUITweakerGroup* m_pGroup;
 	};

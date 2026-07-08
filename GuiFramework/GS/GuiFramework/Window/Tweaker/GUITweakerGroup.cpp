@@ -7,7 +7,7 @@ namespace GuiFramework
 
 	typedef void(_fastcall* AddItem_t)(GUITweakerGroup*, GUITweakerItem*);
 
-	typedef GUITweakerGroup*(_fastcall* CreateSubGroup_t)(GUITweakerGroup*, TGUISharedString<dl_wchar>, dl_uint);
+	typedef GUITweakerGroupItem*(_fastcall* CreateSubGroup_t)(GUITweakerGroup*, TGUISharedString<dl_wchar>, dl_uint);
 
 	typedef TGUIColorTweaker<DLMT::DL_COLOR_32>*(_fastcall* CreateColorTweakerInt_t)(GUITweakerGroup*, TGUISharedString<dl_wchar>, DLMT::DL_COLOR_32*, dl_uint);
 	typedef TGUIColorTweaker<DLMT2::DL_COLOR_U8>*(_fastcall* CreateColorTweakerU8_t)(GUITweakerGroup*, TGUISharedString<dl_wchar>, DLMT2::DL_COLOR_U8*, dl_uint);
@@ -53,7 +53,7 @@ namespace GuiFramework
 		CALL(AddItem_t, 0x54d3a0, this, pItem);
 	}
 
-	GUITweakerGroup* GUITweakerGroup::CreateSubGroup(TGUISharedString<dl_wchar> label, dl_uint flags)
+	GUITweakerGroupItem* GUITweakerGroup::CreateSubGroup(TGUISharedString<dl_wchar> label, dl_uint flags)
 	{
 		return CALL(CreateSubGroup_t, 0x54b630, this, label, flags);
 	}

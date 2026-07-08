@@ -28,45 +28,35 @@ namespace GuiFramework
 
     GUITweakerMaker::~GUITweakerMaker()
     {
-        DL_ASSERT(m_groups.size() <= 1, L"Cannot destroy GUITweakerMaker with multiple groups");
+        DL_ASSERT(!m_groups.empty(), L"Begin/end group mismatch");
 
-        if (m_groups.size() == 1)
-        {
-            GUITweakerGroup* pBack = m_groups.back();
-
-            if (pBack != nullptr)
-                pBack->UnRef();
-
-            m_groups.pop_back();
-        }
-
-        for (auto* pGroup : m_groups)
-        {
-            if (pGroup != nullptr)
-                pGroup->UnRef();
-        }
+		while (!m_groups.empty())
+			_PopGroup();
 
         m_groups.clear();
 	}
 
 	GUITweakerGroup* GUITweakerMaker::BeginGroup(TGUISharedString<dl_wchar> label, dl_uint flags)
 	{
-        DL_ASSERT(!this->m_groups.empty(), L"No tweaker group was created. Create one before calling this.");
+        DL_ASSERT(!this->m_groups.empty(), L"no group!");
 
 		GUITweakerGroup* pCurrentGroup = this->GetCurrentGroup();
 
         if (pCurrentGroup == nullptr)
 			return nullptr;
 
-		GUITweakerGroup* pNewGroup = pCurrentGroup->CreateSubGroup(label, flags);
+		GUITweakerGroupItem* pNewGroup = pCurrentGroup->CreateSubGroup(label, flags);
+		GUITweakerGroup* pGroup = pNewGroup->GetGroup();
 
-		_PushGroup(pNewGroup);
+		_PushGroup(pGroup);
 
-		return pNewGroup;
+		return pGroup;
 	}
 
 	void GUITweakerMaker::EndGroup()
 	{
+        DL_ASSERT(!m_groups.empty(), L"Begin/end group mismatch!");
+
 		_PopGroup();
 	}
 
@@ -77,7 +67,7 @@ namespace GuiFramework
 
     void GUITweakerMaker::AddItem(GUITweakerGroupItem* pItem)
     {
-        DL_ASSERT(!this->m_groups.empty(), L"No tweaker group was created. Create one before calling this.");
+        DL_ASSERT(!this->m_groups.empty(), L"no group!");
 
         if (pItem == nullptr)
             return;
@@ -89,7 +79,7 @@ namespace GuiFramework
 
     void GUITweakerMaker::SetFirstOpenCallback(GUITweakerGroup::FirstOpenCallback_t pCallback, dl_size param1, dl_size param2)
     {
-        DL_ASSERT(!this->m_groups.empty(), L"No tweaker group was created. Create one before calling this.");
+        DL_ASSERT(!this->m_groups.empty(), L"no group!");
 
         GUITweakerGroup* pGroup = this->GetCurrentGroup();
 
@@ -98,7 +88,7 @@ namespace GuiFramework
 
     TGUIColorTweaker<DLMT::DL_COLOR_32>* GUITweakerMaker::CreateColorTweaker(TGUISharedString<dl_wchar> label, DLMT::DL_COLOR_32* v, dl_uint flags)
     {
-        DL_ASSERT(!this->m_groups.empty(), L"No tweaker group was created. Create one before calling this.");
+        DL_ASSERT(!this->m_groups.empty(), L"no group!");
 
         GUITweakerGroup* pGroup = this->GetCurrentGroup();
 
@@ -107,7 +97,7 @@ namespace GuiFramework
 
     TGUIColorTweaker<DLMT2::DL_COLOR_U8>* GUITweakerMaker::CreateColorTweaker(TGUISharedString<dl_wchar> label, DLMT2::DL_COLOR_U8* v, dl_uint flags)
     {
-        DL_ASSERT(!this->m_groups.empty(), L"No tweaker group was created. Create one before calling this.");
+        DL_ASSERT(!this->m_groups.empty(), L"no group!");
 
 		GUITweakerGroup* pGroup = this->GetCurrentGroup();
 
@@ -116,7 +106,7 @@ namespace GuiFramework
 
     TGUIColorTweaker<DLMT::DL_VECTOR4>* GUITweakerMaker::CreateColorTweaker(TGUISharedString<dl_wchar> label, DLMT::DL_VECTOR4* v, dl_uint flags)
     {
-        DL_ASSERT(!this->m_groups.empty(), L"No tweaker group was created. Create one before calling this.");
+        DL_ASSERT(!this->m_groups.empty(), L"no group!");
 
 		GUITweakerGroup* pGroup = this->GetCurrentGroup();
 
@@ -125,7 +115,7 @@ namespace GuiFramework
 
     GUITextureList* GUITweakerMaker::CreateTextureList(TGUISharedString<dl_wchar> label)
     {
-		DL_ASSERT(!this->m_groups.empty(), L"No tweaker group was created. Create one before calling this.");
+        DL_ASSERT(!this->m_groups.empty(), L"no group!");
 
 		GUITweakerGroup* pGroup = this->GetCurrentGroup();
 
@@ -134,7 +124,7 @@ namespace GuiFramework
 
     GUITextureViewer* GUITweakerMaker::CreateTextureViewer(TGUISharedString<dl_wchar> label, GUITextureBase* pTexture)
     {
-		DL_ASSERT(!this->m_groups.empty(), L"No tweaker group was created. Create one before calling this.");
+        DL_ASSERT(!this->m_groups.empty(), L"no group!");
 
 		GUITweakerGroup* pGroup = this->GetCurrentGroup();
 
@@ -143,7 +133,7 @@ namespace GuiFramework
 
     GUITriggerTweaker* GUITweakerMaker::CreateTrigger(TGUISharedString<dl_wchar> label)
     {
-        DL_ASSERT(!this->m_groups.empty(), L"No tweaker group was created. Create one before calling this.");
+        DL_ASSERT(!this->m_groups.empty(), L"no group!");
 
         GUITweakerGroup* pGroup = this->GetCurrentGroup();
 
@@ -152,58 +142,11 @@ namespace GuiFramework
 
     void GUITweakerMaker::_PushGroup(GUITweakerGroup* pGroup)
     {
-        if (pGroup != nullptr)
-            pGroup->AddRef();
-
-        if (!m_groups.empty() &&
-            m_groups.size() >= m_groups.capacity() &&
-            m_groups.capacity() > 20)
-        {
-            auto it = m_groups.begin();
-            while (it != m_groups.end())
-            {
-                if ((*it)->IsFlagSet(2))
-                {
-                    ++it;
-                    continue;
-                }
-
-                auto dst = it;
-                auto src = it + 1;
-                while (src != m_groups.end())
-                {
-                    if (*src != *dst)
-                    {
-                        if (*dst != nullptr)
-                            (*dst)->UnRef();
-                        *dst = *src;
-                        if (*src != nullptr)
-                            (*src)->AddRef();
-                    }
-                    ++dst;
-                    ++src;
-                }
-
-                if (m_groups.back() != nullptr)
-                    m_groups.back()->UnRef();
-
-                m_groups.pop_back();
-            }
-        }
-
         m_groups.push_back(pGroup);
-
-        if (pGroup != nullptr)
-            pGroup->UnRef();
     }
 
     void GUITweakerMaker::_PopGroup()
-    {
-        GUITweakerGroup* pBack = m_groups.back();
-
-        if (pBack != nullptr)
-            pBack->UnRef();
-
+    {        
         m_groups.pop_back();
 	}
 }
