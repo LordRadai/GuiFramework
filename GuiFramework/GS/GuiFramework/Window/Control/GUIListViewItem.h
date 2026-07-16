@@ -18,7 +18,7 @@ namespace GuiFramework
 		virtual DLRF::DLRuntimeClass* GetRuntimeClassOfThis() const override;
 		virtual ~GUIListViewItem() override;
 		virtual void OnDelete() override;
-		virtual dl_uint GetRenderText(DLTX::DLString& out) const { return false; }
+		virtual dl_uint GetRenderText(GuiFramework::GUISharedString& out, dl_int idx) const { return false; }
 
 		void OnRemoveItem();
 		dl_bool SetItemText(dl_int idx, TGUISharedString<dl_wchar> label);
