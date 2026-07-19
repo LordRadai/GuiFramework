@@ -18,7 +18,7 @@ namespace GuiFramework
 		virtual DLRF::DLRuntimeClass* GetRuntimeClassOfThis() const override;
 		virtual ~GUIHeapListItem() override;
 		virtual void OnDelete() override;
-		virtual dl_uint GetRenderText(DLTX::DLString& out) const override;
+		virtual dl_uint GetRenderText(GuiFramework::GUISharedString& out, dl_int idx) const override;
 
 	protected:
 		DLKR::DLAllocator* m_pHeap;

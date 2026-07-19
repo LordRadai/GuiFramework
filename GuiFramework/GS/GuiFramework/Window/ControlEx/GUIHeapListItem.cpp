@@ -32,8 +32,8 @@ namespace GuiFramework
 		CALL(OnDelete_t, 0xc54320, this);
 	}
 
-	dl_uint GUIHeapListItem::GetRenderText(DLTX::DLString& out) const
+	dl_uint GUIHeapListItem::GetRenderText(GuiFramework::GUISharedString& out, dl_int idx) const
 	{
-		return CALL(GetRenderText_t, 0xc53de0, this, out);
+		return CALL(GetRenderText_t, 0xc53de0, this, out, idx);
 	}
 }

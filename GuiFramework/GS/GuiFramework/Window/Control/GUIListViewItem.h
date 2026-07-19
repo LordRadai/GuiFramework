@@ -23,7 +23,7 @@ namespace GuiFramework
 		void OnRemoveItem();
 		dl_bool SetItemText(dl_int idx, TGUISharedString<dl_wchar> label);
 
-		typedef dl_uint(_fastcall* GetRenderText_t)(const GUIListViewItem*, DLTX::DLString&);
+		typedef dl_uint(_fastcall* GetRenderText_t)(const GUIListViewItem*, GuiFramework::GUISharedString&, dl_int);
 	protected:
 		GUIListView* m_pOwner;
 		TGUISharedString<dl_wchar> m_label;
