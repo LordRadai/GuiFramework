@@ -52,6 +52,7 @@ namespace GuiFramework
 		virtual void OnItemRClick(dl_int itemIndex) {}
 
 		dl_int AddItem(TGUISharedString<dl_wchar> label, dl_int id);
+		dl_int AddItem(GUIListViewItem* pItem, dl_int idx);
 		dl_bool AddColumn(TGUISharedString<dl_wchar> label, dl_uint16 id, dl_uint size, dl_int param_4);
 
 		GUIListViewItem* GetItemFromIndex(dl_int index);
