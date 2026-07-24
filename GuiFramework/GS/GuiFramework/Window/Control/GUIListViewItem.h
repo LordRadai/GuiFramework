@@ -23,6 +23,11 @@ namespace GuiFramework
 		void OnRemoveItem();
 		dl_bool SetItemText(dl_int idx, TGUISharedString<dl_wchar> label);
 
+		GUIListView* GetOwner() const { return m_pOwner; }
+
+		void SetUserData(dl_pointer pData) { m_userData = pData; }
+		dl_pointer GetUserData() const { return m_userData; }
+
 		typedef dl_uint(_fastcall* GetRenderText_t)(const GUIListViewItem*, GuiFramework::GUISharedString&, dl_int);
 	protected:
 		GUIListView* m_pOwner;

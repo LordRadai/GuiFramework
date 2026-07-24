@@ -51,11 +51,12 @@ namespace GuiFramework
 		virtual void OnItemClick(dl_int itemIndex) {}
 		virtual void OnItemRClick(dl_int itemIndex) {}
 
-		dl_int AddItem(TGUISharedString<dl_wchar> label, dl_int id);
-		dl_int AddItem(GUIListViewItem* pItem, dl_int idx);
-		dl_bool AddColumn(TGUISharedString<dl_wchar> label, dl_uint16 id, dl_uint size, dl_int param_4);
+		dl_int AddItem(TGUISharedString<dl_wchar> label, dl_int id = -1);
+		dl_int AddItem(GUIListViewItem* pItem, dl_int idx = -1);
+		dl_bool AddColumn(TGUISharedString<dl_wchar> label, dl_uint16 id, dl_uint size, dl_int param_4 = -1);
 
-		GUIListViewItem* GetItemFromIndex(dl_int index);
+		GUIListViewItem* GetItemFromIndex(dl_int index) const;
+		dl_int GetItemIndex(GUIListViewItem* pItem) const;
 		dl_size GetNumItems() const { return m_items.size(); }
 
 		dl_bool SetColumnHeaderLabel(dl_uint16 id, TGUISharedString<dl_wchar> label);
