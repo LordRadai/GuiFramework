@@ -19,7 +19,7 @@ namespace GuiFramework
 
 		virtual void OnDelete() override
 		{
-			if (this->m_pObject)
+			if (this->m_pObject.Get())
 				this->m_pObject->UnRef();
 		}
 
