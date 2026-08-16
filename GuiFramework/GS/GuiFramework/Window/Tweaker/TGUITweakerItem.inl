@@ -19,7 +19,8 @@ namespace GuiFramework
 
 		virtual void OnDelete() override
 		{
-			this->m_pObject->UnRef();
+			if (this->m_pObject)
+				this->m_pObject->UnRef();
 		}
 
 		virtual void Close() override {}
