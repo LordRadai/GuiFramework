@@ -104,7 +104,7 @@ namespace GuiFramework
         virtual void OnDelete() override;
         virtual dl_bool AddChild(GUIWindowBase* pChild) { return false; }
 		virtual DLUT::DLVector<GUIObject*>* GetChildrenVector() { return nullptr; }
-		virtual Rect GetChildrenBaseCoord() const { return Rect(); }
+        virtual Rect& GetChildrenBaseCoord(Rect& out) const { out = Rect(); return out; }
 		virtual GUIWindowBase* GetNextFocusWindow() const { return nullptr; }
         virtual dl_uint IsMoveChild() const { return true; }
         virtual dl_uint IsMoveSelf() const { return true; }
@@ -169,7 +169,7 @@ namespace GuiFramework
 
         typedef dl_bool(_fastcall* AddChild_t)(GUIWindowBase*, GUIWindowBase*);
         typedef DLUT::DLVector<GUIObject*>* (_fastcall* GetChildrenVector_t)(GUIWindowBase*);
-        typedef Rect(_fastcall* GetChildrenBaseCoord_t)(const GUIWindowBase*);
+        typedef Rect&(_fastcall* GetChildrenBaseCoord_t)(const GUIWindowBase*, Rect&);
         typedef GUIWindowBase* (_fastcall* GetNextFocusWindow_t)(const GUIWindowBase*);
         typedef dl_uint(_fastcall* IsMoveChild_t)(const GUIWindowBase*);
         typedef dl_uint(_fastcall* IsMoveSelf_t)(const GUIWindowBase*);

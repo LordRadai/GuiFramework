@@ -35,7 +35,7 @@ namespace GuiFramework
 		virtual void OnDelete() override;
 		virtual dl_bool AddChild(GUIWindowBase* pChild) override;
 		virtual DLUT::DLVector<GUIObject*>* GetChildrenVector() override;
-		virtual Rect GetChildrenBaseCoord() const override;
+		virtual Rect& GetChildrenBaseCoord(Rect& out) const override;
 		virtual GUIWindowBase* GetNextFocusWindow() const override;
 		virtual dl_uint OnMouseMove(const MouseEvent& event) override;
 		virtual dl_uint OnNcMouseMove(GUI_NCHIT ncHit, const MouseEvent& event) override;

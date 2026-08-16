@@ -39,9 +39,9 @@ namespace GuiFramework
 		return CALL(GetChildrenVector_t, 0x537a50, this);
 	}
 
-	Rect GUIWidget::GetChildrenBaseCoord() const
+	Rect& GUIWidget::GetChildrenBaseCoord(Rect& out) const
 	{
-		return CALL(GetChildrenBaseCoord_t, 0x537a00, this);
+		return CALL(GetChildrenBaseCoord_t, 0x537a00, this, out);
 	}
 
 	GUIWindowBase* GUIWidget::GetNextFocusWindow() const
