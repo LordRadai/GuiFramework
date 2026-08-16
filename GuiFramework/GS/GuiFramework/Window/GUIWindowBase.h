@@ -50,6 +50,9 @@ namespace GuiFramework
         dl_uint Flags;
         dl_uint iVarC;
 
+		_GUI_CREATE_WINDOW() : Pos(0, 0, 0, 0), Flags(0), iVarC(0) {}
+		_GUI_CREATE_WINDOW(dl_int16 x, dl_int16 y, dl_int16 width, dl_int16 height, dl_uint flags) : Pos(x, y, width, height), Flags(flags), iVarC(0) {}
+
         static void* operator new(size_t size)
         {
             return DLKR::AllocateAligned(size, 4, GUI_ALLOCATOR);
@@ -161,6 +164,8 @@ namespace GuiFramework
 
         dl_bool SetAfterWindow(GUIWindowBase* pAfter);
         void SetForeground();
+
+		GUIWindowBase* Create(GUIWindowBase* pRoot, const _GUI_CREATE_WINDOW& createParams);
 
         typedef dl_bool(_fastcall* AddChild_t)(GUIWindowBase*, GUIWindowBase*);
         typedef DLUT::DLVector<GUIObject*>* (_fastcall* GetChildrenVector_t)(GUIWindowBase*);

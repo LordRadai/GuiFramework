@@ -72,7 +72,7 @@ namespace GuiFramework
 		return CALL(OnVirtualInput_t, 0x5d7320, this, input);
 	}
 
-	dl_uint GUIColorSelector::OnCommand(unsigned int cmdId)
+	dl_uint GUIColorSelector::OnCommand(dl_uint cmdId)
 	{
 		return CALL(OnCommand_t, 0x5d7180, this, cmdId);
 	}

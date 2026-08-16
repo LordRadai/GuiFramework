@@ -23,7 +23,7 @@ namespace GuiFramework
 		virtual dl_uint OnLButtonUp(const MouseEvent& event) override;
 		virtual dl_uint OnRButtonDown(const MouseEvent& event) override;
 		virtual dl_uint OnVirtualInput(const VirtualInput& input) override;
-		virtual dl_uint OnCommand(unsigned int cmdId) override;
+		virtual dl_uint OnCommand(dl_uint cmdId) override;
 		virtual dl_uint OnSize() override;
 		virtual dl_uint OnCreate() override;
 		virtual void OnRender(GraphicsContext& gc) const override;
