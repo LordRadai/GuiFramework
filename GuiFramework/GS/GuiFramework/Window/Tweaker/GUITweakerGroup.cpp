@@ -13,8 +13,8 @@ namespace GuiFramework
 	typedef TGUIColorTweaker<DLMT2::DL_COLOR_U8>*(_fastcall* CreateColorTweakerU8_t)(GUITweakerGroup*, TGUISharedString<dl_wchar>, DLMT2::DL_COLOR_U8*, dl_uint);
 	typedef TGUIColorTweaker<DLMT::DL_VECTOR4>* (_fastcall* CreateColorTweakerFloat_t)(GUITweakerGroup*, TGUISharedString<dl_wchar>, DLMT::DL_VECTOR4*, dl_uint);
 
-	typedef GUITextureList*(_fastcall* CreateTextureList_t)(GUITweakerGroup*, TGUISharedString<dl_wchar>);
-	typedef GUITextureViewer*(_fastcall* CreateTextureViewer_t)(GUITweakerGroup*, TGUISharedString<dl_wchar>, GUITextureBase*);
+	typedef TGUITweakerItem<GUITextureList>*(_fastcall* CreateTextureList_t)(GUITweakerGroup*, TGUISharedString<dl_wchar>);
+	typedef TGUITweakerItem<GUITextureViewer>*(_fastcall* CreateTextureViewer_t)(GUITweakerGroup*, TGUISharedString<dl_wchar>, GUITextureBase*);
 
 	typedef GUITriggerTweaker*(_fastcall* CreateTrigger_t)(GUITweakerGroup*, TGUISharedString<dl_wchar>);
 
@@ -75,12 +75,12 @@ namespace GuiFramework
 
 	GUITextureList* GUITweakerGroup::CreateTextureList(TGUISharedString<dl_wchar> label)
 	{
-		return CALL(CreateTextureList_t, 0x54cd00, this, label);
+		return CALL(CreateTextureList_t, 0x54cd00, this, label)->GetObject();
 	}
 
 	GUITextureViewer* GUITweakerGroup::CreateTextureViewer(TGUISharedString<dl_wchar> label, GUITextureBase* pTexture)
 	{
-		return CALL(CreateTextureViewer_t, 0x54ca80, this, label, pTexture);
+		return CALL(CreateTextureViewer_t, 0x54ca80, this, label, pTexture)->GetObject();
 	}
 
 	GUITriggerTweaker* GUITweakerGroup::CreateTrigger(TGUISharedString<dl_wchar> label)

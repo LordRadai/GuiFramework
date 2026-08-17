@@ -2,6 +2,8 @@
 #include "GUITweakerItem.h"
 #include "GuiFramework/System/TGUIObjectPtr.inl"
 
+#undef GetObject
+
 namespace GuiFramework
 {
 	template<class T>
@@ -24,6 +26,8 @@ namespace GuiFramework
 		}
 
 		virtual void Close() override {}
+
+		T* GetObject() const { return m_pObject.Get(); }
 	private:
 		TGUIObjectPtr<T> m_pObject;
 	};
