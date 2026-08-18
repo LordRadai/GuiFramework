@@ -15,7 +15,7 @@ namespace GuiFramework
 		{
 			this->m_numValues = numValues;
 			this->m_pValue = pValue;
-			this->m_pValueOld = GUI_ALLOCATOR->AllocateAligned(sizeof(T) * numValues, 4);
+			this->m_pValueOld = static_cast<T*>(GUI_ALLOCATOR->AllocateAligned(sizeof(T) * numValues, 4));
 
 			for (dl_uint8 i = 0; i < numValues; i++)
 			{
