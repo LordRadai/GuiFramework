@@ -9,7 +9,7 @@ namespace GuiFramework
 		typedef TGUIRangeData<T> ThisClass;
 		typedef GUIRangeDataBase SuperClass;
 	public:
-		TGUIRangeData(T min, T max, T step, dl_float32 mult = 1.f) : m_value(0.f), m_min(min), m_max(max), m_step(step), m_original(0.f), m_mult(mult)
+		TGUIRangeData(T value, T min, T max, T step, dl_float32 mult = 1.f) : m_value(value), m_min(min), m_max(max), m_step(step), m_original(value), m_mult(mult)
 		{
 		}
 
