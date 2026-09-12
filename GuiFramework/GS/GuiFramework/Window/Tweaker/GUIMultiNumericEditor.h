@@ -34,14 +34,14 @@ namespace GuiFramework
 		template<typename T>
 		TGUIRangeData<T>* GetRangeData(dl_int idx) const
 		{
-			if (idx > this->m_numValues)
+			if (idx >= this->m_numValues)
 				return nullptr;
 
 			GUIRangeDataBase* pRangeData = this->m_editors[idx].pRangeData.Get();
 
 			if (pRangeData == nullptr)
 			{
-				TGUIRangeData<T>* pRangeDataTyped = new TGUIRangeData<T>(0, 1000, 1);
+				TGUIRangeData<T>* pRangeDataTyped = new TGUIRangeData<T>(0, 0, 1000, 1);
 				this->m_editors[idx].pRangeData = pRangeDataTyped;
 
 				return pRangeDataTyped;
