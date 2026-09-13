@@ -47,6 +47,7 @@ namespace GuiFramework
 
 	Rect GUIAutoVLayout::GetDefaultSizeMax() const
 	{
-		return CALL(GetDefaultSizeMax_t, 0x5a4840, this);
+		Rect out;
+		return *CALL(GetDefaultSizeMax_t, 0x5a4840, this, &out);
 	}
 }

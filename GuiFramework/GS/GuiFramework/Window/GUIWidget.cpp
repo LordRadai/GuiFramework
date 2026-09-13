@@ -121,12 +121,14 @@ namespace GuiFramework
 
 	Rect GUIWidget::GetDefaultSizeMin() const
 	{
-		return CALL(GetDefaultSizeMin_t, 0x57bcd0, this);
+		Rect out;
+		return *CALL(GetDefaultSizeMin_t, 0x57bcd0, this, &out);
 	}
 
 	Rect GUIWidget::GetDefaultSizeMax() const
 	{
-		return CALL(GetDefaultSizeMax_t, 0x57bd50, this);
+		Rect out;
+		return *CALL(GetDefaultSizeMax_t, 0x57bd50, this, &out);
 	}
 
 	void GUIWidget::ComputeNcShapeInfo(const _GUI_NC_SHAPE_PROP& prop, _GUI_NC_SHAPE_INFO& info) const
