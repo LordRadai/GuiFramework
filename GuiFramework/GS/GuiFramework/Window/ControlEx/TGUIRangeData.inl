@@ -56,7 +56,7 @@ namespace GuiFramework
 			return true;
 		}
 
-		virtual dl_bool MoveValue(dl_uint direction, dl_uint isLargeStep) override
+		virtual dl_bool MoveValue(dl_int direction, dl_uint isLargeStep) override
 		{
 			dl_int oldValue = this->m_value;
 			dl_int multiplier = (isLargeStep == 0) ? 1 : 10;
