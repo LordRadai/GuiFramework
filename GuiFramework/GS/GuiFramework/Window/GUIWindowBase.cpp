@@ -7,6 +7,7 @@ namespace GuiFramework
 	typedef dl_bool(_fastcall* SetAfterWindow_t)(GUIWindowBase*, GUIWindowBase*);
 	typedef void(_fastcall* SetForeground_t)(GUIWindowBase*);
 	typedef GUIWindowBase* (_fastcall* Create_t)(GUIWindowBase*, GUIWindowBase*, const _GUI_CREATE_WINDOW&);
+	typedef void(_fastcall* MoveWindow_t)(GUIWindowBase*, dl_uint, dl_uint, dl_uint, dl_uint);
 
 	GUIWindowBase::GUIWindowBase(TGUISharedString<dl_wchar> label)
 	{
@@ -71,6 +72,16 @@ namespace GuiFramework
 	void GUIWindowBase::SetForeground()
 	{
 		CALL(SetForeground_t, 0x550b20, this);
+	}
+
+	void GUIWindowBase::MoveWindow(const TGUI_RECT<dl_int>& rect)
+	{
+		CALL(MoveWindow_t, 0x550580, this, rect.MinX, rect.MinY, rect.MaxX - rect.MinX, rect.MaxY - rect.MinY);
+	}
+
+	void GUIWindowBase::MoveWindow(dl_uint x, dl_uint y, dl_uint width, dl_uint height)
+	{
+		CALL(MoveWindow_t, 0x550580, this, x, y, width, height);
 	}
 
 	GUIWindowBase* GUIWindowBase::Create(GUIWindowBase* pRoot, const _GUI_CREATE_WINDOW& createParams)

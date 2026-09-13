@@ -165,7 +165,12 @@ namespace GuiFramework
         dl_bool SetAfterWindow(GUIWindowBase* pAfter);
         void SetForeground();
 
+		void MoveWindow(const TGUI_RECT<dl_int>& rect);
+		void MoveWindow(dl_uint x, dl_uint y, dl_uint width, dl_uint height);
 		GUIWindowBase* Create(GUIWindowBase* pRoot, const _GUI_CREATE_WINDOW& createParams);
+
+		Rect GetPosition() const { return m_position; }
+		Rect16 GetContentOffset() const { return m_contentOffset; }
 
         typedef dl_bool(_fastcall* AddChild_t)(GUIWindowBase*, GUIWindowBase*);
         typedef DLUT::DLVector<GUIObject*>* (_fastcall* GetChildrenVector_t)(GUIWindowBase*);
