@@ -1,5 +1,6 @@
 #pragma once
 #include "GuiFramework/Window/GUIWindowBase.h"
+#include "GuiFramework/Signal/GUISignalDecl.h"
 
 namespace GuiFramework
 {
@@ -32,3 +33,5 @@ namespace GuiFramework
 		dl_uint m_interactionFlags;
 	};
 }
+
+#define SIGNAL_ON_BUTTON_PRESSED (GuiFramework::GUISignalDecl*)(MODULE_ADDR + 0x1617be0)

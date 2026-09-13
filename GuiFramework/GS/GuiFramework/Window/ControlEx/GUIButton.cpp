@@ -3,11 +3,13 @@
 
 namespace GuiFramework
 {
-	typedef void(_fastcall* Constructor_t)(const GUIButton*, GUITriggerTweakWidget*, TGUISharedString<dl_wchar>, dl_uint);
+	typedef void(_fastcall* Constructor_t)(const GUIButton*, GUIWindowBase*, TGUISharedString<dl_wchar>, dl_uint);
 
-	GUIButton::GUIButton(GUITriggerTweakWidget* pTriggerTweakWidget, TGUISharedString<dl_wchar> label, dl_uint flags)
+	typedef dl_int(_fastcall* GetDefaultClientHeight_t)(GUISystem*);
+
+	GUIButton::GUIButton(GUIWindowBase* pParent, TGUISharedString<dl_wchar> label, dl_uint flags)
 	{
-		CALL(Constructor_t, 0x5b8570, this, pTriggerTweakWidget, label, flags);
+		CALL(Constructor_t, 0x5b8570, this, pParent, label, flags);
 	}
 
 	DLRF::DLRuntimeClass* GUIButton::GetRuntimeClassOfThis() const
@@ -28,5 +30,10 @@ namespace GuiFramework
 	void GUIButton::OnRender(GraphicsContext& gc) const
 	{
 		CALL(OnRender_t, 0x5b8940, this, gc);
+	}
+
+	dl_int GUIButton::GetDefaultClientHeight(GUISystem* pSystem)
+	{
+		return CALL(GetDefaultClientHeight_t, 0x5b8ad0, pSystem);
 	}
 }
