@@ -7,8 +7,8 @@ namespace GuiFramework
 	class GUISignalDecl
 	{
 	public:
-		GUISignalDecl() : m_name(L""), m_flags(0) {}
-		GUISignalDecl(const dl_wchar* name, dl_uint flags) : m_name(name), m_flags(flags) {}
+		GUISignalDecl() : m_name(""), m_flags(0) {}
+		GUISignalDecl(const dl_char* name, dl_uint flags) : m_name(name), m_flags(flags) {}
 
 		static void* operator new(size_t size)
 		{
@@ -20,7 +20,7 @@ namespace GuiFramework
 			return DLKR::Free(block, GUI_ALLOCATOR);
 		}
 	private:
-		const dl_wchar* m_name;
+		const dl_char* m_name;
 		dl_uint m_flags;
 	};
 }
