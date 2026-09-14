@@ -4,7 +4,7 @@ namespace GuiFramework
 {
 	typedef void(_fastcall* GUISystem_ctor_t)(GUISystem*);
 
-	typedef void(_fastcall* GUISystem_Connect_t)(GUISystem*, GUIObject*, GUISignalDecl, GUIMsgReceiver*, DLRF::DLMethodResolver<DLRF::DLMethodInvokeContext>*, dl_uint, dl_uint);
+	typedef void(_fastcall* GUISystem_Connect_t)(GUISystem*, GUIObject*, const GUISignalDecl*, GUIMsgReceiver*, DLRF::DLMethodResolver<DLRF::DLMethodInvokeContext>*, dl_uint, dl_uint);
 	typedef void(_fastcall* GUISystem_CreateTweaker_t)(GUISystem*, GUITweakerDialog*);
 
 	typedef dl_bool(_fastcall* SetAfterWindow_t)(GUISystem*, GUIWindowBase*, GUIWindowBase*);
@@ -52,7 +52,7 @@ namespace GuiFramework
 		return CALL(GetClipboard_t, 0x52b570, this, out);
 	}
 
-	void GUISystem::Connect(GUIObject* pOwner, GUISignalDecl pSignalDeclaration, GUIMsgReceiver* pReceiver, DLRF::DLMethodResolver<DLRF::DLMethodInvokeContext>* pResolver, dl_uint param_5, dl_uint param_6)
+	void GUISystem::Connect(GUIObject* pOwner, const GUISignalDecl* pSignalDeclaration, GUIMsgReceiver* pReceiver, DLRF::DLMethodResolver<DLRF::DLMethodInvokeContext>* pResolver, dl_uint param_5, dl_uint param_6)
 	{
 		CALL(GUISystem_Connect_t, 0x52a7a0, this, pOwner, pSignalDeclaration, pReceiver, pResolver, param_5, param_6);
 	}
