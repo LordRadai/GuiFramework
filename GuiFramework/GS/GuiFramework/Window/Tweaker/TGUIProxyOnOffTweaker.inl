@@ -42,7 +42,7 @@ namespace GuiFramework
 
         virtual void Update(dl_float32 dt) override
         {
-            if (this->m_proxy.pValue == nullptr)
+            if (!this->m_proxy.HasValue())
                 return;
 
             T currentBitValue = this->m_proxy.GetValue();

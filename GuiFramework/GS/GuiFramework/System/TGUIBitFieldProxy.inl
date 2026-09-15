@@ -53,6 +53,8 @@ namespace GuiFramework
 		dl_size GetDataBitSize() const { return sizeof(T) * 8; }
 
 		operator T() const { return GetValue(); }
+
+		dl_bool HasValue() const { return m_pValue != nullptr; }
 	protected:
 		T* m_pValue;
 		dl_uint8 m_bitIndex;
