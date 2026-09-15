@@ -70,12 +70,12 @@ namespace GuiFramework
 
 		static void* operator new(size_t size)
 		{
-			return DLKR::AllocateAligned(size, 8, GUI_ALLOCATOR);
+			return DLKR::AllocationSupporter::Allocate(size, 8, GUI_ALLOCATOR);
 		}
 
 		static void operator delete(void* block)
 		{
-			return DLKR::Free(block, GUI_ALLOCATOR);
+			return DLKR::AllocationSupporter::Deallocate(block, GUI_ALLOCATOR);
 		}
 	};
 
