@@ -48,7 +48,7 @@ namespace GuiFramework
 	GUISharedString GUIListViewItem::GetItemText(dl_int idx) const
 	{
 		GUISharedString out;
-		CALL(GetItemText_t, 0x5d2f90, this, out, idx);
+		CALL(GetItemText_t, 0x5d2f10, this, out, idx);
 		return out;
 	}
 }
