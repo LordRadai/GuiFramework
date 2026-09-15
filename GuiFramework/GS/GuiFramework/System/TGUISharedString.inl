@@ -22,12 +22,21 @@ namespace GuiFramework
 		CharT* m_pStr;
 	public:
 		TGUISharedString() : m_pData(nullptr), m_pStr(nullptr) {}
-		TGUISharedString(const CharT* str);
+
+		TGUISharedString(const CharT* str)
+		{
+			DL_ASSERT(false, "Constructor is not implemented for this type.");
+		}
+
 		TGUISharedString(const ThisClass& other);
 
 		~TGUISharedString();
 
-		void Attach(const CharT* str);
+		void Attach(const CharT* str)
+		{
+			DL_ASSERT(false, "Attach is not implemented for this type.");
+		}
+
 		void Detatch(dl_int start, dl_int end);
 
 		void format(const CharT* fmt, ...)
@@ -38,7 +47,10 @@ namespace GuiFramework
 			va_end(args);
 		}
 
-		void formatV(const CharT* fmt, va_list args);
+		void formatV(const CharT* fmt, va_list args)
+		{
+			DL_ASSERT(false, "formatV is not implemented for this type.");
+		}
 
 		void operator=(const ThisClass& other);
 
@@ -89,7 +101,7 @@ namespace GuiFramework
 
 	typedef void(_fastcall* TGUISharedStringAssign_t)(TGUISharedString<dl_wchar>*, const TGUISharedString<dl_wchar>*);
 
-	typedef DLTX::DLBasicString<wchar_t, std::char_traits<dl_wchar>>* (*TGUISharedStringUnshared_t)(const TGUISharedString<wchar_t>*);			
+	typedef DLTX::DLBasicString<dl_wchar, std::char_traits<dl_wchar>>* (*TGUISharedStringUnshared_t)(const TGUISharedString<dl_wchar>*);			
 
 	template<> inline TGUISharedString<dl_wchar>::TGUISharedString(const dl_wchar* str)
 	{
@@ -118,7 +130,7 @@ namespace GuiFramework
 
 	template<> inline void TGUISharedString<dl_wchar>::formatV(const dl_wchar* fmt, va_list args)
 	{
-		CALL(TGUISharedStringFormatV_t, 0x523f80, this, fmt, args);
+		CALL(TGUISharedStringFormatV_t, 0x524980, this, fmt, args);
 	}
 
 	template<> inline void TGUISharedString<dl_wchar>::operator=(const ThisClass& other)
