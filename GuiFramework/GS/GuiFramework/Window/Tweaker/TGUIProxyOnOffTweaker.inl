@@ -17,7 +17,7 @@ namespace GuiFramework
     public:
 		TGUIProxyOnOffTweaker(GUIWidget* pParent, TGUISharedString<dl_wchar> label, T* pValue, dl_uint32 bitIndex, dl_uint32 bitOffset) :
 			GUIOnOffTweaker(pParent, label),
-			m_proxy(pValue, bitIndex, bitOffset),
+			m_proxy(pValue, bitOffset, bitIndex),
 			m_valueOld(0)
 		{
 			if (pValue != nullptr)
