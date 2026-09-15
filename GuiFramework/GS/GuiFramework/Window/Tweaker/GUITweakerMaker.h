@@ -69,7 +69,7 @@ namespace GuiFramework
 		}
 
 		template<typename T>
-		TGUIProxyOnOffTweaker<T>* CreateProxyOnOffTweaker(TGUISharedString<dl_wchar> label, T* v)
+		TGUIProxyOnOffTweaker<T>* CreateProxyOnOffTweaker(TGUISharedString<dl_wchar> label, T* v, dl_uint32 bitIndex, dl_uint32 bitOffset)
 		{
 			DL_ASSERT(!this->m_groups.empty(), L"There are no tweaker groups on the stack");
 
@@ -78,7 +78,7 @@ namespace GuiFramework
 			if (pGroup == nullptr)
 				return nullptr;
 
-			return pGroup->CreateProxyOnOffTweaker<T>(label, v);
+			return pGroup->CreateProxyOnOffTweaker<T>(label, v, bitIndex, bitOffset);
 		}
 
 		template<typename T>
