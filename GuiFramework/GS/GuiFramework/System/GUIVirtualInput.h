@@ -69,12 +69,12 @@ namespace GuiFramework
 
         static void* operator new(dl_size size)
         {
-            return DLKR::AllocateAligned(size, 4, GUI_ALLOCATOR);
+            return DLKR::AllocationSupporter::Allocate(size, 4, GUI_ALLOCATOR);
 		}
 
         static void operator delete(void* p)
         {
-            DLKR::Free(p, GUI_ALLOCATOR);
+            DLKR::AllocationSupporter::Deallocate(p, GUI_ALLOCATOR);
 		}
     protected:
 		DLUT::DLVector<VirtualInput> m_inputs;
