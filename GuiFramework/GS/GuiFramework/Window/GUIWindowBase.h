@@ -18,12 +18,12 @@ namespace GuiFramework
 
         static void* operator new(dl_size size)
         {
-            return DLKR::AllocationSupporter::Allocate(size, 4, GUI_ALLOCATOR);
+            return DLKR::AllocationSupporter<DLKR::DLAllocator>::Allocate(size, 4, GUI_ALLOCATOR);
         }
 
         static void operator delete(void* p)
         {
-            DLKR::AllocationSupporter::Deallocate(p, GUI_ALLOCATOR);
+            DLKR::AllocationSupporter<DLKR::DLAllocator>::Deallocate(p, GUI_ALLOCATOR);
         }
     };
 
@@ -35,12 +35,12 @@ namespace GuiFramework
 
         static void* operator new(dl_size size)
         {
-            return DLKR::AllocationSupporter::Allocate(size, 4, GUI_ALLOCATOR);
+            return DLKR::AllocationSupporter<DLKR::DLAllocator>::Allocate(size, 4, GUI_ALLOCATOR);
         }
 
         static void operator delete(void* p)
         {
-            DLKR::AllocationSupporter::Deallocate(p, GUI_ALLOCATOR);
+            DLKR::AllocationSupporter<DLKR::DLAllocator>::Deallocate(p, GUI_ALLOCATOR);
 		}
     };
 
@@ -55,12 +55,12 @@ namespace GuiFramework
 
         static void* operator new(size_t size)
         {
-            return DLKR::AllocationSupporter::Allocate(size, 4, GUI_ALLOCATOR);
+            return DLKR::AllocationSupporter<DLKR::DLAllocator>::Allocate(size, 4, GUI_ALLOCATOR);
         }
 
         static void operator delete(void* block)
         {
-            return DLKR::AllocationSupporter::Deallocate(block, GUI_ALLOCATOR);
+            return DLKR::AllocationSupporter<DLKR::DLAllocator>::Deallocate(block, GUI_ALLOCATOR);
         }
     };
 
@@ -73,12 +73,12 @@ namespace GuiFramework
 
         static void* operator new(size_t size)
         {
-            return DLKR::AllocationSupporter::Allocate(size, 4, GUI_ALLOCATOR);
+            return DLKR::AllocationSupporter<DLKR::DLAllocator>::Allocate(size, 4, GUI_ALLOCATOR);
         }
 
         static void operator delete(void* block)
         {
-            return DLKR::AllocationSupporter::Deallocate(block, GUI_ALLOCATOR);
+            return DLKR::AllocationSupporter<DLKR::DLAllocator>::Deallocate(block, GUI_ALLOCATOR);
         }
     };
 
