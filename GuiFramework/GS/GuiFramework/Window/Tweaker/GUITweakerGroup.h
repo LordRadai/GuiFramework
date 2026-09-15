@@ -80,7 +80,7 @@ namespace GuiFramework
 		template<typename T>
 		TGUIProxyOnOffTweaker<T>* CreateProxyOnOffTweaker(TGUISharedString<dl_wchar> label, T* v, dl_uint32 bitIndex, dl_uint32 bitOffset)
 		{
-			TGUIProxyOnOffTweaker<T>* pTweaker = new TGUIProxyOnOffTweaker<T>(this, label, v, bitIndex, bitOffset);
+			TGUIProxyOnOffTweaker<TGUIBitFieldProxy<T>>* pTweaker = new TGUIProxyOnOffTweaker<TGUIBitFieldProxy<T>>(this, label, v, bitIndex, bitOffset);
 
 			if (pTweaker)
 				this->AddItem(pTweaker);

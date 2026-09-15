@@ -6,7 +6,8 @@ namespace GuiFramework
 {
     template<class ProxyClass>
     class TGUIProxyOnOffTweaker : public GUIOnOffTweaker
-    {};
+    {
+    };
 
     template<typename T>
     class TGUIProxyOnOffTweaker<TGUIBitFieldProxy<T>> : public GUIOnOffTweaker
