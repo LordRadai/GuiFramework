@@ -89,6 +89,9 @@ namespace GuiFramework
 		{
 			return DLKRD::AllocationSupporter<DLKR::DLAllocator>::Deallocate(block, GUI_ALLOCATOR);
 		}
+
+		static void* operator new(size_t, void* p) { return p; }
+		static void operator delete(void*, void*) {}
 	};
 
 	typedef void(_fastcall* TGUISharedStringCtor_t)(TGUISharedString<dl_wchar>*, const dl_wchar*);
