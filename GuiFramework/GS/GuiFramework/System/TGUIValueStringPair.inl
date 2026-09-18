@@ -42,7 +42,7 @@ namespace GuiFramework
 	public:
 		TGUIValueStringPairData() : SuperClass() {}
 
-		TGUIValueStringPairData(TGUI_COMBO_TWEAKER_ITEM<T>* items, dl_uint numItems) : SuperClass(), m_pairs(GuiFramework_GUIAllocator_s_pDefaultAllocator)
+		TGUIValueStringPairData(TGUI_COMBO_TWEAKER_ITEM<T>* items, dl_uint numItems) : SuperClass(), m_pairs(GUIAllocator::s_pDefaultAllocator)
 		{
 			m_pairs.reserve(numItems);
 			

@@ -4,36 +4,39 @@
 
 #include "GuiFramework/Globals.h"
 
-template<typename T>
-class TGUIStringStorage
+namespace GuiFramework
 {
-	DLUT::DLVector<T> m_pStringStorageList[53];
-	dl_char m_buffer[212];
-public:
-	TGUIStringStorage();
-
-	virtual ~TGUIStringStorage();
-
-	static void* operator new(size_t size)
+	template<typename T>
+	class TGUIStringStorage
 	{
-		return DLKRD::AllocationSupporter<DLKR::DLAllocator>::Allocate(size, 8, GuiFramework_GUIAllocator_s_pDefaultAllocator);
+		DLUT::DLVector<T> m_pStringStorageList[53];
+		dl_char m_buffer[212];
+	public:
+		TGUIStringStorage();
+
+		virtual ~TGUIStringStorage();
+
+		static void* operator new(size_t size)
+		{
+			return DLKRD::AllocationSupporter<DLKR::DLAllocator>::Allocate(size, 8, GUIAllocator::s_pDefaultAllocator);
+		}
+
+		static void operator delete(void* block)
+		{
+			return DLKRD::AllocationSupporter<DLKR::DLAllocator>::Deallocate(block, GUIAllocator::s_pDefaultAllocator);
+		}
+	};
+
+	typedef void(_fastcall* WChar_Ctor_t)(TGUIStringStorage<dl_wchar>* This);
+	typedef void(_fastcall* WChar_Dtor_t)(TGUIStringStorage<dl_wchar>* This);
+
+	template<> inline TGUIStringStorage<dl_wchar>::TGUIStringStorage()
+	{
+		CALL(WChar_Ctor_t, 0x52dba0, this);
 	}
 
-	static void operator delete(void* block)
+	template<> inline TGUIStringStorage<dl_wchar>::~TGUIStringStorage()
 	{
-		return DLKRD::AllocationSupporter<DLKR::DLAllocator>::Deallocate(block, GuiFramework_GUIAllocator_s_pDefaultAllocator);
+		CALL(WChar_Dtor_t, 0x52df30, this);
 	}
-};
-
-typedef void(_fastcall* WChar_Ctor_t)(TGUIStringStorage<dl_wchar>* This);
-typedef void(_fastcall* WChar_Dtor_t)(TGUIStringStorage<dl_wchar>* This);
-
-template<> inline TGUIStringStorage<dl_wchar>::TGUIStringStorage()
-{
-	CALL(WChar_Ctor_t, 0x52dba0, this);
-}
-
-template<> inline TGUIStringStorage<dl_wchar>::~TGUIStringStorage()
-{
-	CALL(WChar_Dtor_t, 0x52df30, this);
 }

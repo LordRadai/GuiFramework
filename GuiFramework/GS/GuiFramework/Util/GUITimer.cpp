@@ -5,6 +5,8 @@ namespace GuiFramework
 {
 	typedef void(_fastcall* Constructor_t)(GUITimer*, GUISystem*);
 
+	GUISignalDecl*& GUITimer::s_signalOnElapsed = (*(GuiFramework::GUISignalDecl**)(MODULE_ADDR + 0x1617a70));
+
 	GUITimer::GUITimer(GUISystem* pGUISystem)
 	{
 		CALL(Constructor_t, 0x5901d0, this, pGUISystem);

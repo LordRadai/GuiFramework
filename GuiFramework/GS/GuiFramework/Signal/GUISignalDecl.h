@@ -12,12 +12,12 @@ namespace GuiFramework
 
 		static void* operator new(size_t size)
 		{
-			return DLKRD::AllocationSupporter<DLKR::DLAllocator>::Allocate(size, 8, GuiFramework_GUIAllocator_s_pDefaultAllocator);
+			return DLKRD::AllocationSupporter<DLKR::DLAllocator>::Allocate(size, 8, GUIAllocator::s_pDefaultAllocator);
 		}
 
 		static void operator delete(void* block)
 		{
-			return DLKRD::AllocationSupporter<DLKR::DLAllocator>::Deallocate(block, GuiFramework_GUIAllocator_s_pDefaultAllocator);
+			return DLKRD::AllocationSupporter<DLKR::DLAllocator>::Deallocate(block, GUIAllocator::s_pDefaultAllocator);
 		}
 	private:
 		const dl_char* m_name;

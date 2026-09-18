@@ -29,9 +29,9 @@ namespace GuiFramework
 		dl_uint Press(dl_uint state) const;
 
 		typedef void(_fastcall* OnButtonPressed_t)(ThisClass*);
+
+		static GuiFramework::GUISignalDecl*& s_signalOnButtonPressed;
 	protected:
 		dl_uint m_interactionFlags;
 	};
 }
-
-#define SIGNAL_ON_BUTTON_PRESSED (GuiFramework::GUISignalDecl*)(MODULE_ADDR + 0x1617be0)

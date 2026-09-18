@@ -15,7 +15,7 @@ namespace GuiFramework
 		{
 			this->m_numValues = numValues;
 			this->m_pValue = pValue;
-			this->m_pValueOld = static_cast<T*>(GuiFramework_GUIAllocator_s_pDefaultAllocator->AllocateAligned(sizeof(T) * numValues, 4));
+			this->m_pValueOld = static_cast<T*>(GUIAllocator::s_pDefaultAllocator->AllocateAligned(sizeof(T) * numValues, 4));
 
 			for (dl_uint8 i = 0; i < numValues; i++)
 			{
@@ -39,7 +39,7 @@ namespace GuiFramework
 		{
 			if (this->m_pValueOld)
 			{
-				GuiFramework_GUIAllocator_s_pDefaultAllocator->Free(this->m_pValueOld);
+				GUIAllocator::s_pDefaultAllocator->Free(this->m_pValueOld);
 				this->m_pValueOld = nullptr;
 			}
 
