@@ -6,8 +6,8 @@ namespace GuiFramework
 {
 	namespace GUIAllocator
 	{
-#define GUI_ALLOCATOR       (*(DLKR::DLAllocator**)(MODULE_ADDR + 0x1617108))
-#define STRING_ALLOCATOR    (*(DLKR::DLAllocator**)(MODULE_ADDR + 0x1617110))
-#define GUI_STL_ALLOCATOR   (*(DLKR::DLAllocator**)(MODULE_ADDR + 0x1617118))
+#define GuiFramework_GUIAllocator_s_pDefaultAllocator				(*(DLKR::DLAllocator**)(MODULE_ADDR + 0x1617108))
+#define GuiFramework_GUIAllocator_s_pStringAllocator				(*(DLKR::DLAllocator**)(MODULE_ADDR + 0x1617110))
+#define GUIFramework_GUIAllocator_s_pSTLAllocator					(*(DLKR::DLAllocator**)(MODULE_ADDR + 0x1617118))
 	}
 }
