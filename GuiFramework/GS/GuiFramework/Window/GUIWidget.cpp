@@ -8,6 +8,7 @@ namespace GuiFramework
 	typedef dl_bool(_fastcall* Minimize_t)(GUIWidget*, dl_int);
 	typedef dl_bool(_fastcall* Restore_t)(GUIWidget*, dl_int);
 	typedef dl_bool(_fastcall* FadeIn_t)(GUIWidget*);
+	typedef dl_bool(_fastcall* FadeOutClose_t)(GUIWidget*);
 
 	GUIWidget::GUIWidget(TGUISharedString<dl_wchar> label) : GUIWindowBase(label)
 	{
@@ -154,5 +155,10 @@ namespace GuiFramework
 	dl_bool GUIWidget::FadeIn()
 	{
 		return CALL(FadeIn_t, 0x57b1d0, this);
+	}
+
+	dl_bool GUIWidget::FadeOutClose()
+	{
+		return CALL(FadeOutClose_t, 0x57b2a0, this);
 	}
 }

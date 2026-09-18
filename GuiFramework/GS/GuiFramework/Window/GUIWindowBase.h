@@ -168,6 +168,7 @@ namespace GuiFramework
 		void MoveWindow(const TGUI_RECT<dl_int>& rect);
 		void MoveWindow(dl_uint x, dl_uint y, dl_uint width, dl_uint height);
 		GUIWindowBase* Create(GUIWindowBase* pRoot, const _GUI_CREATE_WINDOW& createParams);
+        void ConnectUpdateSignal(dl_uint mode);
 
 		Rect GetPosition() const { return m_position; }
 		Rect16 GetContentOffset() const { return m_contentOffset; }

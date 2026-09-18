@@ -63,6 +63,7 @@ namespace GuiFramework
 		dl_bool Close();
 		dl_bool Minimize(dl_int smooth);
 		dl_bool Restore(dl_int smooth);
+		dl_bool FadeOutClose();
 
 		typedef Rect*(_fastcall* GetDefaultSizeMin_t)(const GUIWidget*, Rect*);
 		typedef Rect*(_fastcall* GetDefaultSizeMax_t)(const GUIWidget*, Rect*);

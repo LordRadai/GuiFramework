@@ -8,6 +8,7 @@ namespace GuiFramework
 	typedef void(_fastcall* SetForeground_t)(GUIWindowBase*);
 	typedef GUIWindowBase* (_fastcall* Create_t)(GUIWindowBase*, GUIWindowBase*, const _GUI_CREATE_WINDOW&);
 	typedef void(_fastcall* MoveWindow_t)(GUIWindowBase*, dl_uint, dl_uint, dl_uint, dl_uint);
+	typedef void(_fastcall* ConnectUpdateSignal_t)(GUIWindowBase*, dl_uint);
 
 	GUIWindowBase::GUIWindowBase(TGUISharedString<dl_wchar> label)
 	{
@@ -87,5 +88,10 @@ namespace GuiFramework
 	GUIWindowBase* GUIWindowBase::Create(GUIWindowBase* pRoot, const _GUI_CREATE_WINDOW& createParams)
 	{
 		return CALL(Create_t, 0x54f930, this, pRoot, createParams);
+	}
+
+	void GUIWindowBase::ConnectUpdateSignal(dl_uint mode)
+	{
+		CALL(ConnectUpdateSignal_t, 0x5519f0, this, mode);
 	}
 }

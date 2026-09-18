@@ -2,6 +2,8 @@
 
 namespace GuiFramework
 {
+	GUISignalDecl*& GUISystem::s_signalOnUpdate = *(GUISignalDecl**)(MODULE_ADDR + 0x1616ec8);
+
 	typedef void(_fastcall* GUISystem_ctor_t)(GUISystem*);
 
 	typedef void(_fastcall* GUISystem_Connect_t)(GUISystem*, GUIObject*, const GUISignalDecl*, GUIMsgReceiver*, DLRF::DLMethodResolver<DLRF::DLMethodInvokeContext>*, dl_uint, dl_uint);
