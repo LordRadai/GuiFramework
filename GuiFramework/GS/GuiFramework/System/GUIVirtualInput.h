@@ -8,36 +8,36 @@ namespace GuiFramework
     {
         enum VIRTUAL_INPUT_ID : dl_uint8
         {
-            // Basic Action Mappings
-            GUI_INPUT_CANCEL = 0,
-            GUI_INPUT_CONFIRM = 1,
-            GUI_INPUT_SELECT = 2,
+            GUI_INPUT_CANCEL,
+            GUI_INPUT_CONFIRM,
+            GUI_INPUT_SELECT,
 
-            // Directional / Navigation State
-            GUI_INPUT_NAV_UP = 5,
-            GUI_INPUT_NAV_LEFT = 6,
-            GUI_INPUT_NAV_RIGHT = 7,
-            GUI_INPUT_NAV_DOWN = 8,
-            GUI_INPUT_NAV_HORIZONTAL = 9,
+            GUI_INPUT_3,
+			GUI_INPUT_4,
 
-            // Utility / Meta Commands
-            GUI_INPUT_ACCEPT_ALT = 10,
-            GUI_INPUT_BACK_ALT = 11,
+            GUI_INPUT_NAV_UP,
+            GUI_INPUT_NAV_DOWN,
+            GUI_INPUT_DPAD_DOWN,
+            GUI_INPUT_DPAD_UP,
+            GUI_INPUT_9,
 
-            // Directional (Discrete/Held)
-            GUI_INPUT_DPAD_RIGHT = 14,
-            GUI_INPUT_DPAD_LEFT = 15,
-            GUI_INPUT_DPAD_Y = 16,
+            GUI_INPUT_BACK,
+            GUI_INPUT_ACCEPT,
 
-            // Shoulder / Tab Navigation
-            GUI_INPUT_TAB_PREV = 17,
-            GUI_INPUT_TAB_NEXT = 18,
+            GUI_INPUT_12,
+			GUI_INPUT_13,
 
-            // Analog Input IDs
-            GUI_INPUT_STICK_LEFT = 19,  // Param1: X, Param2: Y
-            GUI_INPUT_STICK_RIGHT = 20, // Param1: X, Param2: Y
+            GUI_INPUT_DPAD_RIGHT,
+            GUI_INPUT_DPAD_LEFT,
+            GUI_INPUT_DPAD_Y,
 
-            GUI_INPUT_MAX_ID = 21
+            GUI_INPUT_TAB_NEXT,
+            GUI_INPUT_TAB_PREV,
+
+            GUI_INPUT_STICK_LEFT,
+            GUI_INPUT_STICK_RIGHT,
+
+            GUI_INPUT_MAX_ID
         };
 
         dl_uint8 InputID;
