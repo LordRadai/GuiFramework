@@ -41,11 +41,11 @@ namespace GuiFramework
         };
 
         dl_uint8 InputID;
-		dl_float32 Param1;
-		dl_float32 Param2;
+		dl_int Param1;
+        dl_int Param2;
 
 		_GUI_VIRTUAL_INPUT() : InputID(0), Param1(0), Param2(0) {}
-		_GUI_VIRTUAL_INPUT(dl_uint8 inputID, dl_float32 param1 = 0.f, dl_float32 param2 = 0.f) : InputID(inputID), Param1(param1), Param2(param2) {}
+		_GUI_VIRTUAL_INPUT(dl_uint8 inputID, dl_int param1 = 0, dl_int param2 = 0) : InputID(inputID), Param1(param1), Param2(param2) {}
 
         bool IsKeyEvent(dl_char eventID) const
         {
