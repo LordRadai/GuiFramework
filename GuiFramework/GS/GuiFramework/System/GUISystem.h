@@ -58,6 +58,10 @@ namespace GuiFramework
 		GuiFramework::GUIRootWindow* GetRootWindow() const { return m_pGUIWindowManager->GetRootWindow(); }
 		GuiFramework::GUIWindowBase* GetActiveWindow() const { return m_pGUIWindowManager->GetActiveWindow(); }
 
+		dl_bool BeginVirtualInput() { return m_pGUIWindowManager->BeginVirtualInput(); }
+		void EndVirtualInput() { m_pGUIWindowManager->EndVirtualInput(); }
+		void UpdateVirtualInput(GUIVirtualInput& input) { m_pGUIWindowManager->UpdateVirtualInput(input); }
+
 		static GUISignalDecl*& s_signalOnUpdate;
 
 		typedef void(_fastcall* Finalize_t)(GUISystem*);

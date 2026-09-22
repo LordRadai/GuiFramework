@@ -1,4 +1,5 @@
 #include "GUISystem.h"
+#include "GuiFramework/Window/GUIWindowManager.h"
 
 namespace GuiFramework
 {

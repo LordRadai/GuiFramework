@@ -23,7 +23,7 @@ namespace GuiFramework
 		dl_bool SetAfterWindow(GUIWindowBase* pWindow, GUIWindowBase* pAfter);
 		dl_int RegisterWindow(GUIWindowBase* pWindow);
 
-		dl_bool BeginVirtualInput(GUIWindowBase* pWindow);
+		dl_bool BeginVirtualInput();
 		void UpdateVirtualInput(GUIVirtualInput& input);
 		void EndVirtualInput();
 
