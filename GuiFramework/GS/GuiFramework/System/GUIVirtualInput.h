@@ -34,8 +34,8 @@ namespace GuiFramework
             GUI_INPUT_TAB_NEXT = 18,
 
             // Analog Input IDs
-            GUI_INPUT_STICK_LEFT = 19,  // Param1: Y, Param2: X
-            GUI_INPUT_STICK_RIGHT = 20, // Param1: Y, Param2: X
+            GUI_INPUT_STICK_LEFT = 19,  // Param1: X, Param2: Y
+            GUI_INPUT_STICK_RIGHT = 20, // Param1: X, Param2: Y
 
             GUI_INPUT_MAX_ID = 21
         };
