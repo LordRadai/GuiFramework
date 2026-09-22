@@ -17,19 +17,19 @@ namespace GuiFramework
 
             GUI_INPUT_5,
             GUI_INPUT_6,
-            GUI_INPUT_7,
-            GUI_INPUT_PREV_CHILD,
-            GUI_INPUT_NEXT_CHILD,
+            GUI_INPUT_NEXT_SIBLING,
+            GUI_INPUT_PREV_SIBLING,
+            GUI_INPUT_NEXT_FOCUS_WND,
 
-            GUI_INPUT_ACCEPT,
             GUI_INPUT_BACK,
+            GUI_INPUT_ACCEPT,
 
             GUI_INPUT_12,
 			GUI_INPUT_13,
 
             GUI_INPUT_RIGHT,
             GUI_INPUT_LEFT,
-            GUI_INPUT_NEXT_SIBLING,
+            GUI_INPUT_NEXT,
 
             GUI_INPUT_TAB_NEXT,
             GUI_INPUT_TAB_PREV,
