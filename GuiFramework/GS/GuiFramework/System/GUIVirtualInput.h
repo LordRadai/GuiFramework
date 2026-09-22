@@ -17,9 +17,9 @@ namespace GuiFramework
 
             GUI_INPUT_5,
             GUI_INPUT_6,
-            GUI_INPUT_NEXT_CHILD,
+            GUI_INPUT_7,
             GUI_INPUT_PREV_CHILD,
-            GUI_INPUT_9,
+            GUI_INPUT_NEXT_CHILD,
 
             GUI_INPUT_ACCEPT,
             GUI_INPUT_BACK,
