@@ -8,8 +8,8 @@ namespace GuiFramework
     {
         enum VIRTUAL_INPUT_ID : dl_uint8
         {
-            GUI_INPUT_CANCEL,
-            GUI_INPUT_CONFIRM,
+            GUI_INPUT_RESTORE,
+            GUI_INPUT_MINIMIZE,
             GUI_INPUT_SELECT,
 
             GUI_INPUT_3,
@@ -21,8 +21,8 @@ namespace GuiFramework
             GUI_INPUT_DPAD_UP,
             GUI_INPUT_9,
 
-            GUI_INPUT_BACK,
             GUI_INPUT_ACCEPT,
+            GUI_INPUT_BACK,
 
             GUI_INPUT_12,
 			GUI_INPUT_13,
