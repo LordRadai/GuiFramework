@@ -10,15 +10,15 @@ namespace GuiFramework
         {
             GUI_INPUT_RESTORE,
             GUI_INPUT_MINIMIZE,
-            GUI_INPUT_SELECT,
+            GUI_INPUT_CLOSE,
 
             GUI_INPUT_3,
 			GUI_INPUT_4,
 
-            GUI_INPUT_NAV_UP,
-            GUI_INPUT_NAV_DOWN,
-            GUI_INPUT_DPAD_DOWN,
-            GUI_INPUT_DPAD_UP,
+            GUI_INPUT_5,
+            GUI_INPUT_6,
+            GUI_INPUT_NEXT_CHILD,
+            GUI_INPUT_PREV_CHILD,
             GUI_INPUT_9,
 
             GUI_INPUT_ACCEPT,
@@ -27,15 +27,15 @@ namespace GuiFramework
             GUI_INPUT_12,
 			GUI_INPUT_13,
 
-            GUI_INPUT_DPAD_RIGHT,
-            GUI_INPUT_DPAD_LEFT,
-            GUI_INPUT_DPAD_Y,
+            GUI_INPUT_RIGHT,
+            GUI_INPUT_LEFT,
+            GUI_INPUT_NEXT_SIBLING,
 
             GUI_INPUT_TAB_NEXT,
             GUI_INPUT_TAB_PREV,
 
-            GUI_INPUT_STICK_LEFT,
-            GUI_INPUT_STICK_RIGHT,
+            GUI_INPUT_MOVE,
+            GUI_INPUT_RESIZE,
 
             GUI_INPUT_MAX_ID
         };

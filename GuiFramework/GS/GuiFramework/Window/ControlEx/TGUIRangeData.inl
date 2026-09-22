@@ -58,10 +58,10 @@ namespace GuiFramework
 
 		virtual dl_bool MoveValue(dl_int direction, dl_uint isLargeStep) override
 		{
-			dl_int oldValue = this->m_value;
-			dl_int multiplier = (isLargeStep == 0) ? 1 : 10;
+			T oldValue = this->m_value;
+			dl_float32 multiplier = (isLargeStep == 0) ? 1.f : 10.f;
 
-			dl_int offset = this->m_step * direction * multiplier;
+			T offset = this->m_step * direction * multiplier;
 			this->m_value += offset;
 
 			if (direction < 1)
