@@ -3,7 +3,7 @@
 
 namespace GuiFramework
 {
-	GUISignalDecl*& GUISystem::s_signalOnUpdate = *(GUISignalDecl**)(MODULE_ADDR + 0x1616ec8);
+	GUISignalDecl& GUISystem::s_signalOnUpdate = *(GUISignalDecl*)(MODULE_ADDR + 0x1616ec8);
 
 	typedef void(_fastcall* GUISystem_ctor_t)(GUISystem*);
 

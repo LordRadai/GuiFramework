@@ -3,7 +3,7 @@
 
 namespace GuiFramework
 {
-	GUISignalDecl*& GUIButtonBase::s_signalOnButtonPressed = (*(GuiFramework::GUISignalDecl**)(MODULE_ADDR + 0x1617be0));
+	GUISignalDecl& GUIButtonBase::s_signalOnButtonPressed = (*(GuiFramework::GUISignalDecl*)(MODULE_ADDR + 0x1617be0));
 
 	typedef void(_fastcall* Constructor_t)(const GUIButtonBase*, TGUISharedString<dl_wchar>);
 

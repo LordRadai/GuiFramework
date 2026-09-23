@@ -63,7 +63,7 @@ namespace GuiFramework
 		void EndVirtualInput() { m_pGUIWindowManager->EndVirtualInput(); }
 		void UpdateVirtualInput(GUIVirtualInput& input) { m_pGUIWindowManager->UpdateVirtualInput(input); }
 
-		static GUISignalDecl*& s_signalOnUpdate;
+		static GUISignalDecl& s_signalOnUpdate;
 
 		typedef void(_fastcall* Finalize_t)(GUISystem*);
 		typedef TGUI_RECT<int>(_fastcall* GetMouseInfo_t)(GUISystem*);

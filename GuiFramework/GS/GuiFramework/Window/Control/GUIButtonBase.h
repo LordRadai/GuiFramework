@@ -30,7 +30,7 @@ namespace GuiFramework
 
 		typedef void(_fastcall* OnButtonPressed_t)(ThisClass*);
 
-		static GuiFramework::GUISignalDecl*& s_signalOnButtonPressed;
+		static GuiFramework::GUISignalDecl& s_signalOnButtonPressed;
 	protected:
 		dl_uint m_interactionFlags;
 	};

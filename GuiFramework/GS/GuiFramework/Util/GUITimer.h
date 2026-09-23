@@ -16,7 +16,7 @@ namespace GuiFramework
 		virtual DLRF::DLRuntimeClass* GetRuntimeClassOfThis() const override;
 		virtual ~GUITimer() override;
 
-		static GUISignalDecl*& s_signalOnElapsed;
+		static GUISignalDecl& s_signalOnElapsed;
 	protected:
 		dl_float32 m_fInterval;
 		TGUIObjectPtr<GUISystem> m_pAppGUISystem;
