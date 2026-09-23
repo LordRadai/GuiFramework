@@ -39,6 +39,7 @@ namespace GuiFramework
 		virtual void OnPostUpdate(dl_float32 dt) {}
 
 		GUIWindowManager* GetWindowManager() const { return m_pGUIWindowManager.Get(); }
+		GUIFont* GetSysFont(dl_int idx) const { return m_sysFonts[idx].Get(); }
 
 		dl_bool SetAfterWindow(GUIWindowBase* pWindow, GUIWindowBase* pAfter);
 		dl_int RegisterWindow(GUIWindowBase* pWindow);

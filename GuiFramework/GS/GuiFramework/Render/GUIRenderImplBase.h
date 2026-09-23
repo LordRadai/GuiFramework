@@ -122,6 +122,6 @@ namespace GuiFramework
 	protected:
 		GUI_TEXT_ATTRIBUTE m_textAttribute;
 		dl_int m_iVar20;
-		GUI_VIEWPORT m_viewport;
+		__declspec(align(16)) GUI_VIEWPORT m_viewport;
 	};
 }

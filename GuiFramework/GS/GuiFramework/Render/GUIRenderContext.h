@@ -16,7 +16,7 @@ namespace GuiFramework
 	{
 		typedef GUIRenderContext ThisClass;
 	public:
-		GUIRenderContext(GUIRenderImplBase* pImpl);
+		GUIRenderContext(GUIRenderImplBase& impl);
 		GUIRenderContext(GUIRenderContext& other);
 
 		dl_bool BeginText(const GUIFont& font);

@@ -2,7 +2,7 @@
 
 namespace GuiFramework
 {
-	typedef GUIRenderContext* (_fastcall* Constructor_t)(GUIRenderContext*, GUIRenderImplBase*);
+	typedef GUIRenderContext* (_fastcall* Constructor_t)(GUIRenderContext*, GUIRenderImplBase&);
 	typedef GUIRenderContext* (_fastcall* CopyConstructor_t)(GUIRenderContext*, GUIRenderContext&);
 	typedef dl_bool(_fastcall* BeginText_t)(GUIRenderContext*, const GUIFont&);
 	typedef void(_fastcall* DrawText_t)(GUIRenderContext*, const Rect&, const dl_wchar*);
@@ -27,9 +27,9 @@ namespace GuiFramework
 	typedef void(_fastcall* SetTextVAlign_t)(GUIRenderContext*, dl_uint8);
 	typedef void(_fastcall* SetTextScale_t)(GUIRenderContext*, const DLMT::DL_VECTOR2&);
 
-	GUIRenderContext::GUIRenderContext(GUIRenderImplBase* pImpl)
+	GUIRenderContext::GUIRenderContext(GUIRenderImplBase& impl)
 	{
-		CALL(Constructor_t, 0x55dd00, this, pImpl);
+		CALL(Constructor_t, 0x55dd00, this, impl);
 	}
 
 	GUIRenderContext::GUIRenderContext(GUIRenderContext& other)

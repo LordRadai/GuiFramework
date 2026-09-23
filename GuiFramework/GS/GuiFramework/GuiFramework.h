@@ -1,5 +1,6 @@
 #pragma once
 #include "Render/GUIRenderContext.h"
+#include "Render/GUIRenderImpl.h"
 
 #include "Signal/GUISignal.h"
 #include "Signal/GUISignalDecl.h"
