@@ -13,6 +13,7 @@ namespace GuiFramework
 	typedef void(_fastcall* DrawSprite_GouraudRect_t)(GUIRenderContext*, const GUI_SPRITE_GOURAUD_RECT&, GUI_BLEND, GUITextureBase*, GUI_SHADERTYPE);
 	typedef void(_fastcall* DrawSpriteCube_t)(GUIRenderContext*, const GUI_SPRITE_GOURAUD_RECT&, dl_uint, GUI_BLEND, GUITextureBase*, GUI_SHADERTYPE);
 	typedef void(_fastcall* DrawSpriteCubeAllFace_t)(GUIRenderContext*, const GUI_SPRITE_GOURAUD_RECT&, GUI_BLEND, GUITextureBase*, GUI_SHADERTYPE);
+	typedef void(_fastcall* DrawEdge_t)(GUIRenderContext*, const Rect&, dl_float32, DLMT::DL_COLOR_32, GUI_BLEND, dl_int);
 	typedef void(_fastcall* FillGoraudRect_t)(GUIRenderContext*, const Rect&, const DLMT::DL_COLOR_32*, GUI_BLEND);
 	typedef void(_fastcall* FillRect_t)(GUIRenderContext*, const Rect&, DLMT::DL_COLOR_32, GUI_BLEND);
 	typedef void(_fastcall* FillSoftRect_t)(GUIRenderContext*, const Rect&, DLMT::DL_COLOR_32, GUI_BLEND);
@@ -64,6 +65,17 @@ namespace GuiFramework
 		DrawText(x, y, buffer);
 	}
 
+	void GUIRenderContext::DrawFormatText(const Rect& pos, const dl_wchar* fmt, ...)
+	{
+		dl_wchar buffer[1024];
+		va_list args;
+		va_start(args, fmt);
+		vswprintf(buffer, sizeof(buffer) / sizeof(dl_wchar), fmt, args);
+		va_end(args);
+
+		DrawText(pos, buffer);
+	}
+
 	void GUIRenderContext::EndText()
 	{
 		CALL(EndText_t, 0x561610, this);
@@ -92,6 +104,11 @@ namespace GuiFramework
 	void GUIRenderContext::DrawSpriteCubeAllFace(const GUI_SPRITE_GOURAUD_RECT& spriteRect, GUI_BLEND blendMode, GUITextureBase* pTexture, GUI_SHADERTYPE shaderType)
 	{
 		CALL(DrawSpriteCubeAllFace_t, 0x55f420, this, spriteRect, blendMode, pTexture, shaderType);
+	}
+
+	void GUIRenderContext::DrawEdge(const Rect& rect, dl_float32 thickness, DLMT::DL_COLOR_32 color, GUI_BLEND blendMode, dl_int param_5)
+	{
+		CALL(DrawEdge_t, 0x55f8e0, this, rect, thickness, color, blendMode, param_5);
 	}
 
 	void GUIRenderContext::FillGoraudRect(const Rect& rect, const DLMT::DL_COLOR_32* col, GUI_BLEND blendMode)

@@ -5,6 +5,7 @@ namespace GuiFramework
 {
 	enum GUI_SHADERTYPE
 	{
-
+		SHADER_NONE = -1,
+		SHADER_0,
 	};
 }

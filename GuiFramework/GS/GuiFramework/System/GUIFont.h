@@ -17,6 +17,10 @@ namespace GuiFramework
 		virtual ~GUIFont() override;
 		virtual void OnDelete() override {}
 
+		dl_uint GetFontId() const { return m_fontId; }
+		dl_uint GetHeight() const { return m_height; }
+		dl_uint GetDefaultHeight() const { return m_defaultHeight; }
+
 		void CreateTweaker(TGUISharedString<dl_wchar>& title, GUITweakerDialog* pWnd);
 
 	private:
