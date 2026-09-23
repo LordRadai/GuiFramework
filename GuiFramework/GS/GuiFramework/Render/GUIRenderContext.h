@@ -30,7 +30,7 @@ namespace GuiFramework
 		void DrawSprite(const GUI_SPRITE_GOURAUD_RECT& spriteRect, GUI_BLEND blendMode, GUITextureBase* pTexture, GUI_SHADERTYPE shaderType);
 		void DrawSpriteCube(const GUI_SPRITE_GOURAUD_RECT& spriteRect, dl_uint faceIdx, GUI_BLEND blendMode, GUITextureBase* pTexture, GUI_SHADERTYPE shaderType);
 		void DrawSpriteCubeAllFace(const GUI_SPRITE_GOURAUD_RECT& spriteRect, GUI_BLEND blendMode, GUITextureBase* pTexture, GUI_SHADERTYPE shaderType);
-		void DrawEdge(const Rect& rect, dl_float32 thickness, DLMT::DL_COLOR_32 color, GUI_BLEND blendMode, dl_int param_5);
+		void DrawEdge(const Rect& rect, dl_float32 thickness, DLMT::DL_COLOR_32 color, GUI_BLEND blendMode, dl_int flags);
 		void FillGoraudRect(const Rect& rect, const DLMT::DL_COLOR_32* col, GUI_BLEND blendMode);
 		void FillRect(const Rect& rect, DLMT::DL_COLOR_32 color, GUI_BLEND blendMode);
 		void FillSoftRect(const Rect& rect, DLMT::DL_COLOR_32 color, GUI_BLEND blendMode);

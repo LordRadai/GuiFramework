@@ -106,9 +106,9 @@ namespace GuiFramework
 		CALL(DrawSpriteCubeAllFace_t, 0x55f420, this, spriteRect, blendMode, pTexture, shaderType);
 	}
 
-	void GUIRenderContext::DrawEdge(const Rect& rect, dl_float32 thickness, DLMT::DL_COLOR_32 color, GUI_BLEND blendMode, dl_int param_5)
+	void GUIRenderContext::DrawEdge(const Rect& rect, dl_float32 thickness, DLMT::DL_COLOR_32 color, GUI_BLEND blendMode, dl_int flags)
 	{
-		CALL(DrawEdge_t, 0x55f8e0, this, rect, thickness, color, blendMode, param_5);
+		CALL(DrawEdge_t, 0x55f8e0, this, rect, thickness, color, blendMode, flags);
 	}
 
 	void GUIRenderContext::FillGoraudRect(const Rect& rect, const DLMT::DL_COLOR_32* col, GUI_BLEND blendMode)
