@@ -206,6 +206,11 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="GuiFramework\Render\GUIBlend.h" />
+    <ClInclude Include="GuiFramework\Render\GUIPrimitiveTopology.h" />
+    <ClInclude Include="GuiFramework\Render\GUIShaderType.h" />
+    <ClInclude Include="GuiFramework\Render\GUISprite.h" />
+    <ClInclude Include="GuiFramework\Render\GUIVertex.h" />
     <ClInclude Include="GuiFramework\System\GUICallbackObjectBase.h" />
     <ClInclude Include="GuiFramework\Globals.h" />
     <ClInclude Include="GuiFramework\GuiFramework.h" />
@@ -301,6 +306,7 @@
     <ClInclude Include="GuiFramework\Window\Tweaker\GUITweakerItem.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="GuiFramework\Render\GUIRenderContext.cpp" />
     <ClCompile Include="GuiFramework\Render\GUIRenderImpl.cpp" />
     <ClCompile Include="GuiFramework\Render\GUIRenderImplBase.cpp" />
     <ClCompile Include="GuiFramework\System\GUICallbackObjectBase.cpp" />

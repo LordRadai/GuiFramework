@@ -294,6 +294,21 @@
     <ClInclude Include="GuiFramework\Window\Tweaker\GUITriggerTweaker.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="GuiFramework\Render\GUIVertex.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="GuiFramework\Render\GUIPrimitiveTopology.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="GuiFramework\Render\GUIBlend.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="GuiFramework\Render\GUISprite.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="GuiFramework\Render\GUIShaderType.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="GuiFramework\System\GUIObject.cpp">
@@ -492,6 +507,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="GuiFramework\System\GUICallbackObjectBase.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="GuiFramework\Render\GUIRenderContext.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
