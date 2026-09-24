@@ -58,28 +58,20 @@ namespace GuiFramework
 
 		virtual dl_bool MoveValue(dl_int direction, dl_uint isLargeStep) override
 		{
-			T oldValue = this->m_value;
-			dl_float32 multiplier = (isLargeStep == 0) ? 1.f : 10.f;
+			const T oldValue = this->m_value;
+			const dl_float32 multiplier = (isLargeStep == 0) ? 1.0 : 10.0;
 
-			dl_float32 offset = this->m_step * direction * multiplier;
-			this->m_value += offset;
+			dl_float32 newValue = static_cast<dl_float32>(this->m_value)
+				+ static_cast<dl_float32>(this->m_step) * direction * multiplier;
 
-			if (direction < 1)
-			{
-				if (oldValue < this->m_value)
-					this->m_value = this->m_min;
-			}
-			else if (this->m_value < oldValue)
-			{
-				this->m_value = this->m_max;
-			}
+			if (newValue < static_cast<dl_float32>(this->m_min))
+				newValue = static_cast<dl_float32>(this->m_min);
+			else if (newValue > static_cast<dl_float32>(this->m_max))
+				newValue = static_cast<dl_float32>(this->m_max);
 
-			if (this->m_value < this->m_min)
-				this->m_value = this->m_min;
-			else if (this->m_value > this->m_max)
-				this->m_value = this->m_max;
+			this->m_value = static_cast<T>(newValue);
 
-			return (oldValue != this->m_value);
+			return oldValue != this->m_value;
 		}
 
 		virtual void ResetToOriginal() override
