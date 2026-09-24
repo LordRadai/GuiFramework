@@ -19,13 +19,6 @@ namespace GuiFramework
 
 	void GUIVirtualInput::PushInput(const VirtualInput& input)
 	{
-		auto& inputs = this->m_inputs;
-
-		auto it = std::lower_bound(inputs.begin(), inputs.end(), input,
-			[](const _GUI_VIRTUAL_INPUT& a, const _GUI_VIRTUAL_INPUT& b) {
-				return a.InputID < b.InputID;
-			});
-
-		inputs.insert(it, input);
+		m_inputs.push_back(input);
 	}
 }
