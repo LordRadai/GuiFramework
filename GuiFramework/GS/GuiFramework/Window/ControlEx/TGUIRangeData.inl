@@ -61,7 +61,7 @@ namespace GuiFramework
 			T oldValue = this->m_value;
 			dl_float32 multiplier = (isLargeStep == 0) ? 1.f : 10.f;
 
-			T offset = this->m_step * direction * multiplier;
+			dl_float32 offset = this->m_step * direction * multiplier;
 			this->m_value += offset;
 
 			if (direction < 1)
