@@ -9,6 +9,7 @@ namespace GuiFramework
 	
 	typedef void(_fastcall* CreateEasy_t)(GUIEditBox*, GUIWindowBase*, TGUISharedString<dl_wchar>, dl_uint, dl_uint);
 	typedef dl_uint(_fastcall* SetEditText_t)(GUIEditBox*, const dl_wchar*, dl_uint);
+	typedef dl_uint(_fastcall* GetEditText_t)(const GUIEditBox*, std::wstring&);
 
 	GUIEditBox::GUIEditBox(TGUISharedString<dl_wchar> label)
 	{
@@ -118,5 +119,10 @@ namespace GuiFramework
 	dl_uint GUIEditBox::SetEditText(const dl_wchar* text, dl_uint numLines)
 	{
 		return CALL(SetEditText_t, 0x532c70, this, text, numLines);
+	}
+
+	dl_uint GUIEditBox::GetEditText(std::wstring& out) const
+	{
+		return CALL(GetEditText_t, 0x532c30, this, out);
 	}
 }

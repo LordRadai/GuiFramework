@@ -43,6 +43,7 @@ namespace GuiFramework
 
 		void CreateEasy(GUIWindowBase* pParent, TGUISharedString<dl_wchar> label, dl_uint numLines, dl_uint flags);
 		dl_uint SetEditText(const dl_wchar* text, dl_uint numLines);
+		dl_uint GetEditText(std::wstring& out) const;
 	protected:
 		TGUIObjectPtr<GUITextEditorUtil> m_pTextEditorUtil;
 		dl_pointer m_pVar118;
