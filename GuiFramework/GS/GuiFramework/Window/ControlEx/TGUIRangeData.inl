@@ -131,7 +131,7 @@ namespace GuiFramework
 			dl_float64 valueInterval = static_cast<dl_float64>(this->m_max) - static_cast<dl_float64>(this->m_min);
 			dl_float64 numSteps = (this->m_step > 0) ? std::ceil(valueInterval / static_cast<dl_float64>(this->m_step)) : 0;
 
-			dl_float64 result;
+			dl_float64 result = 0.f;
 			/*
 			if (numSteps < 65535.0)
 				result = (static_cast<dl_float64>(sliderPos) * static_cast<dl_float64>(this->m_step)) + static_cast<dl_float64>(this->m_min);
@@ -147,7 +147,6 @@ namespace GuiFramework
 
 		dl_uint _ValueToSlider(dl_int sliderPos) const
 		{
-			dl_uint sliderValue;
 			dl_int min, max;
 			_GetSliderRange(min, max);
 
@@ -157,6 +156,8 @@ namespace GuiFramework
 			else
 				sliderValue = static_cast<dl_uint>((static_cast<dl_float64>(this->m_value - this->m_min) / static_cast<dl_float64>(this->m_step)));
 			*/
+
+			dl_uint sliderValue = static_cast<dl_uint>((static_cast<dl_float64>(this->m_value - this->m_min) / static_cast<dl_float64>(this->m_step)));
 
 			return sliderValue;
 		}
