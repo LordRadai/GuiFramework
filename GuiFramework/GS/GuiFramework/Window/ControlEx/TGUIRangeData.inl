@@ -131,7 +131,7 @@ namespace GuiFramework
 			dl_float64 valueInterval = static_cast<dl_float64>(this->m_max) - static_cast<dl_float64>(this->m_min);
 			dl_float64 numSteps = (this->m_step > 0) ? std::ceil(valueInterval / static_cast<dl_float64>(this->m_step)) : 0;
 
-			dl_float64 result = (static_cast<dl_float64>(sliderPos) * valueInterval) + static_cast<dl_float64>(this->m_min);
+			dl_float64 result = (static_cast<dl_float64>(sliderPos) * static_cast<dl_float64>(this->m_step)) + static_cast<dl_float64>(this->m_min);
 
 			/*
 			if (numSteps < 65535.0)
