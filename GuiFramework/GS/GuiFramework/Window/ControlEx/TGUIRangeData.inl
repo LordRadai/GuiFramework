@@ -123,7 +123,7 @@ namespace GuiFramework
 			else
 				max = static_cast<dl_int>((this->m_max - this->m_min + this->m_step - 1) / this->m_step);
 
-			if (max > 65535) max = 65535;
+			//if (max > 65535) max = 65535;
 		}
 
 		T _SliderToValue(dl_int sliderPos) const
@@ -132,10 +132,12 @@ namespace GuiFramework
 			dl_float64 numSteps = (this->m_step > 0) ? std::ceil(valueInterval / static_cast<dl_float64>(this->m_step)) : 0;
 
 			dl_float64 result;
+			/*
 			if (numSteps < 65535.0)
 				result = (static_cast<dl_float64>(sliderPos) * static_cast<dl_float64>(this->m_step)) + static_cast<dl_float64>(this->m_min);
 			else
 				result = (static_cast<dl_float64>(sliderPos) * valueInterval) / 65535.0 + static_cast<dl_float64>(this->m_min);
+			*/
 
 			if (result < static_cast<dl_float64>(this->m_min)) return this->m_min;
 			if (result > static_cast<dl_float64>(this->m_max)) return this->m_max;
@@ -149,10 +151,12 @@ namespace GuiFramework
 			dl_int min, max;
 			_GetSliderRange(min, max);
 
+			/*
 			if (max > 65535)
 				sliderValue = static_cast<dl_uint>(((static_cast<dl_float64>(this->m_value) - static_cast<dl_float64>(this->m_min)) * static_cast<T>(65535)) / (static_cast<dl_float64>(this->m_max) - static_cast<dl_float64>(this->m_min)));
 			else
 				sliderValue = static_cast<dl_uint>((static_cast<dl_float64>(this->m_value - this->m_min) / static_cast<dl_float64>(this->m_step)));
+			*/
 
 			return sliderValue;
 		}
