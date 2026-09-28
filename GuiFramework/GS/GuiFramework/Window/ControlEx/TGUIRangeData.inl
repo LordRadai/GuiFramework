@@ -79,7 +79,7 @@ namespace GuiFramework
 			this->m_value = this->m_original;
 		}
 
-		virtual void GetSliderRange(dl_int& min, dl_int& max) const override
+		virtual void GetSliderRange(dl_float32& min, dl_float32& max) const override
 		{
 			_GetSliderRange(min, max);
 		}
@@ -115,15 +115,15 @@ namespace GuiFramework
 		T GetStep() const { return this->m_step; }
 		dl_float32 GetMult() const { return this->m_mult; }
 	private:
-		void _GetSliderRange(dl_int& min, dl_int& max, ...) const
+		void _GetSliderRange(dl_float32& min, dl_float32& max, ...) const
 		{
 			min = 0;
 			if (std::is_floating_point<T>::value)
-				max = static_cast<dl_int>(std::ceil((this->m_max - this->m_min) / this->m_step));
+				max = static_cast<dl_float32>(std::ceil((this->m_max - this->m_min) / this->m_step));
 			else
-				max = static_cast<dl_int>((this->m_max - this->m_min + this->m_step - 1) / this->m_step);
+				max = static_cast<dl_float32>((this->m_max - this->m_min + this->m_step - 1) / this->m_step);
 
-			if (max > 65535) max = 65535;
+			if (max > 65535.f) max = 65535.f;
 		}
 
 		T _SliderToValue(dl_int sliderPos) const
@@ -146,10 +146,10 @@ namespace GuiFramework
 		dl_uint _ValueToSlider(dl_int sliderPos) const
 		{
 			dl_uint sliderValue;
-			dl_int min, max;
+			dl_float32 min, max;
 			_GetSliderRange(min, max);
 
-			if (max > 65535)
+			if (max > 65535.f)
 				sliderValue = static_cast<dl_uint>(((static_cast<dl_float64>(this->m_value) - static_cast<dl_float64>(this->m_min)) * static_cast<T>(65535)) / (static_cast<dl_float64>(this->m_max) - static_cast<dl_float64>(this->m_min)));
 			else
 				sliderValue = static_cast<dl_uint>((static_cast<dl_float64>(this->m_value - this->m_min) / static_cast<dl_float64>(this->m_step)));
