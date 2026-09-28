@@ -76,7 +76,7 @@ namespace GuiFramework
 		}
 		
 		template<typename T>
-		TGUIProxyOnOffTweaker<TGUIBitFieldProxy<T>>* CreateProxyOnOffTweaker(TGUISharedString<dl_wchar> label, T* v, dl_uint32 bitIndex, dl_uint32 bitOffset)
+		TGUIProxyOnOffTweaker<TGUIBitFieldProxy<T>>* CreateProxyOnOffTweaker(TGUISharedString<dl_wchar> label, T* v, dl_uint32 bitOffset, dl_uint32 bitSize = 1)
 		{
 			GUITweakerGroup* pGroup = GetCurrentGroup();
 
@@ -85,7 +85,7 @@ namespace GuiFramework
 			if (pGroup == nullptr)
 				return nullptr;
 
-			return pGroup->CreateProxyOnOffTweaker(label, v, bitIndex, bitOffset);
+			return pGroup->CreateProxyOnOffTweaker(label, v, bitOffset, bitSize);
 		}
 
 		template<typename T>

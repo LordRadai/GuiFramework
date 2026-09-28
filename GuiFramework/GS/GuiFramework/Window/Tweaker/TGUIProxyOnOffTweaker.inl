@@ -15,9 +15,9 @@ namespace GuiFramework
         typedef TGUIProxyOnOffTweaker<TGUIBitFieldProxy<T>> ThisClass;
         typedef GUIOnOffTweaker SuperClass;
     public:
-		TGUIProxyOnOffTweaker(GUIWidget* pParent, TGUISharedString<dl_wchar> label, T* pValue, dl_uint32 bitIndex, dl_uint32 bitOffset) :
+		TGUIProxyOnOffTweaker(GUIWidget* pParent, TGUISharedString<dl_wchar> label, T* pValue, dl_uint32 bitOffset, dl_uint32 bitSize = 1) :
 			GUIOnOffTweaker(pParent, label),
-			m_proxy(pValue, bitOffset, bitIndex),
+			m_proxy(pValue, bitOffset, bitSize),
 			m_valueOld(0)
 		{
 			if (pValue != nullptr)
