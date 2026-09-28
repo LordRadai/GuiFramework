@@ -142,8 +142,7 @@ namespace GuiFramework
 			else
 				result = (static_cast<dl_float64>(sliderPos) * valueInterval) / 65535.0 + static_cast<dl_float64>(this->m_min);
 
-			if (result < static_cast<dl_float64>(this->m_min)) return this->m_min;
-			if (result > static_cast<dl_float64>(this->m_max)) return this->m_max;
+			DLMT::DLClamp(result, static_cast<dl_float64>(this->m_min), static_cast<dl_float64>(this->m_max));
 
 			return static_cast<T>(result);
 		}
@@ -160,7 +159,7 @@ namespace GuiFramework
 			const T pos = static_cast<T>(((static_cast<dl_float64>(this->m_value) - static_cast<dl_float64>(this->m_min))
 				/ static_cast<dl_float64>(this->m_max - this->m_min)) * 65535.0);
 
-			return static_cast<dl_int>(std::clamp(pos, static_cast<T>(0), static_cast<T>(65535)));
+			return static_cast<dl_int>(DLMT::DLClamp(pos, static_cast<T>(0), static_cast<T>(65535)));
 		}
 
 		T m_max;
