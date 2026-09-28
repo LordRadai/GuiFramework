@@ -118,7 +118,7 @@ namespace GuiFramework
 		void _GetSliderRange(dl_int& min, dl_int& max, ...) const
 		{
 			min = 0;
-			if constexpr (std::is_floating_point<T>::value)
+			if (std::is_floating_point<T>::value)
 			{
 				const dl_float64 steps = std::ceil((static_cast<dl_float64>(this->m_max) - static_cast<dl_float64>(this->m_min))
 					/ static_cast<dl_float64>(this->m_step));
