@@ -17,6 +17,7 @@ namespace GuiFramework
 			TGUIRangeData<T>* pRangeData = new TGUIRangeData<T>(*pValue, min, max, step, mult);
 			this->m_pRangeData = pRangeData;
 			Create(pParent, label);
+			this->m_pWidget->Reflesh();
 		}
 
 		virtual ~TGUIRangeTweaker() override
