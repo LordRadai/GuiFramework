@@ -88,7 +88,7 @@ namespace GuiFramework
 			return pTweaker;
 		}
 
-		template<typename T, typename Formatter = GUIPropertyFormatter>
+		template<typename T, typename Formatter>
 		TGUIPropertyLabel<T, Formatter>* CreatePropertyLabel(TGUISharedString<dl_wchar> label, T* v)
 		{
 			TGUIPropertyLabel<T, Formatter>* pLabel = new TGUIPropertyLabel<T, Formatter>(this, label, v, 1);

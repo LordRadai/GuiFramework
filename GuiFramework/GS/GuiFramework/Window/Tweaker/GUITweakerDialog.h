@@ -88,7 +88,7 @@ namespace GuiFramework
 			return pGroup->CreateProxyOnOffTweaker(label, v, bitOffset, bitSize);
 		}
 
-		template<typename T, typename Formatter = GUIPropertyFormatter>
+		template<typename T, typename Formatter>
 		TGUIPropertyLabel<T, Formatter>* CreatePropertyLabel(TGUISharedString<dl_wchar> label, T* v)
 		{
 			GUITweakerGroup* pGroup = GetCurrentGroup();
