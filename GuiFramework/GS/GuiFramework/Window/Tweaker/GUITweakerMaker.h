@@ -81,8 +81,8 @@ namespace GuiFramework
 			return pGroup->CreateProxyOnOffTweaker(label, v, bitOffset, bitSize);
 		}
 
-		template<typename T>
-		TGUIPropertyLabel<T>* CreatePropertyLabel(TGUISharedString<dl_wchar> label, T* v)
+		template<typename T, typename Formatter = GUIPropertyFormatter>
+		TGUIPropertyLabel<T, Formatter>* CreatePropertyLabel(TGUISharedString<dl_wchar> label, T* v)
 		{
 			DL_ASSERT(!this->m_groups.empty(), L"There are no tweaker groups on the stack");
 
@@ -91,7 +91,7 @@ namespace GuiFramework
 			if (pGroup == nullptr)
 				return nullptr;
 
-			return pGroup->CreatePropertyLabel<T>(label, v);
+			return pGroup->CreatePropertyLabel<T, Formatter>(label, v);
 		}
 
 		template<typename T>
