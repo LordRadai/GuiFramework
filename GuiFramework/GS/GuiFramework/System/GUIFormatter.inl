@@ -5,6 +5,11 @@ namespace GuiFramework
 {
 	struct GUIPropertyFormatter
 	{
+		static void Format(DLTX::DLString& str, dl_bool value)
+		{
+			DLTX::DLFormat<dl_wchar>::Format(str, L"%d", value);
+		}
+
 		static void Format(DLTX::DLString& str, dl_int8 value)
 		{
 			DLTX::DLFormat<dl_wchar>::Format(str, L"%d", value);
