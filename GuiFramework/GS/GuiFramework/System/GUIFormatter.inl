@@ -60,12 +60,37 @@ namespace GuiFramework
 			DLTX::DLFormat<dl_wchar>::Format(str, L"%.3f , %.3f", value.x, value.y);
 		}
 
+		static void Format(DLTX::DLString& str, const DLMT::DL_VECTOR2AL& value)
+		{
+			DLTX::DLFormat<dl_wchar>::Format(str, L"%.3f , %.3f", value.x, value.y);
+		}
+
 		static void Format(DLTX::DLString& str, const DLMT::DL_VECTOR3& value)
 		{
 			DLTX::DLFormat<dl_wchar>::Format(str, L"%.3f , %.3f , %.3f", value.x, value.y, value.z);
 		}
 
+		static void Format(DLTX::DLString& str, const DLMT::DL_VECTOR3AL& value)
+		{
+			DLTX::DLFormat<dl_wchar>::Format(str, L"%.3f , %.3f , %.3f", value.x, value.y, value.z);
+		}
+
 		static void Format(DLTX::DLString& str, const DLMT::DL_VECTOR4& value)
+		{
+			DLTX::DLFormat<dl_wchar>::Format(str, L"%.3f , %.3f , %.3f , %.3f", value.x, value.y, value.z, value.w);
+		}
+
+		static void Format(DLTX::DLString& str, const DLMT::DL_VECTOR4AL& value)
+		{
+			DLTX::DLFormat<dl_wchar>::Format(str, L"%.3f , %.3f , %.3f , %.3f", value.x, value.y, value.z, value.w);
+		}
+
+		static void Format(DLTX::DLString& str, const DLMT::DL_QUATERNION& value)
+		{
+			DLTX::DLFormat<dl_wchar>::Format(str, L"%.3f , %.3f , %.3f , %.3f", value.x, value.y, value.z, value.w);
+		}
+
+		static void Format(DLTX::DLString& str, const DLMT::DL_QUATERNIONAL& value)
 		{
 			DLTX::DLFormat<dl_wchar>::Format(str, L"%.3f , %.3f , %.3f , %.3f", value.x, value.y, value.z, value.w);
 		}
