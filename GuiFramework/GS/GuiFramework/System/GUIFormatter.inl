@@ -5,12 +5,52 @@ namespace GuiFramework
 {
 	struct GUIPropertyFormatter
 	{
+		static void Format(DLTX::DLString& str, dl_int8 value)
+		{
+			DLTX::DLFormat<dl_wchar>::Format(str, L"%d", value);
+		}
+
+		static void Format(DLTX::DLString& str, dl_uint8 value)
+		{
+			DLTX::DLFormat<dl_wchar>::Format(str, L"%d", value);
+		}
+
+		static void Format(DLTX::DLString& str, dl_int16 value)
+		{
+			DLTX::DLFormat<dl_wchar>::Format(str, L"%d", value);
+		}
+
+		static void Format(DLTX::DLString& str, dl_uint16 value)
+		{
+			DLTX::DLFormat<dl_wchar>::Format(str, L"%d", value);
+		}
+
 		static void Format(DLTX::DLString& str, dl_int value)
 		{
 			DLTX::DLFormat<dl_wchar>::Format(str, L"%d", value);
 		}
 
+		static void Format(DLTX::DLString& str, dl_uint value)
+		{
+			DLTX::DLFormat<dl_wchar>::Format(str, L"%d", value);
+		}
+
+		static void Format(DLTX::DLString& str, dl_int64 value)
+		{
+			DLTX::DLFormat<dl_wchar>::Format(str, L"%d", value);
+		}
+
+		static void Format(DLTX::DLString& str, dl_uint64 value)
+		{
+			DLTX::DLFormat<dl_wchar>::Format(str, L"%d", value);
+		}
+
 		static void Format(DLTX::DLString& str, dl_float32 value)
+		{
+			DLTX::DLFormat<dl_wchar>::Format(str, L"%.3f", value);
+		}
+
+		static void Format(DLTX::DLString& str, dl_float64 value)
 		{
 			DLTX::DLFormat<dl_wchar>::Format(str, L"%.3f", value);
 		}
