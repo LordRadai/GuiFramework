@@ -99,6 +99,16 @@ namespace GuiFramework
 		{
 			DLTX::DLFormat<dl_wchar>::Format(str, L"%.3f , %.3f , %.3f , %.3f", value.x, value.y, value.z, value.w);
 		}
+
+		static void Format(DLTX::DLString& str, const dl_char* value)
+		{
+			DLTX::DLFormat<dl_wchar>::Format(str, L"%hs", value);
+		}
+
+		static void Format(DLTX::DLString& str, const dl_wchar* value)
+		{
+			DLTX::DLFormat<dl_wchar>::Format(str, L"%s", value);
+		}
 	};
 
 	struct GUIBoolFormatter
