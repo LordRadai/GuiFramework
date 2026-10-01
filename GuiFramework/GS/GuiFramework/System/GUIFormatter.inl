@@ -1,5 +1,6 @@
 #pragma once
 #include <dantelion2.h>
+#include "GuiFramework/System/TGUIValueStringPair.inl"
 
 namespace GuiFramework
 {
@@ -141,6 +142,19 @@ namespace GuiFramework
 				DLTX::DLFormat<dl_wchar>::Format(str, L"O");
 			else
 				DLTX::DLFormat<dl_wchar>::Format(str, L"X");
+		}
+	};
+
+	template<typename T>
+	struct TGUIValueToStringFormatter
+	{
+		TGUIValueStringPairData<T> m_valueStringPairData;
+
+		TGUIValueToStringFormatter(const TGUIValueStringPairData<T>& valueStringPairData) : m_valueStringPairData(valueStringPairData) {}
+
+		static void Format(DLTX::DLString& str, T value)
+		{
+			DLTX::DLFormat<dl_wchar>::Format(str, L"%s", m_valueStringPairData.GetStringByValue(value));
 		}
 	};
 }

@@ -42,5 +42,6 @@ namespace GuiFramework
 
 	private:
 		T* m_value;
+		Formatter m_formatter;
 	};
 }
