@@ -138,9 +138,9 @@ namespace GuiFramework
 		static void Format(DLTX::DLString& str, dl_bool value)
 		{
 			if (value)
-				DLTX::DLFormat<dl_wchar>::Format(str, L"○");
+				DLTX::DLFormat<dl_wchar>::Format(str, L"o");
 			else
-				DLTX::DLFormat<dl_wchar>::Format(str, L"×");
+				DLTX::DLFormat<dl_wchar>::Format(str, L"x");
 		}
 	};
 }
