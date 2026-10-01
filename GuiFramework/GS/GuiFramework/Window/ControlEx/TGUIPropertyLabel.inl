@@ -1,6 +1,6 @@
 #pragma once
 #include "GuiFramework/Window/Control/GUIPropertyLabel.h"
-#include "GuiFramework/System/GUIFormatter.h"
+#include "GuiFramework/System/GUIFormatter.inl"
 
 namespace GuiFramework
 {
@@ -42,6 +42,5 @@ namespace GuiFramework
 
 	private:
 		T* m_value;
-		Formatter m_formatter;
 	};
 }

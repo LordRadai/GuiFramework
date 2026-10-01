@@ -227,7 +227,7 @@
     <ClInclude Include="GuiFramework\Signal\GUISignalManager.h" />
     <ClInclude Include="GuiFramework\System\GUIBitsetProxy.inl" />
     <ClInclude Include="GuiFramework\System\GUIFont.h" />
-    <ClInclude Include="GuiFramework\System\GUIFormatter.h" />
+    <ClInclude Include="GuiFramework\System\GUIFormatter.inl" />
     <ClInclude Include="GuiFramework\System\GUIInvoker.h" />
     <ClInclude Include="GuiFramework\System\GUIMouseEvent.h" />
     <ClInclude Include="GuiFramework\System\GUISystem.h" />
@@ -316,7 +316,6 @@
     <ClCompile Include="GuiFramework\Render\GUIRenderImplBase.cpp" />
     <ClCompile Include="GuiFramework\System\GUICallbackObjectBase.cpp" />
     <ClCompile Include="GuiFramework\System\GUIFont.cpp" />
-    <ClCompile Include="GuiFramework\System\GUIFormatter.cpp" />
     <ClCompile Include="GuiFramework\System\GUIMsgReceiver.cpp" />
     <ClCompile Include="GuiFramework\System\GUIObject.cpp" />
     <ClCompile Include="GuiFramework\System\GUISystem.cpp" />

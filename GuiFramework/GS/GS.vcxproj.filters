@@ -276,7 +276,7 @@
     <ClInclude Include="GuiFramework\System\GUIBitsetProxy.inl">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="GuiFramework\System\GUIFormatter.h">
+    <ClInclude Include="GuiFramework\System\GUIFormatter.inl">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="GuiFramework\Window\Tweaker\GUIRangeTweakWidget.h">
@@ -501,9 +501,6 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="GuiFramework\Window\Tweaker\GUITriggerTweaker.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="GuiFramework\System\GUIFormatter.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="GuiFramework\System\GUICallbackObjectBase.cpp">

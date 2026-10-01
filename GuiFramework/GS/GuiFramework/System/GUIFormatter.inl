@@ -3,7 +3,7 @@
 
 namespace GuiFramework
 {
-	static struct GUIPropertyFormatter
+	struct GUIPropertyFormatter
 	{
 		static void Format(DLTX::DLString& str, dl_int value)
 		{
@@ -17,21 +17,21 @@ namespace GuiFramework
 
 		static void Format(DLTX::DLString& str, const DLMT::DL_VECTOR2& value)
 		{
-			DLTX::DLFormat<dl_wchar>::Format(str, L"%.3f, %.3f", value.x, value.y);
+			DLTX::DLFormat<dl_wchar>::Format(str, L"%.3f , %.3f", value.x, value.y);
 		}
 
 		static void Format(DLTX::DLString& str, const DLMT::DL_VECTOR3& value)
 		{
-			DLTX::DLFormat<dl_wchar>::Format(str, L"%.3f, %.3f, %.3f", value.x, value.y, value.z);
+			DLTX::DLFormat<dl_wchar>::Format(str, L"%.3f , %.3f , %.3f", value.x, value.y, value.z);
 		}
 
 		static void Format(DLTX::DLString& str, const DLMT::DL_VECTOR4& value)
 		{
-			DLTX::DLFormat<dl_wchar>::Format(str, L"%.3f, %.3f, %.3f, %.3f", value.x, value.y, value.z, value.w);
+			DLTX::DLFormat<dl_wchar>::Format(str, L"%.3f , %.3f , %.3f , %.3f", value.x, value.y, value.z, value.w);
 		}
 	};
 
-	static struct GUIBoolFormatter
+	struct GUIBoolFormatter
 	{
 		static void Format(DLTX::DLString& str, dl_bool value)
 		{
