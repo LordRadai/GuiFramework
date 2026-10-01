@@ -35,7 +35,7 @@ namespace GuiFramework
 
 		virtual dl_bool GetValueString(DLTX::DLString& str) const override
 		{
-			DLTX::DLFormat<dl_wchar>::Format(str, Formatter::IntegerFormatString, *m_value);
+			Formatter::Format(str, *m_value);
 
 			return true;
 		}
@@ -44,60 +44,4 @@ namespace GuiFramework
 		T* m_value;
 		Formatter m_formatter;
 	};
-
-	template<>
-	inline dl_bool TGUIPropertyLabel<dl_bool, GUIBoolFormatter>::GetValueString(DLTX::DLString& str) const
-	{
-		str = (*m_value) ? GUIBoolFormatter::TrueString : GUIBoolFormatter::FalseString;
-		return true;
-	}
-
-	template<>
-	inline dl_bool TGUIPropertyLabel<dl_float32, GUIPropertyFormatter>::GetValueString(DLTX::DLString& str) const
-	{
-		DLTX::DLFormat<dl_wchar>::Format(str, GUIPropertyFormatter::FloatFormatString, *m_value);
-		return true;
-	}
-
-	template<>
-	inline dl_bool TGUIPropertyLabel<DLMT::DL_VECTOR2, GUIPropertyFormatter>::GetValueString(DLTX::DLString& str) const
-	{
-		DLTX::DLFormat<dl_wchar>::Format(str, GUIPropertyFormatter::Vector2FormatString, m_value->x, m_value->y);
-		return true;
-	}
-
-	template<>
-	inline dl_bool TGUIPropertyLabel<DLMT::DL_VECTOR2AL, GUIPropertyFormatter>::GetValueString(DLTX::DLString& str) const
-	{
-		DLTX::DLFormat<dl_wchar>::Format(str, GUIPropertyFormatter::Vector2FormatString, m_value->x, m_value->y);
-		return true;
-	}
-
-	template<>
-	inline dl_bool TGUIPropertyLabel<DLMT::DL_VECTOR3, GUIPropertyFormatter>::GetValueString(DLTX::DLString& str) const
-	{
-		DLTX::DLFormat<dl_wchar>::Format(str, GUIPropertyFormatter::Vector3FormatString, m_value->x, m_value->y, m_value->z);
-		return true;
-	}
-
-	template<>
-	inline dl_bool TGUIPropertyLabel<DLMT::DL_VECTOR3AL, GUIPropertyFormatter>::GetValueString(DLTX::DLString& str) const
-	{
-		DLTX::DLFormat<dl_wchar>::Format(str, GUIPropertyFormatter::Vector3FormatString, m_value->x, m_value->y, m_value->z);
-		return true;
-	}
-
-	template<>
-	inline dl_bool TGUIPropertyLabel<DLMT::DL_VECTOR4, GUIPropertyFormatter>::GetValueString(DLTX::DLString& str) const
-	{
-		DLTX::DLFormat<dl_wchar>::Format(str, GUIPropertyFormatter::Vector4FormatString, m_value->x, m_value->y, m_value->z, m_value->w);
-		return true;
-	}
-
-	template<>
-	inline dl_bool TGUIPropertyLabel<DLMT::DL_VECTOR4AL, GUIPropertyFormatter>::GetValueString(DLTX::DLString& str) const
-	{
-		DLTX::DLFormat<dl_wchar>::Format(str, GUIPropertyFormatter::Vector4FormatString, m_value->x, m_value->y, m_value->z, m_value->w);
-		return true;
-	}
 }

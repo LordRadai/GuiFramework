@@ -5,18 +5,45 @@ namespace GuiFramework
 {
 	static struct GUIPropertyFormatter
 	{
-		static const dl_wchar* IntegerFormatString;
-		static const dl_wchar* UnsignedIntegerFormatString;
-		static const dl_wchar* HexFormatString;
-		static const dl_wchar* FloatFormatString;
-		static const dl_wchar* Vector2FormatString;
-		static const dl_wchar* Vector3FormatString;
-		static const dl_wchar* Vector4FormatString;
+		static void Format(DLTX::DLString& str, dl_int value)
+		{
+			DLTX::DLFormat<dl_wchar>::Format(str, L"%d", value);
+		}
+
+		static void Format(DLTX::DLString& str, dl_float32 value)
+		{
+			DLTX::DLFormat<dl_wchar>::Format(str, L"%.3f", value);
+		}
+
+		static void Format(DLTX::DLString& str, const DLMT::DL_VECTOR2& value)
+		{
+			DLTX::DLFormat<dl_wchar>::Format(str, L"%.3f, %.3f", value.x, value.y);
+		}
+
+		static void Format(DLTX::DLString& str, const DLMT::DL_VECTOR3& value)
+		{
+			DLTX::DLFormat<dl_wchar>::Format(str, L"%.3f, %.3f, %.3f", value.x, value.y, value.z);
+		}
+
+		static void Format(DLTX::DLString& str, const DLMT::DL_VECTOR4& value)
+		{
+			DLTX::DLFormat<dl_wchar>::Format(str, L"%.3f, %.3f, %.3f, %.3f", value.x, value.y, value.z, value.w);
+		}
 	};
 
 	static struct GUIBoolFormatter
 	{
-		static const dl_wchar* TrueString;
-		static const dl_wchar* FalseString;
+		static void Format(DLTX::DLString& str, dl_bool value)
+		{
+			str = value ? L"TRUE" : L"FALSE";
+		}
+	};
+
+	static struct GUICircleCrossFormatter
+	{
+		static void Format(DLTX::DLString& str, dl_bool value)
+		{
+			str = value ? L"○" : L"×";
+		}
 	};
 }
