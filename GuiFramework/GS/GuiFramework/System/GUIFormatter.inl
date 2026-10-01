@@ -35,15 +35,32 @@ namespace GuiFramework
 	{
 		static void Format(DLTX::DLString& str, dl_bool value)
 		{
-			str = value ? L"TRUE" : L"FALSE";
+			if (value)
+				DLTX::DLFormat<dl_wchar>::Format(str, L"TRUE");
+			else
+				DLTX::DLFormat<dl_wchar>::Format(str, L"FALSE");
 		}
 	};
 
-	static struct GUICircleCrossFormatter
+	struct GUIYesNoFormatter
 	{
 		static void Format(DLTX::DLString& str, dl_bool value)
 		{
-			str = value ? L"○" : L"×";
+			if (value)
+				DLTX::DLFormat<dl_wchar>::Format(str, L"Yes");
+			else
+				DLTX::DLFormat<dl_wchar>::Format(str, L"No");
+		}
+	};
+
+	struct GUICircleCrossFormatter
+	{
+		static void Format(DLTX::DLString& str, dl_bool value)
+		{
+			if (value)
+				DLTX::DLFormat<dl_wchar>::Format(str, L"○");
+			else
+				DLTX::DLFormat<dl_wchar>::Format(str, L"×");
 		}
 	};
 }
