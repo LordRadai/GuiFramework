@@ -12,7 +12,7 @@ namespace GuiFramework
 		typedef GUIRangeTweaker SuperClass;
 	public:
 		TGUIRangeTweaker(GUIWindowBase* pParent, TGUISharedString<dl_wchar> label, T* pValue, T min, T max, T step, dl_float32 mult = 1.f) : SuperClass()
-			, m_pValue(pValue)
+			, m_pValue(pValue), m_valueOld(*pValue)
 		{
 			TGUIRangeData<T>* pRangeData = new TGUIRangeData<T>(*pValue, min, max, step, mult);
 			this->m_pRangeData = pRangeData;

@@ -9,8 +9,13 @@ namespace GuiFramework
 		typedef TGUIRangeData<T> ThisClass;
 		typedef GUIRangeDataBase SuperClass;
 	public:
-		TGUIRangeData(T value, T min, T max, T step, dl_float32 mult = 1.f) : m_value(value), m_min(min), m_max(max), m_step(step), m_original(value), m_mult(mult)
+		TGUIRangeData(T value, T min, T max, T step, dl_float32 mult = 1.f) : m_value(DLMT::DLClamp(value, min, max)), m_min(min), m_max(max), m_step(step), m_original(DLMT::DLClamp(value, min, max)), m_mult(mult)
 		{
+			if (m_step < 0)
+				DL_PANIC("TGUIRangeData m_step value must be positive. Please change the program.");
+
+			if (m_mult == 0.f)
+				DL_PANIC("TGUIRangeData m_mult value must not be zero. Please change the program.");
 		}
 
 		virtual ~TGUIRangeData() override
@@ -22,16 +27,15 @@ namespace GuiFramework
 		{
 			try
 			{
-				T oldValue = this->m_value;
-				T newValue = static_cast<T>(std::stoll(str));
+				const T oldValue = this->m_value;
 
-				if (newValue < this->m_min)
-					newValue = this->m_min;
+				dl_float64 newValue = std::stod(str);
 
-				else if (newValue > this->m_max)
-					newValue = this->m_max;
+				if (this->m_mult != 1.0f)
+					newValue /= this->m_mult;
 
-				this->m_value = newValue;
+				newValue = DLMT::DLClamp(newValue, static_cast<dl_float64>(this->m_min), static_cast<dl_float64>(this->m_max));
+				this->m_value = static_cast<T>(std::floor(newValue + 0.5));
 
 				return (oldValue != this->m_value);
 			}
@@ -43,15 +47,24 @@ namespace GuiFramework
 
 		virtual dl_bool ValueToString(DLTX::DLString& str) const override
 		{
-			dl_int64 value = static_cast<dl_int64>(this->m_value);
-
-			if (this->m_mult != 1.f)
-				value = static_cast<dl_int64>(this->m_value * this->m_mult);
-
 			if (std::is_unsigned<T>::value)
+			{
+				dl_uint64 value = static_cast<dl_uint64>(this->m_value);
+
+				if (this->m_mult != 1.f)
+					value = static_cast<dl_uint64>(static_cast<dl_float64>(this->m_value) * this->m_mult);
+
 				DLTX::DLFormat<dl_wchar>::Format(str, L"%llu", value);
+			}
 			else
-				DLTX::DLFormat<dl_wchar>::Format(str, L"%lld", static_cast<dl_int64>(value));
+			{
+				dl_int64 value = static_cast<dl_int64>(this->m_value);
+
+				if (this->m_mult != 1.f)
+					value = static_cast<dl_int64>(static_cast<dl_float64>(this->m_value) * this->m_mult);
+
+				DLTX::DLFormat<dl_wchar>::Format(str, L"%lld", value);
+			}
 
 			return true;
 		}
@@ -59,15 +72,15 @@ namespace GuiFramework
 		virtual dl_bool MoveValue(dl_int direction, dl_uint isLargeStep) override
 		{
 			const T oldValue = this->m_value;
-			const dl_float32 multiplier = (isLargeStep == 0) ? 1.0 : 10.0;
+			const dl_float64 multiplier = (isLargeStep == 0) ? 1.0 : 10.0;
 
-			dl_float32 newValue = static_cast<dl_float32>(this->m_value)
-				+ static_cast<dl_float32>(this->m_step) * direction * multiplier;
+			dl_float64 newValue = static_cast<dl_float64>(this->m_value)
+				+ static_cast<dl_float64>(this->m_step) * direction * multiplier;
 
-			if (newValue < static_cast<dl_float32>(this->m_min))
-				newValue = static_cast<dl_float32>(this->m_min);
-			else if (newValue > static_cast<dl_float32>(this->m_max))
-				newValue = static_cast<dl_float32>(this->m_max);
+			if (newValue < static_cast<dl_float64>(this->m_min))
+				newValue = static_cast<dl_float64>(this->m_min);
+			else if (newValue > static_cast<dl_float64>(this->m_max))
+				newValue = static_cast<dl_float64>(this->m_max);
 
 			this->m_value = static_cast<T>(newValue);
 
@@ -86,7 +99,7 @@ namespace GuiFramework
 
 		virtual dl_bool SliderToValue(dl_int sliderPos) override
 		{
-			dl_int oldValue = this->m_value;
+			T oldValue = this->m_value;
 			this->m_value = _SliderToValue(sliderPos);
 
 			return (oldValue != this->m_value);
@@ -94,7 +107,7 @@ namespace GuiFramework
 
 		virtual dl_uint ValueToSlider() const override
 		{
-			return _ValueToSlider(this->m_value);
+			return _ValueToSlider();
 		}
 
 		T GetValue() const { return this->m_value; }
@@ -115,9 +128,16 @@ namespace GuiFramework
 		T GetStep() const { return this->m_step; }
 		dl_float32 GetMult() const { return this->m_mult; }
 	private:
-		void _GetSliderRange(dl_int& min, dl_int& max, ...) const
+		void _GetSliderRange(dl_int& min, dl_int& max) const
 		{
 			min = 0;
+
+			if (m_step <= 0)
+			{
+				max = 65535;
+				return;
+			}
+
 			if (std::is_floating_point<T>::value)
 			{
 				const dl_float64 steps = std::ceil((static_cast<dl_float64>(this->m_max) - static_cast<dl_float64>(this->m_min))
@@ -126,7 +146,7 @@ namespace GuiFramework
 			}
 			else
 			{
-				const T steps = (this->m_max - this->m_min + this->m_step - 1) / this->m_step;
+				const dl_int64 steps = (static_cast<dl_int64>(this->m_max) - static_cast<dl_int64>(this->m_min) + static_cast<dl_int64>(this->m_step) - 1) / static_cast<dl_int64>(this->m_step);
 				max = (steps <= 65535) ? static_cast<dl_int>(steps) : 65535;
 			}
 		}
@@ -134,7 +154,7 @@ namespace GuiFramework
 		T _SliderToValue(dl_int sliderPos) const
 		{
 			dl_float64 valueInterval = static_cast<dl_float64>(this->m_max) - static_cast<dl_float64>(this->m_min);
-			dl_float64 numSteps = (this->m_step > 0) ? std::ceil(valueInterval / static_cast<dl_float64>(this->m_step)) : 0;
+			dl_float64 numSteps = (this->m_step > 0) ? std::ceil(valueInterval / static_cast<dl_float64>(this->m_step)) : 65535.f;
 
 			dl_float64 result;
 			if (numSteps < 65535.0)
@@ -142,24 +162,32 @@ namespace GuiFramework
 			else
 				result = (static_cast<dl_float64>(sliderPos) * valueInterval) / 65535.0 + static_cast<dl_float64>(this->m_min);
 
-			DLMT::DLClamp(result, static_cast<dl_float64>(this->m_min), static_cast<dl_float64>(this->m_max));
+			if (!std::is_floating_point<T>::value)
+				result = std::floor(result + 0.5);
 
-			return static_cast<T>(result);
+			return static_cast<T>(DLMT::DLClamp(result, static_cast<dl_float64>(this->m_min), static_cast<dl_float64>(this->m_max)));
 		}
 
-		dl_uint _ValueToSlider(dl_int sliderPos) const
+		dl_uint _ValueToSlider() const
 		{
+			if (this->m_max == this->m_min)
+				return 0;
+
 			dl_int min, max;
 			_GetSliderRange(min, max);
 
 			if (max < 65535)
-				return static_cast<dl_int>((static_cast<dl_float64>(this->m_value) - static_cast<dl_float64>(this->m_min))
+			{
+				const dl_float64 pos = ((static_cast<dl_float64>(this->m_value) - static_cast<dl_float64>(this->m_min))
 					/ static_cast<dl_float64>(this->m_step));
 
-			const T pos = static_cast<T>(((static_cast<dl_float64>(this->m_value) - static_cast<dl_float64>(this->m_min))
-				/ static_cast<dl_float64>(this->m_max - this->m_min)) * 65535.0);
+				return static_cast<dl_uint>(std::floor(DLMT::DLClamp(pos, 0.0, 65535.0) + 0.5f));
+			}
 
-			return static_cast<dl_int>(DLMT::DLClamp(pos, static_cast<T>(0), static_cast<T>(65535)));
+			const dl_float64 pos = ((static_cast<dl_float64>(this->m_value) - static_cast<dl_float64>(this->m_min))
+				/ (static_cast<dl_float64>(this->m_max) - static_cast<dl_float64>(this->m_min))) * 65535.0;
+
+			return static_cast<dl_uint>(std::floor(DLMT::DLClamp(pos, 0.0, 65535.0) + 0.5f));
 		}
 
 		T m_max;
@@ -221,7 +249,14 @@ namespace GuiFramework
 		try
 		{
 			dl_float64 oldValue = this->m_value;
-			dl_float64 newValue = std::stod(str);
+			dl_float64 newValue;
+
+			dl_float64 parsedValue = std::stod(str);
+
+			if (this->m_mult == 1.0f)
+				newValue = static_cast<dl_float64>(parsedValue);
+			else
+				newValue = static_cast<dl_float64>(parsedValue) / this->m_mult;
 
 			if (newValue < this->m_min)
 				newValue = this->m_min;
