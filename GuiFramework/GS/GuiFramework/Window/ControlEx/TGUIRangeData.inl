@@ -43,10 +43,10 @@ namespace GuiFramework
 
 		virtual dl_bool ValueToString(DLTX::DLString& str) const override
 		{
-			dl_uint64 value = static_cast<dl_uint64>(this->m_value);
+			dl_int64 value = static_cast<dl_int64>(this->m_value);
 
 			if (this->m_mult != 1.f)
-				value = static_cast<dl_uint64>(this->m_value * this->m_mult);
+				value = static_cast<dl_int64>(this->m_value * this->m_mult);
 
 			if (std::is_unsigned<T>::value)
 				DLTX::DLFormat<dl_wchar>::Format(str, L"%llu", value);
