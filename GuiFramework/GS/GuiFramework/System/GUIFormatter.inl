@@ -151,7 +151,8 @@ namespace GuiFramework
 		TGUIValueStringPairData<T>* m_pValueStringPairData;
 
 		TGUIValueToStringFormatter(TGUIValueStringPairData<T>* valueStringPairData) : m_pValueStringPairData(valueStringPairData) {}
-
+		~TGUIValueToStringFormatter() { delete m_pValueStringPairData; }
+		
 		void Format(DLTX::DLString& str, T value) const
 		{
 			DLTX::DLFormat<dl_wchar>::Format(str, L"%s", m_pValueStringPairData->GetStringByValue(value));
