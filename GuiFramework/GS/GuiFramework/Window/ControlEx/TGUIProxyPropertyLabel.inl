@@ -21,7 +21,7 @@ namespace GuiFramework
 	public:
 		TGUIProxyPropertyLabel(GUIWindowBase* pParent, TGUISharedString<dl_wchar> label, GUIBitsetProxy<N>* pBitset) :
 			SuperClass(pParent, label, 1),
-			m_proxy(pBitset)
+			m_proxy(*pBitset)
 		{}
 
 		virtual ~TGUIProxyPropertyLabel() override
