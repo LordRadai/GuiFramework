@@ -110,6 +110,27 @@ namespace GuiFramework
 			return pLabel;
 		}
 
+		template<typename T>
+		TGUIPropertyLabel<T, TGUIValueToStringFormatter<T>>* CreatePropertyLabel(TGUISharedString<dl_wchar> label, T* v, TGUIValueStringPairData<T>* data)
+		{
+			TGUIPropertyLabel<T, TGUIValueToStringFormatter<T>>* pLabel = new TGUIPropertyLabel<T, TGUIValueToStringFormatter<T>>(this, label, v, data);
+
+			if (pLabel == nullptr)
+				return nullptr;
+
+			TGUITweakerItem<TGUIPropertyLabel<T, TGUIValueToStringFormatter<T>>>* pItem = new TGUITweakerItem<TGUIPropertyLabel<T, TGUIValueToStringFormatter<T>>>();
+
+			if (pItem == nullptr)
+			{
+				pLabel->UnRef();
+				return nullptr;
+			}
+
+			AddItem(pItem);
+
+			return pLabel;
+		}
+
 		template<typename T, typename Formatter>
 		TGUIProxyPropertyLabel<T, Formatter>* CreateProxyPropertyLabel(TGUISharedString<dl_wchar> label, T* v)
 		{
