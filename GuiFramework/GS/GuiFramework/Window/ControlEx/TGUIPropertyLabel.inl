@@ -10,7 +10,7 @@ namespace GuiFramework
 		typedef TGUIPropertyLabel<T, Formatter> ThisClass;
 		typedef GUIPropertyLabel SuperClass;
 	public:
-		TGUIPropertyLabel(GUIWindowBase* pParent, TGUISharedString<dl_wchar> label, T* value, dl_int flags) : SuperClass(pParent, label, flags), m_value(value)
+		TGUIPropertyLabel(GUIWindowBase* pParent, TGUISharedString<dl_wchar> label, T* value) : SuperClass(pParent, label, 1), m_value(value)
 		{
 		}
 

@@ -111,7 +111,7 @@ namespace GuiFramework
 			if (pGroup == nullptr)
 				return nullptr;
 
-			return pGroup->CreatePropertyLabel<T, TGUIValueToStringFormatter<T>>(label, v, data);
+			return pGroup->CreatePropertyLabel<T>(label, v, data);
 		}
 
 		template<typename T, typename Formatter>

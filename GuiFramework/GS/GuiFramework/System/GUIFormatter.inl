@@ -148,13 +148,13 @@ namespace GuiFramework
 	template<typename T>
 	struct TGUIValueToStringFormatter
 	{
-		TGUIValueStringPairData<T> m_valueStringPairData;
+		TGUIValueStringPairData<T>* m_pValueStringPairData;
 
-		TGUIValueToStringFormatter(const TGUIValueStringPairData<T>& valueStringPairData) : m_valueStringPairData(valueStringPairData) {}
+		TGUIValueToStringFormatter(TGUIValueStringPairData<T>* valueStringPairData) : m_pValueStringPairData(valueStringPairData) {}
 
 		void Format(DLTX::DLString& str, T value) const
 		{
-			DLTX::DLFormat<dl_wchar>::Format(str, L"%s", m_valueStringPairData.GetStringByValue(value));
+			DLTX::DLFormat<dl_wchar>::Format(str, L"%s", m_pValueStringPairData->GetStringByValue(value));
 		}
 	};
 }

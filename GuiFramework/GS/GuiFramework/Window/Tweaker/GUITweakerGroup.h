@@ -92,7 +92,7 @@ namespace GuiFramework
 		template<typename T, typename Formatter>
 		TGUIPropertyLabel<T, Formatter>* CreatePropertyLabel(TGUISharedString<dl_wchar> label, T* v)
 		{
-			TGUIPropertyLabel<T, Formatter>* pLabel = new TGUIPropertyLabel<T, Formatter>(this, label, v, 1);
+			TGUIPropertyLabel<T, Formatter>* pLabel = new TGUIPropertyLabel<T, Formatter>(this, label, v);
 
 			if (pLabel == nullptr)
 				return nullptr;
