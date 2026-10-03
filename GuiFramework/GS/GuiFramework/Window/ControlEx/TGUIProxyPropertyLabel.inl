@@ -31,9 +31,10 @@ namespace GuiFramework
 			SuperClass::_Destroy();
 		}
 
-		virtual void GetValueString(DLTX::DLString& str) const override
+		virtual dl_bool GetValueString(DLTX::DLString& str) const override
 		{
 			m_formatter.Format(str, m_proxy.test());
+			return true;
 		}
 	private:
 		GUIBitsetProxy<N> m_proxy;
