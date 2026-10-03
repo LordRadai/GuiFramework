@@ -10,6 +10,7 @@
 #include "TGUITweakerItem.inl"
 #include "TGUIRangeTweaker.inl"
 #include "GuiFramework/Window/ControlEx/TGUIPropertyLabel.inl"
+#include "GuiFramework/Window/ControlEx/TGUIProxyPropertyLabel.inl"
 #include "GuiFramework/Window/ControlEx/GUITextureViewer.h"
 #include "GuiFramework/Window/ControlEx/GUITextureList.h"
 
@@ -97,6 +98,27 @@ namespace GuiFramework
 				return nullptr;
 
 			TGUITweakerItem<TGUIPropertyLabel<T, Formatter>>* pItem = new TGUITweakerItem<TGUIPropertyLabel<T, Formatter>>();
+
+			if (pItem == nullptr)
+			{
+				pLabel->UnRef();
+				return nullptr;
+			}
+
+			AddItem(pItem);
+
+			return pLabel;
+		}
+
+		template<typename T, typename Formatter>
+		TGUIProxyPropertyLabel<T, Formatter>* CreateProxyPropertyLabel(TGUISharedString<dl_wchar> label, T* v)
+		{
+			TGUIProxyPropertyLabel<T, Formatter>* pLabel = new TGUIProxyPropertyLabel<T, Formatter>(this, label, v);
+
+			if (pLabel == nullptr)
+				return nullptr;
+
+			TGUITweakerItem<TGUIProxyPropertyLabel<T, Formatter>>* pItem = new TGUITweakerItem<TGUIProxyPropertyLabel<T, Formatter>>();
 
 			if (pItem == nullptr)
 			{

@@ -1,7 +1,7 @@
 #pragma once
 #include "GuiFramework/Window/Control/GUIPropertyLabel.h"
-#include "GuiFramework/System/GUIBitsetProxy.h"
-#include "GuiFramework/System/GUIFormatter.h"
+#include "GuiFramework/System/GUIBitsetProxy.inl"
+#include "GuiFramework/System/GUIFormatter.inl"
 
 namespace GuiFramework
 {
@@ -13,12 +13,17 @@ namespace GuiFramework
 	public:
 	};
 
-	template<unsigned int N, class Formatter>
+	template<unsigned int N, class Formatter >
 	class TGUIProxyPropertyLabel<GUIBitsetProxy<N>, Formatter> : public GUIPropertyLabel
 	{
 		typedef TGUIProxyPropertyLabel<GUIBitsetProxy<N>, Formatter> ThisClass;
 		typedef GUIPropertyLabel SuperClass;
 	public:
+		TGUIProxyPropertyLabel(GUIWindowBase* pParent, TGUISharedString<dl_wchar> label, GUIBitsetProxy<N>* pBitset) :
+			SuperClass(pParent, label, 1),
+			m_proxy(pBitset)
+		{}
+
 		virtual ~TGUIProxyPropertyLabel() override
 		{
 			OnDelete();
@@ -26,21 +31,12 @@ namespace GuiFramework
 			SuperClass::_Destroy();
 		}
 
-		virtual void OnDelete() override
+		virtual void GetValueString(DLTX::DLString& str) const override
 		{
-			this->m_pProxy = nullptr;
-			SuperClass::OnDelete();
+			m_formatter.Format(str, m_proxy.test());
 		}
-
-		virtual dl_uint OnClose() override
-		{
-			this->m_pProxy = nullptr;
-			return SuperClass::OnClose();
-		}
-
-		virtual void GetValueString(DLTX::DLString& str) const override;
 	private:
-		GUIBitsetProxy<N>* m_pProxy;
-		dl_uint m_bitIndex;
+		GUIBitsetProxy<N> m_proxy;
+		Formatter m_formatter;
 	};
 }

@@ -94,6 +94,19 @@ namespace GuiFramework
 			return pGroup->CreatePropertyLabel<T, Formatter>(label, v);
 		}
 
+		template<typename T, typename Formatter>
+		TGUIProxyPropertyLabel<T, Formatter>* CreateProxyPropertyLabel(TGUISharedString<dl_wchar> label, T* v)
+		{
+			DL_ASSERT(!this->m_groups.empty(), L"There are no tweaker groups on the stack");
+
+			GUITweakerGroup* pGroup = this->GetCurrentGroup();
+
+			if (pGroup == nullptr)
+				return nullptr;
+
+			return pGroup->CreateProxyPropertyLabel<T, Formatter>(label, v);
+		}
+
 		template<typename T>
 		TGUIRangeTweaker<T>* CreateTweaker(TGUISharedString<dl_wchar> label, T* pValue, T min, T max, T step, dl_float32 mult = 1.f)
 		{

@@ -6,107 +6,107 @@ namespace GuiFramework
 {
 	struct GUIPropertyFormatter
 	{
-		static void Format(DLTX::DLString& str, dl_bool value)
+		void Format(DLTX::DLString& str, dl_bool value) const
 		{
 			DLTX::DLFormat<dl_wchar>::Format(str, L"%d", value);
 		}
 
-		static void Format(DLTX::DLString& str, dl_int8 value)
+		void Format(DLTX::DLString& str, dl_int8 value) const
 		{
 			DLTX::DLFormat<dl_wchar>::Format(str, L"%d", value);
 		}
 
-		static void Format(DLTX::DLString& str, dl_uint8 value)
+		void Format(DLTX::DLString& str, dl_uint8 value) const
 		{
 			DLTX::DLFormat<dl_wchar>::Format(str, L"%d", value);
 		}
 
-		static void Format(DLTX::DLString& str, dl_int16 value)
+		void Format(DLTX::DLString& str, dl_int16 value) const
 		{
 			DLTX::DLFormat<dl_wchar>::Format(str, L"%d", value);
 		}
 
-		static void Format(DLTX::DLString& str, dl_uint16 value)
+		void Format(DLTX::DLString& str, dl_uint16 value) const
 		{
 			DLTX::DLFormat<dl_wchar>::Format(str, L"%d", value);
 		}
 
-		static void Format(DLTX::DLString& str, dl_int value)
+		void Format(DLTX::DLString& str, dl_int value) const
 		{
 			DLTX::DLFormat<dl_wchar>::Format(str, L"%d", value);
 		}
 
-		static void Format(DLTX::DLString& str, dl_uint value)
+		void Format(DLTX::DLString& str, dl_uint value) const
 		{
 			DLTX::DLFormat<dl_wchar>::Format(str, L"%d", value);
 		}
 
-		static void Format(DLTX::DLString& str, dl_int64 value)
+		void Format(DLTX::DLString& str, dl_int64 value) const
 		{
 			DLTX::DLFormat<dl_wchar>::Format(str, L"%d", value);
 		}
 
-		static void Format(DLTX::DLString& str, dl_uint64 value)
+		void Format(DLTX::DLString& str, dl_uint64 value) const
 		{
 			DLTX::DLFormat<dl_wchar>::Format(str, L"%d", value);
 		}
 
-		static void Format(DLTX::DLString& str, dl_float32 value)
+		void Format(DLTX::DLString& str, dl_float32 value) const
 		{
 			DLTX::DLFormat<dl_wchar>::Format(str, L"%.3f", value);
 		}
 
-		static void Format(DLTX::DLString& str, dl_float64 value)
+		void Format(DLTX::DLString& str, dl_float64 value) const
 		{
 			DLTX::DLFormat<dl_wchar>::Format(str, L"%.3f", value);
 		}
 
-		static void Format(DLTX::DLString& str, const DLMT::DL_VECTOR2& value)
+		void Format(DLTX::DLString& str, const DLMT::DL_VECTOR2& value) const
 		{
 			DLTX::DLFormat<dl_wchar>::Format(str, L"%.3f , %.3f", value.x, value.y);
 		}
 
-		static void Format(DLTX::DLString& str, const DLMT::DL_VECTOR2AL& value)
+		void Format(DLTX::DLString& str, const DLMT::DL_VECTOR2AL& value) const
 		{
 			DLTX::DLFormat<dl_wchar>::Format(str, L"%.3f , %.3f", value.x, value.y);
 		}
 
-		static void Format(DLTX::DLString& str, const DLMT::DL_VECTOR3& value)
+		void Format(DLTX::DLString& str, const DLMT::DL_VECTOR3& value) const
 		{
 			DLTX::DLFormat<dl_wchar>::Format(str, L"%.3f , %.3f , %.3f", value.x, value.y, value.z);
 		}
 
-		static void Format(DLTX::DLString& str, const DLMT::DL_VECTOR3AL& value)
+		void Format(DLTX::DLString& str, const DLMT::DL_VECTOR3AL& value) const
 		{
 			DLTX::DLFormat<dl_wchar>::Format(str, L"%.3f , %.3f , %.3f", value.x, value.y, value.z);
 		}
 
-		static void Format(DLTX::DLString& str, const DLMT::DL_VECTOR4& value)
+		void Format(DLTX::DLString& str, const DLMT::DL_VECTOR4& value) const
 		{
 			DLTX::DLFormat<dl_wchar>::Format(str, L"%.3f , %.3f , %.3f , %.3f", value.x, value.y, value.z, value.w);
 		}
 
-		static void Format(DLTX::DLString& str, const DLMT::DL_VECTOR4AL& value)
+		void Format(DLTX::DLString& str, const DLMT::DL_VECTOR4AL& value) const
 		{
 			DLTX::DLFormat<dl_wchar>::Format(str, L"%.3f , %.3f , %.3f , %.3f", value.x, value.y, value.z, value.w);
 		}
 
-		static void Format(DLTX::DLString& str, const DLMT::DL_QUATERNION& value)
+		void Format(DLTX::DLString& str, const DLMT::DL_QUATERNION& value) const
 		{
 			DLTX::DLFormat<dl_wchar>::Format(str, L"%.3f , %.3f , %.3f , %.3f", value.x, value.y, value.z, value.w);
 		}
 
-		static void Format(DLTX::DLString& str, const DLMT::DL_QUATERNIONAL& value)
+		void Format(DLTX::DLString& str, const DLMT::DL_QUATERNIONAL& value) const
 		{
 			DLTX::DLFormat<dl_wchar>::Format(str, L"%.3f , %.3f , %.3f , %.3f", value.x, value.y, value.z, value.w);
 		}
 
-		static void Format(DLTX::DLString& str, const dl_char* value)
+		void Format(DLTX::DLString& str, const dl_char* value) const
 		{
 			DLTX::DLFormat<dl_wchar>::Format(str, L"%hs", value);
 		}
 
-		static void Format(DLTX::DLString& str, const dl_wchar* value)
+		void Format(DLTX::DLString& str, const dl_wchar* value) const
 		{
 			DLTX::DLFormat<dl_wchar>::Format(str, L"%s", value);
 		}
@@ -114,7 +114,7 @@ namespace GuiFramework
 
 	struct GUIBoolFormatter
 	{
-		static void Format(DLTX::DLString& str, dl_bool value)
+		void Format(DLTX::DLString& str, dl_bool value) const
 		{
 			if (value)
 				DLTX::DLFormat<dl_wchar>::Format(str, L"TRUE");
@@ -125,7 +125,7 @@ namespace GuiFramework
 
 	struct GUIYesNoFormatter
 	{
-		static void Format(DLTX::DLString& str, dl_bool value)
+		void Format(DLTX::DLString& str, dl_bool value) const
 		{
 			if (value)
 				DLTX::DLFormat<dl_wchar>::Format(str, L"Yes");
@@ -136,7 +136,7 @@ namespace GuiFramework
 
 	struct GUICircleCrossFormatter
 	{
-		static void Format(DLTX::DLString& str, dl_bool value)
+		void Format(DLTX::DLString& str, dl_bool value) const
 		{
 			if (value)
 				DLTX::DLFormat<dl_wchar>::Format(str, L"O");
@@ -152,7 +152,7 @@ namespace GuiFramework
 
 		TGUIValueToStringFormatter(const TGUIValueStringPairData<T>& valueStringPairData) : m_valueStringPairData(valueStringPairData) {}
 
-		static void Format(DLTX::DLString& str, T value)
+		void Format(DLTX::DLString& str, T value) const
 		{
 			DLTX::DLFormat<dl_wchar>::Format(str, L"%s", m_valueStringPairData.GetStringByValue(value));
 		}
