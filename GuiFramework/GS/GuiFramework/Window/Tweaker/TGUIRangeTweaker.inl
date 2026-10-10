@@ -83,4 +83,91 @@ namespace GuiFramework
 		T* m_pValue;
 		T m_valueOld;
 	};
+
+	// ProxyClass must provide: typedef ValueType, IsValid(), GetValue(), SetValue(const ValueType&), Detach()
+	template<class ProxyClass>
+	class TGUIProxyRangeTweaker : public GUIRangeTweaker
+	{
+		typedef TGUIProxyRangeTweaker ThisClass;
+		typedef GUIRangeTweaker SuperClass;
+		typedef typename ProxyClass::ValueType T;
+	public:
+		TGUIProxyRangeTweaker(GUIWindowBase* pParent, TGUISharedString<dl_wchar> label, const ProxyClass& proxy, T min, T max, T step, dl_float32 mult = 1.f) : SuperClass()
+			, m_proxy(proxy), m_valueOld(T())
+		{
+			if (m_proxy.IsValid())
+				m_valueOld = m_proxy.GetValue();
+
+			TGUIRangeData<T>* pRangeData = new TGUIRangeData<T>(m_valueOld, min, max, step, mult);
+			this->m_pRangeData = pRangeData;
+			Create(pParent, label);
+			this->m_pWidget->Reflesh();
+		}
+
+		virtual ~TGUIProxyRangeTweaker() override
+		{
+			_Destroy();
+		}
+
+		virtual void OnDelete() override
+		{
+			this->m_pRangeData = nullptr;
+			this->m_proxy.Detach();
+			SuperClass::OnDelete();
+		}
+
+		virtual void Update(dl_float32 dt) override
+		{
+			if (!this->m_proxy.IsValid())
+				return;
+
+			T currentValue = this->m_proxy.GetValue();
+
+			if (currentValue == this->m_valueOld)
+			{
+				if (this->m_valueOld != this->m_pRangeData->GetValue())
+				{
+					if (!(this->m_flags & 1))
+					{
+						this->m_valueOld = this->m_pRangeData->GetValue();
+						this->m_proxy.SetValue(this->m_valueOld);
+						this->InvokeCallback();
+					}
+					else
+					{
+						this->m_pRangeData->SetValue(this->m_valueOld);
+						this->m_pWidget->Reflesh();
+					}
+				}
+			}
+			else
+			{
+				this->m_valueOld = currentValue;
+				this->m_pRangeData->SetValue(this->m_valueOld);
+				this->m_pWidget->Reflesh();
+			}
+		}
+
+		virtual void Close() override
+		{
+			this->m_proxy.Detach();
+			SuperClass::Close();
+		}
+
+		virtual TGUIRangeData<T>* GetRangeData() const override
+		{
+			return this->m_pRangeData.Get();
+		}
+	private:
+		void _Destroy()
+		{
+			OnDelete();
+			UnRef();
+			SuperClass::_Destroy();
+		}
+
+		TGUIObjectPtr<TGUIRangeData<T>> m_pRangeData;
+		ProxyClass m_proxy;
+		T m_valueOld;
+	};
 }

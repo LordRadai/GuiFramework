@@ -163,6 +163,28 @@ namespace GuiFramework
 			return pTweaker;
 		}
 
+		template<class ProxyClass>
+		TGUIProxyRangeTweaker<ProxyClass>* CreateProxyTweaker(TGUISharedString<dl_wchar> label, const ProxyClass& proxy, typename ProxyClass::ValueType min, typename ProxyClass::ValueType max, typename ProxyClass::ValueType step, dl_float32 mult = 1.f)
+		{
+			TGUIProxyRangeTweaker<ProxyClass>* pTweaker = new TGUIProxyRangeTweaker<ProxyClass>(this, label, proxy, min, max, step, mult);
+
+			if (pTweaker)
+				this->AddItem(pTweaker);
+
+			return pTweaker;
+		}
+
+		template<class ProxyClass>
+		TGUIProxyOnOffTweaker<ProxyClass>* CreateProxyOnOffTweaker(TGUISharedString<dl_wchar> label, const ProxyClass& proxy)
+		{
+			TGUIProxyOnOffTweaker<ProxyClass>* pTweaker = new TGUIProxyOnOffTweaker<ProxyClass>(this, label, proxy);
+
+			if (pTweaker)
+				this->AddItem(pTweaker);
+
+			return pTweaker;
+		}
+
 		void SetFirstOpenCallback(FirstOpenCallback_t pCallback, dl_size param1, dl_size param2);
 	protected:
 		DLUT::DLVector<GUITweakerGroupItem*> m_items;

@@ -132,6 +132,32 @@ namespace GuiFramework
 
 			return pGroup->CreateTweaker<T>(label, pValue, min, max, step, mult);
 		}
+
+		template<class ProxyClass>
+		TGUIProxyRangeTweaker<ProxyClass>* CreateProxyTweaker(TGUISharedString<dl_wchar> label, const ProxyClass& proxy, typename ProxyClass::ValueType min, typename ProxyClass::ValueType max, typename ProxyClass::ValueType step, dl_float32 mult = 1.f)
+		{
+			DL_ASSERT(!this->m_groups.empty(), L"There are no tweaker groups on the stack");
+
+			GUITweakerGroup* pGroup = this->GetCurrentGroup();
+
+			if (pGroup == nullptr)
+				return nullptr;
+
+			return pGroup->CreateProxyTweaker<ProxyClass>(label, proxy, min, max, step, mult);
+		}
+
+		template<class ProxyClass>
+		TGUIProxyOnOffTweaker<ProxyClass>* CreateProxyOnOffTweaker(TGUISharedString<dl_wchar> label, const ProxyClass& proxy)
+		{
+			DL_ASSERT(!this->m_groups.empty(), L"There are no tweaker groups on the stack");
+
+			GUITweakerGroup* pGroup = this->GetCurrentGroup();
+
+			if (pGroup == nullptr)
+				return nullptr;
+
+			return pGroup->CreateProxyOnOffTweaker<ProxyClass>(label, proxy);
+		}
 	protected:
 		void _PushGroup(GUITweakerGroup* pGroup);
 		void _PopGroup();
