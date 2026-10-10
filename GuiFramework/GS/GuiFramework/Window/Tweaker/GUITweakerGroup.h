@@ -152,6 +152,27 @@ namespace GuiFramework
 			return pLabel;
 		}
 
+		template<class Owner, typename T>
+		TGUICbPropertyLabel<Owner, T>* CreateCbPropertyLabel(TGUISharedString<dl_wchar> label, Owner* pOwner, typename TGUICbPropertyLabel<Owner, T>::FormatFn_t pFormatFn, T value)
+		{
+			TGUICbPropertyLabel<Owner, T>* pLabel = new TGUICbPropertyLabel<Owner, T>(this, label, pOwner, pFormatFn, value);
+
+			if (pLabel == nullptr)
+				return nullptr;
+
+			TGUITweakerItem<TGUICbPropertyLabel<Owner, T>>* pItem = new TGUITweakerItem<TGUICbPropertyLabel<Owner, T>>();
+
+			if (pItem == nullptr)
+			{
+				pLabel->UnRef();
+				return nullptr;
+			}
+
+			AddItem(pItem);
+
+			return pLabel;
+		}
+
 		template<typename T>
 		TGUIRangeTweaker<T>* CreateTweaker(TGUISharedString<dl_wchar> label, T* v, T min, T max, T step, dl_float32 mult = 1.f)
 		{

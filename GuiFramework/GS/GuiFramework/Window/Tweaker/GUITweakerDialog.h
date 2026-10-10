@@ -114,6 +114,19 @@ namespace GuiFramework
 			return pGroup->CreatePropertyLabel<T>(label, v, data);
 		}
 
+		template<class Owner, typename T>
+		TGUICbPropertyLabel<Owner, T>* CreateCbPropertyLabel(TGUISharedString<dl_wchar> label, Owner* pOwner, typename TGUICbPropertyLabel<Owner, T>::FormatFn_t pFormatFn, T value)
+		{
+			GUITweakerGroup* pGroup = GetCurrentGroup();
+
+			DL_ASSERT(pGroup, L"No tweaker group was created. Create one before calling this.");
+
+			if (pGroup == nullptr)
+				return nullptr;
+
+			return pGroup->CreateCbPropertyLabel<Owner, T>(label, pOwner, pFormatFn, value);
+		}
+
 		template<typename T, typename Formatter>
 		TGUIProxyPropertyLabel<T, Formatter>* CreateProxyPropertyLabel(TGUISharedString<dl_wchar> label, T* v)
 		{
