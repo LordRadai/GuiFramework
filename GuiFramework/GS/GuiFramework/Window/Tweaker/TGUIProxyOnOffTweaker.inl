@@ -4,9 +4,81 @@
 
 namespace GuiFramework
 {
+    // ProxyClass must provide: typedef ValueType, IsValid(), GetValue(), SetValue(const ValueType&), Detach()
     template<class ProxyClass>
     class TGUIProxyOnOffTweaker : public GUIOnOffTweaker
     {
+        typedef TGUIProxyOnOffTweaker<ProxyClass> ThisClass;
+        typedef GUIOnOffTweaker SuperClass;
+        typedef typename ProxyClass::ValueType T;
+    public:
+        TGUIProxyOnOffTweaker(GUIWidget* pParent, TGUISharedString<dl_wchar> label, const ProxyClass& proxy) :
+            GUIOnOffTweaker(pParent, label),
+            m_proxy(proxy),
+            m_valueOld(T())
+        {
+            if (m_proxy.IsValid())
+            {
+                m_valueOld = m_proxy.GetValue();
+                this->SetCheck(m_valueOld != T());
+            }
+        }
+
+        virtual ~TGUIProxyOnOffTweaker() override
+        {
+            OnDelete();
+            UnRef();
+            SuperClass::~GUIOnOffTweaker();
+        }
+
+        virtual void OnDelete() override
+        {
+            m_proxy.Detach();
+            SuperClass::OnDelete();
+        }
+
+        virtual void Update(dl_float32 dt) override
+        {
+            if (!this->m_proxy.IsValid())
+                return;
+
+            T currentValue = this->m_proxy.GetValue();
+
+            if (currentValue == this->m_valueOld)
+            {
+                bool bUiState = (this->IsChecked() != 0);
+                bool bCacheState = (this->m_valueOld != T());
+
+                if (bUiState != bCacheState)
+                {
+                    if (this->m_flags < 0)
+                    {
+                        this->SetCheck(bCacheState);
+                    }
+                    else
+                    {
+                        this->m_valueOld = bUiState ? (T)1 : (T)0;
+                        this->m_proxy.SetValue(this->m_valueOld);
+                        this->InvokeCallback();
+                    }
+                }
+            }
+            else
+            {
+                this->m_valueOld = currentValue;
+                this->SetCheck(this->m_valueOld != T());
+            }
+        }
+
+        virtual void Close() override
+        {
+            m_proxy.Detach();
+            SuperClass::Close();
+        };
+
+    protected:
+        ProxyClass m_proxy;
+        T m_valueOld;
     };
 
     template<typename T>
