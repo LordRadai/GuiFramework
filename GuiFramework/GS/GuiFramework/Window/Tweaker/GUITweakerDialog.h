@@ -166,19 +166,6 @@ namespace GuiFramework
 			return pGroup->CreateProxyTweaker<ProxyClass>(label, proxy, min, max, step, mult);
 		}
 
-		template<class ProxyClass>
-		TGUIProxyOnOffTweaker<ProxyClass>* CreateProxyOnOffTweaker(TGUISharedString<dl_wchar> label, const ProxyClass& proxy)
-		{
-			GUITweakerGroup* pGroup = GetCurrentGroup();
-
-			DL_ASSERT(pGroup, L"No tweaker group was created. Create one before calling this.");
-
-			if (pGroup == nullptr)
-				return nullptr;
-
-			return pGroup->CreateProxyOnOffTweaker<ProxyClass>(label, proxy);
-		}
-
 	private:
 		DLUT::DLVector<GUITweakerGroupItem*> m_items;
 		DLUT::DLVector<GUITweakerGroup*> m_groups;

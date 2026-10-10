@@ -195,17 +195,6 @@ namespace GuiFramework
 			return pTweaker;
 		}
 
-		template<class ProxyClass>
-		TGUIProxyOnOffTweaker<ProxyClass>* CreateProxyOnOffTweaker(TGUISharedString<dl_wchar> label, const ProxyClass& proxy)
-		{
-			TGUIProxyOnOffTweaker<ProxyClass>* pTweaker = new TGUIProxyOnOffTweaker<ProxyClass>(this, label, proxy);
-
-			if (pTweaker)
-				this->AddItem(pTweaker);
-
-			return pTweaker;
-		}
-
 		void SetFirstOpenCallback(FirstOpenCallback_t pCallback, dl_size param1, dl_size param2);
 	protected:
 		DLUT::DLVector<GUITweakerGroupItem*> m_items;
