@@ -33,6 +33,7 @@ namespace GuiFramework
 
 		void SetCurSel(dl_int idx, dl_int param_2);
 		void CenteringItem(dl_int idx);
+		dl_int GetSelectedItemIdx() const { return m_selectedItem; }
 
 		typedef void(_fastcall* OnItemSelected_t)(GUIListBox*, dl_int);
 	protected:
