@@ -58,6 +58,14 @@ namespace GuiFramework
 
 		GuiFramework::GUIRootWindow* GetRootWindow() const { return m_pGUIWindowManager->GetRootWindow(); }
 		GuiFramework::GUIWindowBase* GetActiveWindow() const { return m_pGUIWindowManager->GetActiveWindow(); }
+		
+		dl_int GetSysInt(dl_int idx) const { return m_sysInts[idx]; }
+		void SetSysInt(dl_int idx, dl_int value) { m_sysInts[idx] = value; }
+
+		DLMT::DL_COLOR_32 GetSysColor(dl_int idx) const { return m_sysColors[idx]; }
+		void SetSysColor(dl_int idx, DLMT::DL_COLOR_32 color) { m_sysColors[idx] = color; }
+
+		GUIFont* RefSysFont(dl_int idx) const { return m_sysFonts[idx].Get(); }
 
 		dl_bool BeginVirtualInput() { return m_pGUIWindowManager->BeginVirtualInput(); }
 		void EndVirtualInput() { m_pGUIWindowManager->EndVirtualInput(); }
