@@ -18,7 +18,9 @@ namespace GuiFramework
 		virtual void Update(dl_float32 dt) override {}
 		virtual void Close() override;
 
+		void ClearAllItems();
 		void SetComboCurSel(dl_int index);
+		void SetComboItem(dl_int index, TGUISharedString<dl_wchar> text);
 	protected:
 		void _Destroy();
 		virtual void _OnComboSelChanged(dl_int idx) {}

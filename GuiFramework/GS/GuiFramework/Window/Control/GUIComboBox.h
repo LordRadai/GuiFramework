@@ -27,6 +27,7 @@ namespace GuiFramework
 		virtual dl_uint OnCreate() override;
 		virtual void OnRender(GraphicsContext& gc) const override;
 
+		dl_bool AddItem(const TGUISharedString<dl_wchar> text, dl_uint value, dl_int idx);
 		dl_bool SetCurSel(dl_int index, dl_uint param_2);
 	private:
 		DLUT::DLVector<_ComboItem> m_items;

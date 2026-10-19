@@ -77,8 +77,17 @@ namespace GuiFramework
 
 		void _Init()
 		{
-			typedef void(_fastcall* Init_t)(TGUIComboTweaker<T>*);
-			CALL(Init_t, 0x566310, this);
+			this->ClearAllItems();
+
+			TGUIValueStringPairData<T>* pPairs = this->m_valueStringPairs.Get();
+			
+			if (pPairs == nullptr)
+				return;
+
+			for (dl_uint i = 0; i < pPairs->GetNumPairs(); i++)
+				this->SetComboItem(i, TGUISharedString<dl_wchar>(pPairs->GetValueStringPair(i)->Name));
+
+			this->SetComboCurSel(pPairs->FindIndexByValue(this->m_valueOld));
 		}
 
 	private:

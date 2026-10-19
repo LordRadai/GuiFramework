@@ -5,7 +5,9 @@ namespace GuiFramework
 {
 	typedef void(_fastcall* Constructor_t)(GUIComboTweaker*, GUIWindowBase*, TGUISharedString<dl_wchar>, dl_uint);
 
+	typedef void(_fastcall* ClearAllItems_t)(GUIComboTweaker*);
 	typedef void(_fastcall* SetComboCurSel_t)(GUIComboTweaker*, dl_int);
+	typedef void(_fastcall* SetComboItem_t)(GUIComboTweaker*, dl_int, TGUISharedString<dl_wchar>);
 
 	GUIComboTweaker::GUIComboTweaker(GUIWindowBase* pParent, TGUISharedString<dl_wchar> label, dl_uint flags) : SuperClass()
 	{
@@ -37,8 +39,18 @@ namespace GuiFramework
 		CALL(_Destroy_t, 0x547ec0, this);
 	}
 
+	void GUIComboTweaker::ClearAllItems()
+	{
+		CALL(ClearAllItems_t, 0x5480e0, this);
+	}
+
 	void GUIComboTweaker::SetComboCurSel(dl_int index)
 	{
 		CALL(SetComboCurSel_t, 0x548000, this, index);
+	}
+
+	void GUIComboTweaker::SetComboItem(dl_int index, TGUISharedString<dl_wchar> str) 
+	{ 
+		CALL(SetComboItem_t, 0x548050, this, index, str); 
 	}
 }
