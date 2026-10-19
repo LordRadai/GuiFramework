@@ -19,6 +19,12 @@ namespace GuiFramework
                 AddRef();
         }
 
+        TGUIObjectPtr(const TGUIObjectPtr& other) : m_ptr(other.m_ptr)
+        {
+            if (m_ptr)
+                AddRef();
+        }
+
         ~TGUIObjectPtr() 
         {
             UnRef();
@@ -28,7 +34,7 @@ namespace GuiFramework
         {
             if (m_ptr == nullptr) return false;
 
-            return (m_ptr->m_nRefCountAndFlags & (1 << 30)) != 0;
+            return m_ptr && m_ptr->IsFlagSet(1 << 30);
         }
 
         void UnRef()
@@ -41,20 +47,6 @@ namespace GuiFramework
         {
             if (m_ptr)
                 m_ptr->AddRef();
-        }
-
-        TGUIObjectPtr& operator=(T* pObj) 
-        {
-            static_assert(std::is_base_of<GUIObject, T>::value, "T must be a child of GUIObject");
-            if (m_ptr != pObj) 
-            {
-                UnRef();
-                m_ptr = pObj;
-                if (m_ptr)
-                    AddRef();
-            }
-
-            return *this;
         }
 
         T* operator->() const { return m_ptr; }
