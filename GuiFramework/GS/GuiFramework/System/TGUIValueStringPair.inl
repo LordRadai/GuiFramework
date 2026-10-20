@@ -1,4 +1,6 @@
 #pragma once
+#include <algorithm>
+
 #include "GUIObject.h"
 #include "TGUISharedString.inl"
 
@@ -32,6 +34,36 @@ namespace GuiFramework
 
 		TGUI_COMBO_TWEAKER_ITEM() : pVar0(nullptr), Name(nullptr), Value() {}
 		TGUI_COMBO_TWEAKER_ITEM(const dl_wchar* name, T value) : pVar0(nullptr), Name(name), Value(value) {}
+
+		dl_bool operator==(const TGUI_COMBO_TWEAKER_ITEM<T>& other) const
+		{
+			return (Value == other.Value) && (Name == other.Name);
+		}
+
+		dl_bool operator!=(const TGUI_COMBO_TWEAKER_ITEM<T>& other) const
+		{
+			return !(*this == other);
+		}
+
+		dl_bool operator<(const TGUI_COMBO_TWEAKER_ITEM<T>& other) const
+		{
+			return Value < other.Value;
+		}
+
+		dl_bool operator>(const TGUI_COMBO_TWEAKER_ITEM<T>& other) const
+		{
+			return Value > other.Value;
+		}
+
+		dl_bool operator<=(const TGUI_COMBO_TWEAKER_ITEM<T>& other) const
+		{
+			return Value <= other.Value;
+		}
+
+		dl_bool operator>=(const TGUI_COMBO_TWEAKER_ITEM<T>& other) const
+		{
+			return Value >= other.Value;
+		}
 	};
 
 	template<typename T>
@@ -44,6 +76,8 @@ namespace GuiFramework
 
 		TGUIValueStringPairData(TGUI_COMBO_TWEAKER_ITEM<T>* items, dl_uint numItems) : SuperClass(), m_pairs(GUIAllocator::s_pDefaultAllocator)
 		{
+			std::sort(items, items + numItems);
+
 			m_pairs.reserve(numItems);
 			
 			for (dl_uint i = 0; i < numItems; ++i)
