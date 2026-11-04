@@ -229,6 +229,7 @@ namespace GuiFramework
         typedef void(_fastcall* OnRenderWindow_t)(const GUIWindowBase*, GraphicsContext&);
         typedef void(_fastcall* OnVirtualInputRender_t)(const GUIWindowBase*, GraphicsContext&);
 
+		dl_bool IsOpen() const { return m_pParentWindow.Get() != nullptr; }
     protected:
 		TGUIObjectPtr<GUIWindowBase> m_pParentWindow;
         TGUIObjectPtr<GUIWindowBase> m_pVar18;
