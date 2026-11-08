@@ -19,9 +19,9 @@ namespace GuiFramework
 
 			for (dl_uint8 i = 0; i < numValues; i++)
 			{
-				TGUIRangeData<T>* pRangeData = new TGUIRangeData<T>(*pValue, min, max, step, mult);
-				
+				TGUIRangeData<T>* pRangeData = new TGUIRangeData<T>(pValue[i], min, max, step, mult);
 				this->m_pMultiNumericEditor->SetRangeData(i, pRangeData);
+				this->m_pValueOld[i] = pValue[i];
 			}
 
 			Create(pParent, label);

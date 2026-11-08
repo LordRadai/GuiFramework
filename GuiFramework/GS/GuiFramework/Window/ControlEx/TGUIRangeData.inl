@@ -9,13 +9,16 @@ namespace GuiFramework
 		typedef TGUIRangeData<T> ThisClass;
 		typedef GUIRangeDataBase SuperClass;
 	public:
-		TGUIRangeData(T value, T min, T max, T step, dl_float32 mult = 1.f) : m_value(DLMT::DLClamp(value, min, max)), m_min(min), m_max(max), m_step(step), m_original(DLMT::DLClamp(value, min, max)), m_mult(mult)
+		TGUIRangeData(T value, T min, T max, T step, dl_float32 mult = 1.f) : m_value(value), m_min(min), m_max(max), m_step(step), m_original(value), m_mult(mult)
 		{
 			if (m_step < 0)
 				DL_PANIC("TGUIRangeData m_step value must be positive. Please change the program.");
 
 			if (m_mult == 0.f)
 				DL_PANIC("TGUIRangeData m_mult value must not be zero. Please change the program.");
+
+			if (m_max < m_min)
+				DL_PANIC("TGUIRangeData m_max value must be greater than or equal to m_min value. Please change the program.");
 		}
 
 		virtual ~TGUIRangeData() override
